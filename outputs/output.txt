@@ -1,0 +1,532 @@
+[
+  {
+    "link": "https://www.amazon.com/Owala-Insulated-Stainless-Steel-Push-Button-Marshmallow/dp/B085DVNHHK/ref=sr_1_1?keywords=bottle&qid=1706201391&sr=8-1",
+    "title": "Owala FreeSip Insulated Stainless Steel Water Bottle with Straw, BPA-Free Sports Water Bottle, Great for Travel, 32 Oz, Shy Marshmallow  ",
+    "img": "https://m.media-amazon.com/images/I/71XJK6bWJKL._AC_UL320_.jpg",
+    "fullPrice": "32.61",
+    "reviewRatingAndCount": [
+      "4.8 out of 5",
+      "30,712 global ratings"
+    ],
+    "fromTheManufacturer": [
+      "32-ounce insulated stainless-steel water bottle with a FreeSip spout and push-button lid with lock     Patented FreeSip spout designed for either sipping upright through the built-in straw or tilting back to swig from the spout opening     Protective push-to-open lid keeps spout clean; convenient carry loop doubles as a lock     Double-wall insulation keeps drinks cold for up to 24 hours; wide opening for cleaning and adding ice     BPA and phthalate-free; hand wash cup, dishwasher-safe lid; not for use with hot liquids",
+      "From the manufacturer",
+      "Hi. We make water bottles.",
+      "Why? Well, we’re a motley crew of dreamers and designers who live by a simple creed: “Do more of what you love.”​",
+      "And we love designing things that make life a little bit easier and a heckuva a lot more enjoyable. We asked ourselves, with so many different kinds of water bottles out there, why do 3 out of 4 people still suffer from chronic dehydration?",
+      "So we rolled up our sleeves and got to work. We created what we believe to be the finest water bottles in all the land. Water bottles designed to help you do more of what you love. So, what are you waiting for? Go forth and carpe the diem—hydrated like a boss.",
+      "<img alt=\"swig or sip drinking spout\" src=\"https://m.media-amazon.com/images/S/aplus-media-library-service-media/7505e53c-474f-4695-9d88-2432ee2b535b.__CR0,0,300,300_PT0_SX220_V1___.jpg\"/>",
+      "<img alt=\"flip top lid,owala\" src=\"https://m.media-amazon.com/images/S/aplus-media-library-service-media/1ce2d9cb-6037-484b-9dd9-0ec041178f40.__CR0,0,300,300_PT0_SX220_V1___.jpg\"/>",
+      "<img alt=\"leakproof water bottle\" src=\"https://m.media-amazon.com/images/S/aplus-media-library-service-media/6577910f-8a41-4c48-b1c8-13a4c5d7e953.__CR0,0,300,300_PT0_SX220_V1___.jpg\"/>",
+      "<img alt=\"owala, insulated water bottles\" src=\"https://m.media-amazon.com/images/S/aplus-media-library-service-media/30d2e2db-175e-4287-a263-3e70cdd4e9e1.__CR0,0,300,300_PT0_SX220_V1___.jpg\"/>",
+      "FreeSip Spout",
+      "What makes the Owala FreeSip so different than other bottles? The FreeSip has a patented 2-in-1 spout that rocks BOTH a built-in straw for sipping AND a wide-mouth opening for chugging. That’s right—two different ways to drink.",
+      "Easy to Clean",
+      "Designed to be quick and easy to disassemble, with minimal hard-to-reach surfaces. Lid and straw are dishwasher safe. Hand wash cup with Owala 2-in-1 Water Bottle Brush (sold separately).",
+      "Cup Holder Friendly Base",
+      "Because you'll want to take this bottle everywhere, the 24-Ounce bottles are cup-holder friendly. Now you can stay hydrated on-the-go.",
+      "Keeps Drinks Cold",
+      "Triple-layered, vacuum-insulated stainless steel keeps drinks cold for up to 24-hours. Plus, this bottle is made from BPA- and phthalate-free materials."
+    ],
+    "bestReviews": [
+      {
+        "title": "Owala 32 oz Water Bottle",
+        "rating": "5.0 out of 5 stars",
+        "content": "This water bottle is so unique like no other. Aside from keeping my drink cold for a long time, aside from the very colorful top that attracted me foremost ever since the first time I laid my eyes on it,  I love so much the sip and swig features - big spout opening and the unique sip hole that looks like a contour of a pursed lip. The big straw inside that is connected to it gives me the right size amount of drink, water in this case, when I have to take in a sip to drink some medication. Proven for its quality, last night, I placed a couple of lemon slices to my water inside and let it seep through overnight. This morning, when I took a sip, some of the lemon parts got stuck at the bottom end of the straw, preventing me to drink a good amount of my usual sip. It was no problem at all. That’s where the swig features comes in handy. I tilted my head and got a good gulp amount of water. Boy I just love this Owala. I love parading it at work, swinging and swaying it around with the easy lift and secure handle. No spill at all. 32 oz is the most perfect size for me. (Oh my, first time a wrote a long review. Sorry, can’t control myself, I just love this Owala)"
+      },
+      {
+        "title": "Durable and well-designed",
+        "rating": "5.0 out of 5 stars",
+        "content": "Didn't know anything about the brand when buying, just thought the colors were cute and wanted to try it. Turns out the design is very well thought out, comes with a straw but also allows u to drink from it without the straw if you prefer (it's also satisfying because you always get that last drop of water out). The bottle is easy to grab even for people with smaller hands. Keeps the temperature of the water the same as when it was put in. The bottle fits into the side pouch of most backpacks, including my own which is a pretty tight fit. Only drawback is that it's a bit heavy but that's to be expected for a metal bottle filled with water."
+      },
+      {
+        "title": "My Emotional Support Bottle!",
+        "rating": "5.0 out of 5 stars",
+        "content": "I recently purchased the Owala FreeSip water bottle and have been extremely happy with my purchase. The bottle is well-designed and easy to use. The FreeSip lid allows me to drink from the bottle without having to tilt my head back, which is great for when I'm driving or working at my desk. The lid is also leak-proof, so I don't have to worry about any spills. The bottle itself is made of durable stainless steel and keeps my water cold for hours. I also appreciate that the bottle is BPA-free and environmentally friendly. Overall, I highly recommend the Owala FreeSip water bottle to anyone in the market for a high-quality, functional water bottle."
+      },
+      {
+        "title": "Convenient sip or straw dispenser",
+        "rating": "5.0 out of 5 stars",
+        "content": "This is an easy one-handed push button to access the drinking area. I feel this keeps it sanitary. It has a straw that can detach to be cleaned. This allows you to sip to the straw or tilt the container up to drink. They do say not to use hot liquids for safety reasons. Pressure can build up. I haven't used it long-term, so I cannot comment on staining or ease of cleaning. It will mostly be used for water. It is keeping the water very cold for a long time. The only downside is that you have to close it for best performance on keeping liquids cold and not spilling if it gets knocked over-- I do tend to tip my water bottle over in the car or at the gym. Having to push the button every time is kind of inconvenient and I wonder about the longevity. However, everything else combined makes this a good choice."
+      },
+      {
+        "title": "Superior water bottle",
+        "rating": "5.0 out of 5 stars",
+        "content": "Fits in my car cup holders, keeps cold, has a handle, has a straw cover, doesn’t leak, & much easier to clean than competitive bottles with small parts.  Sippy part is like those mouth piece Gatorade bottles. Website says top is dishwasher safe (top rack) & straw works in silverware compartment. Love it!"
+      },
+      {
+        "title": "Best water bottles on the market",
+        "rating": "5.0 out of 5 stars",
+        "content": "After years of owning Yeti bottles, I switched to this bottle mostly because my daughter told me about it.  What I found is that it’s the best designed of all the ones out there.We briefly tried the Stanley bottles with built in handles and straws. While those are good, I found carrying those around to be awkward, especially if I want to store them in a backpack.Enter Owala.  I own three sizes for different reasons. The 40oz is the one I use daily at home. It either sits next to the bed overnight or I use it for my work day.  The bottle keeps water cold for up to 48 hours.I also carry a 32oz for daily excursions. The 40oz is just too big for cup holders. The 32oz also keeps cold for up to two days. Finally, I have a 24oz that I use for travel.I love the spout.  The bottle allows me to drink however I feel necessary. Normally I use the built in straw, but there are times I’ve just wanted to chug water and their spout allows me to do both.The cap seals extremely well. We’ve had Yeti bottles leak, Owala seems to have solved this issue quite well.Now for the bad things…. If you fill the bottle with ice water, I suggest adding the ice last.  Putting ice in first causes it to stay in the lower section of the bottle, making it hard to get the straw into it. I usually fill my bottle with water, add ice and then push the straw through.Second, I had the flip top mechanism stick a bit on one bottle, which I promptly returned and replaced. Only happened on one out of the five we own in the house.Overall this is a highly recommended item that you will not regret."
+      },
+      {
+        "title": "Best water bottle ever",
+        "rating": "5.0 out of 5 stars",
+        "content": "I have spent so much money on cheaper water bottles that don't work.  Especially straw types.  This straw is completely different.  It's \"mouth shaped\" at the top and SECURELY attached inside so it doesn't pop off like the cheap ones do.  It's also straight instead of curved so I get water all the way down to the bottom.  There is also a chug hole.  My only advice is don't forget it's there and tilt the bottle up to drink from the straw.  I did that once.  Whoops.  But the chug hole is a great feature too!  At dance classes I need more than a sip.  That being said -- the straw hole delivers a solid stream of water with minimal effort.  I did drop it and scraped some of the paint off yesterday, but all things considered, it was a hard drop and it barely dented.  I'd say it's pretty sturdy!  It is also attractive, sporting bright colors that make me smile when I look at it.  Honestly, I wish I had sprung for the $30 bucks a LOT sooner because I'm so happy with this water bottle.  I'd have to LOSE it to make me buy another one, which isn't so great for the company, but it's hard to need to replace perfection.  This is the perfect water bottle for me.  Oh -- and it doesn't leak when the lid is shut.  I was worried because I have an apple tag hooked to the locking portion, so I was afraid it would leak, but it does not.  If you aren't using the lock as a handle like I am, I would lock it to make it especially leak proof.  Happy drinking!!"
+      },
+      {
+        "title": "Makes me drink more water",
+        "rating": "4.0 out of 5 stars",
+        "content": "I love the Owala so much that I bought them for my whole family. They have both a straw and an opening to drink from and they are insulated so they keep water cold. My favorite thing about it is how fast you can drink from them. No glugging. The pop top is easy to undo one handed and the carrying ring snaps over the button so it won’t pop open when you don’t want it to.The only problem with these is it develops mold on the mouthpiece seal that you can’t clean off. I have a black line where it seals against the mouthpiece. I would buy a replacement seal if they sold them."
+      },
+      {
+        "title": "Convenient, Great Design, Incredible For Everyday Use",
+        "rating": "5.0 out of 5 stars",
+        "content": "I love that the bottle has a large capacity (40 oz) but still fits well in backpack bottle holders (if it can hold a 32 oz Nalgene, it can hold the 40 oz Owala). The sipping straw feature built into the mouthpiece is surprisingly comfortable and very easy and convenient to use regardless if you're sipping or swigging. The design of the mouthpiece also makes it very easy to clean compared to other sipping bottles like a bite valve bottle. The stainless steel vacuum interior holds water temperature very well and is very easy to clean, especially with the wide mouth opening when the cap is removed. The cap secures very well and you can feel the tight seal when you close it, giving you confidence that it won't leak. The silicone seal for the mouthpiece also can be removed very easily for cleaning and the carrying handle folds in very well and locks in securely. Everything locks into place with a very satisfying, secure click.The one caveat, or limitation, of the bottle is that the seal on the mouth piece is so effective that it can cause the straw to store water when you remove the cap when the bottle is full. This may lead to some spillage from the end of the straw if the mouthpiece seal is opened after the removal of the straw. Also, when filling the bottle, be sure to replace the cap with the mouthpiece seal open or some water may shoot out of the mouthpiece when you open the seal as the water rushes into the straw when the air is released. In my opinion, this is a very minor issue.Overall, the bottle has quickly become my everyday water bottle. It fits into my bag's bottle pockets very well and is great for leaving on my desk at work to sip water from while also being great to take swigs from while at the gym, or when I'm especially thirsty. The simple design makes it easy to clean and the stainless steel interior holds temperature very well while being plastic free."
+      },
+      {
+        "title": "Trendsetter!!!",
+        "rating": "5.0 out of 5 stars",
+        "content": "I LOVE my Owala. Several months ago, I researched for HOURS on the best water bottle to get. I was gifted a Stanley but never liked it much since I'm a germaphobe and don't like the straw being exposed to the elements. A friend recommended her 32oz Owala, but I decided on the 24 since \"filling up more often\" really isn't a concern for me. I've had it for months now and it was definitely a perfect decision. The dual-use sip/chug spout is GENIUS and I definitely make use of both. It is very easy to clean, which i do at least weekly. I also bought a silicone boot to put on it, which I would recommend for anyone who is prone to dropping like me. I took hours to decide on a color, I ended up with the teal/orange/reddish one. Since getting this and using it around campus, I've seen TONS of other students/athletes using owalas, and even specifically in this color. Before a few weeks ago, I have never seen anyone on Tiktok/online/in person ever using this color. Not saying I started it, but...(jk, but definitely get the bottle)"
+      }
+    ]
+  },
+  {
+    "link": "https://www.amazon.com/CamelBak-Podium-Chill-Insulated-Bottle/dp/B07VVRSXXR/ref=sr_1_49?keywords=bottle&qid=1706201396&sr=8-49",
+    "title": "CamelBakPodium Dirt Series Chill Insulated Mountain Bike Water Bottle 21oz, Lime  ",
+    "img": "https://m.media-amazon.com/images/I/41BEL5b+xuL._AC_UL320_.jpg",
+    "fullPrice": "12.56",
+    "reviewRatingAndCount": [
+      "4.7 out of 5",
+      "1,914 global ratings"
+    ],
+    "fromTheManufacturer": [
+      "Keeps your mouth clean and your drink cold twice as long     Double-Walled Construction: Keeps water cold twice as long     Optimized Cage Fit: Engineered to securely fit in a variety of bottle cages     Easy to Clean Interface: All parts can separate for thorough cleaning     Nozzle Cover: Keeps dirt out and your mouth clean",
+      "From the manufacturer",
+      "Podium: The Original Premium Bike Bottle",
+      "A new design and improved cleanability maintains the Podium bottle's position as the best-of-the-best within the cycling industry.",
+      "<img alt=\"camelbak bottle, podium bottle, bike water bottle, squeeze bottle, cycling water bottle, podium\" src=\"https://m.media-amazon.com/images/S/aplus-media/vc/f0f01049-fc2f-4d6b-9a30-2b79eccc56b6.__CR0,0,300,300_PT0_SX220_V1___.jpg\"/>",
+      "<img alt=\"camelbak bottle, podium bottle, bike water bottle, squeeze bottle, cycling water bottle, podium\" src=\"https://m.media-amazon.com/images/S/aplus-media/vc/82cbe9bb-5990-4d32-94a0-3a76e8ef2894.__CR0,0,300,300_PT0_SX220_V1___.jpg\"/>",
+      "<img alt=\"camelbak bottle, podium bottle, bike water bottle, squeeze bottle, cycling water bottle, podium\" src=\"https://m.media-amazon.com/images/S/aplus-media/vc/073d5ac7-da06-41fb-913d-77281f6f6ea8.__CR0,0,300,300_PT0_SX220_V1___.jpg\"/>",
+      "<img alt=\"camelbak bottle, podium bottle, bike water bottle, squeeze bottle, cycling water bottle, podium\" src=\"https://m.media-amazon.com/images/S/aplus-media/vc/7305ee8f-87f6-4efa-a4bd-c33cea72392d.__CR0,0,300,300_PT0_SX220_V1___.jpg\"/>",
+      "Optimized Cage Fit",
+      "Engineered to securely fit in a variety of bottle cages. Easy squeeze so that you get more fluid with less effort.",
+      "High Flow, Self-Sealing Cap",
+      "Maximizes flow rate while eliminating splatters and spills. All parts can separate for thorough cleaning.",
+      "Sophisticated Graphics",
+      "Clean graphics make for an easy match with your kit.",
+      "Mud Cap*",
+      "The Mud Cap keeps dirt out of your cap so you can drink water, not dirt. Perfect for mountain biking.",
+      "*Included on all Podium Dirt Series bottles and available as an add-on product.",
+      "Podium Chill Insulated Bottle",
+      "Podium is the ultimate bottle for rapid and reliable hydration. This premium bike bottle prioritizes performance and excellent cage fit above all else for both professional and recreational users.",
+      "Podium Chill, Insulated Bike Bottle",
+      "With double-walled construction to keep water cold twice as long as other bottles, Podium Chill is ideal for delivering cold, consistent cycling hydration. This premium bike bottle prioritizes performance and excellent cage fit for both professional and recreational users.",
+      "Podium Dirt Series Bottle",
+      "The Podium Dirt Series is the premium bike bottle for mountain bikers who prioritize performance and functionality above all else. The Mud Cap keeps dirt and dust out of your bottle while the secure cage fit means you'll be able to swig and stow your bottle with confidence.",
+      "Podium Ice, Insulated Bike Bottle",
+      "Keep your water cold 4x longer! CamelBak's re-engineered Podium Ice is the ultimate insulated cycling bottle, even when temps rise into triple-digits. With unmatched aerogel insulation technology, high flow rate and easy cleanability, the Podium Ice stands second to none.",
+      "Podium Bike Bottle",
+      "Podium Chill Insulated Bottle",
+      "Podium Dirt Series Bottle",
+      "Podium Ice, Insulated Bike Bottle",
+      "About CamelBak",
+      "Founded in 1989, CamelBak invented the hands-free hydration category and is the global leader in outdoor hydration. CamelBak continues to reinvent hydration and carry solutions that empower an active lifestyle through award-winning products that include everything from technical hydration packs to reusable bottles."
+    ],
+    "bestReviews": [
+      {
+        "title": "Perfect biking accessory",
+        "rating": "5.0 out of 5 stars",
+        "content": "On long, dusty (or muddy) bike trips, I was growing weary of drinking from dirty bottle spouts. So I got this bottle because of its nozzle cover. I am extremely pleased with that cover and the resulting clean tastes of water, but I got so much more with this bottle. It's insulated, which is a bonus. It works so well as a squeeze bottle that I don't even touch my mouth to it, so I don't feel the need to always clean the inside. But if I need to, the cap and nozzle separate into several pieces to make it easy to clean. The lock works absolutely perfectly: can't even squeeze a drop out if I wanted to. And lastly, it fits perfectly in the bottle cage on my bike. I couldn't imagine a better bottle!"
+      },
+      {
+        "title": "Great quality for Great price!",
+        "rating": "5.0 out of 5 stars",
+        "content": "The CamelBak Podium Dirt Series Chill Insulated Mountain Bike Water Bottle in Lime is an exceptional accessory for any mountain biker. With its 21oz capacity and insulated design, it keeps my water cool and refreshing throughout my rides. The high-quality construction ensures durability, and the self-sealing Jet Valve provides easy, leak-proof hydration. The vibrant lime color adds a fun touch to my biking gear. Overall, the CamelBak Podium Dirt Series Chill Water Bottle is a top-notch product that combines functionality, durability, and style. Highly recommended for mountain bikers in need of a reliable hydration solution."
+      },
+      {
+        "title": "Perfect size",
+        "rating": "5.0 out of 5 stars",
+        "content": "Great quality and the perfect size to use while cycling. Sturdier than expected. I highly recommend."
+      },
+      {
+        "title": "Great water bottle that keeps the dirt out.",
+        "rating": "4.0 out of 5 stars",
+        "content": "These bottles are durable, well made and the rubber boot keeps the dirt off the spout. Does not keep water cold for as long as I'd hoped, but decent."
+      },
+      {
+        "title": "Great bottle and works fairly well insulation-wise",
+        "rating": "5.0 out of 5 stars",
+        "content": "I have 4 of these bottles and at times carry all of them on longer rides. Love the caps on them! Better than drinking dirt and grit! They do keep water cooler longer than my non-insulated ones but on 85-90 degree days after 4 hours, it's not gonna be ice cold. One trick is to fill them a little over 3/4 of the way and set them in the freezer at a slight angle with the cap on loosely. Frozen overnight like this, they are much more effective past the 3-hour mark. I usually freeze two and fill the others with cold water and ice along with my Tailwind Endurance Fuel."
+      },
+      {
+        "title": "Exelente calidad",
+        "rating": "5.0 out of 5 stars",
+        "content": "Buen producto , bien presentado y bien acabado . Debes estar atento a la tapa que protege la salida de líquido pues puede safarse y perderse"
+      },
+      {
+        "title": "Well made bottle",
+        "rating": "5.0 out of 5 stars",
+        "content": "I waited 6 months to review. Although it isn't insulated it does keep water cold with a few ice cubes for over an hour in the summer heat. The locking tab does prevent leaking.  The flip top is easy to use 1 handed while riding my bike. The mouth is large enough to fit large ice cubes from a large silicon mold. It is pretty easy to clean. The green color is easy for me to find as I have left several bottles on many trails."
+      },
+      {
+        "title": "great for the MTB",
+        "rating": "5.0 out of 5 stars",
+        "content": "Really like the mouth piece cover to keep the dirt out.  It also does a pretty good job of keeping the water cold."
+      },
+      {
+        "title": "CamelBak Podium Bike Bottle: Beat the Dirt!",
+        "rating": "4.0 out of 5 stars",
+        "content": "I've taken up cycling for recreation fairly recently and I'm loving it! Here are my 2 cents on this Podium insulated bottle by CamelBak:Pros 👍👍👍- Dirt-Proof: This was the selling point for me. I've tried different bottles in the past, including one from Schwinn (see photos 📸) This one worked the best at keeping (most) dust away from the drinking spout 🙌- Locking Function: No Spills, No Squirts and No Surprises!- Overall, really good fit and finish.Cons 👎👎👎- Insulation: It's a good idea on paper but in reality it has limited functionality. That's a nice way of saying, it doesn't really work!- A little pricy.My Recommendation 🤔If you enjoy riding your bike and are tired of eating dirt, this bottle is for you! This bottle has served me very well. If anything, I need another bottle cage and second bottle! Can't wait for the next time it goes on sale!Note on Cleaning 🧴🫧🤔 I've seen one review that shows this bottle can get moldy. That was a little concerning to me but I rinse mine with warm water and dish soap after each ride and let it air dry on a rack. Honestly, I haven't experienced any mold or smell in my bottle. Take that for what it's worth!Hope my short review has helped you make a more informed buying decision 👍😊✌️⚠️ Quick Update (04/19/2023) ⚠️Got my second bottle cage put on and added a second podium bottle (non insulated) for additional hydration 😎 Check out my new photos 📸😅👋"
+      },
+      {
+        "title": "Fits the bill for now....",
+        "rating": "4.0 out of 5 stars",
+        "content": "Its a little taller than expected, but does keep my ice water nice & cold for a few hrs riding in 90 degree Florida heat. I like the cap that goes over the drinking spout, keeps the dirt & sand off it, so no dirty drinks :-)"
+      }
+    ]
+  },
+  {
+    "link": "https://www.amazon.com/BJPKPK-Insulated-Bottles-Stainless-School-Navy/dp/B096RV414K/ref=sr_1_97?keywords=bottle&qid=1706201400&sr=8-97",
+    "title": "BJPKPK Insulated Water Bottles -17oz/500ml -Stainless Steel Water bottles,Sports water bottles Keep cold for 24 Hours and hot for 12 Hours,BPA Free kids water bottles for School-Navy blue  ",
+    "img": "https://m.media-amazon.com/images/I/81HYdFaXIoL._AC_UL320_.jpg",
+    "fullPrice": "8.91",
+    "reviewRatingAndCount": [
+      "4.5 out of 5",
+      "7,378 global ratings"
+    ],
+    "fromTheManufacturer": [
+      "Safe and Reliable: BPA-Free, made of food grade 18/8 stainless steel, double wall vacuum insulated bottle. Eco-friendly, lead free, rust proof and leak proof, no sweat, no condensation any more.     Keep drinks cold & hot: Keep your drinks ice cold for 24 hours and hot for 12 hours within our highly performed insulated water bottle. No sweat on the exterior side to keep your hands comfortable while holding.     Keep Hydration: Drinking more water with this water bottle, suitable for any sports activities, work, school and any scenario in your daily life.     Functional style: Our water bottles have been designed with spill proof and leak proof features for convenient use and travelling.     Perfect size: Our water bottles are designed with perfect size for daily use and also perfect fit in your car cup holder.",
+      "From the manufacturer",
+      "BJPKPK Stainless Steel Double Wall Insulated Water Bottles BUILT TO LAST",
+      "Our highly rated water bottles are ready for any adventure, also designed to be the perfect urban companion as well. With design in mind, our stylish cola shaped bottles know how to keep you cool. Using our innovative insulated water bottles enhance the daily hydration experience by keeping drinks cold for 24 hours or hot for 12 hours. No matter where your journey, our water bottle is the best beverage companion, making sure you have high performance with you!",
+      "<img alt=\"water bottle\" src=\"https://m.media-amazon.com/images/S/aplus-media/vc/87d5cb76-8433-4d69-9e65-ccb745d57a69.__CR0,0,300,300_PT0_SX300_V1___.jpg\"/>",
+      "<img alt=\"water bottle\" src=\"https://m.media-amazon.com/images/S/aplus-media/vc/5afddd5d-7102-4860-9450-1276bd886527.__CR0,0,300,300_PT0_SX300_V1___.jpg\"/>",
+      "<img alt=\"water bottle cup holder\" src=\"https://m.media-amazon.com/images/S/aplus-media-library-service-media/d7bf0105-41a7-4627-baeb-b9e2f0e00829.__CR0,0,1600,1600_PT0_SX300_V1___.jpg\"/>",
+      "CLEANING AND MAINTENANCE:",
+      "18/8 Stainless Steel Material",
+      "Water tastes fresh all day long! And it feels nicer than plastic to drink.",
+      "Made with 18/8 food grade stainless steel, BJPKPK metal water bottles ensure pure taste and no flavor transfer, and the durable construction stands up to whatever life brings, never sweat on your hands or in your bag.",
+      "Double Wall Vacuum Insulation",
+      "The unique double wall vacuum insulation protects temperature for hours. Keeps cold drinks icy cold and hot drinks piping hot for hydration any time, anywhere. Our BJPKPK insulated water bottles can keep hot beverages warm for up to 12 hours and cold beverages chilled for up to 24 hrs.",
+      "The color is gorgeous, even prettier in real life!",
+      "Our stainless steel water bottles are beautifully crafted and designed to last. The powder coated             finish is not a smooth glossy finish, doesn't sweat, staying slip-free and colorful, no matter where             you take it.",
+      "You can use our double wall vacuum insulated water bottle in any circumstance, both for going to             the office as well as for any other common plans like hiking, go camping or making any sport.             Keep hydrated all day long! Whether you're on the road or in the office, there's a BJPKPK bottle             just for you."
+    ],
+    "bestReviews": [
+      {
+        "title": "Perfect Stanley Alternative: BJPKPK's Insulated Wonder Bottle Will Steal Your Heart",
+        "rating": "5.0 out of 5 stars",
+        "content": "Forget the hype, ditch the bulky beast – the BJPKPK Stainless Steel Insulated Water Bottle (25oz) is the real MVP of hydration heroes. While everyone's clinging to their Stanleys, this hidden gem takes the crown for keeping beverages ice-cold longer and piping hot for hours longer than your Stanley. Seriously, I'm talking frosty lemonade at sunset and toasty tea well into the afternoon.But it's not just about temperature. This little wonder is a champion of convenience too. Picture-perfect fit in any 3-inch car cupholder—no more awkward wedging or precarious balancing acts. Plus, the leakproof lid and durable stainless steel construction mean you can toss it in your bag without worry. Say goodbye to soggy backpacks and hello to peace of mind.And did I mention the gorgeous colors and sleek design? This bottle isn't just functional, it's eye-catching too. Ditch the boring metal cylinders and rock a vibrant pop of personality with every sip.Sure, you could follow the crowd and join the Stanley club, but why settle for good when you can have exceptional? The BJPKPK Kids Stainless Steel Insulated Water Bottle is a game-changer, a hydration hero, and an all-around awesome companion for any adventure. I love it so much, I'd buy another in a heartbeat (though with this quality, why would I need to?)Here's the lowdown:Temperature Titan: Keeps drinks ice-cold for 24 hours and piping hot for 12 hours.Cupholder Champion: Fits snugly in any 3-inch car cupholder.Leakproof Legend: No more spills, just pure hydration bliss.Durable Defender: Built to last, adventure after adventure.Style Star: Available in a range of eye-catching colors to match your personality.So, ditch the hype and grab a BJPKPK. Your taste buds (and your car cupholder) will thank you.P.S. If you're looking for a gift that's both practical and awesome, look no further! This bottle is a guaranteed crowd-pleaser for kids and adults alike."
+      },
+      {
+        "title": "Keeping Hydration Cool and Stylish",
+        "rating": "5.0 out of 5 stars",
+        "content": "I recently purchased the BJPKPK Insulated Water Bottle in Sakura Pink for my niece, and it has proven to be a delightful addition to her daily routine. This stainless steel water bottle not only keeps her beverages at the perfect temperature but also offers a chic design that she adores. I'm thrilled to provide a five-star review for this fantastic gift.Impressive Temperature Retention:One of the standout features of this water bottle is its remarkable ability to keep beverages cold for 24 hours and hot for 12 hours. Whether she's enjoying a refreshing cold drink or a hot beverage during the school day, this bottle ensures that it stays at the ideal temperature.Stainless Steel Durability:The stainless steel construction is not only durable but also adds to the aesthetic appeal of the bottle. It can withstand daily use and the occasional bump or drop.Chic Sakura Pink Design:The Sakura Pink color and design are both stylish and age-appropriate for my niece. She loves showing off her water bottle at school, making it a fashionable accessory as well as a practical one.Perfect Size:The 17oz/500ml size is just right for her daily hydration needs. It's not too bulky, making it easy to carry in her school bag, while still holding enough water to keep her refreshed throughout the day.BPA-Free and Safe:The fact that this bottle is BPA-free provides peace of mind. It ensures that she's staying hydrated with a safe and non-toxic container.Easy to Clean:The design of the bottle makes it easy to clean, and it's dishwasher safe, which simplifies the cleaning process for both her and her parents.In conclusion, the BJPKPK Insulated Water Bottle is a five-star gift that combines functionality and style. Its impressive temperature retention capabilities, chic Sakura Pink design, and stainless steel durability make it a perfect choice for my niece. It's a wonderful accessory for her school days, ensuring she stays hydrated and fashionable. Whether as a gift or for personal use, this water bottle is a fantastic choice for anyone seeking a stylish and practical hydration solution. My niece absolutely loves it, and I wholeheartedly recommend it to others."
+      },
+      {
+        "title": "Great quality",
+        "rating": "5.0 out of 5 stars",
+        "content": "I purchased the 17 oz version but I keep it in the door of my car while I drive. The 17 oz was too tall and the bottom of the lid scratched the overhanging area of my door. I purchase this 12 oz and it is perfect. Fits well in my car door and keeps my drinks cold for about 36 to 48 hours. Ice stays for 24 hours or more depending on the outside temp. The metal is easy to clean. The threads and gasket always seal perfectly and the bottle doesn't seem to dent easily. No leaks. I highly recommend it. The navy blue is an excellent color."
+      },
+      {
+        "title": "Bottle mouth is too small for most average sized ice cubes.",
+        "rating": "4.0 out of 5 stars",
+        "content": "I received my order two days ago, and I am happy with it. The bottle has a sleek design that fits my hand much better than most of the others I’ve owned. I was disappointed by the size of the bottle opening. It is about an inch and a half wide and I will have to buy a smaller bottle brush to clean it properly. I also couldn't get my smaller ice cubes to fit the narrow opening, so I crushed some ice in the blender. The great news is that the ice stayed frozen for at least ten hours. Today, I didn't feel like chopping ice, so I added some very cold water from my fridge to the bottle, and 6 hours later,  it was still cold. If it's possible to redesign this with a wider mouth, it would be perfect for me. However, if you have a crushed ice option on your fridge or an icemaker with small pellet ice, you should have no problems loading it with ice and enjoying a very cold beverage for several hours. Though, so far, the water in the bottle is still cold, even without any ice. I wrote this review so anyone who must have a wide-mouth bottle understands this particular style may not fit your needs. However, if the narrow opening isn't a deal breaker, this is quite a good bottle that delivers on the promise to keep beverages cold for a reasonable price."
+      },
+      {
+        "title": "My son loved this.",
+        "rating": "5.0 out of 5 stars",
+        "content": "My son absolutely adores his BJPKPK 17oz Stainless Steel Water Bottle for kids. This little water bottle has become an inseparable part of his daily routine, and here's why:First and foremost, the design is kid-friendly and fun, with vibrant colors and playful patterns. It's the kind of bottle that instantly grabs a child's attention and makes them excited about staying hydrated.The insulation is a game-changer. My son loves that his water stays cold for hours, even on hot summer days. He's taken it to school, soccer practice, and on family outings, and the water always stays refreshingly cool.The size is just right for his little hands, and the spout is easy to drink from without any mess or spills. It's also a breeze to open and close, which means no hassles for both of us.Additionally, I appreciate that it's made of stainless steel, which is not only durable but also safe for his health. It gives me peace of mind knowing he's using a high-quality bottle.In a nutshell, the BJPKPK 17oz Stainless Steel Water Bottle for kids has made hydration easy and enjoyable for my son. He's excited about drinking water, and as a parent, I couldn't be happier. It's a win-win for both of us!"
+      },
+      {
+        "title": "Perfect for Everyday Use",
+        "rating": "5.0 out of 5 stars",
+        "content": "I was looking for a water bottle I could pop in the bottom of my stroller that wouldn’t leak. This is perfect, keeps the drink cold and easy to drink out of. I’ve dropped it multiple times and she’s still in great condition! I didn’t want to spend a ton of money and this had great reviews so thought I would try it! Definitely worth it if you need something that’s easy to use on the go!"
+      },
+      {
+        "title": "keep tea warm for over 12h",
+        "rating": "5.0 out of 5 stars",
+        "content": "I purchased this insulated water bottle primarily because I'm often chilly in my office and enjoy having hot tea to keep me warm.First and foremost, the 750ml size is just perfect for my needs. I always prefer larger sizes because you don't have to refill as often, haha.I'm accustomed to a German brand called \"emsa,\" which is known for keeping water warm for extended periods. I must say that this bottle is comparable in terms of heat retention. It keeps my beverages very hot for 6 hours, still pleasantly warm for 12 hours, and even maintains a noticeable warmth for up to 18 hours.One of the most significant advantages I've experienced is that this bottle has never leaked on me. It's airtight and reliable, which is essential for keeping my bag and belongings dry.A helpful tip for maximizing its heat retention: Before pouring your hot drink inside, add a small amount of hot water, close the lid securely, give it a quick shake, and then empty the water. Afterward, pour your hot drink in. This little trick has made a noticeable difference in how long my drink stays warm.I haven't had the chance to test it with cold drinks, so I can't comment on its performance in that regard."
+      },
+      {
+        "title": "Could be better",
+        "rating": "3.0 out of 5 stars",
+        "content": "Pro is big enough to hold a lot of volume. but it does have few cons.It does not fit in to some cup holders, it is not easy to clean inside as the opening is smaller, and the screw cap is hard to open with one hand when you are driving etc."
+      },
+      {
+        "title": "Fits middle school backpack",
+        "rating": "5.0 out of 5 stars",
+        "content": "We bought a 17oz bottle for the middle schooler and a 25oz bottle for the adult. The slim bottle is easier to stuff into the outside pocket of the backpack. The small lid keeps the water cold longer. It also seals better compared to our old leaky wide-mouth bottle of another brand. The inside bottom of the bottle reads SUS 304, which is food grade stainless steel. The cheapest, grey 25oz bottle looks very industrial. Luckily we had some colorful stickers on hand. In retrospect, we should've spent a few dollars more for a nicer color."
+      },
+      {
+        "title": "Leaks a little",
+        "rating": "4.0 out of 5 stars",
+        "content": "It's a great water bottle but it leaks if you fill it too high"
+      }
+    ]
+  },
+  {
+    "link": "https://www.amazon.com/Hydro-Flask-Travel-Coffee-Flex/dp/B07G39F6C5/ref=sr_1_145?keywords=bottle&qid=1706201404&sr=8-145",
+    "title": "Hydro FlaskStainless Steel Wide Mouth Bottle with Flex Sip Lid and Double-Wall Vacuum Insulation for Coffee, Tea and Drinks  ",
+    "img": "https://m.media-amazon.com/images/I/51Z0HfVP7kL._AC_UL320_.jpg",
+    "fullPrice": "22.97",
+    "reviewRatingAndCount": [
+      "4.6 out of 5",
+      "7,935 global ratings"
+    ],
+    "fromTheManufacturer": [
+      "Enjoy optimum drinking temperature for hours: Our TempShield double wall, vacuum insulated technology guards the temperature of your coffee or tea keeping it hot for hours. It also ensures no condensation or heat transfer to the outside of the flask     Solid and eco-friendly travel flask: All of our flasks are made with pro-grade stainless steel, a metal known for its resistance and purity. It also protects against the transfer of flavours. The flask is easy to clean and is dishwasher safe     BPA-Free flask with a Leak Proof Flex Sip Lid: Thanks to the Leak Proof Flex Sip Lid, you can carry and sip your drink without spraying it on. The flask is also compatible with our Hydro Flip Lid, Wide Mouth Flex Cap and Wide Mouth Straw lid     Take along with you: This insulated water bottle is compatible with most backpacks and car cupholders and is therefore the perfect everyday carry-on. Its powder coat means an easy-grip, sweat-free, and extra-durable flask that you can take anywhere     100% Customer and product satisfaction warranty: We stand behind our products and have great faith in our products. HYDRO FLASK is committed to high standards of durable and robust materials. HYDRO FLASK guarantees this product with a limited lifetime warranty against manufacturer defects",
+      "From the manufacturer"
+    ],
+    "bestReviews": [
+      {
+        "title": "Indigo is a beautiful color and 16 Oz is perfect for my needs",
+        "rating": "5.0 out of 5 stars",
+        "content": "This is the first Hydro Flask that is dishwasher safe I’ve purchased which was the big draw to buying a new one.  Now, I can’t believe I didn’t buy a new one sooner as it so much easier to place in the dishwasher instead of washing and drying by hand. Plus, I love that my dish washer will disinfect (total germaphobe here) the bottle which might mot happen by hand washing. Since  purchasing this 16 Oz bottle, I’ve bought a new 32 Oz to use at home and will either give away or donate my other bottles that aren’t dishwasher safe. My bottle in the color “indigo” and is a beautiful dark blue which is not a navy blue but close. It’s held up so far during a daily trip through the dishwasher.I use this bottle (plus the neoprene sleeve I purchased to fit over it to prevent scratches and light dents) in a backpack or other bags. It’s light weight to carry when full and fits easily into bags, purses and backpacks compared to a 32 Oz . It provides enough water to get you through work (which is what I use it for, we have water dispensers for refills) or I imagine classes for school until you can refill it again. It keeps my water cold and fresh and has no leaks or defects as of now. I can’t recommend it enough but will update if anything changes."
+      },
+      {
+        "title": "Keeps drinks cold!",
+        "rating": "5.0 out of 5 stars",
+        "content": "I love hydro flask products.  They are sturdy and pretty and keeps drinks cool just like they say they will.  Just wish they were not so pricy.  Also, mine leak from time to time.  Don't know why."
+      },
+      {
+        "title": "Best coffee mug that I have ever owned",
+        "rating": "5.0 out of 5 stars",
+        "content": "This keeps my coffee warm for around 8 hours.  I love the design and how well it seals.  I'm not a fan of how large the Yeti coffee mugs are and like the smaller diameter on the Hydroflask.  It fits perfectly in my car and boat cup holder.  I can also stash it in my backpack side pocket and close the lid and nothing spills.  I use this mug every day that I am not traveling."
+      },
+      {
+        "title": "my go to water/coffee bottle",
+        "rating": "5.0 out of 5 stars",
+        "content": "These are great! keeps everything warm or cold for a long time. In fact a little to well lol my coffee is still burning hot even after a few hours. its easy to take a part and clean every piece. I dented my water bottle a small dent when i dropped it on hard concrete floor but other than that these are really durable. the bottle still works fine and the dent is barely noticeable. would buy this again."
+      },
+      {
+        "title": "Tricky, but good job at insulating beverages.",
+        "rating": "4.0 out of 5 stars",
+        "content": "When one manages to get the parts of the lid properly assembled after cleaning, this thing is truly the most leak-proof leak-proof thermal drink container with a \"drink-through\" lid that I've ever used.  The problem is that to all visual inspection, it can look like the lid is perfectly reassembled . . . but then it will leak between the two main sections.  Then you have to disassemble if someplace where you can do so and try it again.  I'm thinking the rubber gasket is not always seated securely even though it appears to be so.The thermal construction of the metal part is excellent - I have fixed hot tea, then gotten distracted and forgotten to put the lid on and come back an hour later to find the tea still quite hot.  I don't get the 12 hours of truly hot beverage, but I've gotten too rushed to do what one is supposed to for best effectiveness - preheat with hot or boiling water and empty right before adding hot beverage.  That said, my tea is still piping hot two hours later when I first start drinking and acceptably warm and drinkable more than six hours later.  Like it enough that I've gotten two of them."
+      },
+      {
+        "title": "Great flask and company!",
+        "rating": "5.0 out of 5 stars",
+        "content": "I love this. I only got the 16 oz for now because it fit my needs. Somehow after cleaning I lost the red rubber seal. Called the company. They sent me a new top of the bottle. No charge and quickly, great bottle and company!"
+      },
+      {
+        "title": "Perfect size",
+        "rating": "5.0 out of 5 stars",
+        "content": "It’s a great bottle, I’ve put water with ice in it and the ice lasted a whole day without melting. It has the perfect size as it is not too big still containing half a liter of liquid. The lid is easy to clean. 10/10 price-quality"
+      },
+      {
+        "title": "The king of the flasks",
+        "rating": "5.0 out of 5 stars",
+        "content": "Love this flask and love that amazon had it on sale and at my door in 2 days. It's attractive, sturdy, well made and keeps the liquid hot or cold. This is my third one, but the first I've bought from amazon and was delighted with price and speed."
+      },
+      {
+        "title": "I prefer another brand.",
+        "rating": "4.0 out of 5 stars",
+        "content": "I was looking for a larger insulated travel cup to use in the car and Hydro Flask has such a great reputation that I wanted to try one, although I ended up returning before using. It seemed to be a high quality product and I have no doubt that it stays cold and hot as long as stated, but I found the twist cap was going to be too inconvenient to use while driving as I am used to a leak-proof cap with one-handed operation. I also prefer the tapered design of my current brand as it is easier to fit in my hand."
+      },
+      {
+        "title": "Keeps drinks cold and hot",
+        "rating": "5.0 out of 5 stars",
+        "content": "Loving this thermus. It most definitely does what it  says it will do. In addition, the design of this cup is easy to clean as the top breaks into three simple parts to get into those hard to reach places."
+      }
+    ]
+  },
+  {
+    "link": "https://www.amazon.com/Zak-Designs-Universe-Newport-W-StrawLid/dp/B085FQRS6C/ref=sr_1_193?keywords=bottle&qid=1706201409&sr=8-193",
+    "title": "Zak Designs Marvel Comics Durable Single Wall Stainless Steel Water Bottle with Push-Button Flip Lid Leak-Proof Design is Perfect for Outdoor Sports (19.5oz, BPA Free), 19.5 oz, Avengers  ",
+    "img": "https://m.media-amazon.com/images/I/71dFEev+g-L._AC_UL320_.jpg",
+    "fullPrice": "29.64",
+    "reviewRatingAndCount": [
+      "4.3 out of 5",
+      "1,487 global ratings"
+    ],
+    "fromTheManufacturer": [
+      "SIZE: This Marvel water bottle has a capacity of 19.5 ounces and is 7.87 inches tall.     MATERIAL: The single-wall sports bottle is made from food-grade 18/8 stainless steel, which is durable, BPA free, and won't rust or oxidize.     ONE HAND OPERATION: This leak-proof water bottle comes with a push-button lid that enables one-handed operation, and it’s easy to drink from the straw opening. You won’t have to worry about a thing when you take this Zak water bottle on the road!     BUILT-IN CARRYING HANDLE: The convenient carrying handle is perfect for bringing your favorite cold beverage on the go, and stays out of the way against the lid when it’s not being used.     LIFESTYLE: Zak water bottles help kids get hydrated with fun artwork featuring their favorite Marvel characters!",
+      "From the manufacturer",
+      "Making Hydration Fun",
+      "Drinking plenty of water is essential to a healthy lifestyle, refreshing both mind and body, and Zak Designs is here to help with drinkware you and the kids will love. Featuring bold artwork and favorite characters, these items will help anyone get excited about an everyday routine.",
+      "Action Lid",
+      "The comfortable silicone straw is protected by a spout cover that helps prevent the spread of germs, but easily opens at the push of a button. To stop the cover from opening accidentally, just slide down the locking mechanism. The lid also has a built-in handle that makes it easy to carry anywhere and folds out of the way when it's not being used.",
+      "Newport Bottle",
+      "Everyday Durability",
+      "Made from durable stainless steel, this bottle is sturdy enough to stand up to daily use, whether you're out on a hike or hydrating at home. The large capacity means you'll always have plenty of water on hand before going for a refill, and the bottle fits in most car cup holders for convenient travel."
+    ],
+    "bestReviews": [
+      {
+        "title": "Sturdy",
+        "rating": "5.0 out of 5 stars",
+        "content": "Bright and colorful. My grandson will love it."
+      },
+      {
+        "title": "Good size, and quality.",
+        "rating": "5.0 out of 5 stars",
+        "content": "This cup keeps my little boys water for school cold all day. He has dropped it multiple times and it has not dented, only a few little scuff marks on the lid. Does not leak."
+      },
+      {
+        "title": "Good quality",
+        "rating": "5.0 out of 5 stars",
+        "content": "No leaks and picture has not come off after 2 months of daily use."
+      },
+      {
+        "title": "Isn't Insulated But Does Stay Cold",
+        "rating": "4.0 out of 5 stars",
+        "content": "I was under the impression that this water bottle stays cold and is basically like a thermos water bottle, but unfortunately, it was not. I was highly disappointed upon finding this out. In addition to that, the water bottle also sweats pretty badly. The design on the water bottle is very nice though. If ice is put in the water bottle, it will stay cold for an incredibly long time. It's also great to put stickers on and is especially great for taking to school, vacations, theme parks, etc. My expectations unfortunately weren't met, but the water bottle has great graphic designs on it and is super kids friendly!"
+      },
+      {
+        "title": "It’s to cold outside",
+        "rating": "5.0 out of 5 stars",
+        "content": "I love the design and it’s easy to clean but it’s to cold on the outside my 4 year old grandson hands are freezing trying to hold this cup"
+      },
+      {
+        "title": "Great look!",
+        "rating": "3.0 out of 5 stars",
+        "content": "This is a great simple water bottle for my son. Only issue is the at the top plastic is cheap."
+      },
+      {
+        "title": "Es buenísimo",
+        "rating": "5.0 out of 5 stars",
+        "content": "Me ha agrado mucho los productos  y recomiendo los productos ."
+      },
+      {
+        "title": "Broken from day 1",
+        "rating": "1.0 out of 5 stars",
+        "content": "I gifted this to my sons best friend and came to find out that it has been defective  since day one. The first day he used it, it leaked all inside his backpack. His mom thought maybe it was maybe not sealed right but it is the actual thermos."
+      },
+      {
+        "title": "Single walled",
+        "rating": "4.0 out of 5 stars",
+        "content": "It’s my fault I didn’t read Single walled but otherwise it’s great it has a silicone straw that makes it easy for my son to drink from, has a handle, but has tons of condensation (hence the single walled glass) he loves the marvel characters though so overall a success"
+      },
+      {
+        "title": "Very thin",
+        "rating": "3.0 out of 5 stars",
+        "content": "Cute cup, will keep because purchased when on sale, so much thinner than other cups, will not last, positive it will dent and possibly crack the first time my son accidentally drops it, tried to show a comparison in the pictures first 2 pictures is this cup, third picture is another cup, and fourth picture is this cup in the left and the other on the right, same price for both, but this cup is poorer quality"
+      }
+    ]
+  },
+  {
+    "link": "https://www.amazon.com/Swell-10540-B17-00401-Insulated-Stainless-Roamer/dp/B07BTRJWL2/ref=sr_1_241?keywords=bottle&qid=1706201413&sr=8-241",
+    "title": "S'wellStainless Steel Roamer Bottle - 40 Fl Oz - Onyx - Triple-Layered Vacuum-Insulated Containers Keeps Drinks Cold for 40 Hours and Hot for 18 - with No Condensation - BPA Free Water Bottle  ",
+    "img": "https://m.media-amazon.com/images/I/61JpAOsIPWL._AC_UL320_.jpg",
+    "fullPrice": "35.00",
+    "reviewRatingAndCount": [
+      "4.7 out of 5",
+      "1,972 global ratings"
+    ],
+    "fromTheManufacturer": [
+      "TRIPLE-LAYERED INSULATION: S’well Roamer Onyx 40oz stainless steel water bottles feature triple-layered, vacuum-insulated construction, designed to keep beverages cold for up to 40 hours or hot for up to 18 with our exclusive Therma-S’well Technology. Each bottle features unique colors, prints, patterns and textures, all while delivering superior functionality. Hand-wash only.     THE PERFECT FIT: Our Roamer water bottles and beverage containers are designed with an opening wide enough for most ice cubes so you can easily refill and reuse it over and over. Whether you're headed out to go to on a hike, camping or the gym, you’ll find our large capacity 40oz and 60oz Roamers make the ultimate companion to keep you hydrated on outdoor and indoor adventures alike.     DON’T SWEAT IT: S'well beverage containers are insulated with a copper wall layer to eliminate condensation by providing an exterior that won't sweat on your hands or in your bag.     WORRY-FREE HYDRATION: Your search for safety is over. All S’well containers are BPA-free and composed of 18/8 premium food-grade stainless steel. We are compliant with California Prop 65 regulations and our products are certified to meet all regulatory requirements by an independent and accredited testing facility.     SUSTAINABILITY WITHOUT COMPROMISE: You won’t have to compromise fashion and functionality to live more sustainably with our sleek, beautifully crafted, built to last bottles. Every S’well purchased counts towards displacing millions of single-use plastic bottles.",
+      "From the manufacturer"
+    ],
+    "bestReviews": [
+      {
+        "title": "Love this huge water bottle",
+        "rating": "5.0 out of 5 stars",
+        "content": "I love this water bottle. The water taste great in it. It is not your typical cheap plastic water bottle. The only thing plastic is the inside of the lid. It is heavy duty. I have dropped it a few times and it held up really well. I don’t have to clean it too frequently since it just water I use in it. It holds about half a gallon of water. I put ice cubes in it and they melted. But it did keep my water cold. It does leak if you don’t fully close the lid. I have had it for a month now and use it every day. It works super well."
+      },
+      {
+        "title": "My son loves it",
+        "rating": "5.0 out of 5 stars",
+        "content": "At my kids' school, the students bring their own water bottles to drink during the day and at P.E. The drinking water from the fountains doesn't taste good to my 10 year old (and now my younger son, too), so he asked if he could get a big jug to bring water from home. If you've lived in Southern California you'll know what I mean. I have a 64 oz. Roamer and love it, so I thought a 40 oz. might work well for him. He absolutely loves it--it fits inside his backpack (he usually only has a couple folders, a chapter book, a jacket, and a lunchbox in there), but it holds lots of water. He used to bring his 18 oz. Yeti AND the S'well Roamer, but now it's just the Roamer. It's got scuffs and scratches, but I've seen him accidentally drop it onto the concrete, and it hasn't dented yet! It's empty when he brings it home, so I know it's getting used. He's asked if he can take my 64 oz, and give his 40 oz to his younger brother, but I don't want to give mine up until there's another sale. This one is definitely a genuine S'well, and doesn't leak, it keeps his water cold, it hasn't come apart or rusted, etc. He loves that he can bring a lot of water with him when we go to the pumpkin patch, or the basketball court, or a day running errands. Cleaning is easy with an OXO bottle brush kit, I use the small round brush to swipe the groove inside the cap. The handle is great not only for picking up the bottle and for carrying, but we can use it to hang on a hook in the car, so that it doesn't roll around on the seat or the floor."
+      },
+      {
+        "title": "Texture alert for the sensory sensitive",
+        "rating": "5.0 out of 5 stars",
+        "content": "My husband got this for himself but the black color has a texture, so it feels kind of rough and honesty I hate it, but he doesn’t care. One bummer is that because it’s textured, stickers won’t stick. Otherwise the bottle itself is cool."
+      },
+      {
+        "title": "Love it",
+        "rating": "5.0 out of 5 stars",
+        "content": "The quality is good. I love the pattern."
+      },
+      {
+        "title": "Very awesome.",
+        "rating": "5.0 out of 5 stars",
+        "content": "Works as described. Insulated, durable, cap is nice, handle is nice for hanging/drinking. Would buy again/10."
+      },
+      {
+        "title": "Vacuum seal is an issue",
+        "rating": "4.0 out of 5 stars",
+        "content": "I have a 32oz swell that I have had for a few years and love it. My daughter bought it for me and I use it daily.  I was so pleased with it that months after she gave it to me, I bought the 64oz as I sometimes need more tea to get through my day. It wasn't long before the vacuum seal failed. I could see no visible dents but assumed the seal failed due to a drop or bumping it. I was disappointed but eventually bought another and to my dismay it wasn't long before it was no longer keeping things cold either.  I chocked it up to the 640z being too heavy making them easy to damage.  Months after losing a second one due to loss of the seal,  I find myself tempted to buy another.  I love the size and my 32OZ is a champ, but I fear I will be throwing my money away yet again. I would buy another 32, but lugging two around daily would be a chore. Bottom line, it is a great product,  but the large size is heavy and harder to handle."
+      },
+      {
+        "title": "I love this thing",
+        "rating": "5.0 out of 5 stars",
+        "content": "I bought this monster of a bottle of my wife and she loves it. The mouth is big enough for ice cubes without any issues. The mouth is also big enough for a bottle brush to fit comfortably in case you need to do a bit of deep cleaning. This bottle DOES NOT work with the commuter lid. I’ve triedThe handle is a hard plastic so I would be mindful about knocking it on something for fear of breaking it.The lid is as you would expect, does great for insulation too.The bottle itself is a literal jug. If I stretch my hand I could hold it with one hand. I would buy another for myself if I didn’t already have a 20oz commuter.I’d HIGHLY recommend this over other bottles because you absolutely get what you pay for. swell is the only brand I’ve seen that’s triple insulated and it definitely showsBefore anyone thinks I’m sponsored, I’m 100% not. I just really like their products and this, to me, is a one-and-done purchase. I don’t like having 10+ bottles lying around that are all cheap10/10 would buy again"
+      },
+      {
+        "title": "Love It! Totally keeps water cold",
+        "rating": "5.0 out of 5 stars",
+        "content": "I use this daily.  I live in Miami, so it is hot outside, and I take hot yoga, so it is hot inside, too.  The S’well takes it in stride and keeps the water icy cold when it is 99° outside (or hotter inside the yoga studio).  The shape is pleasing and the broad base is stable so the S’well never falls over.  I did contact customer service and they totally stand behind the product!"
+      },
+      {
+        "title": "Good value !",
+        "rating": "5.0 out of 5 stars",
+        "content": "Had other smaller swell bottles before however I need bigger water carrier and so far this has the best value with the price and size compared to other branded stainless steel water bottles!"
+      },
+      {
+        "title": "It’s okay",
+        "rating": "3.0 out of 5 stars",
+        "content": "The cap separated from the inner shell so I have to squeeze really tight to open and close lid or it will just constantly spin without open or closing.  Temperature retention is not as good as the smaller sizes. Paint scratches easy and bottle dings easy. Otherwise and still, it’s the best bottle on the market as of quality and temperature retention."
+      }
+    ]
+  },
+  {
+    "link": "https://www.amazon.com/Brita-Bottle-Filter-Premium-Filtered/dp/B08S9V2NC6/ref=sr_1_290?keywords=bottle&qid=1706201418&sr=8-290",
+    "title": "Brita Insulated Filtered Water Bottle with Straw, Reusable, BPA Free Plastic, Sea Glass, 26 Ounce  ",
+    "img": "https://m.media-amazon.com/images/I/51uwrZJOxrL._AC_UL320_.jpg",
+    "fullPrice": "18.99",
+    "reviewRatingAndCount": [
+      "4.5 out of 5",
+      "1,807 global ratings"
+    ],
+    "fromTheManufacturer": [
+      "The BPA-free Brita Premium Filtering Bottle holds 26 oz of water, and is designed with a Brita filter that fits in the straw and makes water taste great     Get great tasting water without the waste; by switching to Brita, you can save money and replace 1,800 single-use plastic water bottles a year     It’s the convenient way to stay hydrated at home or on the go; sleek, leak-proof filtered water bottle is car cup holder friendly, and features a built-in carrying loop, easy open lid and is top rack dishwasher safe for easy cleaning     The filter reduces chlorine (taste and odor) and more with every sip; compatible with Brita water bottle replacement filters     For the freshest-tasting water, the Brita water bottle filter should be replaced after 40 gallons or approximately every two months; 16.9 oz water bottle",
+      "From the manufacturer",
+      "About us",
+      "All Brita filters cut chlorine taste and odor and reduce other contaminants, and our new and improved Longlast Filter removes 99% of lead and reduces the contaminants. Patented pleated filter technology allows our Longlast Filter to last 3x longer, too. Brita faucet filters reduce lead, chlorine, asbestos, benzene, particulates and other contaminants."
+    ],
+    "bestReviews": [
+      {
+        "title": "Great for tap water purifcation",
+        "rating": "5.0 out of 5 stars",
+        "content": "I've had this water bottle for a month now and it works well and purifies the water from the tab, it is easy to refill and makes the water taste better. The first couple of bottles do have a weird plastic taste, but after 4-5 refills that taste disappears. Great value for under $20.00 USD;  Living in Portland Oregon, we have great tasting (sweet) water from the tap... but flouride is added, which is a harmful chemical to the human body which calcifies the pineal gland; I made the purchase to illimnate the flouride in the water I drink.Happy with my decision hope this helps you."
+      },
+      {
+        "title": "Love these!",
+        "rating": "5.0 out of 5 stars",
+        "content": "I’ve been using these for months now. The only complaint I have with this one is that the dark blue ones hold more water. The one bit of advice I have,is when you clean your bottle out,clean the filter as well. I put lemon in my water & I didn’t clean the filter & it was really hard to drink from. Once I took it all apart, I found lemon guck all over the filter. After I cleaned it, it was easy to drink from again. Even if you clean the filter, the filters only last about a month. I wish they lasted longer. But, like I said, I do love these bottles! They’re super useful & the water tastes great! I just recommend buying the dark blue one, because it holds more water."
+      },
+      {
+        "title": "Nice water bottle and no more empty water bottles to recycle.",
+        "rating": "5.0 out of 5 stars",
+        "content": "It’s a good bottle and you seem to drink more with this bottle."
+      },
+      {
+        "title": "Not really insulated",
+        "rating": "4.0 out of 5 stars",
+        "content": "Nice bottle. Seems to do a good job filtering and Fits great in car cupholder. Saying it's insulated is a bit misleading if you're looking for something that will stay cold for a period of time. I like it, but would probably not buy another one!"
+      },
+      {
+        "title": "Love it (26 oz Brita)",
+        "rating": "5.0 out of 5 stars",
+        "content": "I bought this water bottle to take on vacation next month so I tried it out as soon as I received it. I love it!!! It’s very light and washes easily! In some of the reviews I’ve read said it’s hard to suck out of the straw but I found it to be very easy. I love that you can put it in the side sleeve of your backpack or just carry it with the top handle. With it being a light but hard plastic, I’m sure if I dropped it it’d probably crack but for now I’m very happy with the product."
+      },
+      {
+        "title": "Wasn't sure at first, but now convinced",
+        "rating": "5.0 out of 5 stars",
+        "content": "I've been using Brita bottles for years.  Decided to take them apart last weekend and give them a good thorough cleaning.  Well, that was a mistake, although I think I got all the pieces back in place, they leak like crazy. The bottles were hard to clean into all the little crevices and I felt that there were moldy spots.Time for a new bottle.....The new bottle has a different mouthpiece and different filter system.  I wasn't sure about the mouthpieces which is place in the middle of the top of the bottle (vs on the edge as on the previous models).  Also when I first started using it, the cover kept hitting my face and I was completely annoyed, only to discover that I had to push it harder to go further back and everything was good again.  Now it moves back easily.  The bottle looks like it will be easier to clean - time will tell.I do like the mouthpiece in the center, not better or worse than the older models.  I do love that you can drink from these bottle so easily and don't have to lean it back to drink."
+      },
+      {
+        "title": "A travel must have",
+        "rating": "5.0 out of 5 stars",
+        "content": "Easy to clean and  replace filters.  Must have for traveling or home use."
+      },
+      {
+        "title": "You have to suck !",
+        "rating": "3.0 out of 5 stars",
+        "content": "It's easy in every way , except that in order to drink a sip of water you need to suck it into you mouth. It does not flow easily."
+      },
+      {
+        "title": "Good purchase.",
+        "rating": "5.0 out of 5 stars",
+        "content": "Fast delivery."
+      },
+      {
+        "title": "Clean water",
+        "rating": "5.0 out of 5 stars",
+        "content": "We all know we are supposed to drink more water. I keep one of these of these on my coffee table and one on my bedside table. Their presence reminds me to hydrate. They are easy to clean and you know the water is pure. Get some in different colors when you have guests. They appreciate it and when they leave clean them and keep them handy for the next time you need them. I am very happy with them."
+      }
+    ]
+  }
+]
