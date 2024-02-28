@@ -14,7 +14,7 @@ const API_KEY = ' AIzaSyBddp8jmFT7KubMWGlq6LKpoi8TZO52oMA';
 const CX = '206e8f6255aad4f6c';
 //CHANGE THEESE
 let MaxPages = 1;
-let maxIndexesPerPage = 1
+let maxIndexesPerPage = 3
 
 let allProducts = [];
 let allArticles = []
@@ -136,7 +136,8 @@ async function fetchProductDetails(product, index) {
         console.log("Product", index, "done")
 
         //Call AI
-        const aiAnswer = await DoAIMagic(product, index)
+        const { productImages, ...productNoImages } = product;
+        const aiAnswer = await DoAIMagic(productNoImages, index)
         allArticles.push(aiAnswer)
 
         return product;
@@ -166,32 +167,33 @@ async function DoAIMagic(prompt, index) {
         frequency_penalty: 0,
         presence_penalty: 0,
     });
-    let RawAiResault = response.choices[0].message.content
-    await fs.promises.writeFile('outputs/AI-output-raw.txt', JSON.stringify(RawAiResault, null, 2));
-    const secondResponse = await openai.chat.completions.create({
-        model: "gpt-3.5-turbo-16k",
-        messages: [
-            {
-                "role": "system",
-                "content": "Convert the following article into a fully structured, SEO-optimized HTML webpage. Retain the original words and meaning of the article without any alterations. Structure the HTML with appropriate tags, such as <h1> for the main title, <h2> for subheadings, <p> for paragraphs, <ul>/<ol> for any lists, and <a> for hyperlinks, if applicable. Include meta tags for SEO, such as <title>, <meta name='description'> with a brief summary of the article, and <meta name='keywords'> with relevant keywords extracted from the article. Ensure that the HTML is clean, readable, and compliant with web standards. The final output should be ready to be directly used on a web page. Add the <style> tag and style the page with css. Use best practices and optimise for SEO"
-            },
-            {
-                "role": "user",
-                "content": RawAiResault
-            }
-        ],
-        temperature: 0,
-        max_tokens: 12000,
-        top_p: 1,
-        frequency_penalty: 0,
-        presence_penalty: 0,
-    });
+    // let RawAiResault = response.choices[0].message.content
+    // await fs.promises.writeFile('outputs/AI-output-raw.txt', JSON.stringify(RawAiResault, null, 2));
+    // const secondResponse = await openai.chat.completions.create({
+    //     model: "gpt-3.5-turbo-16k",
+    //     messages: [
+    //         {
+    //             "role": "system",
+    //             "content": "Convert the following article into a fully structured, SEO-optimized HTML webpage. Retain the original words and meaning of the article without any alterations. Structure the HTML with appropriate tags, such as <h1> for the main title, <h2> for subheadings, <p> for paragraphs, <ul>/<ol> for any lists, and <a> for hyperlinks, if applicable. Include meta tags for SEO, such as <title>, <meta name='description'> with a brief summary of the article, and <meta name='keywords'> with relevant keywords extracted from the article. Ensure that the HTML is clean, readable, and compliant with web standards. The final output should be ready to be directly used on a web page."
+    //         },
+    //         {
+    //             "role": "user",
+    //             "content": RawAiResault
+    //         }
+    //     ],
+    //     temperature: 0,
+    //     max_tokens: 12000,
+    //     top_p: 1,
+    //     frequency_penalty: 0,
+    //     presence_penalty: 0,
+    // });
 
-    saveAsHtml(secondResponse.choices[0].message.content.replace(/\\|\\n/g, ""), index)
-    return secondResponse.choices[0].message.content.replace(/\\|\\n/g, "")
+    // saveAsHtml(secondResponse.choices[0].message.content.replace(/\\|\\n/g, ""), index)
+    saveAsHtml(RawAiResault, index)
+    return RawAiResault
 }
 async function saveAsHtml(item, index) {
-    await fs.promises.writeFile(`outputs/html/html-${index}.html`, item);
+    await fs.promises.writeFile(`outputs/txt/txt-${index}.txt`, item);
     console.log(`File ${index} saved`)
 }
 fetchAndProcessData()

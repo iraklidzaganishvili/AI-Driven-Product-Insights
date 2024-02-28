@@ -1,0 +1,34 @@
+* {
+  min-width: 0px;
+}
+
+nav {
+  font-size: 2rem;
+  margin-bottom: 6rem;
+}
+nav a {
+  margin-right: 6rem;
+  color: black;
+  --bs-nav-link-hover-color: rgba(0, 0, 0, 0.644);
+}
+nav .nav-link {
+  color: black;
+}
+nav img {
+  height: 3.5rem;
+}
+nav .navbar-nav {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  background-image: url("../images/bg.png");
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}
+
+/*# sourceMappingURL=repeat.css.map */

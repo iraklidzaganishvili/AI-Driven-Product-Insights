@@ -1,0 +1,136 @@
+#main-text {
+  font-size: 5rem;
+  text-align: center;
+}
+#main-text span {
+  font-size: 5rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #097dff, #ffa8f7, #097dff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+#main-text span::-webkit-background-clip {
+  color: transparent;
+}
+
+.product-row {
+  background-color: white;
+  width: 100%;
+  margin-top: 3rem;
+}
+.product-row .header-product-row {
+  font-size: 2rem;
+  border-bottom: 1px solid #dee2e6;
+  padding-top: 0.7rem;
+  padding-bottom: 0.3rem;
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+}
+.product-row .carousel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+.product-row .carousel .carousel-inner {
+  width: 90%;
+}
+.product-row .carousel .carousel-inner .carousel-item {
+  left: 6px;
+}
+.product-row .carousel .carousel-inner .row {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+@media only screen and (max-width: 1024px) {
+  .product-row .carousel .carousel-inner .row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 10px;
+  }
+  .product-row .carousel .carousel-inner .row .col {
+    position: relative;
+    left: 3px;
+  }
+}
+.product-row .carousel .carousel-inner .row .col {
+  padding-right: 6px;
+  padding-left: 6px;
+}
+@media only screen and (max-width: 480px) {
+  .product-row .carousel .carousel-inner {
+    width: 100%;
+  }
+  .product-row .carousel .carousel-inner .carousel-item {
+    left: 9px;
+  }
+  .product-row .carousel .carousel-inner .row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 10px;
+  }
+  .product-row .carousel .carousel-inner .row .col {
+    position: relative;
+    left: 3px;
+  }
+}
+.product-row .carousel .d-block {
+  width: 5rem;
+}
+.product-row .carousel .carousel-control-prev,
+.product-row .carousel .carousel-control-next {
+  width: 5%;
+}
+@media only screen and (max-width: 480px) {
+  .product-row .carousel .carousel-control-prev,
+  .product-row .carousel .carousel-control-next {
+    width: 0%;
+  }
+}
+.product-row .carousel .card {
+  overflow: hidden;
+  cursor: pointer;
+}
+.product-row .carousel .card .card-img-top {
+  transition: all 0.05s linear;
+  position: relative;
+}
+.product-row .carousel .card .card-img-top:hover {
+  transform: translateY(-10px) scale(1.1);
+}
+.product-row .carousel .card .card-body {
+  padding: 12px;
+}
+.product-row .carousel .card .card-body .card-title {
+  font-size: 1rem;
+}
+.product-row .carousel .card .card-body .card-text {
+  font-size: 1.2rem;
+}
+.product-row .carousel .card .card-body .product-rating {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+.product-row .carousel .card .card-body .product-rating img {
+  object-fit: none;
+}
+.product-row .carousel .card .card-body .product-rating p {
+  font-size: 0.7rem;
+  width: fit-content;
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-left: 0.3rem;
+}
+.product-row .carousel .card .card-body h5 {
+  color: rgb(91, 91, 91);
+  transition: all 0.05s linear;
+}
+.product-row .carousel .card .card-body h5:hover {
+  color: black;
+}
+
+/*# sourceMappingURL=index.css.map */
