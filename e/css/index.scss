@@ -36,6 +36,14 @@
     display: flex;
     justify-content: center;
 
+    .carousel-indicators{
+      margin-top: 0px;
+      margin-bottom: 0.5rem;
+      button{
+        border: none;
+      }
+    }
+
     .carousel-inner {
       width: 90%;
 

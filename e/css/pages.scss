@@ -57,7 +57,58 @@
             position: sticky;
             border: none;
             background-color: #F9F8F8;
-        }
+            overflow: hidden;
+            cursor: pointer;
+      
+            .card-img-top {
+              transition: all 0.05s linear;
+              position: relative;
+              max-width: 320px;
+      
+              &:hover {
+                transform: translateY(-10px) scale(1.1);
+              }
+            }
+      
+            .card-body {
+              padding: 12px;
+      
+              .card-title {
+                font-size: 1rem;
+              }
+      
+              .card-text {
+                font-size: 1.2rem;
+              }
+      
+              .product-rating {
+                display: flex;
+                justify-content: flex-start;
+                width: 100%;
+      
+                img {
+                  object-fit: none;
+                }
+      
+                p {
+                  font-size: 0.7rem;
+                  width: fit-content;
+                  display: inline-block;
+                  margin-bottom: 0rem;
+                  margin-left: 0.3rem;
+                }
+              }
+      
+              h5 {
+                color: rgb(91, 91, 91);
+                transition: all 0.05s linear;
+      
+                &:hover {
+                  color: black;
+                }
+              }
+            }
+          }
 
         #card2 {
             position: absolute;
