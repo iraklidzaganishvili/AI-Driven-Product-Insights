@@ -34,6 +34,13 @@
   justify-content: center;
   padding-bottom: 1rem;
 }
+.product-row .carousel .carousel-indicators {
+  margin-top: 0px;
+  margin-bottom: 0.5rem;
+}
+.product-row .carousel .carousel-indicators button {
+  border: none;
+}
 .product-row .carousel .carousel-inner {
   width: 90%;
 }

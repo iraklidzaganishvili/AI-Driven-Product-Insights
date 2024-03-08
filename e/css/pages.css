@@ -51,6 +51,47 @@
   position: sticky;
   border: none;
   background-color: #F9F8F8;
+  overflow: hidden;
+  cursor: pointer;
+}
+#main-cont #more .card .card-img-top {
+  transition: all 0.05s linear;
+  position: relative;
+  max-width: 320px;
+}
+#main-cont #more .card .card-img-top:hover {
+  transform: translateY(-10px) scale(1.1);
+}
+#main-cont #more .card .card-body {
+  padding: 12px;
+}
+#main-cont #more .card .card-body .card-title {
+  font-size: 1rem;
+}
+#main-cont #more .card .card-body .card-text {
+  font-size: 1.2rem;
+}
+#main-cont #more .card .card-body .product-rating {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+#main-cont #more .card .card-body .product-rating img {
+  object-fit: none;
+}
+#main-cont #more .card .card-body .product-rating p {
+  font-size: 0.7rem;
+  width: fit-content;
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-left: 0.3rem;
+}
+#main-cont #more .card .card-body h5 {
+  color: rgb(91, 91, 91);
+  transition: all 0.05s linear;
+}
+#main-cont #more .card .card-body h5:hover {
+  color: black;
 }
 #main-cont #more #card2 {
   position: absolute;

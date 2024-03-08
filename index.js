@@ -7,32 +7,52 @@ const readline = require('node:readline').createInterface({
 });
 const OpenAI = require("openai");
 const openai = new OpenAI({
-    apiKey: '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',
+    apiKey: '***REMOVED***',
 });
+
+//converter
+const articleToHTML = require('./e/converter');
+
 //google image search
 const API_KEY = ' AIzaSyBddp8jmFT7KubMWGlq6LKpoi8TZO52oMA';
 const CX = '206e8f6255aad4f6c';
 //CHANGE THEESE
-let MaxPages = 1;
+let MaxPages = 1
 let maxIndexesPerPage = 3
+// https://www.amazon.com/dp/B01845QGKK/ref=nosim?tag=bestmmorpg00-20
+let storeID = 'bestmmorpg00'
 
-let allProducts = [];
+let allProducts = []
 let allArticles = []
+let savedIndexes = []
 let currNum = 0;
+let pageNum = 0
 
 async function fetchAndProcessData() {
     try {
-        const url = await new Promise((resolve) => {
-            readline.question(`Enter Search `, resolve);
-        });
+        // const url = await new Promise((resolve) => {
+        //     readline.question(`Enter Search `, resolve);
+        // });
+        url = "bottle"
 
         await getProducts('https://www.amazon.com/s?k=' + url);
+
+        for (let i = 0; i < savedIndexes.length; i++) {
+            if (savedIndexes[i][1].bestReviews && savedIndexes[i][1].productImages) {
+                articleToHTML(savedIndexes[i][2], pageNum, savedIndexes[i][1], allProducts[twoNumbers()[0]], allProducts[twoNumbers()[1]]);
+                pageNum++;
+            }else{
+                console.log("Product " + index + " AI failed due to lack of info")
+            }
+        }
+
+
         console.log(allProducts.length, "products stolen");
 
         let dataToSave = JSON.stringify(allProducts, null, 2);
         let AIDataToSave = JSON.stringify(allArticles, null, 2);
-        await fs.promises.writeFile('outputs/output.txt', dataToSave);
-        await fs.promises.writeFile('outputs/AI-output.txt', AIDataToSave);
+        await fs.promises.writeFile('outputs/info-output.txt', dataToSave);
+        await fs.promises.writeFile('outputs/text-output.txt', AIDataToSave);
         console.log('The files with the goods have been saved!');
     } catch (err) {
         console.error(err);
@@ -56,11 +76,14 @@ async function getProducts(url) {
             let priceWhole = $(this).find(".a-price-whole").text();
             let priceFraction = $(this).find(".a-price-fraction").text();
             let fullPrice = priceWhole + priceFraction;
+            let asin = (link.match(/(\/[^\/]*){5}(.{0,10})/) || [, ''])[1];
+            link = `https://www.amazon.com/dp/${asin}/ref=nosim?tag=${storeID}`;
 
             if (link && img && title && priceWhole) singlePageResults.push({
                 link,
+                asin,
                 title,
-                productImages:[img],
+                productImages: [img],
                 fullPrice
             });
         });
@@ -76,8 +99,6 @@ async function getProducts(url) {
         });
 
         const resolvedProductDetails = await Promise.all(productDetails);
-        allProducts = allProducts.concat(resolvedProductDetails.filter(detail => detail));
-
         currNum++;
         let next = $('[aria-label^="Go to next page"]').attr('href')
         if (currNum < MaxPages && next) {
@@ -91,11 +112,60 @@ async function getProducts(url) {
     }
 }
 
+async function DoAIMagic(prompt) {
+    try {
+        const response = await openai.chat.completions.create({
+            model: "gpt-3.5-turbo-16k",
+            messages: [
+                {
+                    "role": "system",
+                    "content": "Generate a 2000-word article that is SEO-optimized and based on the following inputs: 1. Product Name: [Insert Product Name Here] 2. Product Brand: [Insert Brand Name Here] 3. Amazon Product Reviews: [Insert Key Insights from Amazon Reviews] 4. Any other information. The article should be engaging and informative, tailored to potential customers. Ensure the content is unique and structured with SEO best practices in mind, including keyword optimization related to the product and its features. Incorporate the following elements: - Robert Cialdini's Principles of Persuasion: Apply these principles (Reciprocity, Scarcity, Authority, Consistency, Liking, and Consensus) strategically throughout the content to enhance its persuasive impact. - Readability and Structure: The article should be easy to read, with a clear introduction, body, and conclusion.Use H1 for the main title, H2 for major headings, and H3 for subheadings. - Formatting: Employ bullet points for lists, and ensure paragraphs are concise. - Useful Information for the Reader: Highlight the benefits, features, and practical applications of the product. Address common questions or concerns raised in the Amazon product reviews. - Call to Action: Conclude with a compelling call to action that encourages the reader to consider purchasing or learning more about the product. The objective is to create content that not only ranks well on search engines but also provides real value to readers, encouraging engagement and potential conversion. Do not use any images provided in the article"
+                },
+                {
+                    "role": "user",
+                    "content": JSON.stringify(prompt, null, 2)
+                }
+            ],
+            temperature: 0,
+            max_tokens: 4000,
+            top_p: 1,
+            frequency_penalty: 0,
+            presence_penalty: 0,
+        });
+        let RawAiResault = response.choices[0].message.content
+        allArticles.push(RawAiResault)
+        return RawAiResault
+    } catch (err) {
+        // console.error(err);
+    }
+
+}
+
+async function fetchImages(SEARCH_QUERY, index) {
+    try {
+        const url = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(SEARCH_QUERY)}&cx=${CX}&searchType=image&key=${API_KEY}`
+        const response = await fetch(url);
+        const data = await response.json();
+
+        let links = []
+        if (data.items) {
+            data.items.forEach(item => {
+                links.push(item.link)
+            });
+        } else {
+            console.log('No image results found for ' + index);
+        }
+        return links
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
 async function fetchProductDetails(product, index) {
     try {
         if (maxIndexesPerPage <= index) return
         console.log("Started", index)
-        let commentsPage = "http://www.amazon.com/product-reviews" + (product.link.match(/(\/[^\/]*){5}(.{0,10})/) || [, ''])[1];
+        let commentsPage = "http://www.amazon.com/product-reviews" + product.asin;
         const [response1, mainRes] = await Promise.all([
             fetch(commentsPage),
             fetch(product.link)
@@ -129,17 +199,40 @@ async function fetchProductDetails(product, index) {
         ].filter(item => item !== null && item !== "");
 
         product.bestReviews = ans;
-        
-        const links = await fetchImages(product.title)
+
+        const links = await fetchImages(product.title, index)
         product.productImages.unshift(...links)
 
-        console.log("Product", index, "done")
+        console.log("Product", index, "done, starting AI")
 
         //Call AI
-        const { productImages, ...productNoImages } = product;
-        const aiAnswer = await DoAIMagic(productNoImages, index)
-        allArticles.push(aiAnswer)
+        if (product.bestReviews && product.productImages) {
+            const { productImages, ...productNoImages } = product;
+            const aiAnswer = await DoAIMagic(productNoImages)
 
+            //SAVER <----
+            if (product && allProducts[twoNumbers()[0]] && allProducts[twoNumbers()[1]]) {
+                if (index > 2) {
+                    articleToHTML(aiAnswer, pageNum, product, allProducts[twoNumbers()[0]], allProducts[twoNumbers()[1]]);
+                    pageNum++;
+                } else {
+                    savedIndexes.push([index, product, aiAnswer])
+                }
+            } else {
+                console.log("Product " + index + " failed due to not all products having info")
+            }
+        } else {
+            console.log("Product " + index + " AI failed due to lack of info")
+        }
+
+        // if (index > 2) {
+        //     articleToHTML(aiAnswer = `eee`, [index, pageNum, maxIndexesPerPage], product, allProducts[twoNumbers()[0]], allProducts[twoNumbers()[1]]);
+        //     pageNum++;
+        // } else {
+        //     savedIndexes.push([index, product])
+        // }
+
+        allProducts.push(product)
         return product;
     } catch (error) {
         console.error(`Error fetching details for product index ${index}:`, error);
@@ -147,73 +240,16 @@ async function fetchProductDetails(product, index) {
     }
 }
 
-async function DoAIMagic(prompt, index) {
-    console.log("Started AI")
-    const response = await openai.chat.completions.create({
-        model: "gpt-3.5-turbo-16k",
-        messages: [
-            {
-                "role": "system",
-                "content": "Generate a 2000-word article that is SEO-optimized and based on the following inputs: 1. Product Name: [Insert Product Name Here] 2. Product Brand: [Insert Brand Name Here] 3. Amazon Product Reviews: [Insert Key Insights from Amazon Reviews] 4. Any other information. The article should be engaging and informative, tailored to potential customers. Ensure the content is unique and structured with SEO best practices in mind, including keyword optimization related to the product and its features. Incorporate the following elements: - Robert Cialdini's Principles of Persuasion: Apply these principles (Reciprocity, Scarcity, Authority, Consistency, Liking, and Consensus) strategically throughout the content to enhance its persuasive impact. - Readability and Structure: The article should be easy to read, with a clear introduction, body, and conclusion.Use H1 for the main title, H2 for major headings, and H3 for subheadings. - Formatting: Employ bullet points for lists, and ensure paragraphs are concise. - Useful Information for the Reader: Highlight the benefits, features, and practical applications of the product. Address common questions or concerns raised in the Amazon product reviews. - Call to Action: Conclude with a compelling call to action that encourages the reader to consider purchasing or learning more about the product. The objective is to create content that not only ranks well on search engines but also provides real value to readers, encouraging engagement and potential conversion. Use several of the images provided in the article"
-            },
-            {
-                "role": "user",
-                "content": JSON.stringify(prompt, null, 2)
-            }
-        ],
-        temperature: 0,
-        max_tokens: 4000,
-        top_p: 1,
-        frequency_penalty: 0,
-        presence_penalty: 0,
-    });
-    // let RawAiResault = response.choices[0].message.content
-    // await fs.promises.writeFile('outputs/AI-output-raw.txt', JSON.stringify(RawAiResault, null, 2));
-    // const secondResponse = await openai.chat.completions.create({
-    //     model: "gpt-3.5-turbo-16k",
-    //     messages: [
-    //         {
-    //             "role": "system",
-    //             "content": "Convert the following article into a fully structured, SEO-optimized HTML webpage. Retain the original words and meaning of the article without any alterations. Structure the HTML with appropriate tags, such as <h1> for the main title, <h2> for subheadings, <p> for paragraphs, <ul>/<ol> for any lists, and <a> for hyperlinks, if applicable. Include meta tags for SEO, such as <title>, <meta name='description'> with a brief summary of the article, and <meta name='keywords'> with relevant keywords extracted from the article. Ensure that the HTML is clean, readable, and compliant with web standards. The final output should be ready to be directly used on a web page."
-    //         },
-    //         {
-    //             "role": "user",
-    //             "content": RawAiResault
-    //         }
-    //     ],
-    //     temperature: 0,
-    //     max_tokens: 12000,
-    //     top_p: 1,
-    //     frequency_penalty: 0,
-    //     presence_penalty: 0,
-    // });
-
-    // saveAsHtml(secondResponse.choices[0].message.content.replace(/\\|\\n/g, ""), index)
-    saveAsHtml(RawAiResault, index)
-    return RawAiResault
-}
-async function saveAsHtml(item, index) {
-    await fs.promises.writeFile(`outputs/txt/txt-${index}.txt`, item);
-    console.log(`File ${index} saved`)
-}
-fetchAndProcessData()
-
-async function fetchImages(SEARCH_QUERY) {
-    try {
-        const url = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(SEARCH_QUERY)}&cx=${CX}&searchType=image&key=${API_KEY}`
-        const response = await fetch(url);
-        const data = await response.json();
-
-        let links = []
-        if (data.items) {
-            data.items.forEach(item => {
-                links.push(item.link)
-            });
-        } else {
-            console.log('No results found');
-        }
-        return links
-    } catch (error) {
-        console.error('Error:', error);
+function twoNumbers() {
+    if (allProducts.length < 2) {
+        return [0, 0]
     }
+    let randomIndex1 = Math.floor(Math.random() * allProducts.length)
+    let randomIndex2
+    do {
+        randomIndex2 = Math.floor(Math.random() * allProducts.length)
+    } while (randomIndex1 === randomIndex2)
+    return [randomIndex1, randomIndex2]
 }
+
+fetchAndProcessData()
