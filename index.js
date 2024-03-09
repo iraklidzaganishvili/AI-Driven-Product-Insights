@@ -11,7 +11,7 @@ const openai = new OpenAI({
 });
 
 //converter
-const articleToHTML = require('./e/converter');
+const { articleToHTML, mainPage } = require('./e/converter');
 
 //google image search
 const API_KEY = ' AIzaSyBddp8jmFT7KubMWGlq6LKpoi8TZO52oMA';
@@ -26,7 +26,6 @@ let allProducts = []
 let allArticles = []
 let savedIndexes = []
 let currNum = 0;
-let pageNum = 0
 
 async function fetchAndProcessData() {
     try {
@@ -39,13 +38,13 @@ async function fetchAndProcessData() {
 
         for (let i = 0; i < savedIndexes.length; i++) {
             if (savedIndexes[i][1].bestReviews && savedIndexes[i][1].productImages) {
-                articleToHTML(savedIndexes[i][2], pageNum, savedIndexes[i][1], allProducts[twoNumbers()[0]], allProducts[twoNumbers()[1]]);
-                pageNum++;
-            }else{
+                articleToHTML(savedIndexes[i][2], savedIndexes[i][1], allProducts[twoNumbers()[0]], allProducts[twoNumbers()[1]]);
+            } else {
                 console.log("Product " + index + " AI failed due to lack of info")
             }
         }
 
+        mainPage(allProducts)
 
         console.log(allProducts.length, "products stolen");
 
@@ -213,8 +212,7 @@ async function fetchProductDetails(product, index) {
             //SAVER <----
             if (product && allProducts[twoNumbers()[0]] && allProducts[twoNumbers()[1]]) {
                 if (index > 2) {
-                    articleToHTML(aiAnswer, pageNum, product, allProducts[twoNumbers()[0]], allProducts[twoNumbers()[1]]);
-                    pageNum++;
+                    articleToHTML(aiAnswer, product, allProducts[twoNumbers()[0]], allProducts[twoNumbers()[1]]);
                 } else {
                     savedIndexes.push([index, product, aiAnswer])
                 }
