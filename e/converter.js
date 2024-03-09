@@ -2,8 +2,10 @@
 const Showdown = require('showdown');
 const { JSDOM } = require("jsdom");
 const fs = require('fs');
+const path = require('path');
+const { index } = require('cheerio/lib/api/traversing');
 
-function articleToHTML(markdownText, pageNum, product0, product1, product2) {
+function articleToHTML(markdownText, product0, product1, product2) {
 
     //End the function if any of the products are empty or null         
     if (product0 == null || product1 == null || product2 == null) {
@@ -134,12 +136,12 @@ function articleToHTML(markdownText, pageNum, product0, product1, product2) {
     const card1 = mainDocument.querySelector('#card1')
     card1.querySelector('img').src = product1.productImages[0]
     card1.querySelector('.card-title').innerHTML = product1.title
-    card1.querySelector('.card-text').innerHTML = product1.fullPrice+"$"
+    card1.querySelector('.card-text').innerHTML = product1.fullPrice + "$"
     card1.querySelector('.revCount').innerHTML = product1.reviewRatingAndCount[1].match(/\d+/g).join(",");
     const card2 = mainDocument.querySelector('#card2')
     card2.querySelector('img').src = product2.productImages[0]
     card2.querySelector('.card-title').innerHTML = product2.title
-    card2.querySelector('.card-text').innerHTML = product2.fullPrice+"$"
+    card2.querySelector('.card-text').innerHTML = product2.fullPrice + "$"
     card1.querySelector('.revCount').innerHTML = product1.reviewRatingAndCount[1].match(/\d+/g).join(",");
 
     // Insert Links
@@ -176,6 +178,46 @@ function articleToHTML(markdownText, pageNum, product0, product1, product2) {
 
     // Save the updated HTML
     const updatedHTML = mainDom.serialize();
-    fs.writeFileSync(`e/${pageNum}.html`, updatedHTML, 'utf8');
+
+    const files = fs.readdirSync('e');
+    let maxNum = 0;
+
+    files.forEach(file => {
+        const baseName = path.basename(file, '.html');
+        const num = parseInt(baseName);
+        if (!isNaN(num) && num > maxNum) {
+            maxNum = num;
+        }
+    })
+    const pageNum = maxNum + 1;
+    const newFileName = `${pageNum}.html`;
+    fs.writeFileSync(path.join('e', newFileName), updatedHTML, 'utf8');
 }
-module.exports = articleToHTML;
+
+function mainPage(allProducts) {
+    const mainHtmlContent = fs.readFileSync('e/index.html', 'utf8');
+    const mainDom = new JSDOM(mainHtmlContent);
+    const mainDocument = mainDom.window.document;
+
+    const section = mainDocument.querySelectorAll('section');
+
+    const cards = section[0].querySelectorAll('.card');
+    cards.forEach((card, index) => {
+        if (allProducts.length > index) {
+            card.querySelector('img').src = allProducts[index].productImages[0]
+            card.querySelector('.card-title').allProducts[index] = product1.title
+            card.querySelector('.card-text').allProducts[index] = product1.fullPrice + "$"
+            card.querySelector('.revCount').allProducts[index] = product1.reviewRatingAndCount[1].match(/\d+/g).join(",");
+            card.onclick = () => { window.location.href = allProducts[index].link; }
+        } else {
+            return;
+        }
+    });
+
+    fs.writeFileSync(path.join('e', 'index1.html'), updatedHTML, 'utf8');
+}
+module.exports = {
+    articleToHTML,
+    mainPage
+  };
+
