@@ -31,8 +31,9 @@ const openai = new OpenAI({
 });
 
 //google image search
-const API_KEY = ' AIzaSyBddp8jmFT7KubMWGlq6LKpoi8TZO52oMA';
-const CX = '206e8f6255aad4f6c';
+const API_KEY = 'AIzaSyD65Hre95IE768oBS6lGl5Td-j37uHk4-A';
+let currCX = 0;
+let CXArray = ["a429bc4ef05c94f32", "97b5a63071dd3440c", "07d8bd65abcc2417c", "55fea1429943f4f18", "452a0a03a3edd4c9c", "7404585bcdafa47ae", "c0e540c3a33a64cea", "66403a5dd64f64432"]
 // ------
 
 let allProducts = []
@@ -45,7 +46,6 @@ let maxIndexesPerPage = 1
 let url = "bottle"
 
 agentRotator = 0
-
 
 async function fetchAndProcessData() {
     try {
@@ -86,7 +86,8 @@ async function fetchAndProcessData() {
 async function getProducts(url) {
     try {
         //roator
-        if (agentRotator === 100) {
+        console.log(agentRotator)
+        if (agentRotator >= 100) {
             agentRotator = 0
             const userAgent = new UserAgents(userAgent => userAgent.deviceCategory === 'desktop')
             options = {
@@ -139,7 +140,6 @@ async function getProducts(url) {
             return await fetchProductDetails(product, i);
         });
 
-        const resolvedProductDetails = await Promise.all(productDetails);
         currNum++;
         let next = $('[aria-label^="Go to next page"]').attr('href')
         if (currNum < MaxPages && next) {
@@ -147,6 +147,7 @@ async function getProducts(url) {
             await getProducts(nextUrl);
         } else {
             console.log("Not going to next page")
+            const resolvedProductDetails = await Promise.all(productDetails);
         }
     } catch (err) {
         console.error(err);
@@ -182,26 +183,34 @@ async function DoAIMagic(prompt) {
 
 }
 
-async function fetchImages(SEARCH_QUERY, index) {
+async function fetchImages(SEARCH_QUERY, index, unLoop = 0, links = []) {
     try {
-        const url = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(SEARCH_QUERY)}&cx=${CX}&searchType=image&key=${API_KEY}`
+        const url = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(SEARCH_QUERY)}&cx=${CXArray[currCX]}&searchType=image&key=${API_KEY}`;
+        currCX++;
+        if (currCX >= CXArray.length) {
+            currCX = 0;
+        }
         const response = await fetch(url, options);
-        agentRotator++
         const data = await response.json();
 
-        let links = []
         if (data.items) {
             data.items.forEach(item => {
-                // if (item.height > 200 || item.width > 300) {
-                    links.push(item.link)
-                // }
+                links.push(item.link);
             });
         } else {
-            console.log('No image results found for ' + index);
+            if (unLoop < CXArray.length) {
+                unLoop = unLoop + 1;
+                // Use await to ensure the recursive call completes and its result is returned
+                return await fetchImages(SEARCH_QUERY, index, unLoop, links);
+            } else {
+                console.log('Google API failed on index ' + index);
+            }
         }
-        return links
+        return links;
     } catch (error) {
         console.error('Error:', error);
+        // Return the accumulated links even in case of error
+        return links;
     }
 }
 
@@ -209,7 +218,7 @@ async function fetchProductDetails(product, index) {
     try {
         if (maxIndexesPerPage <= index) return
         // console.log("Started", index)
-        let commentsPage = "http://www.amazon.com/product-reviews/" + product.asin; 5
+        let commentsPage = "http://www.amazon.com/product-reviews/" + product.asin;
         const [response1, mainRes] = await Promise.all([
             fetch(commentsPage, options),
             fetch(product.link, options)
@@ -226,8 +235,14 @@ async function fetchProductDetails(product, index) {
             ans.push({ title, rating, content });
         });
 
+
+        //mainPage
         const mainHtml = await mainRes.text();
         const m$ = cheerio.load(mainHtml);
+
+        let prBrand = m$(`.po-brand`, mainHtml).find('.po-break-word').text().trim()
+        if (prBrand) product.brand = prBrand;
+        
         const texts = [];
         m$('#aplus_feature_div').find('p, h1, h2, h3, h4, h5, h6').each(function () {
             texts.push($1(this).text().trim());
