@@ -48,6 +48,7 @@ function articleToHTML(markdownText, product0, product1, product2, index, rand) 
                 //carousel
                 const carousel = mainDocument.getElementById('carousel-cont')
                 const carouselInner = mainDocument.getElementsByClassName('carousel-inner')[0]
+
                 //inside it
                 product0.productImages.forEach((imageUrl, i) => {
                     const item = document.createElement('div');
@@ -55,7 +56,6 @@ function articleToHTML(markdownText, product0, product1, product2, index, rand) 
                     if (i == 0) {
                         item.classList.add('active');
                     }
-                    item.onclick = () => { window.location.href = product0.link; }
                     const img = document.createElement('img');
                     img.src = imageUrl;
                     img.onerror="this.onerror=null"
