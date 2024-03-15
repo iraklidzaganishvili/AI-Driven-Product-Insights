@@ -164,4 +164,11 @@
   border-radius: 0px;
 }
 
+#popupModal {
+  position: sticky;
+  bottom: 0px;
+  display: none;
+  margin-bottom: 0px;
+}
+
 /*# sourceMappingURL=pages.css.map */
