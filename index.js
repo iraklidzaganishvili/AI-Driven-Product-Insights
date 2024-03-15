@@ -1,4 +1,19 @@
+const EventEmitter = require('events');
+EventEmitter.defaultMaxListeners = 50;
+//converter
+const { articleToHTML, mainPage } = require('./e/converter');
+
+//useragent
+const UserAgents = require('user-agents');
+
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
+const firstAgent = new UserAgents(userAgent => userAgent.deviceCategory === 'desktop')
+options = {
+    method: 'GET',
+    headers: {
+        'User-Agent': firstAgent.toString()
+    }
+}
 const cheerio = require('cheerio');
 const fs = require('fs');
 const readline = require('node:readline').createInterface({
@@ -6,53 +21,61 @@ const readline = require('node:readline').createInterface({
     output: process.stdout,
 });
 const OpenAI = require("openai");
+
+//changables ------
+let storeID = 'bestmmorpg00'
+
+//openai
 const openai = new OpenAI({
     apiKey: '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',
 });
 
-//converter
-const { articleToHTML, mainPage } = require('./e/converter');
-
 //google image search
 const API_KEY = ' AIzaSyBddp8jmFT7KubMWGlq6LKpoi8TZO52oMA';
 const CX = '206e8f6255aad4f6c';
-//CHANGE THEESE
-let MaxPages = 1
-let maxIndexesPerPage = 3
-// https://www.amazon.com/dp/B01845QGKK/ref=nosim?tag=bestmmorpg00-20
-let storeID = 'bestmmorpg00'
+// ------
 
 let allProducts = []
 let allArticles = []
 let savedIndexes = []
 let currNum = 0;
 
+let MaxPages = 1
+let maxIndexesPerPage = 1
+let url = "bottle"
+
+agentRotator = 0
+
+
 async function fetchAndProcessData() {
     try {
-        // const url = await new Promise((resolve) => {
-        //     readline.question(`Enter Search `, resolve);
-        // });
-        url = "bottle"
+        const userOutput = await new Promise((resolve) => {
+            readline.question(`Enter search, max products per page (1-10), amount of pages: `, (input) => {
+                readline.close();
+                resolve(input);
+            });
+        });
+        const inputs = userOutput.split(',').map(input => input.trim());
+        [url = "bottle", maxIndexesPerPage = 1, MaxPages = 1] = inputs;
 
         await getProducts('https://www.amazon.com/s?k=' + url);
 
         for (let i = 0; i < savedIndexes.length; i++) {
             if (savedIndexes[i][1].bestReviews && savedIndexes[i][1].productImages) {
-                articleToHTML(savedIndexes[i][2], savedIndexes[i][1], allProducts[twoNumbers()[0]], allProducts[twoNumbers()[1]]);
+                const rand = twoNumbers();
+                articleToHTML(savedIndexes[i][2], savedIndexes[i][1], allProducts[rand[0]], allProducts[rand[1]], 2222222);
             } else {
-                console.log("Product " + index + " AI failed due to lack of info")
+                console.log("Product " + index + " html generation failed due to lack of info")
             }
         }
 
-        mainPage(allProducts)
-
-        console.log(allProducts.length, "products stolen");
+        if (allProducts) mainPage(allProducts)
 
         let dataToSave = JSON.stringify(allProducts, null, 2);
         let AIDataToSave = JSON.stringify(allArticles, null, 2);
         await fs.promises.writeFile('outputs/info-output.txt', dataToSave);
         await fs.promises.writeFile('outputs/text-output.txt', AIDataToSave);
-        console.log('The files with the goods have been saved!');
+        console.log(allProducts.length, "products gotten");
     } catch (err) {
         console.error(err);
     } finally {
@@ -62,7 +85,20 @@ async function fetchAndProcessData() {
 
 async function getProducts(url) {
     try {
-        const response = await fetch(url);
+        //roator
+        if (agentRotator === 100) {
+            agentRotator = 0
+            const userAgent = new UserAgents(userAgent => userAgent.deviceCategory === 'desktop')
+            options = {
+                method: 'GET',
+                headers: {
+                    'User-Agent': userAgent.toString()
+                }
+            }
+        }
+
+        const response = await fetch(url, options);
+        agentRotator++
         console.log("Search page loaded", url)
         const html = await response.text();
         const $ = cheerio.load(html);
@@ -70,12 +106,18 @@ async function getProducts(url) {
 
         $('.s-result-item[data-component-type="s-search-result"]', html).each(function () {
             let link = 'https://www.amazon.com' + $(this).find('[data-cy="title-recipe"]').children('h2').children('a').attr('href');
+            link = decodeURIComponent(link);
+
             let img = $(this).find("img").attr("src");
+
             let title = $(this).find(".s-title-instructions-style").text();
+            let prefix = "SponsoredSponsored You’re seeing this ad based on the product’s relevance to your search query.Leave ad feedback"
+            title = title.startsWith(prefix) ? title.slice(prefix.length).trim() : title
+
             let priceWhole = $(this).find(".a-price-whole").text();
             let priceFraction = $(this).find(".a-price-fraction").text();
             let fullPrice = priceWhole + priceFraction;
-            let asin = (link.match(/(\/[^\/]*){5}(.{0,10})/) || [, ''])[1];
+            let asin = (link.match(/\/([A-Z0-9]{10})\//i))[1];
             link = `https://www.amazon.com/dp/${asin}/ref=nosim?tag=${storeID}`;
 
             if (link && img && title && priceWhole) singlePageResults.push({
@@ -135,7 +177,7 @@ async function DoAIMagic(prompt) {
         allArticles.push(RawAiResault)
         return RawAiResault
     } catch (err) {
-        // console.error(err);
+        console.error(err);
     }
 
 }
@@ -143,13 +185,16 @@ async function DoAIMagic(prompt) {
 async function fetchImages(SEARCH_QUERY, index) {
     try {
         const url = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(SEARCH_QUERY)}&cx=${CX}&searchType=image&key=${API_KEY}`
-        const response = await fetch(url);
+        const response = await fetch(url, options);
+        agentRotator++
         const data = await response.json();
 
         let links = []
         if (data.items) {
             data.items.forEach(item => {
-                links.push(item.link)
+                // if (item.height > 200 || item.width > 300) {
+                    links.push(item.link)
+                // }
             });
         } else {
             console.log('No image results found for ' + index);
@@ -163,12 +208,13 @@ async function fetchImages(SEARCH_QUERY, index) {
 async function fetchProductDetails(product, index) {
     try {
         if (maxIndexesPerPage <= index) return
-        console.log("Started", index)
-        let commentsPage = "http://www.amazon.com/product-reviews" + product.asin;
+        // console.log("Started", index)
+        let commentsPage = "http://www.amazon.com/product-reviews/" + product.asin; 5
         const [response1, mainRes] = await Promise.all([
-            fetch(commentsPage),
-            fetch(product.link)
+            fetch(commentsPage, options),
+            fetch(product.link, options)
         ]);
+        agentRotator += 2
         const html1 = await response1.text();
         const $1 = cheerio.load(html1);
         const ans = [];
@@ -202,35 +248,37 @@ async function fetchProductDetails(product, index) {
         const links = await fetchImages(product.title, index)
         product.productImages.unshift(...links)
 
-        console.log("Product", index, "done, starting AI")
+        // console.log("Product", index, "done, starting AI")
 
         //Call AI
-        if (product.bestReviews && product.productImages) {
-            const { productImages, ...productNoImages } = product;
-            const aiAnswer = await DoAIMagic(productNoImages)
+        const rand = twoNumbers();
+        // if (product.bestReviews && product.productImages) {
+        //     const { productImages, ...productNoImages } = product;
+        //     // const aiAnswer = await DoAIMagic(productNoImages)
 
-            //SAVER <----
-            if (product && allProducts[twoNumbers()[0]] && allProducts[twoNumbers()[1]]) {
-                if (index > 2) {
-                    articleToHTML(aiAnswer, product, allProducts[twoNumbers()[0]], allProducts[twoNumbers()[1]]);
-                } else {
-                    savedIndexes.push([index, product, aiAnswer])
-                }
-            } else {
-                console.log("Product " + index + " failed due to not all products having info")
-            }
-        } else {
-            console.log("Product " + index + " AI failed due to lack of info")
-        }
-
-        // if (index > 2) {
-        //     articleToHTML(aiAnswer = `eee`, [index, pageNum, maxIndexesPerPage], product, allProducts[twoNumbers()[0]], allProducts[twoNumbers()[1]]);
-        //     pageNum++;
+        //     //SAVER <----
+        //     console.log (rand)
+        //     if (aiAnswer, product && allProducts[rand[0]] && allProducts[rand[1]]) {
+        //         if (index > 2) {
+        //             articleToHTML(aiAnswer, product, allProducts[rand[0]], allProducts[rand[1]]);
+        //         } else {
+        //             savedIndexes.push([index, product, aiAnswer])
+        //         }
+        //     } else {
+        //         console.log("Product " + index + " generation failed due to lack of info")
+        //     }
         // } else {
-        //     savedIndexes.push([index, product])
+        //     console.log("Product " + index + " AI failed due to lack of info")
         // }
 
+        if (index > 2) {
+            articleToHTML(aiAnswer = `<h1>aa</h1>`, product, allProducts[rand[0]], allProducts[rand[1]], index, rand);
+        } else {
+            savedIndexes.push([index, product, '<h1>aa</h1>'])
+        }
+
         allProducts.push(product)
+
         return product;
     } catch (error) {
         console.error(`Error fetching details for product index ${index}:`, error);

@@ -2,14 +2,13 @@
 const Showdown = require('showdown');
 const { JSDOM } = require("jsdom");
 const fs = require('fs');
-const path = require('path');
-const { index } = require('cheerio/lib/api/traversing');
+const path = require('node:path');
 
-function articleToHTML(markdownText, product0, product1, product2) {
+function articleToHTML(markdownText, product0, product1, product2, index, rand) {
 
     //End the function if any of the products are empty or null         
     if (product0 == null || product1 == null || product2 == null) {
-        console.log("Gen Failed")
+        console.log("Gen failed in converter.js index " + index, rand)
         return
     }
 
@@ -20,7 +19,7 @@ function articleToHTML(markdownText, product0, product1, product2) {
     const htmlText = converter.makeHtml(markdownText);
     // console.log(htmlText)
 
-    function addListsToHTML(html, currpProduct, product1, product2) {
+    function addListsToHTML(html) {
         const dom = new JSDOM(html);
         const document = dom.window.document;
         let currentUl = null;
@@ -45,6 +44,27 @@ function articleToHTML(markdownText, product0, product1, product2) {
                 // Move the H1 into the header and then replace the original H1 with this new header
                 el.parentNode.insertBefore(header, el);
                 header.appendChild(el);
+
+                //carousel
+                const carousel = mainDocument.getElementById('carousel-cont')
+                const carouselInner = mainDocument.getElementsByClassName('carousel-inner')[0]
+                //inside it
+                product0.productImages.forEach((imageUrl, i) => {
+                    const item = document.createElement('div');
+                    item.classList.add('carousel-item', 'link2amazon');
+                    if (i == 0) {
+                        item.classList.add('active');
+                    }
+                    item.onclick = () => { window.location.href = product0.link; }
+                    const img = document.createElement('img');
+                    img.src = imageUrl;
+                    img.onerror="this.onerror=null"
+                    img.className = 'd-block w-100';
+                    img.alt = 'Carousel product image';
+                    item.appendChild(img);
+                    carouselInner.appendChild(item);
+                })
+                header.insertAdjacentElement('afterend', carousel)
 
             } else if (el.tagName === 'H2') {
                 closeCurrentList(); // Ensure no open lists are carried over
@@ -115,18 +135,16 @@ function articleToHTML(markdownText, product0, product1, product2) {
         return outputHTML;
     }
 
-    // Example HTML input
+    // Load main HTML content
+    const mainHtmlContent = fs.readFileSync('e/blueprint.html', 'utf8');
+    const mainDom = new JSDOM(mainHtmlContent);
+    const mainDocument = mainDom.window.document;
 
     // Transform the HTML
     const modifiedHtml = addListsToHTML(htmlText);
     // console.log(modifiedHtml);
 
     // ---------- insert in to the actual file ----------
-
-    // Load your HTML content
-    const mainHtmlContent = fs.readFileSync('e/blueprint.html', 'utf8');
-    const mainDom = new JSDOM(mainHtmlContent);
-    const mainDocument = mainDom.window.document;
 
     // Find the section with the ID 'article'
     const articleSection = mainDocument.querySelector('#article');
@@ -142,7 +160,7 @@ function articleToHTML(markdownText, product0, product1, product2) {
     card2.querySelector('img').src = product2.productImages[0]
     card2.querySelector('.card-title').innerHTML = product2.title
     card2.querySelector('.card-text').innerHTML = product2.fullPrice + "$"
-    card1.querySelector('.revCount').innerHTML = product1.reviewRatingAndCount[1].match(/\d+/g).join(",");
+    card2.querySelector('.revCount').innerHTML = product1.reviewRatingAndCount[1].match(/\d+/g).join(",");
 
     // Insert Links
     const scriptTag = mainDocument.createElement('script');
@@ -191,7 +209,9 @@ function articleToHTML(markdownText, product0, product1, product2) {
     })
     const pageNum = maxNum + 1;
     const newFileName = `${pageNum}.html`;
-    fs.writeFileSync(path.join('e', newFileName), updatedHTML, 'utf8');
+    const road = path.join('e', newFileName)
+    fs.writeFileSync(road, updatedHTML, 'utf8');
+    console.log(`HTML file ${newFileName} saved!`)
 }
 
 function mainPage(allProducts) {
@@ -205,19 +225,21 @@ function mainPage(allProducts) {
     cards.forEach((card, index) => {
         if (allProducts.length > index) {
             card.querySelector('img').src = allProducts[index].productImages[0]
-            card.querySelector('.card-title').allProducts[index] = product1.title
-            card.querySelector('.card-text').allProducts[index] = product1.fullPrice + "$"
-            card.querySelector('.revCount').allProducts[index] = product1.reviewRatingAndCount[1].match(/\d+/g).join(",");
+            card.querySelector('.card-title').innerHTML = allProducts[index].title
+            card.querySelector('.card-text').innerHTML = allProducts[index].fullPrice + "$"
+            card.querySelector('.revCount').innerHTML = allProducts[index].reviewRatingAndCount[1].match(/\d+/g).join(",");
             card.onclick = () => { window.location.href = allProducts[index].link; }
         } else {
             return;
         }
     });
-
-    fs.writeFileSync(path.join('e', 'index1.html'), updatedHTML, 'utf8');
+    const updatedHTML = mainDom.serialize();
+    const road = path.join('e', 'index-new.html')
+    fs.writeFileSync(road, updatedHTML, 'utf8');
+    console.log(`HTML file index-new.html saved!`)
 }
 module.exports = {
     articleToHTML,
     mainPage
-  };
+};
 

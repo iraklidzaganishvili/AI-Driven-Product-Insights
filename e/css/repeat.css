@@ -4,6 +4,9 @@
 
 nav {
   font-size: 2rem;
+  position: sticky !important;
+  top: 0px;
+  z-index: 1000;
   margin-bottom: 6rem;
 }
 nav a {

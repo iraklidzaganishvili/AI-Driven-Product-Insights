@@ -328,6 +328,13 @@
         <p id="copyright">Copyright © ALPACA™ | Designed by DDR - Powered by MNA</p>
     </footer>
 
+    <!-- Modal -->
+    <div class="alert alert-warning alert-dismissible fade show" role="alert" id="popupModal">
+        <div><strong>Check it out on amazon!</strong> <a href="#" class="alert-link">Click here</a></div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+
     <script>
         document.querySelector('.fb').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
         document.querySelector('.x').href = `https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=WoW!`;
@@ -346,6 +353,7 @@
         var more = document.getElementById('more');
         var card1 = document.getElementById('card1');
         var card2 = document.getElementById('card2');
+        var nav = document.querySelector('.navbar')
 
         var windowHeight = window.innerHeight;
         var moreRect = more.getBoundingClientRect();
@@ -353,8 +361,10 @@
         var halfwayPoint = moreRect.height / 2;
         console.log(halfwayPoint)
         card2.style.top = halfwayPoint + "px"
+        var navHeight = nav.getBoundingClientRect().height + 10;
 
         let prevScrollPos = 0
+
 
         window.addEventListener('scroll', function () {
             if (window.innerWidth > 1200) {
@@ -364,44 +374,44 @@
 
                     // console.log(scrollPositionWithinMore)
 
-                    if (scrollPositionWithinMore < halfwayPoint - cardRect.height) {
-                        console.log(1)
+                    if (scrollPositionWithinMore < halfwayPoint - cardRect.height - navHeight) {
+                        // console.log(1)
                         // First half of the page
                         card1.style.position = 'sticky';
-                        card1.style.top = '10px';
+                        card1.style.top = navHeight + 'px';
                         card2.style.position = 'absolute';
                         card2.style.top = halfwayPoint + "px"
                     } else {
-                        if (scrollPositionWithinMore < halfwayPoint) {
-                            console.log(2)
+                        if (scrollPositionWithinMore < halfwayPoint - navHeight) {
+                            // console.log(2)
                             // Second half of the page
                             card1.style.position = 'absolute';
                             card1.style.top = halfwayPoint - cardRect.height + 'px';
 
                         } else {
-                            console.log(3)
+                            // console.log(3)
                             card1.style.position = 'absolute';
                             card1.style.top = halfwayPoint - cardRect.height + 'px';
                             card2.style.position = 'sticky';
-                            card2.style.top = "10px"
+                            card2.style.top = navHeight + 'px'
                         }
                     }
                 }
                 else {
                     if (prevScrollPos > scrollPositionWithinMore) {
-                        if (scrollPositionWithinMore < halfwayPoint) {
-                            console.log(11)
+                        if (scrollPositionWithinMore < halfwayPoint - navHeight) {
+                            // console.log(11)
                             card2.style.position = 'absolute';
                             card2.style.top = halfwayPoint + "px"
-                            if (scrollPositionWithinMore < halfwayPoint - cardRect.height) {
-                                console.log(22)
+                            if (scrollPositionWithinMore < halfwayPoint - cardRect.height - navHeight) {
+                                // console.log(22)
                                 card1.style.position = 'sticky';
-                                card1.style.top = '10px';
+                                card1.style.top = navHeight + 'px'
                             }
                         } else {
-                            console.log(33)
+                            // console.log(33)
                             card2.style.position = 'sticky';
-                            card2.style.top = "10px"
+                            card2.style.top = navHeight + 'px'
                         }
                     }
                 }
@@ -412,6 +422,21 @@
                 document.getElementById('card2').style.position = 'initial'
             }
         });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var target = document.getElementById('article');
+            var targetHeight = target.offsetTop + target.offsetHeight / 2; // Adjust this to change when the popup appears
+
+            function handleScroll() {
+                if (window.scrollY > targetHeight) {
+                    var myModal = new bootstrap.Modal(document.getElementById('popupModal'), {});
+                    document.getElementById('popupModal').style.display = 'block';
+                    window.removeEventListener('scroll', handleScroll); // Use the named function to remove the listener
+                }
+            }
+            window.addEventListener('scroll', handleScroll);
+        });
+
         function myFunction() {
             $(".message").text("link copied");
         }
