@@ -1,87 +1,89 @@
 [
   {
-    "link": "https://www.amazon.com/dp/B085DVNHHK/ref=nosim?tag=bestmmorpg00",
-    "asin": "B085DVNHHK",
-    "title": "Owala FreeSip Insulated Stainless Steel Water Bottle with Straw, BPA-Free Sports Water Bottle, Great for Travel, 32 Oz, Shy Marshmallow  ",
+    "link": "https://www.amazon.com/dp/B07TNNCSJD/ref=nosim?tag=bestmmorpg00",
+    "asin": "B07TNNCSJD",
+    "title": "NATIONAL GEOGRAPHICRock Collection Box for Kids – 300+ Piece Gemstones and Crystals Set Includes Geodes and Real Fossils, Rocks and Minerals Science Kit , A Geology Gift for Boys and Girls",
     "productImages": [
-      "https://m.media-amazon.com/images/I/71XJK6bWJKL._AC_UL320_.jpg"
+      "https://m.media-amazon.com/images/I/91L0Uo8-CcL._AC_UF894,1000_QL80_.jpg",
+      "https://m.media-amazon.com/images/I/91L0Uo8-CcL.jpg",
+      "https://m.media-amazon.com/images/I/61whMGJ39uL._AC_.jpg",
+      "https://m.media-amazon.com/images/I/81ju-Iy93qS._AC_UF894,1000_QL80_.jpg",
+      "https://m.media-amazon.com/images/I/A1I+QdVUCJL._AC_UF894,1000_QL80_.jpg",
+      "https://images-na.ssl-images-amazon.com/images/I/91L0Uo8-CcL._AC_UL210_SR210,210_.jpg",
+      "https://m.media-amazon.com/images/I/A1I+QdVUCJL.jpg",
+      "https://m.media-amazon.com/images/I/91bllWXz3tL.jpg",
+      "https://m.media-amazon.com/images/I/91bllWXz3tL._AC_UF894,1000_QL80_.jpg",
+      "https://m.media-amazon.com/images/I/91DZeAFb67S._AC_UF894,1000_QL80_.jpg",
+      "https://m.media-amazon.com/images/I/91L0Uo8-CcL._AC_UY218_.jpg"
     ],
-    "fullPrice": "32.99",
-    "brand": "Owala",
+    "fullPrice": "24.99",
+    "brand": "NATIONAL GEOGRAPHIC",
     "reviewRatingAndCount": [
-      "4.8 out of 5",
-      "35,069 global ratings"
+      "4.7 out of 5",
+      "20,619 global ratings"
     ],
     "fromTheManufacturer": [
-      "32-ounce insulated stainless-steel water bottle with a FreeSip spout and push-button lid with lock     Patented FreeSip spout designed for either sipping upright through the built-in straw or tilting back to swig from the spout opening     Protective push-to-open lid keeps spout clean; convenient carry loop doubles as a lock     Double-wall insulation keeps drinks cold for up to 24 hours; wide opening for cleaning and adding ice; cup holder-friendly base     BPA, lead, and phthalate-free; hand wash cup, dishwasher-safe lid; not for use with hot liquids",
-      "From the manufacturer",
-      "Hi. We make water bottles.",
-      "Why? Well, we’re a motley crew of dreamers and designers who live by a simple creed: “Do more of what you love.”​",
-      "And we love designing things that make life a little bit easier and a heckuva a lot more enjoyable. We asked ourselves, with so many different kinds of water bottles out there, why do 3 out of 4 people still suffer from chronic dehydration?",
-      "So we rolled up our sleeves and got to work. We created what we believe to be the finest water bottles in all the land. Water bottles designed to help you do more of what you love. So, what are you waiting for? Go forth and carpe the diem—hydrated like a boss.",
-      "<img alt=\"swig or sip drinking spout\" src=\"https://m.media-amazon.com/images/S/aplus-media-library-service-media/7505e53c-474f-4695-9d88-2432ee2b535b.__CR0,0,300,300_PT0_SX220_V1___.jpg\"/>",
-      "<img alt=\"flip top lid,owala\" src=\"https://m.media-amazon.com/images/S/aplus-media-library-service-media/1ce2d9cb-6037-484b-9dd9-0ec041178f40.__CR0,0,300,300_PT0_SX220_V1___.jpg\"/>",
-      "<img alt=\"leakproof water bottle\" src=\"https://m.media-amazon.com/images/S/aplus-media-library-service-media/6577910f-8a41-4c48-b1c8-13a4c5d7e953.__CR0,0,300,300_PT0_SX220_V1___.jpg\"/>",
-      "<img alt=\"owala, insulated water bottles\" src=\"https://m.media-amazon.com/images/S/aplus-media-library-service-media/30d2e2db-175e-4287-a263-3e70cdd4e9e1.__CR0,0,300,300_PT0_SX220_V1___.jpg\"/>",
-      "FreeSip Spout",
-      "What makes the Owala FreeSip so different than other bottles? The FreeSip has a patented 2-in-1 spout that rocks BOTH a built-in straw for sipping AND a wide-mouth opening for chugging. That’s right—two different ways to drink.",
-      "Easy to Clean",
-      "Designed to be quick and easy to disassemble, with minimal hard-to-reach surfaces. Lid and straw are dishwasher safe. Hand wash cup with Owala 2-in-1 Water Bottle Brush (sold separately).",
-      "Cup Holder Friendly Base",
-      "Because you'll want to take this bottle everywhere, the 24-Ounce bottles are cup-holder friendly. Now you can stay hydrated on-the-go.",
-      "Keeps Drinks Cold",
-      "Triple-layered, vacuum-insulated stainless steel keeps drinks cold for up to 24-hours. Plus, this bottle is made from BPA- and phthalate-free materials."
+      "ULTIMATE ROCK COLLECTION FOR KIDS - A perfect standalone collection or addition to any kid’s rock collection. Includes rough and polished samples of aventurine, rose quartz, stunning snowflake obsidian, desert rose, red jasper, blue quartz, pumice, and geode specimens as well. Makes an excellent STEM gift for girls and boys!     GENUINE FOSSILS - real fossils include prehistoric gastropods, ammonites, clams, brachiopods, and more. The included magnifying glass, full-color learning guide, and identification sheet will help you to sort and identify every rock, gemstone, mineral, and fossil in the collection.     REAL GEODES – Discover crystals treasures! Each kit contains one broken geode and two unbroken geode specimens for you to crack open yourself. Geology doesn’t get more exciting than breaking open rocks and finding crystal treasures.     DISPLAY YOUR FAVORITES – Show off your favorite rock, crystal, and fossil specimens in the included case! Keep the rest of your treasures safe in the included storage bag.     HIGH-QUALITY EDUCATIONAL TOYS - We're proud to make the highest quality hands-on science toys, and all our products are backed by exceptional service. If your experience is less than stellar, let us know and we'll make things right!",
+      "Product Description",
+      "NATIONAL GEOGRAPHIC Ultimate Rocks, Minerals & Fossils Kit",
+      "The 300+ piece Ultimate Rock, Mineral & Fossil Activity Kit is a perfect standalone collection or addition to any kid’s rock collection. Includes rough and polished gems and minerals, as well as unique fossil specimens and 3 geode specimens, one broken and two they can crack open themselves!",
+      "An incredible collection of natural wonders from all over the world.",
+      "The National Geographic Ultimate Rock, Mineral and Fossil Kit is a perfect standalone collection or addition to any kid’s rock collection!",
+      "Specimens include:",
+      "Kids can keep all their samples safe in the closable storage bag, and showcase their favorite specimens in the included display box.",
+      "This kit is fantastic for girls and boys wanting to start a rock collection or expand on an existing collection—order today!",
+      "We make the highest quality hands-on science toys, and all products are backed by exceptional service. With a mission to inspire people to care about the planet, the National Geographic Society is one of the world's largest nonprofit scientific and educational organizations."
     ],
     "bestReviews": [
       {
-        "title": "Best water bottle on the market!",
+        "title": "Great Rock Collection For the Young Geologist!!",
         "rating": "5.0 out of 5 stars",
-        "content": "I’ve been using reusable water bottles for over two decades. The Owala free sip is leaps and bounds better than any water bottle I’ve ever used. I will never buy another brand! The first one I bought was probably 3 years ago. It still works just as well now as it did the day I bought it. I’ve dropped it more times than I can count and never broken. I finally decided to broaden my horizons and purchase different colors. I will tell anyone who asks about the quality of these bottles. There’s something strangely satisfying about drinking from this bottle. The spout is shaped in a way that isn’t overwhelming sensory wise as it seems to be designed to fit the mouth. I always avoided cups with straws in the past because of the potential for bacterial growth and exposure. The design of these cups makes it easy to clean. My drinks stay cold for a long period of time.I promise, you won’t regret buying this!Side note, they say drinking out of the bottle makes you look like a koala, which is a great added bonus."
+        "content": "My grandson celebrated his 7th birthday & whenever we go for walks together, he is always picking up rocks & putting them in his pocket so I thought this National Geographic Rock Collection would be the perfect brithday present for him & it was!!! The kit comes with some nice sized rocks along with an identification chart & small magnifier for closeup viewing of his rocks. It also came with some geodes for him to crack open with a hammer. This little boy was totally thrilled!!!"
       },
       {
-        "title": "Perfect Hydration Companion: Owala FreeSip Insulated Stainless Steel Water Bottle Review",
+        "title": "Interesting toy.",
         "rating": "5.0 out of 5 stars",
-        "content": "I am absolutely thrilled with the Owala FreeSip Insulated Stainless Steel Water Bottle. This 32 oz bottle has become my go-to hydration companion, offering convenience, durability, and style all in one package.First and foremost, the quality of this water bottle is outstanding. The stainless steel construction ensures durability and longevity, while the double-wall insulation keeps my drinks cold for hours on end. Whether I'm at the gym, on a hike, or running errands, I can always count on this bottle to keep my water refreshingly chilled.The FreeSip straw design is a game-changer, allowing for easy, one-handed drinking without the need to tilt the bottle. The straw is BPA-free and provides a comfortable drinking experience, making it perfect for staying hydrated on the go.I also appreciate the thoughtful design features of this bottle, such as the leak-proof lid and convenient carry handle. The camo cool design adds a touch of personality to my hydration routine, standing out from the crowd in style.Since switching to the Owala FreeSip Insulated Stainless Steel Water Bottle, I've noticed a significant improvement in my hydration habits. The generous 32 oz capacity ensures I always have plenty of water on hand, encouraging me to stay hydrated throughout the day.Overall, I couldn't be happier with this water bottle. If you're in search of a high-quality, stylish, and functional hydration solution, look no further. The Owala FreeSip Insulated Stainless Steel Water Bottle has earned its place as my hydration companion, and I give it a well-deserved five-star rating!"
+        "content": "Although returned because a friend had my same idea for a gift, this is an excellent toy for a child interested in nature and open for learning new things. Good gift. Inspirational toy."
       },
       {
-        "title": "Colors are beautiful and love the flexibility of straw or swig",
+        "title": "Worth it!",
         "rating": "5.0 out of 5 stars",
-        "content": "In person the colors are every bit as vibrant as the image online (color I have is Summer Sweetness) and the bottle works great both at my desk during work hours or in the gym. Really appreciate the push button opening to prevent leaks and the carry loop makes it easy to carry when my hands are full. Have definitely found myself drinking more water at work because it stays cool and the straw makes sipping so easy! I have not tested how long it keeps things cool but haven't had any concerns about the water getting tepid."
+        "content": "This is a great bundle! I am an adult and an avid rock collector and this was a great selection. The reason there are 300 pieces is there is a thick, full small bag of chips (picture in bag) and a good amount of smaller pebble stones (picture in selenite bowl). There is a small handful of tumbles and a small handful of fossils. I received a great variety! The chips and small pebbles were different stones than are advertised, but that can make it a fun challenge for people wanting to learn more. The book was also great with lots of fun information, it also has plenty of pictures so this set is great for kids, young adults, or adults!"
       },
       {
-        "title": "Beautiful AND leakproof when closed",
-        "rating": "5.0 out of 5 stars",
-        "content": "I saw the good reviews and gave this a try, and I LOVE it!  Not only is it beautiful, with its gorgeous interplay of vivid colors, but it WORKS.  To be honest, I wasn't sure how it could have an \"attached straw,\" but as soon as I tried to take a sip, I realized that it works.  It works beautifully.  The color combination I wanted came in a smaller form, so I usually have to refill it halfway through the day, but this water bottle makes taking a sip so easy and so carefree - the best quality (to me) is that when it's closed, this doesn't leak AT ALL.  With the lock mechanism so easy to use, the pop-up top is easy to open and close, and that makes this my most carefree water bottle.  I've started bringing it with me everywhere.  (Oh, and it fits into my car's cup holder, which I cannot say for the \"Stanley Cup\" knockoff.)  Such a great bottle - I'm probably going to buy a few more.  Try one for yourself and see if you don't agree!  Easy to hold, easy to carry, easy to use, and pretty!"
-      },
-      {
-        "title": "Fun & innovative sipping spout/straw!",
-        "rating": "5.0 out of 5 stars",
-        "content": "Love the concealed straw option, which makes staying hydrated a breeze! Cute color patterns for kids, making fun to use which keeping drinks cold all day. Easy to use, no leaking and easy to clean.  Wishing there were more aesthetic color options for adults who aren’t into the color lock design. Would buy again!"
-      },
-      {
-        "title": "Good quality, rivals other name brands, fair priced",
-        "rating": "5.0 out of 5 stars",
-        "content": "Love this water bottle. It’s good quality, &rivals other name brands. Priced a good $8-10 cheaper than more well known brands too. I read an article online praising this & ordered it as a result. Needless to say, I’m very pleased. It keeps cold beverages cold & there is no lead used in construction of this. I love the snap shut leak proof feature as well. It’s a tall & slender water bottle. The only thing I am not pleased with  is that it isn’t for hot beverages, only cold. There is a built in straw & you can drink from it using the straw or tip it back to drink."
-      },
-      {
-        "title": "The perfect water bottle",
-        "rating": "5.0 out of 5 stars",
-        "content": "Yes, this bottle prevents leaks and spills. Yes, this bottle keeps beverages cold. Yes, it has a great carrying handle and complimentary colors. But what really stands out about this one is how great it is to drink from. When I was a teacher, I had students who called their water bottle their comfort blanket. Never understood it until now. I don't like drinking out of a straw, but the opening for the straw is so perfect and convenient, I use it over the large opening. I'm drinking 3 bottles (32 oz bottle) a day now, way more than I ever have before. The water somehow tastes better (maybe how cold it is?) too making me more likely to drink. I've had other water bottles. Hated them all. But I LOVE this one and bring it everywhere"
-      },
-      {
-        "title": "I Really Like This Bottle",
+        "title": "Great collection of stones, but most of them are really small",
         "rating": "4.0 out of 5 stars",
-        "content": "I have been on a mission to find the very best water bottle.  I had settled on a glass bottle with a flip top cap, see through design, leak-proof, easy sip,  and handsome exterior.  But then I saw the Owala Bottle in a store.. First, the Owala's have a wonderful palate of colors, and handsome design.  I love the size and look of the sipping part of the bottle......just the right amount of water.  But what makes the Owala my new favorite is the stainless steel that makes the water taste wonderful, chilled all through the day.  .not too cold, just right.  What I do is set up the bottle in open mode, and sip from it throughout the day.  Because of all these factors, I have been drinking more water.  Even though the cap is open, the water remains chilled.  I have two Owala bottles, and will order two more.  The reason for 4 stars?  The flip lids on my bottles don't work, so I just manually flip them open.....Perhaps they will loosen over time."
+        "content": "Great collection of stones, but most of them are really small and don't correspond to the marketing picture"
       },
       {
-        "title": "Fun, durable, functional, and no funky tasting water!",
+        "title": "Great gift.",
         "rating": "5.0 out of 5 stars",
-        "content": "When I was pregnant with my second daughter I was surprised when my doctor advised me to not drink from plastic or cook with non-stick.  I did some research and we made changes, including converting to stainless steel water bottles.  It has been so hard to find a good water bottle that is all stainless steel and doesn’t leak.  Klean Kanteen is decent, but the silicone inserts that seal the lid break down over time and literally shred apart.  If I’m paying a premium price, I don’t want a water bottle with a short lifespan.  ThermoFlask is another decent option, but we’ve had the same issue with the lid seal breaking down, and also the straws seem to wear out.  They get sort of scuffed up and discolored, and by the end of the day the water starts to have a funny plastic taste.  Makes me wonder what the heck I’m marinating in my water all day.  So we decided to give Owala a try, and for us, these are the best option we’ve found so far.  The bottle itself is insulated stainless steel, and only the lid and straw are plastic.  But they seem to be “better” plastic = super hard and durable plastic, including the straw which is rigid and does not bend (ThermoFlask plastic straws bend).  Maybe this type of plastic is more resistant to wear and tear, I’m not sure, all I know is that we can leave water in the bottles for DAYS and it still tastes just like water, no funky flavors.  I can stick all parts in the dishwasher over and over again, including the straw, and they come out clean and looking brand new every time, without stains.  The silicone insert that seals the lid seems to be better designed and more resistant to breaking down than Klean Kanteen and Thermoflask.  My girls love all the different fun color options, it’s nice to be able to chug if you are super thirsty, or keep the bottle upright to take a sip from the straw.  Especially for our youngest, the straw feature is essential.  And the bottles can take a beating, we’ve dropped them on sidewalks, hardwood floors, concrete, etc and they are still going strong.  A note on sizing, the 24 oz and 32 oz sizes are actually the exact same height, it’s just the 24oz is a little thinner.  I’ve included side-by-side photos.  There really is not much physical difference between these two capacities, so we bumped up to the 32 oz for my daughter who is in first grade, since she was running out of water by the end of the school day with the 24 oz.  The 32 oz still easily fits in the side pocket of her backpack, and it’s enough water for her to get through the day.  Bottom line - these water bottles are durable, they function great, and they keep our water cold and fresh and free of funky flavors.  Until someone cracks the code for a durable, 100% all stainless-steel water bottle with a straw that doesn’t leak, these are the go-to in our household.  Highly recommend."
+        "content": "The book was very nice and had lots of info. It would have been nice if the box was a bit bigger to hold some larger rocks. It appeared bigger in the picture. Overall, it was very nice, though."
       },
       {
-        "title": "Amazing!",
+        "title": "Perfect gift",
         "rating": "5.0 out of 5 stars",
-        "content": "I recently invested in a set of five Owala Water Bottles, and let me tell you, it was one of the best purchases I've made in a long time! These bottles are an absolute game-changer in terms of both functionality and style, earning a solid five-star rating from me.First and foremost, the functionality of these bottles is unmatched. The innovative FreeSip® spout design allows for effortless one-handed drinking, which is incredibly convenient for someone like me who is always on the go. Plus, the integrated straw means I can enjoy every last drop of my favorite beverage without having to tilt the bottle – a feature I absolutely love! And with their spill-proof design, I can toss these bottles into my bag without worrying about any leaks or messes – a true lifesaver!But it's not just about function – these bottles also score major points in the style department. The sleek, modern design is eye-catching and sophisticated, making these bottles a fashionable accessory wherever I go. Whether I'm hitting the gym, running errands, or simply lounging at home, I love showing off my Owala Water Bottle.Another standout feature of these bottles is their durability. Made from high-quality, BPA-free materials, they can withstand daily wear and tear without missing a beat. I've accidentally dropped mine more times than I can count, and they've held up like champs every single time – no dents, no scratches, no leaks.And let's not forget about the environmental impact. By using these reusable bottles instead of disposable plastic ones, I'm doing my part to reduce waste and minimize my carbon footprint – something that's important to me as a conscious consumer.In summary, Owala Water Bottles have truly exceeded my expectations on every level. They're functional, stylish, spill-proof, and eco-friendly – what more could you ask for? If you're in the market for a new water bottle, do yourself a favor and invest in Owala. You won't be disappointed!"
+        "content": "Bought this kit for my 9 year old geology lover. Such a great kit with many pieces. We use them for homeschool as well. Great collection for any collector or for school."
+      },
+      {
+        "title": "Great gift for a rock lover",
+        "rating": "5.0 out of 5 stars",
+        "content": "My twin nephews are obsessed with collecting rocks when they go places. I decided I was going to buy them some interesting rocks, and this was a great item for them. They loved it."
+      },
+      {
+        "title": "very good .",
+        "rating": "5.0 out of 5 stars",
+        "content": "Very  good."
+      },
+      {
+        "title": "Lots of basic",
+        "rating": "4.0 out of 5 stars",
+        "content": "This is a good size kit, great quality. However, the selection is limited."
+      },
+      {
+        "title": "Rocks and gems",
+        "rating": "5.0 out of 5 stars",
+        "content": "I collect rocks and gems I have some in my attic"
       }
     ]
   }

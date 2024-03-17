@@ -1,5 +1,8 @@
 const EventEmitter = require('events');
 EventEmitter.defaultMaxListeners = 50;
+const path = require('node:path');
+const { spawn } = require('child_process');
+
 //converter
 const { articleToHTML, mainPage } = require('./e/converter');
 
@@ -47,6 +50,9 @@ let url = "bottle"
 
 agentRotator = 0
 
+isFirstCall = true
+let ImgMaxNum = 0;
+
 async function fetchAndProcessData() {
     try {
         const userOutput = await new Promise((resolve) => {
@@ -86,7 +92,6 @@ async function fetchAndProcessData() {
 async function getProducts(url) {
     try {
         //roator
-        console.log(agentRotator)
         if (agentRotator >= 100) {
             agentRotator = 0
             const userAgent = new UserAgents(userAgent => userAgent.deviceCategory === 'desktop')
@@ -242,7 +247,7 @@ async function fetchProductDetails(product, index) {
 
         let prBrand = m$(`.po-brand`, mainHtml).find('.po-break-word').text().trim()
         if (prBrand) product.brand = prBrand;
-        
+
         const texts = [];
         m$('#aplus_feature_div').find('p, h1, h2, h3, h4, h5, h6').each(function () {
             texts.push($1(this).text().trim());
@@ -260,8 +265,56 @@ async function fetchProductDetails(product, index) {
 
         product.bestReviews = ans;
 
+        //IMAGES ------------------------
         const links = await fetchImages(product.title, index)
         product.productImages.unshift(...links)
+
+        if (isFirstCall == true) {
+            const imgFiles = fs.readdirSync('e/gen-img');
+
+            imgFiles.forEach(file => {
+                const baseName = path.basename(file, '.html');
+                const num = parseInt(baseName);
+                if (!isNaN(num) && num > ImgMaxNum) {
+                    ImgMaxNum = num;
+                }
+            })
+            isFirstCall == false
+        }
+        const downloadPromises = product.productImages.map(pImg => {
+            ImgMaxNum ++
+            return downloadFile(pImg, `./e/gen-img/${ImgMaxNum}.png`, index);
+        });
+
+        Promise.all(downloadPromises)
+            .then(() => {
+                const process = spawn('python', ["e/img-converter.py", "gen-img"]);
+
+                process.on('error', (err) => {
+                    console.error(`Failed to start py subprocess: ${err}`);
+                });
+
+                process.stdout.on('data', (data) => {
+                    console.log(`stdout: ${data}`);
+                });
+
+                process.stderr.on('data', (data) => {
+                    console.error(`stderr: ${data}`);
+                });
+
+                process.on('close', (code) => {
+                    if (code !== 0) {
+                        console.error(`Python script executed with code ${code}`);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('An error occurred while downloading files id: ' + index + ':', error);
+                // Handle any errors that occurred during the download process
+            });
+
+        // END IMAGES ------------------------
+
 
         // console.log("Product", index, "done, starting AI")
 
@@ -312,5 +365,22 @@ function twoNumbers() {
     } while (randomIndex1 === randomIndex2)
     return [randomIndex1, randomIndex2]
 }
+
+async function downloadFile(url, outputPath, id) {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`Unexpected response on id: ${id}, ${response.statusText}`);
+
+        const fileStream = fs.createWriteStream(outputPath);
+        response.body.pipe(fileStream);
+        await new Promise((resolve, reject) => {
+            fileStream.on("finish", resolve);
+            fileStream.on("error", reject);
+        });
+    } catch (error) {
+        console.error(`Error while downloading file from ${url} on id: ${id}`, error);
+    }
+}
+
 
 fetchAndProcessData()
