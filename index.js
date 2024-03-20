@@ -3,8 +3,9 @@ EventEmitter.defaultMaxListeners = 50;
 const path = require('node:path');
 const { spawn } = require('child_process');
 
-//converter
+//imports
 const { articleToHTML, mainPage } = require('./e/converter');
+const { getImages, downloadFile } = require('./pup');
 
 //useragent
 const UserAgents = require('user-agents');
@@ -32,12 +33,6 @@ let storeID = 'bestmmorpg00'
 const openai = new OpenAI({
     apiKey: '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',
 });
-
-//google image search
-const API_KEY = 'AIzaSyD65Hre95IE768oBS6lGl5Td-j37uHk4-A';
-let currCX = 0;
-let CXArray = ["a429bc4ef05c94f32", "97b5a63071dd3440c", "07d8bd65abcc2417c", "55fea1429943f4f18", "452a0a03a3edd4c9c", "7404585bcdafa47ae", "c0e540c3a33a64cea", "66403a5dd64f64432"]
-// ------
 
 let allProducts = []
 let allArticles = []
@@ -188,46 +183,9 @@ async function DoAIMagic(prompt) {
 
 }
 
-async function fetchImages(SEARCH_QUERY, index, unLoop = 0, links = []) {
-    try {
-        const url = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(SEARCH_QUERY)}&cx=${CXArray[currCX]}&searchType=image&key=${API_KEY}`;
-        currCX++;
-        if (currCX >= CXArray.length) {
-            currCX = 0;
-        }
-        const response = await fetch(url, options);
-        const data = await response.json();
-
-        if (data.items) {
-
-            data.items.forEach(item => {
-                if (item.image.height > 200 && item.image.width > 200) {
-                    links.push(item.link);
-                }else{
-                    console.log('On index ' + index + ' image too small');
-                }
-                });
-        } else {
-            if (unLoop < CXArray.length) {
-                unLoop = unLoop + 1;
-                // Use await to ensure the recursive call completes and its result is returned
-                return await fetchImages(SEARCH_QUERY, index, unLoop, links);
-            } else {
-                console.log('Google API failed on index ' + index);
-            }
-        }
-        return links;
-    } catch (error) {
-        console.error('Error:', error);
-        // Return the accumulated links even in case of error
-        return links;
-    }
-}
-
 async function fetchProductDetails(product, index) {
     try {
         if (maxIndexesPerPage <= index) return
-        // console.log("Started", index)
         let commentsPage = "http://www.amazon.com/product-reviews/" + product.asin;
         const [response1, mainRes] = await Promise.all([
             fetch(commentsPage, options),
@@ -270,10 +228,6 @@ async function fetchProductDetails(product, index) {
 
         product.bestReviews = ans;
 
-        //IMAGES ------------------------
-        const links = await fetchImages(product.title, index)
-        product.productImages.unshift(...links)
-
         if (isFirstCall == true) {
             const imgFiles = fs.readdirSync('e/gen-img');
 
@@ -286,44 +240,15 @@ async function fetchProductDetails(product, index) {
             })
             isFirstCall == false
         }
-        let prevMaxNum = ImgMaxNum
-        const downloadPromises = product.productImages.map(pImg => {
-            ImgMaxNum++
-            return downloadFile(pImg, `./e/gen-img/${ImgMaxNum}.png`, index);
-        });
 
-        Promise.all(downloadPromises)
-            .then(() => {
-                const process = spawn('python', ["e/img-converter.py", "e/gen-img", prevMaxNum, ImgMaxNum]);
-
-                process.on('error', (err) => {
-                    console.error(`Failed to start py subprocess: ${err}`);
-                });
-
-                process.stdout.on('data', (data) => {
-                    console.log(`stdout: ${data}`);
-                });
-
-                process.stderr.on('data', (data) => {
-                    console.error(`stderr: ${data}`);
-                });
-
-                process.on('close', (code) => {
-                    if (code !== 0) {
-                        console.error(`Python script executed with code ${code}`);
-                    }
-                });
-            })
-            .catch(error => {
-                console.error('An error occurred while downloading files id: ' + index + ':', error);
-                // Handle any errors that occurred during the download process
+        getImages(product.link).then((prLinks) => {
+            product.productImages.push(...prLinks);
+            product.productImages.forEach((link, i) => {
+                downloadFile(product.productImages[i], `./e/gen-img/${ImgMaxNum}.webp`, index);
+                ImgMaxNum++
             });
-
-        // END IMAGES ------------------------
-
-
-        // console.log("Product", index, "done, starting AI")
-
+            console.log('done ' + index)
+        });
         //Call AI
         const rand = twoNumbers();
         // if (product.bestReviews && product.productImages) {
@@ -371,22 +296,5 @@ function twoNumbers() {
     } while (randomIndex1 === randomIndex2)
     return [randomIndex1, randomIndex2]
 }
-
-async function downloadFile(url, outputPath, id) {
-    try {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error(`Unexpected response on id: ${id}, ${response.statusText}`);
-
-        const fileStream = fs.createWriteStream(outputPath);
-        response.body.pipe(fileStream);
-        await new Promise((resolve, reject) => {
-            fileStream.on("finish", resolve);
-            fileStream.on("error", reject);
-        });
-    } catch (error) {
-        console.error(`Error while downloading file from ${url} on id: ${id}`, error);
-    }
-}
-
 
 fetchAndProcessData()
