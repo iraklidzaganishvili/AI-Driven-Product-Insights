@@ -5,7 +5,7 @@ import os
 # Constants
 SCALED_SIZE = (1024, 1024)  # Standard size for comparison
 FEATURE_MATCH_RATIO = 0.75  # Lowe's ratio test
-MIN_MATCH_COUNT = 10  # Minimum good matches to be a duplicate
+MIN_MATCH_COUNT = 50  # Minimum good matches to be a duplicate
 
 def remove_whitespace(image):
     """Remove the whitespace from the image by finding the largest contour."""
