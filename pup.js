@@ -4,6 +4,7 @@ const { execSync } = require('child_process');
 const puppeteer = require('puppeteer-extra')
 const StealthPlugin = require('puppeteer-extra-plugin-stealth')
 puppeteer.use(StealthPlugin())
+const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
 async function getImages(url) {
 
@@ -12,29 +13,42 @@ async function getImages(url) {
     const firstAgent = new UserAgents(userAgent => userAgent.deviceCategory === 'desktop')
     await page.setUserAgent(firstAgent.toString())
 
-    await page.goto(url);
+    await page.goto(url, { waitUntil: 'domcontentloaded' });
 
     try {
         let imageUrls = []
         const totalElements = 5
-        for (i = 0; i < totalElements; i++) {
-            await page.hover(`#altImages ul li:nth-of-type(${i + 5})`)
 
-            await page.waitForSelector(`.image.item.itemNo${i + 1}.maintain-height.selected .a-dynamic-image`, {
+        selector = '#altImages ul .imageThumbnail';
+        const htmlContent = await page.evaluate((sel) => {
+            const elements = document.querySelectorAll(sel);
+            let srcs = [];
+            elements.forEach(element => {
+                const img = element.querySelector('img');
+                if (img && img.src) srcs.push(img.src);
+            });
+            return srcs;
+        }, selector);
+
+        for (i = 1; i < htmlContent.length; i++) {
+            await page.hover(`#altImages ul .imageThumbnail img[src*='${htmlContent[i]}']`)
+
+            await page.waitForSelector(`.image.item.itemNo${i}.maintain-height.selected .a-dynamic-image`, {
                 visible: true,
             });
 
-            const filePath = `screenshot-${i + 1}.png`
+            const filePath = `screenshot-${i}.png`
             await page.screenshot({ path: filePath });
 
             const imageUrl = await page.evaluate((index) => {
                 const imageInForm = document.querySelector(`.image.item.itemNo${index}.maintain-height.selected .a-dynamic-image`);
                 return imageInForm ? imageInForm.src : null;
-            }, i + 1)
+            }, i)
             imageUrls.push(imageUrl)
         }
         console.log(imageUrls.filter(url => url !== null));
         await browser.close();
+        return imageUrls
 
     } catch (error) {
         console.log('Hover action failed, grabbing the first image on the page. ' + error);
@@ -86,26 +100,26 @@ async function getImages(url) {
         });
     }
 };
-getImages('https://www.amazon.com/ASUS-Vivobook-Windows-Transparent-M515DA-WS33/dp/B0CRDCFNHW/?_encoding=UTF8&pd_rd_w=jNgYL&content-id=amzn1.sym.d0ebfbb2-6761-494f-8e2f-95743b37c35c%3Aamzn1.symc.50e00d6c-ec8b-42ef-bb15-298531ab4497&pf_rd_p=d0ebfbb2-6761-494f-8e2f-95743b37c35c&pf_rd_r=D3QP8WRQQ6MFWR2TQVTW&pd_rd_wg=PSJ8S&pd_rd_r=fd01e1ba-d51f-42e6-8fe4-072d319c0897&ref_=pd_gw_ci_mcx_mr_hp_atf_m')
+// getImages('https://www.amazon.com/dp/B0001AVSJG/ref=nosim?tag=bestmmorpg00')
 
 
-const downloadFile = async (imageUrl, outputPath) => {
-    const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
-
+const downloadFile = async (imageUrl, outputPath, id = '') => {
     try {
         const response = await fetch(imageUrl);
-        if (!response.ok) {
-            throw new Error(`Failed to fetch image: ${response.statusText}`);
-        }
+        if (!response.ok) throw new Error(`Failed to fetch image, id ${id}: ${response.statusText}`);
         const streamPipeline = (source, dest) => new Promise((resolve, reject) => {
             source.pipe(dest);
             dest.on('finish', resolve);
             dest.on('error', reject);
         });
-
         await streamPipeline(response.body, fs.createWriteStream(outputPath));
-        console.log('Download and save successful.');
     } catch (error) {
-        console.error(`Error: ${error.message}`);
+        console.error(`Error in id ${id}: ${error.message}`);
     }
+};
+
+
+module.exports = {
+    getImages,
+    downloadFile
 };
