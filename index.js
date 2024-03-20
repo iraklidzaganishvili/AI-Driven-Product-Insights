@@ -199,9 +199,14 @@ async function fetchImages(SEARCH_QUERY, index, unLoop = 0, links = []) {
         const data = await response.json();
 
         if (data.items) {
+
             data.items.forEach(item => {
-                links.push(item.link);
-            });
+                if (item.image.height > 200 && item.image.width > 200) {
+                    links.push(item.link);
+                }else{
+                    console.log('On index ' + index + ' image too small');
+                }
+                });
         } else {
             if (unLoop < CXArray.length) {
                 unLoop = unLoop + 1;
@@ -281,14 +286,15 @@ async function fetchProductDetails(product, index) {
             })
             isFirstCall == false
         }
+        let prevMaxNum = ImgMaxNum
         const downloadPromises = product.productImages.map(pImg => {
-            ImgMaxNum ++
+            ImgMaxNum++
             return downloadFile(pImg, `./e/gen-img/${ImgMaxNum}.png`, index);
         });
 
         Promise.all(downloadPromises)
             .then(() => {
-                const process = spawn('python', ["e/img-converter.py", "gen-img"]);
+                const process = spawn('python', ["e/img-converter.py", "e/gen-img", prevMaxNum, ImgMaxNum]);
 
                 process.on('error', (err) => {
                     console.error(`Failed to start py subprocess: ${err}`);

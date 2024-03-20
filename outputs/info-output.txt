@@ -1,89 +1,81 @@
 [
   {
-    "link": "https://www.amazon.com/dp/B07TNNCSJD/ref=nosim?tag=bestmmorpg00",
-    "asin": "B07TNNCSJD",
-    "title": "NATIONAL GEOGRAPHICRock Collection Box for Kids – 300+ Piece Gemstones and Crystals Set Includes Geodes and Real Fossils, Rocks and Minerals Science Kit , A Geology Gift for Boys and Girls",
+    "link": "https://www.amazon.com/dp/B0BNLZ4DXC/ref=nosim?tag=bestmmorpg00",
+    "asin": "B0BNLZ4DXC",
+    "title": "Hydro Flask Stainless Steel Wide Mouth Water Bottle with Flex Straw Lid and Double-Wall Vacuum Insulation",
     "productImages": [
-      "https://m.media-amazon.com/images/I/91L0Uo8-CcL._AC_UF894,1000_QL80_.jpg",
-      "https://m.media-amazon.com/images/I/91L0Uo8-CcL.jpg",
-      "https://m.media-amazon.com/images/I/61whMGJ39uL._AC_.jpg",
-      "https://m.media-amazon.com/images/I/81ju-Iy93qS._AC_UF894,1000_QL80_.jpg",
-      "https://m.media-amazon.com/images/I/A1I+QdVUCJL._AC_UF894,1000_QL80_.jpg",
-      "https://images-na.ssl-images-amazon.com/images/I/91L0Uo8-CcL._AC_UL210_SR210,210_.jpg",
-      "https://m.media-amazon.com/images/I/A1I+QdVUCJL.jpg",
-      "https://m.media-amazon.com/images/I/91bllWXz3tL.jpg",
-      "https://m.media-amazon.com/images/I/91bllWXz3tL._AC_UF894,1000_QL80_.jpg",
-      "https://m.media-amazon.com/images/I/91DZeAFb67S._AC_UF894,1000_QL80_.jpg",
-      "https://m.media-amazon.com/images/I/91L0Uo8-CcL._AC_UY218_.jpg"
+      "https://m.media-amazon.com/images/I/51okdFTE-sL._AC_UF1000,1000_QL80_.jpg",
+      "https://m.media-amazon.com/images/I/61lvSW9Gm7L._AC_UF1000,1000_QL80_.jpg",
+      "https://images-na.ssl-images-amazon.com/images/I/51okdFTE-sL._AC_UL210_SR210,210_.jpg",
+      "https://m.media-amazon.com/images/I/61is3aBH-eL._AC_UF894,1000_QL80_.jpg",
+      "https://m.media-amazon.com/images/I/61H2SKAtgnL._AC_UF1000,1000_QL80_.jpg",
+      "https://m.media-amazon.com/images/I/61bGK4xMEpL._AC_UF894,1000_QL80_.jpg",
+      "https://m.media-amazon.com/images/I/41BHo3XeuwL._AC_.jpg",
+      "https://m.media-amazon.com/images/I/61DLmuUUEqL._AC_UF894,1000_QL80_.jpg",
+      "https://m.media-amazon.com/images/I/61is3aBH-eL.jpg",
+      "https://m.media-amazon.com/images/I/61PnxrC03FL._AC_UF1000,1000_QL80_.jpg",
+      "https://m.media-amazon.com/images/I/61n6THjVFUL._AC_UL320_.jpg"
     ],
-    "fullPrice": "24.99",
-    "brand": "NATIONAL GEOGRAPHIC",
+    "fullPrice": "49.95",
+    "brand": "Hydro Flask",
     "reviewRatingAndCount": [
       "4.7 out of 5",
-      "20,619 global ratings"
+      "3,613 global ratings"
     ],
     "fromTheManufacturer": [
-      "ULTIMATE ROCK COLLECTION FOR KIDS - A perfect standalone collection or addition to any kid’s rock collection. Includes rough and polished samples of aventurine, rose quartz, stunning snowflake obsidian, desert rose, red jasper, blue quartz, pumice, and geode specimens as well. Makes an excellent STEM gift for girls and boys!     GENUINE FOSSILS - real fossils include prehistoric gastropods, ammonites, clams, brachiopods, and more. The included magnifying glass, full-color learning guide, and identification sheet will help you to sort and identify every rock, gemstone, mineral, and fossil in the collection.     REAL GEODES – Discover crystals treasures! Each kit contains one broken geode and two unbroken geode specimens for you to crack open yourself. Geology doesn’t get more exciting than breaking open rocks and finding crystal treasures.     DISPLAY YOUR FAVORITES – Show off your favorite rock, crystal, and fossil specimens in the included case! Keep the rest of your treasures safe in the included storage bag.     HIGH-QUALITY EDUCATIONAL TOYS - We're proud to make the highest quality hands-on science toys, and all our products are backed by exceptional service. If your experience is less than stellar, let us know and we'll make things right!",
-      "Product Description",
-      "NATIONAL GEOGRAPHIC Ultimate Rocks, Minerals & Fossils Kit",
-      "The 300+ piece Ultimate Rock, Mineral & Fossil Activity Kit is a perfect standalone collection or addition to any kid’s rock collection. Includes rough and polished gems and minerals, as well as unique fossil specimens and 3 geode specimens, one broken and two they can crack open themselves!",
-      "An incredible collection of natural wonders from all over the world.",
-      "The National Geographic Ultimate Rock, Mineral and Fossil Kit is a perfect standalone collection or addition to any kid’s rock collection!",
-      "Specimens include:",
-      "Kids can keep all their samples safe in the closable storage bag, and showcase their favorite specimens in the included display box.",
-      "This kit is fantastic for girls and boys wanting to start a rock collection or expand on an existing collection—order today!",
-      "We make the highest quality hands-on science toys, and all products are backed by exceptional service. With a mission to inspire people to care about the planet, the National Geographic Society is one of the world's largest nonprofit scientific and educational organizations."
+      "TempShield️ double-wall vacuum insulation keeps contents cold up to 24 hours     Insulated Flex Straw Cap is leakproof when closed     Made with 18/8 pro-grade stainless steel for durability, pure taste and no flavor transfer     Wide Mouth opening is ice-cube friendly     Color Last powder coat stays clean and colorful",
+      "From the manufacturer"
     ],
     "bestReviews": [
       {
-        "title": "Great Rock Collection For the Young Geologist!!",
+        "title": "Water bottle",
         "rating": "5.0 out of 5 stars",
-        "content": "My grandson celebrated his 7th birthday & whenever we go for walks together, he is always picking up rocks & putting them in his pocket so I thought this National Geographic Rock Collection would be the perfect brithday present for him & it was!!! The kit comes with some nice sized rocks along with an identification chart & small magnifier for closeup viewing of his rocks. It also came with some geodes for him to crack open with a hammer. This little boy was totally thrilled!!!"
+        "content": "Purchased this water bottle for my daughter to replace her old hydroflask due to regular wear and several drops/dents. Her old one began to leak from being dropped so many times, but still kept her beverages very cold. We purchased the new one and the new size/shape is perfect. The straw/sipper is updated so it totally comes apart to be washed. I was very happy with this new update. You can either attach the straw to suck on the top or you can detach the straw to tip it back and let the water flow out. Nice that their is an option. Color is beautiful and bottle has the quality I have come to expect from hydroflask."
       },
       {
-        "title": "Interesting toy.",
+        "title": "Cute flask.",
         "rating": "5.0 out of 5 stars",
-        "content": "Although returned because a friend had my same idea for a gift, this is an excellent toy for a child interested in nature and open for learning new things. Good gift. Inspirational toy."
+        "content": "I find this bottle light enough for a day's water intake. I've had other water bottles, but it is heavier.  This one has double wall vacuum insulation which keeps the temperature good and I would try to drink at least a bottle of this per day. If I go to gym and exercise I would drink more. It is leak proof, and the straw cap at the top makes it easy to sip."
       },
       {
-        "title": "Worth it!",
+        "title": "Hydroflask for the win!",
         "rating": "5.0 out of 5 stars",
-        "content": "This is a great bundle! I am an adult and an avid rock collector and this was a great selection. The reason there are 300 pieces is there is a thick, full small bag of chips (picture in bag) and a good amount of smaller pebble stones (picture in selenite bowl). There is a small handful of tumbles and a small handful of fossils. I received a great variety! The chips and small pebbles were different stones than are advertised, but that can make it a fun challenge for people wanting to learn more. The book was also great with lots of fun information, it also has plenty of pictures so this set is great for kids, young adults, or adults!"
+        "content": "Its a metal water bottle, it fits in my cup holder with minimal movement (2016 Kia Sportage), it doesn't leak, it keeps my water cold for a long time, I like that it has a wide mouth for easy cleaning, the color is beautiful, I would buy again."
       },
       {
-        "title": "Great collection of stones, but most of them are really small",
+        "title": "Easy to use.  Keeps beverage cold all day.  Fits car cup holder",
+        "rating": "5.0 out of 5 stars",
+        "content": "Nice water flask.  I put a can cozy on the bottom of the flask to keep it from getting dented."
+      },
+      {
+        "title": "This waterbottle keeps my drinks super cold.",
+        "rating": "5.0 out of 5 stars",
+        "content": "I love this water bottle, my sister got it for me as a Christmas gift. It's such a cute color and style that fits perfectly in the side pocket of my backpack. The handle is perfect and makes it easy to hold on to. This is a great style to take to work or to school because of how slim it is."
+      },
+      {
+        "title": "Favorite water bottle",
+        "rating": "5.0 out of 5 stars",
+        "content": "I got one of these as a work prize and fell in love with it. Then my husband “stole” it so I needed to get another!! Love how easy this is to add water and ice, it doesn’t leak, and the straw makes it easy to drink water one-handed and in the car. A little pricier than other water bottles but in my opinion, highly worth it! Also the color options are awesome and I love my grey-green color."
+      },
+      {
+        "title": "Excellent insulated flask",
+        "rating": "5.0 out of 5 stars",
+        "content": "This is truly what I wanted for trips to the beach, travel and other activities where hydration (or your fav adult bev) is desired.  Thermal quality, fit and finish are excellent.  The wide mouth accepts whole ice cubes and makes filling and washing easy. The lid includes a well designed finger hold and the flip mechanism for the straw, which seals perfectly.  When ordering, I was a little concerned about the large size, but in use, it is perfect.  I also purchased the small \"boot\" for the flask bottom, which adds a stylish/finished look and quiets it down while rolling around in my vehicle.  I'm totally sold."
+      },
+      {
+        "title": "Title: Refreshing Hydration Companion - Hydro Flask Stainless Steel Wide Mouth Water Bottle",
         "rating": "4.0 out of 5 stars",
-        "content": "Great collection of stones, but most of them are really small and don't correspond to the marketing picture"
+        "content": "The Hydro Flask Stainless Steel Wide Mouth Water Bottle with Flex Straw Lid has proven to be a game-changer in the world of hydration. As an avid water bottle user, I was skeptical about whether it could truly live up to the hype surrounding it. However, after using it consistently, I am thoroughly impressed.One of the standout features is the build quality. The stainless steel construction not only gives the bottle a sleek and modern appearance but also ensures durability and longevity. The wide mouth design makes it easy to fill, clean, and even add ice cubes for that extra chill. The powder-coated finish not only adds a touch of style but also provides a non-slip grip, preventing accidental drops.The Flex Straw Lid is a game-changer for those who prefer sipping over the traditional screw-on cap. The flexible straw is made from high-quality silicone, providing a comfortable and drip-free drinking experience. The lid's durability is commendable, and the simplicity of its design makes it easy to disassemble and clean thoroughly.Temperature retention is another area where the Hydro Flask shines. Whether I'm enjoying a hot coffee on a chilly morning or sipping ice-cold water during a workout, the bottle consistently maintains the desired temperature for an extended period. The double-wall vacuum insulation truly lives up to its promises.What sets this water bottle apart is its commitment to environmental sustainability. By investing in a Hydro Flask, users are contributing to the reduction of single-use plastic waste. The reusable nature of the bottle is a small yet impactful step towards a greener planet.The only minor drawback is the weight of the stainless steel, making the bottle slightly heavier than its plastic counterparts. However, the trade-off for durability and insulation capabilities is well worth it.In conclusion, the Hydro Flask Stainless Steel Wide Mouth Water Bottle with Flex Straw Lid is a top-tier choice for anyone seeking a reliable, durable, and stylish hydration companion. Its thoughtful design, excellent build quality, and commitment to sustainability make it a standout product in the crowded water bottle market. Highly recommended!"
       },
       {
-        "title": "Great gift.",
+        "title": "Just a wee bit better than OK",
+        "rating": "3.0 out of 5 stars",
+        "content": "There are a gazillion water bottle choices out there and Hydro Flask seems to have a very loyal following.  My husband has had them for years.  I've always opted for less expensive brands and have found that my bottles often out perform his as far as keeping ice for long periods of time.  And he has lost the rubber gasket in the lids of his Hydro Flasks and has on occasion had major leakage issues because of it.  One learns that the gasket is gone the hard way, as you end up with water, or coffee or tea all over the place, hopefully not in  your lap!When I saw a Cyber Monday deal for Hydro Flasks here on Amazon, I decided to take this opportunity to try one out for myself.  I got the purple one and the color is SO PRETTY.  I do like the colors that Hydro Flask offers...so that's a plus.I don't have any major complaints about this bottle except for the lid.  If I put my powdered drink mix into the bottle with water and shake it, the seal does seem to hold and stays dry (right now anyway).  But when the top is opened to take a drink, liquid shoots out of the top.  Pressure has built up inside the bottle.  I guess it's not a deal breaker, but depending on what you have in your bottle, this could be a very bad thing.Also, I have found that when I take a drink through the extended flip-up piece on the lid, liquid shoots up out of it when  I'm done.  I can't be the only person on the planet that this has happened to.  It is a design flaw in the way the lid handles the pressure inside the bottle as one drinks.  Again...not a deal breaker, but I get sick of having water shoot up onto my face after I drink.  I have found a way to deal with this by placing my tongue on the opening of the raised straw, but one shouldn't have to think that hard when they take a drink of water from a bottle.  My other water bottle of a lesser known brand doesn't do this.The Hydro Flask has a slightly rough surface on the outside which makes the bottle easier to hold than if it was slick and smooth, but I ended up getting an outer sleeve made of silicone so that I'm less likely to drop the bottle.  I have a friend who once dropped her Hydro Flask and it looks like it's been through a war...so they are not that tough on the outside.As far as keeping ice over a period of time, the Hydro Flask pales in comparison to some other brands.  Corcksicicle brand holds ice FOREVER...I mean for DAYS!...and my Simple Modern brand 40 oz bottle outdoes the Hydro Flask by a landslide when it comes to keeping ice.  I know this because I recently traveled with my Simple Modern while my friend  and travel buddy had her Hydro Flask.  Each morning we filled our bottles with about the same amount of ice.  Her Hydro Flask ice was gone many hours before my Simple Modern ice was, so this was a side by side comparison.  Of course the Simple Modern bottle was purchased at a fraction of the price of a Hydro Flask.All in all I'm happy to have a Hydro Flask, but I'm VERY glad that I didn't pay even close to full price for it.  They simply are not worth the hefty price tag from a performance standpoint.  The fact that you can get replacement parts for them (lids, straws and rubber gaskets) does make the investment more appealing."
+      },
+      {
+        "title": "Birthday gift",
         "rating": "5.0 out of 5 stars",
-        "content": "The book was very nice and had lots of info. It would have been nice if the box was a bit bigger to hold some larger rocks. It appeared bigger in the picture. Overall, it was very nice, though."
-      },
-      {
-        "title": "Perfect gift",
-        "rating": "5.0 out of 5 stars",
-        "content": "Bought this kit for my 9 year old geology lover. Such a great kit with many pieces. We use them for homeschool as well. Great collection for any collector or for school."
-      },
-      {
-        "title": "Great gift for a rock lover",
-        "rating": "5.0 out of 5 stars",
-        "content": "My twin nephews are obsessed with collecting rocks when they go places. I decided I was going to buy them some interesting rocks, and this was a great item for them. They loved it."
-      },
-      {
-        "title": "very good .",
-        "rating": "5.0 out of 5 stars",
-        "content": "Very  good."
-      },
-      {
-        "title": "Lots of basic",
-        "rating": "4.0 out of 5 stars",
-        "content": "This is a good size kit, great quality. However, the selection is limited."
-      },
-      {
-        "title": "Rocks and gems",
-        "rating": "5.0 out of 5 stars",
-        "content": "I collect rocks and gems I have some in my attic"
+        "content": "I ordered this a gift for my daughter. That was almost a year ago and she has used it and still does on a daily for school and for all of her after school sports practices and games. She's not one to be gentle with her stuff and this gets tossed aside and around at just about every practice so I can't imagine what happens at school with it being in her bag. This jug has proven to be extremely durable and hasn't sprung a leak yet! I am considering ordering one for my other two kids since this jug has survived my roughest/toughest child!"
       }
     ]
   }
