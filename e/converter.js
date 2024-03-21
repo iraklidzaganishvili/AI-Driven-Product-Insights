@@ -4,7 +4,7 @@ const { JSDOM } = require("jsdom");
 const fs = require('fs');
 const path = require('node:path');
 
-function articleToHTML(markdownText, product0, product1, product2, index, rand) {
+function articleToHTML(markdownText, product0, product1, product2, index, rand, PupImages) {
 
     //End the function if any of the products are empty or null         
     if (product0 == null || product1 == null || product2 == null) {
@@ -50,7 +50,7 @@ function articleToHTML(markdownText, product0, product1, product2, index, rand) 
                 const carouselInner = mainDocument.getElementsByClassName('carousel-inner')[0]
 
                 //inside it
-                product0.productImages.forEach((imageUrl, i) => {
+                PupImages.forEach((imageUrl, i) => {
                     const item = document.createElement('div');
                     item.classList.add('carousel-item', 'link2amazon');
                     if (i == 0) {
