@@ -64,7 +64,7 @@ async function fetchAndProcessData() {
         for (let i = 0; i < savedIndexes.length; i++) {
             if (savedIndexes[i][1].bestReviews && savedIndexes[i][1].productImages) {
                 const rand = twoNumbers();
-                articleToHTML(savedIndexes[i][2], savedIndexes[i][1], allProducts[rand[0]], allProducts[rand[1]], 2222222);
+                articleToHTML(savedIndexes[i][2], savedIndexes[i][1], allProducts[rand[0]], allProducts[rand[1]], 2222222, savedIndexes[i][3]);
             } else {
                 console.log("Product " + index + " html generation failed due to lack of info")
             }
@@ -156,27 +156,28 @@ async function getProducts(url) {
 
 async function DoAIMagic(prompt) {
     try {
-        const response = await openai.chat.completions.create({
-            model: "gpt-3.5-turbo-16k",
-            messages: [
-                {
-                    "role": "system",
-                    "content": "Generate a 2000-word article that is SEO-optimized and based on the following inputs: 1. Product Name: [Insert Product Name Here] 2. Product Brand: [Insert Brand Name Here] 3. Amazon Product Reviews: [Insert Key Insights from Amazon Reviews] 4. Any other information. The article should be engaging and informative, tailored to potential customers. Ensure the content is unique and structured with SEO best practices in mind, including keyword optimization related to the product and its features. Incorporate the following elements: - Robert Cialdini's Principles of Persuasion: Apply these principles (Reciprocity, Scarcity, Authority, Consistency, Liking, and Consensus) strategically throughout the content to enhance its persuasive impact. - Readability and Structure: The article should be easy to read, with a clear introduction, body, and conclusion.Use H1 for the main title, H2 for major headings, and H3 for subheadings. - Formatting: Employ bullet points for lists, and ensure paragraphs are concise. - Useful Information for the Reader: Highlight the benefits, features, and practical applications of the product. Address common questions or concerns raised in the Amazon product reviews. - Call to Action: Conclude with a compelling call to action that encourages the reader to consider purchasing or learning more about the product. The objective is to create content that not only ranks well on search engines but also provides real value to readers, encouraging engagement and potential conversion. Do not use any images provided in the article"
-                },
-                {
-                    "role": "user",
-                    "content": JSON.stringify(prompt, null, 2)
-                }
-            ],
-            temperature: 0,
-            max_tokens: 4000,
-            top_p: 1,
-            frequency_penalty: 0,
-            presence_penalty: 0,
-        });
-        let RawAiResault = response.choices[0].message.content
-        allArticles.push(RawAiResault)
-        return RawAiResault
+        // const response = await openai.chat.completions.create({
+        //     model: "gpt-3.5-turbo-16k",
+        //     messages: [
+        //         {
+        //             "role": "system",
+        //             "content": "Generate a 2000-word article that is SEO-optimized and based on the following inputs: 1. Product Name: [Insert Product Name Here] 2. Product Brand: [Insert Brand Name Here] 3. Amazon Product Reviews: [Insert Key Insights from Amazon Reviews] 4. Any other information. The article should be engaging and informative, tailored to potential customers. Ensure the content is unique and structured with SEO best practices in mind, including keyword optimization related to the product and its features. Incorporate the following elements: - Robert Cialdini's Principles of Persuasion: Apply these principles (Reciprocity, Scarcity, Authority, Consistency, Liking, and Consensus) strategically throughout the content to enhance its persuasive impact. - Readability and Structure: The article should be easy to read, with a clear introduction, body, and conclusion.Use H1 for the main title, H2 for major headings, and H3 for subheadings. - Formatting: Employ bullet points for lists, and ensure paragraphs are concise. - Useful Information for the Reader: Highlight the benefits, features, and practical applications of the product. Address common questions or concerns raised in the Amazon product reviews. - Call to Action: Conclude with a compelling call to action that encourages the reader to consider purchasing or learning more about the product. The objective is to create content that not only ranks well on search engines but also provides real value to readers, encouraging engagement and potential conversion. Do not use any images provided in the article"
+        //         },
+        //         {
+        //             "role": "user",
+        //             "content": JSON.stringify(prompt, null, 2)
+        //         }
+        //     ],
+        //     temperature: 0,
+        //     max_tokens: 4000,
+        //     top_p: 1,
+        //     frequency_penalty: 0,
+        //     presence_penalty: 0,
+        // });
+        // let RawAiResault = response.choices[0].message.content
+        // allArticles.push(RawAiResault)
+        // return RawAiResault
+        return "eeee"
     } catch (err) {
         console.error(err);
     }
@@ -240,40 +241,40 @@ async function fetchProductDetails(product, index) {
             })
             isFirstCall == false
         }
+        let PupImages = []
 
-        getImages(product.link).then((prLinks) => {
+        console.log(product.link)
+        const ImgPromise = getImages(product.link).then((prLinks) => {
+            console.log(prLinks)
             product.productImages.push(...prLinks);
             product.productImages.forEach((link, i) => {
                 downloadFile(product.productImages[i], `./e/gen-img/${ImgMaxNum}.webp`, index);
                 ImgMaxNum++
+                PupImages.push(`./e/gen-img/${ImgMaxNum}.webp`)
             });
             console.log('done ' + index)
         });
         //Call AI
         const rand = twoNumbers();
-        // if (product.bestReviews && product.productImages) {
-        //     const { productImages, ...productNoImages } = product;
-        //     // const aiAnswer = await DoAIMagic(productNoImages)
+        if (product.bestReviews && product.productImages) {
+            const { productImages, ...productNoImages } = product;
+            const aiAnswerPromise = DoAIMagic(productNoImages)
 
-        //     //SAVER <----
-        //     console.log (rand)
-        //     if (aiAnswer, product && allProducts[rand[0]] && allProducts[rand[1]]) {
-        //         if (index > 2) {
-        //             articleToHTML(aiAnswer, product, allProducts[rand[0]], allProducts[rand[1]]);
-        //         } else {
-        //             savedIndexes.push([index, product, aiAnswer])
-        //         }
-        //     } else {
-        //         console.log("Product " + index + " generation failed due to lack of info")
-        //     }
-        // } else {
-        //     console.log("Product " + index + " AI failed due to lack of info")
-        // }
-
-        if (index > 2) {
-            articleToHTML(aiAnswer = `<h1>aa</h1>`, product, allProducts[rand[0]], allProducts[rand[1]], index, rand);
+            const [result1, aiAnswer] = await Promise.all([ImgPromise, aiAnswerPromise]);
+            
+            //SAVER <----
+            console.log (rand)
+            if (aiAnswer, product && allProducts[rand[0]] && allProducts[rand[1]]) {
+                if (index > 2) {
+                    articleToHTML(aiAnswer, product, allProducts[rand[0]], allProducts[rand[1]], index, rand, PupImages);
+                } else {
+                    savedIndexes.push([index, product, aiAnswer, PupImages])
+                }
+            } else {
+                console.log("Product " + index + " generation failed due to lack of info")
+            }
         } else {
-            savedIndexes.push([index, product, '<h1>aa</h1>'])
+            console.log("Product " + index + " AI failed due to lack of info")
         }
 
         allProducts.push(product)

@@ -17,7 +17,6 @@ async function getImages(url) {
 
     try {
         let imageUrls = []
-        const totalElements = 5
 
         selector = '#altImages ul .imageThumbnail';
         const htmlContent = await page.evaluate((sel) => {
@@ -29,6 +28,11 @@ async function getImages(url) {
             });
             return srcs;
         }, selector);
+        if (htmlContent.length === 0){
+            const filePath = `screenshot-${1}.png`
+            await page.screenshot({ path: filePath });
+            throw new Error("The variable is empty");
+        }
 
         for (i = 1; i < htmlContent.length; i++) {
             await page.hover(`#altImages ul .imageThumbnail img[src*='${htmlContent[i]}']`)
@@ -71,27 +75,37 @@ async function getImages(url) {
             page.click('button[type="submit"]'), // Clicking the button that leads to navigation
         ]).then(async () => {
             try {
-
                 let imageUrls = []
-                const totalElements = 5
-                for (i = 0; i < totalElements; i++) {
-                    await page.hover(`#altImages ul li:nth-of-type(${i + 5})`)
-
-                    await page.waitForSelector(`.image.item.itemNo${i + 1}.maintain-height.selected .a-dynamic-image`, {
+                selector = '#altImages ul .imageThumbnail';
+                const htmlContent = await page.evaluate((sel) => {
+                    const elements = document.querySelectorAll(sel);
+                    let srcs = [];
+                    elements.forEach(element => {
+                        const img = element.querySelector('img');
+                        if (img && img.src) srcs.push(img.src);
+                    });
+                    return srcs;
+                }, selector);
+        
+                for (i = 1; i < htmlContent.length; i++) {
+                    await page.hover(`#altImages ul .imageThumbnail img[src*='${htmlContent[i]}']`)
+        
+                    await page.waitForSelector(`.image.item.itemNo${i}.maintain-height.selected .a-dynamic-image`, {
                         visible: true,
                     });
-
-                    const filePath = `screenshot-${i + 1}.png`
+        
+                    const filePath = `screenshot-${i}.png`
                     await page.screenshot({ path: filePath });
-
+        
                     const imageUrl = await page.evaluate((index) => {
                         const imageInForm = document.querySelector(`.image.item.itemNo${index}.maintain-height.selected .a-dynamic-image`);
                         return imageInForm ? imageInForm.src : null;
-                    }, i + 1)
+                    }, i)
                     imageUrls.push(imageUrl)
                 }
                 console.log(imageUrls.filter(url => url !== null));
                 await browser.close();
+                return imageUrls
 
             } catch (error) {
                 console.log('Action failed' + error);
