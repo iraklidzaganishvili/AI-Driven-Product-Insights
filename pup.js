@@ -50,7 +50,7 @@ async function getImages(url) {
             }, i)
             imageUrls.push(imageUrl)
         }
-        console.log(imageUrls.filter(url => url !== null));
+        // console.log(imageUrls.filter(url => url !== null));
         await browser.close();
         return imageUrls
 
@@ -65,10 +65,14 @@ async function getImages(url) {
 
         console.log(firstImageUrl)
         await downloadFile(firstImageUrl, 'captcha.png');
+        console.log('a')
 
         const pythonOutput = execSync('python captcha.py').toString().trim();
+        console.log('b')
         await page.type('#captchacharacters', pythonOutput);
+        console.log('c')
         await page.screenshot({ path: 'page-on-comp.png' });
+        console.log('d')
 
         Promise.all([
             page.waitForNavigation(), // The promise resolves after navigation has finished

@@ -62,9 +62,9 @@ async function fetchAndProcessData() {
         await getProducts('https://www.amazon.com/s?k=' + url);
 
         for (let i = 0; i < savedIndexes.length; i++) {
-            if (savedIndexes[i][1].bestReviews && savedIndexes[i][1].productImages) {
+            if (savedIndexes[i].product.bestReviews && savedIndexes[i].product.productImages) {
                 const rand = twoNumbers();
-                articleToHTML(savedIndexes[i][2], savedIndexes[i][1], allProducts[rand[0]], allProducts[rand[1]], 2222222, savedIndexes[i][3]);
+                articleToHTML(savedIndexes[i].aiAnswer, savedIndexes[i].product, allProducts[rand[0]], allProducts[rand[1]], 2222222, rand, savedIndexes[i].PupImages);
             } else {
                 console.log("Product " + index + " html generation failed due to lack of info")
             }
@@ -177,7 +177,7 @@ async function DoAIMagic(prompt) {
         // let RawAiResault = response.choices[0].message.content
         // allArticles.push(RawAiResault)
         // return RawAiResault
-        return "eeee"
+        return "eeee <h1>test</h1>"
     } catch (err) {
         console.error(err);
     }
@@ -245,12 +245,12 @@ async function fetchProductDetails(product, index) {
 
         console.log(product.link)
         const ImgPromise = getImages(product.link).then((prLinks) => {
-            console.log(prLinks)
+            console.log(prLinks, 'link')
             product.productImages.push(...prLinks);
             product.productImages.forEach((link, i) => {
                 downloadFile(product.productImages[i], `./e/gen-img/${ImgMaxNum}.webp`, index);
                 ImgMaxNum++
-                PupImages.push(`./e/gen-img/${ImgMaxNum}.webp`)
+                PupImages.push(`./gen-img/${ImgMaxNum}.webp`)
             });
             console.log('done ' + index)
         });
@@ -261,23 +261,23 @@ async function fetchProductDetails(product, index) {
             const aiAnswerPromise = DoAIMagic(productNoImages)
 
             const [result1, aiAnswer] = await Promise.all([ImgPromise, aiAnswerPromise]);
-            
+
+
+            allProducts.push(product)
+
             //SAVER <----
-            console.log (rand)
-            if (aiAnswer, product && allProducts[rand[0]] && allProducts[rand[1]]) {
+            if (aiAnswer && product && allProducts[rand[0]] && allProducts[rand[1]]) {
                 if (index > 2) {
                     articleToHTML(aiAnswer, product, allProducts[rand[0]], allProducts[rand[1]], index, rand, PupImages);
                 } else {
-                    savedIndexes.push([index, product, aiAnswer, PupImages])
+                    savedIndexes.push({index, product, aiAnswer, PupImages})
                 }
             } else {
-                console.log("Product " + index + " generation failed due to lack of info")
+                console.log("Product " + index + " generation failed due to lack of info, ye", aiAnswer, product, allProducts[rand[0]], allProducts[rand[1]])
             }
         } else {
             console.log("Product " + index + " AI failed due to lack of info")
         }
-
-        allProducts.push(product)
 
         return product;
     } catch (error) {
