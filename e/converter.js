@@ -4,7 +4,7 @@ const { JSDOM } = require("jsdom");
 const fs = require('fs');
 const path = require('node:path');
 
-function articleToHTML(markdownText, product0, product1, product2, index, rand, PupImages) {
+function articleToHTML(markdownText, product0, product1, product2, index, rand) {
 
     //End the function if any of the products are empty or null         
     if (product0 == null || product1 == null || product2 == null) {
@@ -50,7 +50,7 @@ function articleToHTML(markdownText, product0, product1, product2, index, rand, 
                 const carouselInner = mainDocument.getElementsByClassName('carousel-inner')[0]
 
                 //inside it
-                PupImages.forEach((imageUrl, i) => {
+                product0.productImages.forEach((imageUrl, i) => {
                     const item = document.createElement('div');
                     item.classList.add('carousel-item', 'link2amazon');
                     if (i == 0) {
@@ -152,12 +152,12 @@ function articleToHTML(markdownText, product0, product1, product2, index, rand, 
 
     // Insert in to cards
     const card1 = mainDocument.querySelector('#card1')
-    card1.querySelector('img').src = product1.productImages[0]
+    card1.querySelector('img').src = product1.productSmallImage
     card1.querySelector('.card-title').innerHTML = product1.title
     card1.querySelector('.card-text').innerHTML = product1.fullPrice + "$"
     card1.querySelector('.revCount').innerHTML = product1.reviewRatingAndCount[1].match(/\d+/g).join(",");
     const card2 = mainDocument.querySelector('#card2')
-    card2.querySelector('img').src = product2.productImages[0]
+    card2.querySelector('img').src = product2.productSmallImage
     card2.querySelector('.card-title').innerHTML = product2.title
     card2.querySelector('.card-text').innerHTML = product2.fullPrice + "$"
     card2.querySelector('.revCount').innerHTML = product1.reviewRatingAndCount[1].match(/\d+/g).join(",");

@@ -1,1 +1,100 @@
-[]
+[
+  {
+    "link": "https://www.amazon.com/dp/B0BWY3HX32/ref=nosim?tag=bestmmorpg00",
+    "asin": "B0BWY3HX32",
+    "title": "BJPKPK Insulated Water Bottles, 18oz Stainless Steel Metal Water Bottle with Strap, BPA Free Leak Proof Thermos, Mugs, Flasks, Reusable Water Bottle for Sports & Travel, Sakura",
+    "productImages": [
+      "./gen-img/38a.webp",
+      "./gen-img/39a.webp",
+      "./gen-img/40a.webp",
+      "./gen-img/41a.webp",
+      "./gen-img/42a.webp",
+      "./gen-img/43a.webp"
+    ],
+    "fullPrice": "9.88",
+    "brand": "BJPKPK",
+    "reviewRatingAndCount": [
+      "4.6 out of 5",
+      "1,027 global ratings"
+    ],
+    "fromTheManufacturer": [
+      "Keep Your Drinks Hot Or Cold For Hours: Our double-walled vacuum insulated water bottle is made of 18/8 stainless steel, which is known for its excellent insulation properties. This means that it will keep your beverage cold for 24 hours and hot for 12 hours, making it perfect for all-day hydration.     Leak-Proof & Portable: Screw cap designed with a tight seal to prevent leaks and spills, so you can have peace of mind while you're on the go! The compact size makes it easy to put in your backpack or car cupholder, and the carrying strap ensures that you can take it with you wherever you go.     Food-grade Materials: BJPKPK metal water bottles are made of 18/8 stainless steel with a BPA-free lid that ensures no flavor transfer, it preserves the authentic taste of your beverages. Safe for your daily water drinking. The long-lasting powder coating is non-toxic and slip-free, also gives this cute water bottles a vibrant look.     Sweat-free & Reusable: Say goodbye to those annoying sweat rings on your desk or in your car, our stainless steel water bottle is designed to be sweat-free! Get more out of your outdoor adventures with our reusable water bottle that can be refilled multiple times, reducing environmental waste and promoting a sustainable lifestyle.     Stylish & Durable: With European style design, durable and fashionable powder coating, our sports water bottle is not only functional, but also stylish and durable. Whether you're at the office or out and about, this thermos bottle is the perfect accessory to complement any outfit.",
+      "From the manufacturer",
+      "BJPKPK 18oz Insulated Water Bottles",
+      "Cleaning and Maintenance：",
+      "<img alt=\"BJPKPK water bottle\" src=\"https://m.media-amazon.com/images/S/aplus-media-library-service-media/76da90e9-47ba-4b94-a4b0-9932e788411e.__CR0,0,1600,1600_PT0_SX220_V1___.jpg\"/>",
+      "<img alt=\"BJPKPK Water Bottle\" src=\"https://m.media-amazon.com/images/S/aplus-media-library-service-media/da4a1c36-2fb9-46b5-8ad2-a28e842a88ad.__CR0,0,1600,1600_PT0_SX220_V1___.jpg\"/>",
+      "<img alt=\"BJPKPK Water Bottle\" src=\"https://m.media-amazon.com/images/S/aplus-media-library-service-media/e01a36fc-f203-45d0-a96e-5c5ca4cfc836.__CR0,0,1600,1600_PT0_SX220_V1___.jpg\"/>",
+      "<img alt=\"BJPKPK Water Bottle\" src=\"https://m.media-amazon.com/images/S/aplus-media-library-service-media/9b76ce0c-826d-4a05-8bef-56eaac2089d4.__CR0,0,1600,1600_PT0_SX220_V1___.jpg\"/>",
+      "Great Gift Choice",
+      "BJPKPK insulated water bottles are designed for everyday using at home, office, outdoor parties, and other occasions. Great gift choice for your family or friends.",
+      "Cupholder Friendly",
+      "Our 18oz thermos water bottles are designed with perfect size for carrying in your bag or backpack and also perfect fit in your car cup holder.",
+      "Ideal Sports Water Bottle",
+      "This reusable water bottle is lightweight, durable and easy to clean. Perfect as a gym water bottle, workout water bottle or sports water bottle.",
+      "Bring Colors to Your Life",
+      "BJPKPK stainless steel metal water bottles have a variety of popular colors. You can find the one that matches your style easily.",
+      "<img alt=\"BJPKPK Water Bottle\" src=\"https://m.media-amazon.com/images/S/aplus-media-library-service-media/c05228fa-860b-46c9-91fd-a30517733e57.__CR0,0,1600,1600_PT0_SX220_V1___.jpg\"/>",
+      "<img alt=\"BJPKPK water bottle\" src=\"https://m.media-amazon.com/images/S/aplus-media-library-service-media/989b5eed-3a4f-42ba-89a2-fb54848dc7a9.__CR0,0,1600,1600_PT0_SX220_V1___.jpg\"/>",
+      "<img alt=\"bjpkpk water bottle\" src=\"https://m.media-amazon.com/images/S/aplus-media-library-service-media/3748ef81-7e6a-4909-9335-a8ffaa55ac74.__CR0,0,1600,1600_PT0_SX220_V1___.jpg\"/>",
+      "<img alt=\"BJPKPK water bottle\" src=\"https://m.media-amazon.com/images/S/aplus-media-library-service-media/5449dba8-f14d-49be-afb8-04b050a73754.__CR0,0,1600,1600_PT0_SX220_V1___.jpg\"/>",
+      "Your",
+      "Bottle",
+      "Your",
+      "Lifestyle"
+    ],
+    "bestReviews": [
+      {
+        "title": "Good quality",
+        "rating": "5.0 out of 5 stars",
+        "content": "I used to buy bottled water, but now that my State's bottle return went up to 10 cents, I refuse to buy them anymore. So I bought this bottle, and it is so much better than any bottled water because it stays cold! It's the perfect size because it fits right in my pocketbook, which is convenient if my hands are full. And thankfully it does not leak! But it doesn't fit in my cup holder in my car, so that's my only complaint. The handle that it comes with is not going to fit your wrist. So you can really only stick your fingers through the loop and hold it that way. Which is fine with me."
+      },
+      {
+        "title": "Convenient",
+        "rating": "5.0 out of 5 stars",
+        "content": "I use my water bottle almost every day. I've had mine for almost a year now and it still looks good. It's holding up great! It doesn't leak. It keeps my beverages cold as advertised. I would definitely recommend purchasing this product. I love mine."
+      },
+      {
+        "title": "good at keeping drinks warm",
+        "rating": "4.0 out of 5 stars",
+        "content": "the little handle strap thing is stupid to me. should be a little bigger so you can put it around your wrist. my parents use it for their tea and it keeps it piping hot. also looks nice"
+      },
+      {
+        "title": "Works well, strap a big plus",
+        "rating": "5.0 out of 5 stars",
+        "content": "I have two plans for this bottle. One is to replace the plastic water bottle I keep at my bedside and the other is for travel. I wanted a bottle with a top that screws on like a plastic water bottle because in my experience, that is easier to close than when the top screws inside. For traveling, having a hand strap should make it easier to keep hold of it. I also did NOT want a straw. While a bottle with a straw is great for active situations, I don't like taking pills with a straw. I was impressed with the leak proof performance when I had partially closed it late at night and it slipped out of my hand and fell, but didn't leak. It is also insulated, keeping the water cold all night. The only challenge is that on my uninsulated metal water bottles, I can guess the fill level from my refrigerator spout by the location of the cooler part of the bottle. This one got overfilled the first time I used it because there is no temperature differential on the outside during filling."
+      },
+      {
+        "title": "Super shiny glittery",
+        "rating": "5.0 out of 5 stars",
+        "content": "Super cute, but we're returning.  It was too shiny glittery for my daughter.  It sure is FABULOUS if you like the shimmer & shine. Not sure about anything else as we didn't use, but looks of very good quality!"
+      },
+      {
+        "title": "Works well for daily use",
+        "rating": "5.0 out of 5 stars",
+        "content": "My old bottle was incredibly banged up and it's such a relief to have this replacement. I tote it around with me everywhere, and it's a great size for that (just barely fits in my purse and doesn't leak) and keeps my water cold for a while, which my old bottle didn't do. Despite my best efforts, I've already dropped it on gravel once in the few weeks since I got it, which chipped the paint and only barely dented the metal, so hopefully this is sturdier than my other bottle, too. I like the twist cap style as opposed to a straw or anything else because this style is easier to clean. My one gripe is that the cap can be difficult to twist off when it's slippery, because it has no ridges to grip."
+      },
+      {
+        "title": "Great value",
+        "rating": "5.0 out of 5 stars",
+        "content": "Perfect size, arrived quickly and can put it in the dishwasher. What's not to like!"
+      },
+      {
+        "title": "Great bottle",
+        "rating": "5.0 out of 5 stars",
+        "content": "Doesn’t leak and easy to clean. No issues so far with it."
+      },
+      {
+        "title": "Leakproof Water Bottle",
+        "rating": "5.0 out of 5 stars",
+        "content": "Love this BJPKPK Insulated Water Bottle. 18 oz is the perfect size to fit in my gym bag as well as my purse. It's also water proof and super cute as well. Will be ordering more!"
+      },
+      {
+        "title": "Seals great",
+        "rating": "5.0 out of 5 stars",
+        "content": "No water leaks well made Only issues I have is it dents and scratches a little bit easier that you would think but if you don’t drop it and throw it around like me you’ll be in good shape."
+      }
+    ],
+    "productSmallImage": "./gen-img/38b.webp"
+  }
+]

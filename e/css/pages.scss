@@ -23,7 +23,6 @@
             flex-direction: column;
 
             img {
-                max-height: 500px;
                 width: max-content;
                 align-self: center;
             }
@@ -35,6 +34,9 @@
             .carousel {
                 background-color: #F9F8F8;
 
+                .carousel-inner{
+                    width: 460px;
+                }
                 img {
                     object-fit: contain;
                 }
@@ -63,7 +65,6 @@
             .card-img-top {
                 transition: all 0.05s linear;
                 position: relative;
-                max-width: 320px;
 
                 &:hover {
                     transform: translateY(-10px) scale(1.1);
