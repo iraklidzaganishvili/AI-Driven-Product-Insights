@@ -5,6 +5,7 @@ const puppeteer = require('puppeteer-extra')
 const StealthPlugin = require('puppeteer-extra-plugin-stealth')
 puppeteer.use(StealthPlugin())
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
+const sharp = require('sharp');
 
 async function getImages(url) {
 
@@ -28,13 +29,13 @@ async function getImages(url) {
             });
             return srcs;
         }, selector);
-        if (htmlContent.length === 0){
+        if (htmlContent.length === 0) {
             const filePath = `screenshot-${1}.png`
             await page.screenshot({ path: filePath });
             throw new Error("The variable is empty");
         }
 
-        for (i = 1; i < htmlContent.length; i++) {
+        for (i = 0; i < htmlContent.length; i++) {
             await page.hover(`#altImages ul .imageThumbnail img[src*='${htmlContent[i]}']`)
 
             await page.waitForSelector(`.image.item.itemNo${i}.maintain-height.selected .a-dynamic-image`, {
@@ -74,48 +75,43 @@ async function getImages(url) {
         await page.screenshot({ path: 'page-on-comp.png' });
         console.log('d')
 
-        Promise.all([
-            page.waitForNavigation(), // The promise resolves after navigation has finished
-            page.click('button[type="submit"]'), // Clicking the button that leads to navigation
-        ]).then(async () => {
-            try {
-                let imageUrls = []
-                selector = '#altImages ul .imageThumbnail';
-                const htmlContent = await page.evaluate((sel) => {
-                    const elements = document.querySelectorAll(sel);
-                    let srcs = [];
-                    elements.forEach(element => {
-                        const img = element.querySelector('img');
-                        if (img && img.src) srcs.push(img.src);
-                    });
-                    return srcs;
-                }, selector);
+        await Promise.all([
+            page.waitForNavigation(), // Waits for the navigation to happen
+            page.click('button[type="submit"]'), // Clicks the button that leads to the navigation
+        ]);
         
-                for (i = 1; i < htmlContent.length; i++) {
-                    await page.hover(`#altImages ul .imageThumbnail img[src*='${htmlContent[i]}']`)
-        
-                    await page.waitForSelector(`.image.item.itemNo${i}.maintain-height.selected .a-dynamic-image`, {
-                        visible: true,
-                    });
-        
-                    const filePath = `screenshot-${i}.png`
-                    await page.screenshot({ path: filePath });
-        
-                    const imageUrl = await page.evaluate((index) => {
-                        const imageInForm = document.querySelector(`.image.item.itemNo${index}.maintain-height.selected .a-dynamic-image`);
-                        return imageInForm ? imageInForm.src : null;
-                    }, i)
-                    imageUrls.push(imageUrl)
-                }
-                console.log(imageUrls.filter(url => url !== null));
-                await browser.close();
-                return imageUrls
+        console.log('e')
+        let imageUrls = []
+        selector = '#altImages ul .imageThumbnail';
+        const htmlContent = await page.evaluate((sel) => {
+            const elements = document.querySelectorAll(sel);
+            let srcs = [];
+            elements.forEach(element => {
+                const img = element.querySelector('img');
+                if (img && img.src) srcs.push(img.src);
+            });
+            return srcs;
+        }, selector);
 
-            } catch (error) {
-                console.log('Action failed' + error);
-            }
-            await browser.close();
-        });
+        for (i = 0; i < htmlContent.length; i++) {
+            await page.hover(`#altImages ul .imageThumbnail img[src*='${htmlContent[i]}']`)
+
+            await page.waitForSelector(`.image.item.itemNo${i}.maintain-height.selected .a-dynamic-image`, {
+                visible: true,
+            });
+
+            const filePath = `screenshot-${i}.png`
+            await page.screenshot({ path: filePath });
+
+            const imageUrl = await page.evaluate((index) => {
+                const imageInForm = document.querySelector(`.image.item.itemNo${index}.maintain-height.selected .a-dynamic-image`);
+                return imageInForm ? imageInForm.src : null;
+            }, i)
+            imageUrls.push(imageUrl)
+        }
+        // console.log(imageUrls.filter(url => url !== null));
+        await browser.close();
+        return imageUrls
     }
 };
 // getImages('https://www.amazon.com/dp/B0001AVSJG/ref=nosim?tag=bestmmorpg00')
@@ -135,9 +131,28 @@ const downloadFile = async (imageUrl, outputPath, id = '') => {
         console.error(`Error in id ${id}: ${error.message}`);
     }
 };
+async function resizeFile(inputPath, outputPath, id = '', width, height) {
+    try {
+        let image = sharp(inputPath);
+        if (width && height) {
+            image = image.resize(width, height); // Apply resize only if width and height are provided
+        }
+
+        const buffer = await image.toBuffer(); // Convert to buffer whether resized or not
+        fs.writeFile(outputPath, buffer, (err) => {
+            if (err) {
+                console.error('Error processing the image in ID:', id, err);
+                return;
+            }
+        })
+    } catch (error) {
+        console.error('Error processing the image in ID:', id, error);
+    }
+}
 
 
 module.exports = {
     getImages,
-    downloadFile
+    downloadFile,
+    resizeFile
 };

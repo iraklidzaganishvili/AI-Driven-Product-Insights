@@ -23,7 +23,6 @@
   flex-direction: column;
 }
 #main-cont #article .sec img {
-  max-height: 500px;
   width: max-content;
   align-self: center;
 }
@@ -32,6 +31,9 @@
 }
 #main-cont #article #carousel-cont .carousel {
   background-color: #F9F8F8;
+}
+#main-cont #article #carousel-cont .carousel .carousel-inner {
+  width: 460px;
 }
 #main-cont #article #carousel-cont .carousel img {
   object-fit: contain;
@@ -57,7 +59,6 @@
 #main-cont #more .card .card-img-top {
   transition: all 0.05s linear;
   position: relative;
-  max-width: 320px;
 }
 #main-cont #more .card .card-img-top:hover {
   transform: translateY(-10px) scale(1.1);

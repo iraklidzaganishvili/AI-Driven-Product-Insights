@@ -2,10 +2,11 @@ const EventEmitter = require('events');
 EventEmitter.defaultMaxListeners = 50;
 const path = require('node:path');
 const { spawn } = require('child_process');
+const sharp = require('sharp');
 
 //imports
 const { articleToHTML, mainPage } = require('./e/converter');
-const { getImages, downloadFile } = require('./pup');
+const { getImages, downloadFile, resizeFile } = require('./pup');
 
 //useragent
 const UserAgents = require('user-agents');
@@ -64,7 +65,7 @@ async function fetchAndProcessData() {
         for (let i = 0; i < savedIndexes.length; i++) {
             if (savedIndexes[i].product.bestReviews && savedIndexes[i].product.productImages) {
                 const rand = twoNumbers();
-                articleToHTML(savedIndexes[i].aiAnswer, savedIndexes[i].product, allProducts[rand[0]], allProducts[rand[1]], 2222222, rand, savedIndexes[i].PupImages);
+                articleToHTML(savedIndexes[i].aiAnswer, savedIndexes[i].product, allProducts[rand[0]], allProducts[rand[1]], 2222222, rand);
             } else {
                 console.log("Product " + index + " html generation failed due to lack of info")
             }
@@ -109,7 +110,7 @@ async function getProducts(url) {
             let link = 'https://www.amazon.com' + $(this).find('[data-cy="title-recipe"]').children('h2').children('a').attr('href');
             link = decodeURIComponent(link);
 
-            let img = $(this).find("img").attr("src");
+            // let img = $(this).find("img").attr("src");
 
             let title = $(this).find(".s-title-instructions-style").text();
             let prefix = "SponsoredSponsored You’re seeing this ad based on the product’s relevance to your search query.Leave ad feedback"
@@ -121,11 +122,11 @@ async function getProducts(url) {
             let asin = (link.match(/\/([A-Z0-9]{10})\//i))[1];
             link = `https://www.amazon.com/dp/${asin}/ref=nosim?tag=${storeID}`;
 
-            if (link && img && title && priceWhole) singlePageResults.push({
+            if (link && title && priceWhole) singlePageResults.push({
                 link,
                 asin,
                 title,
-                productImages: [img],
+                productImages: [],
                 fullPrice
             });
         });
@@ -241,16 +242,26 @@ async function fetchProductDetails(product, index) {
             })
             isFirstCall == false
         }
-        let PupImages = []
 
         console.log(product.link)
         const ImgPromise = getImages(product.link).then((prLinks) => {
             console.log(prLinks, 'link')
-            product.productImages.push(...prLinks);
-            product.productImages.forEach((link, i) => {
-                downloadFile(product.productImages[i], `./e/gen-img/${ImgMaxNum}.webp`, index);
+            prLinks.forEach((link, i) => {
+                
+                (function (currentImgMaxNum, currIndex) {
+                    downloadFile(link, `./e/gen-img/${currentImgMaxNum}.webp`, currIndex).then(() => {
+                        resizeFile(`./e/gen-img/${currentImgMaxNum}.webp`, `./e/gen-img/${currentImgMaxNum}a.webp`, currIndex, 460, 460);
+                        if(i == 0){
+                            resizeFile(`./e/gen-img/${currentImgMaxNum}.webp`, `./e/gen-img/${currentImgMaxNum}b.webp`, currIndex, 320, 320);
+                        }
+                    });
+                })(ImgMaxNum, index);
+
+                product.productImages.push(`./gen-img/${ImgMaxNum}a.webp`)
+                if (i == 0) {
+                    product.productSmallImage = `./gen-img/${ImgMaxNum}b.webp`
+                }
                 ImgMaxNum++
-                PupImages.push(`./gen-img/${ImgMaxNum}.webp`)
             });
             console.log('done ' + index)
         });
@@ -268,9 +279,9 @@ async function fetchProductDetails(product, index) {
             //SAVER <----
             if (aiAnswer && product && allProducts[rand[0]] && allProducts[rand[1]]) {
                 if (index > 2) {
-                    articleToHTML(aiAnswer, product, allProducts[rand[0]], allProducts[rand[1]], index, rand, PupImages);
+                    articleToHTML(aiAnswer, product, allProducts[rand[0]], allProducts[rand[1]], index, rand);
                 } else {
-                    savedIndexes.push({index, product, aiAnswer, PupImages})
+                    savedIndexes.push({ index, product, aiAnswer})
                 }
             } else {
                 console.log("Product " + index + " generation failed due to lack of info, ye", aiAnswer, product, allProducts[rand[0]], allProducts[rand[1]])
