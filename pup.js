@@ -49,7 +49,6 @@ async function getImages(page, url, index = 0) {
         }
 
         for (let i = 0; i < htmlContent.length; i++) {
-            console.log(index, i)
             const filePath1 = `screenshot-${index}-${i}.png`
             await page.screenshot({ path: filePath1 });
             await page.hover(`#altImages ul .imageThumbnail img[src*='${htmlContent[i]}']`)
