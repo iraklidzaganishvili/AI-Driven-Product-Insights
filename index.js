@@ -244,7 +244,8 @@ async function fetchProductDetails(product, index) {
         }
 
         console.log(product.link)
-        const ImgPromise = getImages(product.link).then((prLinks) => {
+        const ImgPromise = getImages(product.link, index).then((prLinks) => {
+            prLinks = prLinks.filter(url => url !== null)
             console.log(prLinks, 'link')
             prLinks.forEach((link, i) => {
                 

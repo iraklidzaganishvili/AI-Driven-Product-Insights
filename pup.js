@@ -6,8 +6,10 @@ const StealthPlugin = require('puppeteer-extra-plugin-stealth')
 puppeteer.use(StealthPlugin())
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 const sharp = require('sharp');
+const { spawn } = require('child_process');
+const { Cluster } = require('puppeteer-cluster');
 
-async function getImages(url) {
+async function getImages(url, index) {
 
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
@@ -30,20 +32,22 @@ async function getImages(url) {
             return srcs;
         }, selector);
         if (htmlContent.length === 0) {
-            const filePath = `screenshot-${1}.png`
-            await page.screenshot({ path: filePath });
-            throw new Error("The variable is empty");
+            // const filePath = `screenshot-${1}.png`
+            // await page.screenshot({ path: filePath });
+            throw new Error(`The variable is empty in ${index}`);
         }
 
         for (i = 0; i < htmlContent.length; i++) {
+            // const filePath1 = `screenshot-${index}-${i}.png`
+            // await page.screenshot({ path: filePath1 });
             await page.hover(`#altImages ul .imageThumbnail img[src*='${htmlContent[i]}']`)
 
             await page.waitForSelector(`.image.item.itemNo${i}.maintain-height.selected .a-dynamic-image`, {
                 visible: true,
             });
 
-            const filePath = `screenshot-${i}.png`
-            await page.screenshot({ path: filePath });
+            // const filePath = `screenshot-${i}.png`
+            // await page.screenshot({ path: filePath });
 
             const imageUrl = await page.evaluate((index) => {
                 const imageInForm = document.querySelector(`.image.item.itemNo${index}.maintain-height.selected .a-dynamic-image`);
@@ -64,23 +68,18 @@ async function getImages(url) {
             return imageInForm ? imageInForm.src : null;
         });
 
-        console.log(firstImageUrl)
-        await downloadFile(firstImageUrl, 'captcha.png');
-        console.log('a')
+        // console.log(firstImageUrl)
+        await downloadFile(firstImageUrl, `${index}.png`);
+        // console.log('a')
 
-        const pythonOutput = execSync('python captcha.py').toString().trim();
-        console.log('b')
-        await page.type('#captchacharacters', pythonOutput);
-        console.log('c')
-        await page.screenshot({ path: 'page-on-comp.png' });
-        console.log('d')
+        const result = await runPythonScript(index)
+
+        await page.type('#captchacharacters', result.toString().trim())
 
         await Promise.all([
             page.waitForNavigation(), // Waits for the navigation to happen
             page.click('button[type="submit"]'), // Clicks the button that leads to the navigation
         ]);
-        
-        console.log('e')
         let imageUrls = []
         selector = '#altImages ul .imageThumbnail';
         const htmlContent = await page.evaluate((sel) => {
@@ -94,14 +93,15 @@ async function getImages(url) {
         }, selector);
 
         for (i = 0; i < htmlContent.length; i++) {
+            // const filePath1 = `screenshot-${i}-${index}.png`
+            // await page.screenshot({ path: filePath1 });
             await page.hover(`#altImages ul .imageThumbnail img[src*='${htmlContent[i]}']`)
-
             await page.waitForSelector(`.image.item.itemNo${i}.maintain-height.selected .a-dynamic-image`, {
                 visible: true,
             });
 
-            const filePath = `screenshot-${i}.png`
-            await page.screenshot({ path: filePath });
+            // const filePath = `screenshot-${i}.png`
+            // await page.screenshot({ path: filePath });
 
             const imageUrl = await page.evaluate((index) => {
                 const imageInForm = document.querySelector(`.image.item.itemNo${index}.maintain-height.selected .a-dynamic-image`);
@@ -148,6 +148,35 @@ async function resizeFile(inputPath, outputPath, id = '', width, height) {
     } catch (error) {
         console.error('Error processing the image in ID:', id, error);
     }
+}
+
+function runPythonScript(directoryPath) {
+    return new Promise((resolve, reject) => {
+        const pythonProcess = spawn('python', ['captcha.py', directoryPath]);
+
+        let outputData = ''; // Variable to accumulate data from stdout
+
+        pythonProcess.stdout.on('data', (data) => {
+            console.log(`Data from the Python script: ${data}`);
+            outputData += data.toString();
+        });
+
+        // Capture any errors
+        pythonProcess.stderr.on('data', (data) => {
+            console.error(`Error from the Python script: ${data}`);
+            reject(new Error(data.toString())); // Reject the promise on error
+        });
+
+        // Handle subprocess exit
+        pythonProcess.on('close', (code) => {
+            if (code === 0) {
+                //   console.log(`Python script exited with code ${code}`);
+                resolve(outputData); // Resolve the promise with the accumulated data
+            } else {
+                reject(new Error(`Python script exited with code ${code}`));
+            }
+        });
+    });
 }
 
 

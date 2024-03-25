@@ -1,100 +1,73 @@
 [
   {
-    "link": "https://www.amazon.com/dp/B0BWY3HX32/ref=nosim?tag=bestmmorpg00",
-    "asin": "B0BWY3HX32",
-    "title": "BJPKPK Insulated Water Bottles, 18oz Stainless Steel Metal Water Bottle with Strap, BPA Free Leak Proof Thermos, Mugs, Flasks, Reusable Water Bottle for Sports & Travel, Sakura",
+    "link": "https://www.amazon.com/dp/B0964CHD65/ref=nosim?tag=bestmmorpg00",
+    "asin": "B0964CHD65",
+    "title": "Philips AVENT Natural Baby Bottle with Natural Response Nipple, Clear, 9oz, 4pk, SCY903/04  4 Count (Pack of 1)",
     "productImages": [
-      "./gen-img/38a.webp",
-      "./gen-img/39a.webp",
-      "./gen-img/40a.webp",
-      "./gen-img/41a.webp",
-      "./gen-img/42a.webp",
-      "./gen-img/43a.webp"
+      "./gen-img/142a.webp"
     ],
-    "fullPrice": "9.88",
-    "brand": "BJPKPK",
+    "fullPrice": "29.95",
+    "brand": "Philips Avent",
     "reviewRatingAndCount": [
-      "4.6 out of 5",
-      "1,027 global ratings"
+      "4.7 out of 5",
+      "16,411 global ratings"
     ],
     "fromTheManufacturer": [
-      "Keep Your Drinks Hot Or Cold For Hours: Our double-walled vacuum insulated water bottle is made of 18/8 stainless steel, which is known for its excellent insulation properties. This means that it will keep your beverage cold for 24 hours and hot for 12 hours, making it perfect for all-day hydration.     Leak-Proof & Portable: Screw cap designed with a tight seal to prevent leaks and spills, so you can have peace of mind while you're on the go! The compact size makes it easy to put in your backpack or car cupholder, and the carrying strap ensures that you can take it with you wherever you go.     Food-grade Materials: BJPKPK metal water bottles are made of 18/8 stainless steel with a BPA-free lid that ensures no flavor transfer, it preserves the authentic taste of your beverages. Safe for your daily water drinking. The long-lasting powder coating is non-toxic and slip-free, also gives this cute water bottles a vibrant look.     Sweat-free & Reusable: Say goodbye to those annoying sweat rings on your desk or in your car, our stainless steel water bottle is designed to be sweat-free! Get more out of your outdoor adventures with our reusable water bottle that can be refilled multiple times, reducing environmental waste and promoting a sustainable lifestyle.     Stylish & Durable: With European style design, durable and fashionable powder coating, our sports water bottle is not only functional, but also stylish and durable. Whether you're at the office or out and about, this thermos bottle is the perfect accessory to complement any outfit.",
-      "From the manufacturer",
-      "BJPKPK 18oz Insulated Water Bottles",
-      "Cleaning and Maintenance：",
-      "<img alt=\"BJPKPK water bottle\" src=\"https://m.media-amazon.com/images/S/aplus-media-library-service-media/76da90e9-47ba-4b94-a4b0-9932e788411e.__CR0,0,1600,1600_PT0_SX220_V1___.jpg\"/>",
-      "<img alt=\"BJPKPK Water Bottle\" src=\"https://m.media-amazon.com/images/S/aplus-media-library-service-media/da4a1c36-2fb9-46b5-8ad2-a28e842a88ad.__CR0,0,1600,1600_PT0_SX220_V1___.jpg\"/>",
-      "<img alt=\"BJPKPK Water Bottle\" src=\"https://m.media-amazon.com/images/S/aplus-media-library-service-media/e01a36fc-f203-45d0-a96e-5c5ca4cfc836.__CR0,0,1600,1600_PT0_SX220_V1___.jpg\"/>",
-      "<img alt=\"BJPKPK Water Bottle\" src=\"https://m.media-amazon.com/images/S/aplus-media-library-service-media/9b76ce0c-826d-4a05-8bef-56eaac2089d4.__CR0,0,1600,1600_PT0_SX220_V1___.jpg\"/>",
-      "Great Gift Choice",
-      "BJPKPK insulated water bottles are designed for everyday using at home, office, outdoor parties, and other occasions. Great gift choice for your family or friends.",
-      "Cupholder Friendly",
-      "Our 18oz thermos water bottles are designed with perfect size for carrying in your bag or backpack and also perfect fit in your car cup holder.",
-      "Ideal Sports Water Bottle",
-      "This reusable water bottle is lightweight, durable and easy to clean. Perfect as a gym water bottle, workout water bottle or sports water bottle.",
-      "Bring Colors to Your Life",
-      "BJPKPK stainless steel metal water bottles have a variety of popular colors. You can find the one that matches your style easily.",
-      "<img alt=\"BJPKPK Water Bottle\" src=\"https://m.media-amazon.com/images/S/aplus-media-library-service-media/c05228fa-860b-46c9-91fd-a30517733e57.__CR0,0,1600,1600_PT0_SX220_V1___.jpg\"/>",
-      "<img alt=\"BJPKPK water bottle\" src=\"https://m.media-amazon.com/images/S/aplus-media-library-service-media/989b5eed-3a4f-42ba-89a2-fb54848dc7a9.__CR0,0,1600,1600_PT0_SX220_V1___.jpg\"/>",
-      "<img alt=\"bjpkpk water bottle\" src=\"https://m.media-amazon.com/images/S/aplus-media-library-service-media/3748ef81-7e6a-4909-9335-a8ffaa55ac74.__CR0,0,1600,1600_PT0_SX220_V1___.jpg\"/>",
-      "<img alt=\"BJPKPK water bottle\" src=\"https://m.media-amazon.com/images/S/aplus-media-library-service-media/5449dba8-f14d-49be-afb8-04b050a73754.__CR0,0,1600,1600_PT0_SX220_V1___.jpg\"/>",
-      "Your",
-      "Bottle",
-      "Your",
-      "Lifestyle"
+      "Natural baby bottle with Natural Response nipple: Baby controls the pace, just like breastfeeding     Designed with a unique opening and tip which only releases milk when baby actively drinks; When pausing to swallow and breathe no milk flows from the bottle, just like at the breast     Our baby bottles make it easy to combine breast and bottle feeding with a wide breast-shaped nipple that has a soft feel that mimics the shape and feel of a breast and baby can control the flow of milk     No-drip nipple design helps prevent lost milk from the tip of the baby bottle, giving you peace of mind; Bottle Nipple comes in Flow 3     Anti-colic valve is designed to reduce colic and discomfort by sending air away from your baby's tummy     Best Baby Bottles Overall winner in the 2022 Forbes Vetted Best Baby Bottles To Encourage Happy Feedings Awards     Recognized by Newsweek as a Best Parenting Product of 2022",
+      "From the manufacturer"
     ],
     "bestReviews": [
       {
-        "title": "Good quality",
+        "title": "The best bottle ever.",
         "rating": "5.0 out of 5 stars",
-        "content": "I used to buy bottled water, but now that my State's bottle return went up to 10 cents, I refuse to buy them anymore. So I bought this bottle, and it is so much better than any bottled water because it stays cold! It's the perfect size because it fits right in my pocketbook, which is convenient if my hands are full. And thankfully it does not leak! But it doesn't fit in my cup holder in my car, so that's my only complaint. The handle that it comes with is not going to fit your wrist. So you can really only stick your fingers through the loop and hold it that way. Which is fine with me."
+        "content": "The media could not be loaded.\n                \n            \n                \n            \n            \n        \n    \n    \n\n\n\n\n\n\n\n\n  \n  \n    I started searching for a new baby bottle after the one I had (\"Dr. brand\") had major issues.I was hesitant to spend money on a new bottle, but I am extremely happy I went with this one.Absolutely no regrets. This is THE ONE. I should have got this sooner/first.I can't imagine a better bottle than this in terms of replicating a real nipple (I easily notice the higher quality in the material), ease of cleaning, and how attractive the bottle looks (the blue is so beautiful!!) -- and of course, a highly reputable well established brand.I was worried at first about the different nipple sizes. The default one that comes with this is \"Flow 3\" which is the middle level, targeted for 1 month old.My baby gobbles up milk like a starving child every time; this nipple works fine for him.He can finish the 4 oz milk less than 10 minutes, which is good. If it takes longer than 30 minutes to feed your baby, that's not right, and exhausting for the parent too.It doesn't make weird sounds when he's drinking and and it doesn't drip. There's no milk wasted either. So much better than the lame Dr. brand I was using before; that one also had so many parts to clean, it was more work.The top cap has a thumb grip area, which can still be a little difficult to open if it's wet. I also notice the silicone has a bit of certain odor when you get it.Philips AVENT is easily one of the best baby bottles on the market. It's the perfect gift - must have for any parents out there.It's life changing. It will make feeding time more convenient and a pleasure for you. It's worth spending extra considering you're going to be feeding your baby so many times. It was definitely worth the investment."
       },
       {
-        "title": "Convenient",
+        "title": "Great bottles",
         "rating": "5.0 out of 5 stars",
-        "content": "I use my water bottle almost every day. I've had mine for almost a year now and it still looks good. It's holding up great! It doesn't leak. It keeps my beverages cold as advertised. I would definitely recommend purchasing this product. I love mine."
+        "content": "We got these bottles for our infant, hoping that we can transition him from full breast to breast and bottle. These were the only bottles that we could get him to take even for a few minutes. My other child likes to have bottles at night and she absolutely loves these. They are one of our favorites, they’re easy to clean they don’t leak and the kids really like them. It’s easy to get replacement parts or upgrade nipples should you need."
       },
       {
-        "title": "good at keeping drinks warm",
+        "title": "Great bottles",
+        "rating": "5.0 out of 5 stars",
+        "content": "These came with a flow 3 which is a tad too fast for my enthusiastic 2 month old boy, especially when he gets extra fussy and acts like he hasn't eaten all day. So I had to switch to a flow 2 buy I think soon I'll switch back to the 3. I love the natural nipple and how it doesn't leak. We had the Tomme tippe flow 0 bottles and the flow was still too fast that it would come out the side of his mouth. Since switching to these, we haven't had that problem."
+      },
+      {
+        "title": "No leakeage!!!!",
+        "rating": "5.0 out of 5 stars",
+        "content": "These bottles are amazing. I had used so many different ones. The mam, dr browns, chicco duo, parents choice wide neck, pigeon, avent anti colic, and my baby did not take well to them. For about 3-4 months we used the chicco duo and those were a favorite until I found these. They are easy to clean and the valve on the nipple for air works so amazing. My baby has very little air going into his tummy and he drinks the bottle without collapsing the nipple. He is 5 months but he loves to chug down so the sizing for these nipples is amazing. Size 3 is perfect for him since he can control it and I noticed he does not take as many breaks drinking, he just keeps drinking and maybe takes 2-3 breaks and then he keeps going usually he would collapse the chicco duo nipple even if I moved him to size 2 nipple. But I found these my savings grace and I am so happy. They are affordable in my opinion compared to other bottles that claim to do the same thing these do and they don’t. Anyway love these."
+      },
+      {
+        "title": "Great for Breastfed Babies",
+        "rating": "5.0 out of 5 stars",
+        "content": "These bottles have been great for our breastfed baby. He took to this bottle right away as a newborn and goes between breast and bottle feeding with no issue. I also love that the bottles are simple and don’t have too many parts. The nipple has a slow flow so you may have to try a few sizes to see which size works best for your baby. These bottles also are compatible with the Motif Luna and Spectra pump flanges which is super helpful if you want to feed baby freshly pumped milk."
+      },
+      {
+        "title": "EASY TO USE, EASY TO READ",
+        "rating": "5.0 out of 5 stars",
+        "content": "The media could not be loaded.\n                \n            \n                \n            \n            \n        \n    \n    \n\n\n\n\n\n\n\n\n  \n  \n    I got these to use with my newest gs. They are so nice because they are wide which makes it so much easier to fill. We use breast milk and supplement with formula so pouring from bags as well as putting in scoops of powdered formula is so much easier and you don't waste it by spilling it trying to get it into a standard size bottle neck. Another giant advantage for me is being able to actually read the numbers to measure.  The light blue is a nice faint shade, they are easy to hold and see how much milk is actually in the nipple so they don't get a bunch of air, which helps on too much gas. The nipples it comes with have a good shape that is more natural and soft against his face. He actually likes these best. They are also easier to clean and sturdy enough to last for years through multiple babies and the nipples can be replaced very easy as needed. They are a really good quality which makes the price worth it. I'm very happy with them I highly recommend these and I hope this info helps you."
+      },
+      {
+        "title": "No fuss bottles",
+        "rating": "5.0 out of 5 stars",
+        "content": "If your baby will accept this nipple for feeding, stay the course and stick with these bottles. They are seriously no fuss and work as they are intended to with NO LEAKS, minimal and easy to clean parts, and the bottle vents perfectly as long as the nipple is lined up with the notch. These bottles have a great design to hold a lot of ounces without looking and feeling huge like other brands. Additionally, leakage is a huge problem with other popular brands that I just could not deal with anymore. Most other bottles made my baby fuss and make feedings a sloppy mess. These nipples help the baby to pace their feeding out on their terms and then the milk stops from rolling out of their mouth. It took about a day or two for my baby to get the hang of the nipple but it was totally worth it. Additionally, pay close attention to the flow chart to figure out which nipple will work best for your baby. These bottles saved my sanity!"
+      },
+      {
+        "title": "Not this breastfed baby",
         "rating": "4.0 out of 5 stars",
-        "content": "the little handle strap thing is stupid to me. should be a little bigger so you can put it around your wrist. my parents use it for their tea and it keeps it piping hot. also looks nice"
+        "content": "Good product. I just didn't read correctly. Wrong flow. Ended up getting the next step up and still my breastfed baby would not touch it."
       },
       {
-        "title": "Works well, strap a big plus",
+        "title": "Avent is the best!!",
         "rating": "5.0 out of 5 stars",
-        "content": "I have two plans for this bottle. One is to replace the plastic water bottle I keep at my bedside and the other is for travel. I wanted a bottle with a top that screws on like a plastic water bottle because in my experience, that is easier to close than when the top screws inside. For traveling, having a hand strap should make it easier to keep hold of it. I also did NOT want a straw. While a bottle with a straw is great for active situations, I don't like taking pills with a straw. I was impressed with the leak proof performance when I had partially closed it late at night and it slipped out of my hand and fell, but didn't leak. It is also insulated, keeping the water cold all night. The only challenge is that on my uninsulated metal water bottles, I can guess the fill level from my refrigerator spout by the location of the cooler part of the bottle. This one got overfilled the first time I used it because there is no temperature differential on the outside during filling."
+        "content": "Before ordering this, we ordered bottles of different brand, but our little one didn’t like it. We had used Philips Avent 4oz bottles for our little one. So, we ended up buying Avent again. These bottles are perfect in shape, neither too small nor too big. Perfect for those growing little fingers to hold. Nipples are also very good and our little one got used to it very quickly. These bottles are a great deal!!"
       },
       {
-        "title": "Super shiny glittery",
+        "title": "Perfect for 10mo old",
         "rating": "5.0 out of 5 stars",
-        "content": "Super cute, but we're returning.  It was too shiny glittery for my daughter.  It sure is FABULOUS if you like the shimmer & shine. Not sure about anything else as we didn't use, but looks of very good quality!"
-      },
-      {
-        "title": "Works well for daily use",
-        "rating": "5.0 out of 5 stars",
-        "content": "My old bottle was incredibly banged up and it's such a relief to have this replacement. I tote it around with me everywhere, and it's a great size for that (just barely fits in my purse and doesn't leak) and keeps my water cold for a while, which my old bottle didn't do. Despite my best efforts, I've already dropped it on gravel once in the few weeks since I got it, which chipped the paint and only barely dented the metal, so hopefully this is sturdier than my other bottle, too. I like the twist cap style as opposed to a straw or anything else because this style is easier to clean. My one gripe is that the cap can be difficult to twist off when it's slippery, because it has no ridges to grip."
-      },
-      {
-        "title": "Great value",
-        "rating": "5.0 out of 5 stars",
-        "content": "Perfect size, arrived quickly and can put it in the dishwasher. What's not to like!"
-      },
-      {
-        "title": "Great bottle",
-        "rating": "5.0 out of 5 stars",
-        "content": "Doesn’t leak and easy to clean. No issues so far with it."
-      },
-      {
-        "title": "Leakproof Water Bottle",
-        "rating": "5.0 out of 5 stars",
-        "content": "Love this BJPKPK Insulated Water Bottle. 18 oz is the perfect size to fit in my gym bag as well as my purse. It's also water proof and super cute as well. Will be ordering more!"
-      },
-      {
-        "title": "Seals great",
-        "rating": "5.0 out of 5 stars",
-        "content": "No water leaks well made Only issues I have is it dents and scratches a little bit easier that you would think but if you don’t drop it and throw it around like me you’ll be in good shape."
+        "content": "Used the 4oz size since birth. She just started drinking 6-8oz per feed so got larger size and she can still hold this one just fine. Prevents me from having to get up mid nap to refill bottle or make two at once.Glass one was better for breast milk because fat did not get stuck on the sides. Plastic is better for baby holding due to weight although she can hold both."
       }
     ],
-    "productSmallImage": "./gen-img/38b.webp"
+    "productSmallImage": "./gen-img/142b.webp"
   }
 ]
