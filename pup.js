@@ -9,18 +9,29 @@ const sharp = require('sharp');
 const { spawn } = require('child_process');
 const { Cluster } = require('puppeteer-cluster');
 
-async function getImages(url, index) {
+(async () => {
+    const cluster = await Cluster.launch({
+        concurrency: Cluster.CONCURRENCY_CONTEXT,
+        maxConcurrency: 2,
+        puppeteer,
+        puppeteerOptions: { headless: true },
+    });
+    cluster.task(async ({ page, data }) => {
+        const { url, index } = data;
+        await getImages(page, url, index);
+    });
+    cluster.queue({ url: 'https://www.amazon.com/dp/B0001AVSJG/ref=nosim?tag=bestmmorpg00', index: 1 })
+    cluster.queue({ url: 'https://www.amazon.com/dp/B0964CHD65/ref=nosim?tag=bestmmorpg00', index: 2 })
+    await cluster.idle();
+    await cluster.close();
+})()
 
-    const browser = await puppeteer.launch();
-    const page = await browser.newPage();
+async function getImages(page, url, index = 0) {
     const firstAgent = new UserAgents(userAgent => userAgent.deviceCategory === 'desktop')
     await page.setUserAgent(firstAgent.toString())
-
     await page.goto(url, { waitUntil: 'domcontentloaded' });
-
     try {
         let imageUrls = []
-
         selector = '#altImages ul .imageThumbnail';
         const htmlContent = await page.evaluate((sel) => {
             const elements = document.querySelectorAll(sel);
@@ -37,9 +48,10 @@ async function getImages(url, index) {
             throw new Error(`The variable is empty in ${index}`);
         }
 
-        for (i = 0; i < htmlContent.length; i++) {
-            // const filePath1 = `screenshot-${index}-${i}.png`
-            // await page.screenshot({ path: filePath1 });
+        for (let i = 0; i < htmlContent.length; i++) {
+            console.log(index, i)
+            const filePath1 = `screenshot-${index}-${i}.png`
+            await page.screenshot({ path: filePath1 });
             await page.hover(`#altImages ul .imageThumbnail img[src*='${htmlContent[i]}']`)
 
             await page.waitForSelector(`.image.item.itemNo${i}.maintain-height.selected .a-dynamic-image`, {
@@ -56,11 +68,10 @@ async function getImages(url, index) {
             imageUrls.push(imageUrl)
         }
         // console.log(imageUrls.filter(url => url !== null));
-        await browser.close();
         return imageUrls
 
     } catch (error) {
-        console.log('Hover action failed, grabbing the first image on the page. ' + error);
+        console.log(`Hover action failed, grabbing the first image on page ${index}. ${error}`);
 
         // Grab the first image on the page
         const firstImageUrl = await page.evaluate(() => {
@@ -93,8 +104,8 @@ async function getImages(url, index) {
         }, selector);
 
         for (i = 0; i < htmlContent.length; i++) {
-            // const filePath1 = `screenshot-${i}-${index}.png`
-            // await page.screenshot({ path: filePath1 });
+            const filePath1 = `screenshot-${index}-${i}.png`
+            await page.screenshot({ path: filePath1 });
             await page.hover(`#altImages ul .imageThumbnail img[src*='${htmlContent[i]}']`)
             await page.waitForSelector(`.image.item.itemNo${i}.maintain-height.selected .a-dynamic-image`, {
                 visible: true,
@@ -110,12 +121,9 @@ async function getImages(url, index) {
             imageUrls.push(imageUrl)
         }
         // console.log(imageUrls.filter(url => url !== null));
-        await browser.close();
         return imageUrls
     }
 };
-// getImages('https://www.amazon.com/dp/B0001AVSJG/ref=nosim?tag=bestmmorpg00')
-
 
 const downloadFile = async (imageUrl, outputPath, id = '') => {
     try {
