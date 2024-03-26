@@ -243,28 +243,10 @@ async function fetchProductDetails(product, index) {
             isFirstCall == false
         }
 
-        console.log(product.link)
-        const ImgPromise = getImages(product.link).then((prLinks) => {
-            console.log(prLinks, 'link')
-            prLinks.forEach((link, i) => {
-                
-                (function (currentImgMaxNum, currIndex) {
-                    downloadFile(link, `./e/gen-img/${currentImgMaxNum}.webp`, currIndex).then(() => {
-                        resizeFile(`./e/gen-img/${currentImgMaxNum}.webp`, `./e/gen-img/${currentImgMaxNum}a.webp`, currIndex, 460, 460);
-                        if(i == 0){
-                            resizeFile(`./e/gen-img/${currentImgMaxNum}.webp`, `./e/gen-img/${currentImgMaxNum}b.webp`, currIndex, 320, 320);
-                        }
-                    });
-                })(ImgMaxNum, index);
+        console.log(product.link, 'prlink')
+        const ImgPromise = runConcurrentlyControlledImageProcessing(product, index)
 
-                product.productImages.push(`./gen-img/${ImgMaxNum}a.webp`)
-                if (i == 0) {
-                    product.productSmallImage = `./gen-img/${ImgMaxNum}b.webp`
-                }
-                ImgMaxNum++
-            });
-            console.log('done ' + index)
-        });
+        
         //Call AI
         const rand = twoNumbers();
         if (product.bestReviews && product.productImages) {
@@ -307,6 +289,78 @@ function twoNumbers() {
         randomIndex2 = Math.floor(Math.random() * allProducts.length)
     } while (randomIndex1 === randomIndex2)
     return [randomIndex1, randomIndex2]
+}
+
+
+class ConcurrencyControl {
+    constructor(maxConcurrency) {
+        this.maxConcurrency = maxConcurrency;
+        this.currentRunning = 0;
+        this.queue = [];
+    }
+
+    async run(task) {
+        // Wait until there's a slot available
+        if (this.currentRunning >= this.maxConcurrency) {
+            await new Promise((resolve) => this.queue.push(resolve));
+        }
+
+        try {
+            this.currentRunning++;
+            // Execute the task
+            return await task();
+        } finally {
+            this.currentRunning--;
+            // Release the slot, start the next task in the queue
+            if (this.queue.length > 0) {
+                this.queue.shift()();
+            }
+        }
+    }
+}
+const concurrencyControl = new ConcurrencyControl(4);
+
+
+function processProductImages(product, index) {
+    console.log('------------------------------------started------------------------------------', index)
+    // Return a new promise that encapsulates the entire operation
+    return new Promise((resolve, reject) => {
+      getImages(product.link).then((prLinks) => {
+        console.log(prLinks, 'link');
+        let operations = prLinks.map((link, i) => {
+          return new Promise((resolveInner, rejectInner) => {
+            const currentImgMaxNum = ImgMaxNum++; // Update the ImgMaxNum here
+  
+            downloadFile(link, `./e/gen-img/${currentImgMaxNum}.webp`, index).then(() => {
+              // Chain resizeFile operations
+              const resizePromise = resizeFile(`./e/gen-img/${currentImgMaxNum}.webp`, `./e/gen-img/${currentImgMaxNum}a.webp`, index, 460, 460);
+  
+              if (i == 0) {
+                resizePromise.then(() => {
+                  resizeFile(`./e/gen-img/${currentImgMaxNum}.webp`, `./e/gen-img/${currentImgMaxNum}b.webp`, index, 320, 320).then(resolveInner);
+                });
+              } else {
+                resizePromise.then(resolveInner);
+              }
+  
+              product.productImages.push(`./gen-img/${currentImgMaxNum}a.webp`);
+              if (i == 0) {
+                product.productSmallImage = `./gen-img/${currentImgMaxNum}b.webp`;
+              }
+            }).catch(rejectInner);
+          });
+        });
+  
+        // Wait for all image processing operations to complete
+        Promise.all(operations).then(() => {
+            console.log('------------------------------------done------------------------------------', index)
+          resolve(); // Resolve the outer promise once all operations are complete
+        }).catch(reject);
+      }).catch(reject);
+    });
+  }
+  function runConcurrentlyControlledImageProcessing(product, index) {
+    return concurrencyControl.run(() => processProductImages(product, index));
 }
 
 fetchAndProcessData()

@@ -35,7 +35,7 @@ async function getImages(url) {
             throw new Error("The variable is empty");
         }
 
-        for (i = 0; i < htmlContent.length; i++) {
+        for (let i = 0; i < htmlContent.length; i++) {
             await page.hover(`#altImages ul .imageThumbnail img[src*='${htmlContent[i]}']`)
 
             await page.waitForSelector(`.image.item.itemNo${i}.maintain-height.selected .a-dynamic-image`, {
@@ -66,21 +66,16 @@ async function getImages(url) {
 
         console.log(firstImageUrl)
         await downloadFile(firstImageUrl, 'captcha.png');
-        console.log('a')
 
         const pythonOutput = execSync('python captcha.py').toString().trim();
-        console.log('b')
         await page.type('#captchacharacters', pythonOutput);
-        console.log('c')
         await page.screenshot({ path: 'page-on-comp.png' });
-        console.log('d')
 
         await Promise.all([
             page.waitForNavigation(), // Waits for the navigation to happen
             page.click('button[type="submit"]'), // Clicks the button that leads to the navigation
         ]);
         
-        console.log('e')
         let imageUrls = []
         selector = '#altImages ul .imageThumbnail';
         const htmlContent = await page.evaluate((sel) => {
@@ -93,7 +88,7 @@ async function getImages(url) {
             return srcs;
         }, selector);
 
-        for (i = 0; i < htmlContent.length; i++) {
+        for (let i = 0; i < htmlContent.length; i++) {
             await page.hover(`#altImages ul .imageThumbnail img[src*='${htmlContent[i]}']`)
 
             await page.waitForSelector(`.image.item.itemNo${i}.maintain-height.selected .a-dynamic-image`, {
@@ -135,7 +130,11 @@ async function resizeFile(inputPath, outputPath, id = '', width, height) {
     try {
         let image = sharp(inputPath);
         if (width && height) {
-            image = image.resize(width, height); // Apply resize only if width and height are provided
+            image = image.resize({
+                width: width,
+                height: height,
+                fit: 'contain'
+              });
         }
 
         const buffer = await image.toBuffer(); // Convert to buffer whether resized or not
