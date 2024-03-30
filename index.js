@@ -85,6 +85,8 @@ async function fetchAndProcessData() {
     }
 }
 
+let allprom = [];
+
 async function getProducts(url) {
     try {
         //roator
@@ -98,48 +100,74 @@ async function getProducts(url) {
                 }
             }
         }
+        [singlePageResults, $] = await grabFirst(url)
+        async function grabFirst(url) {
+            const response = await fetch(url, options);
+            agentRotator++
+            console.log("Search page loaded", url)
+            const html = await response.text();
+            const $ = cheerio.load(html);
+            const singlePageResults = [];
 
-        const response = await fetch(url, options);
-        agentRotator++
-        console.log("Search page loaded", url)
-        const html = await response.text();
-        const $ = cheerio.load(html);
-        const singlePageResults = [];
+            $('.s-result-item[data-component-type="s-search-result"]', html).each(function () {
+                let link = 'https://www.amazon.com' + $(this).find('[data-cy="title-recipe"]').children('h2').children('a').attr('href');
+                link = decodeURIComponent(link);
 
-        $('.s-result-item[data-component-type="s-search-result"]', html).each(function () {
-            let link = 'https://www.amazon.com' + $(this).find('[data-cy="title-recipe"]').children('h2').children('a').attr('href');
-            link = decodeURIComponent(link);
+                // let img = $(this).find("img").attr("src");
 
-            // let img = $(this).find("img").attr("src");
+                let title = $(this).find(".s-title-instructions-style").text();
+                let prefix = "SponsoredSponsored You’re seeing this ad based on the product’s relevance to your search query.Leave ad feedback"
+                title = title.startsWith(prefix) ? title.slice(prefix.length).trim() : title
 
-            let title = $(this).find(".s-title-instructions-style").text();
-            let prefix = "SponsoredSponsored You’re seeing this ad based on the product’s relevance to your search query.Leave ad feedback"
-            title = title.startsWith(prefix) ? title.slice(prefix.length).trim() : title
+                let priceWhole = $(this).find(".a-price-whole").text();
+                let priceFraction = $(this).find(".a-price-fraction").text();
+                let fullPrice = priceWhole + priceFraction;
+                let asin = (link.match(/\/([A-Z0-9]{10})\//i))[1];
+                link = `https://www.amazon.com/dp/${asin}/ref=nosim?tag=${storeID}`;
 
-            let priceWhole = $(this).find(".a-price-whole").text();
-            let priceFraction = $(this).find(".a-price-fraction").text();
-            let fullPrice = priceWhole + priceFraction;
-            let asin = (link.match(/\/([A-Z0-9]{10})\//i))[1];
-            link = `https://www.amazon.com/dp/${asin}/ref=nosim?tag=${storeID}`;
-
-            if (link && title && priceWhole) singlePageResults.push({
-                link,
-                asin,
-                title,
-                productImages: [],
-                fullPrice
+                if (link && title && priceWhole) singlePageResults.push({
+                    link,
+                    asin,
+                    title,
+                    productImages: [],
+                    fullPrice
+                });
             });
-        });
+            return [singlePageResults, $]
+        }
+
+        async function handleError(url) {
+            const userAgent = new UserAgents(userAgent => userAgent.deviceCategory === 'desktop')
+            console.log(userAgent.toString())
+            options = {
+                method: 'GET',
+                headers: {
+                    'User-Agent': userAgent.toString()
+                }
+            }
+            await new Promise(resolve => setTimeout(resolve, 20 * 1000));
+            [singlePageResults, $] = await grabFirst(url);
+            if (singlePageResults == 0) {
+                console.log('YOU WERE BANNED BY AMAZON... AGAIN');
+                await handleError(url)
+            } else {
+                return [singlePageResults, $]
+            }
+        }
 
         if (singlePageResults.length == 0) {
-            console.log('YOU WERE (probably) BANNED BY AMAZON FOR (hopefully) SEVERAL HOURS');
-            console.log($.html())
-            process.exit(0);
+            console.log('YOU WERE BANNED BY AMAZON');
+            await handleError(url)
+            // console.log($.html())
         }
 
         const productDetails = singlePageResults.map(async (product, i) => {
-            return await fetchProductDetails(product, i);
+            return conContPages.run(async () => {
+                await fetchProductDetails(product, i);
+            });
         });
+
+        allprom.push(...productDetails)
 
         currNum++;
         let next = $('[aria-label^="Go to next page"]').attr('href')
@@ -148,7 +176,7 @@ async function getProducts(url) {
             await getProducts(nextUrl);
         } else {
             console.log("Not going to next page")
-            const resolvedProductDetails = await Promise.all(productDetails);
+            await Promise.all(allprom)
         }
     } catch (err) {
         console.error(err);
@@ -157,32 +185,72 @@ async function getProducts(url) {
 
 async function DoAIMagic(prompt) {
     try {
-        // const response = await openai.chat.completions.create({
-        //     model: "gpt-3.5-turbo-16k",
-        //     messages: [
-        //         {
-        //             "role": "system",
-        //             "content": "Generate a 2000-word article that is SEO-optimized and based on the following inputs: 1. Product Name: [Insert Product Name Here] 2. Product Brand: [Insert Brand Name Here] 3. Amazon Product Reviews: [Insert Key Insights from Amazon Reviews] 4. Any other information. The article should be engaging and informative, tailored to potential customers. Ensure the content is unique and structured with SEO best practices in mind, including keyword optimization related to the product and its features. Incorporate the following elements: - Robert Cialdini's Principles of Persuasion: Apply these principles (Reciprocity, Scarcity, Authority, Consistency, Liking, and Consensus) strategically throughout the content to enhance its persuasive impact. - Readability and Structure: The article should be easy to read, with a clear introduction, body, and conclusion.Use H1 for the main title, H2 for major headings, and H3 for subheadings. - Formatting: Employ bullet points for lists, and ensure paragraphs are concise. - Useful Information for the Reader: Highlight the benefits, features, and practical applications of the product. Address common questions or concerns raised in the Amazon product reviews. - Call to Action: Conclude with a compelling call to action that encourages the reader to consider purchasing or learning more about the product. The objective is to create content that not only ranks well on search engines but also provides real value to readers, encouraging engagement and potential conversion. Do not use any images provided in the article"
-        //         },
-        //         {
-        //             "role": "user",
-        //             "content": JSON.stringify(prompt, null, 2)
-        //         }
-        //     ],
-        //     temperature: 0,
-        //     max_tokens: 4000,
-        //     top_p: 1,
-        //     frequency_penalty: 0,
-        //     presence_penalty: 0,
-        // });
-        // let RawAiResault = response.choices[0].message.content
-        // allArticles.push(RawAiResault)
-        // return RawAiResault
-        return "eeee <h1>test</h1>"
+        const promptString = `Product information:
+Product Name: ${cleanText(prompt.title)}
+${prompt.brand ? `Product Brand: ${cleanText(prompt.brand)}` : ''}
+Product Price: ${cleanText(prompt.fullPrice)}
+Product Description: ${cleanText(prompt.fromTheManufacturer.join(' '))}
+Review Rating And Count: ${cleanText(prompt.reviewRatingAndCount.join(' '))}
+Amazon Product Reviews:
+${prompt.bestReviews.map((review, index) => `Review ${index + 1}: ${cleanText(review.title)}
+    Rating: ${cleanText(review.rating)}
+    Content: "${cleanText(review.content)}"`).join('\n')}
+
+Article word count should be at least 1500 words but we need to try to output 2000 words. `;
+
+        function cleanText(text) {
+            return text.replace(/\s+/g, ' ') // Replace multiple spaces with a single space
+                .replace(/\n\s*\n/g, '\n') // Replace multiple newlines with a single newline
+                .trim(); // Remove leading and trailing whitespace
+        }
+
+        // console.log(promptString)
+
+
+        const response = await openai.chat.completions.create({
+            model: "gpt-3.5-turbo-16k-0613",
+            messages: [
+                {
+                    "role": "system",
+                    "content": `
+                        Act as a world-class copywriter, generate a 2000 word article in proper US English without any grammatical or punctuation mistakes that is SEO-optimized and based on the following prompt and product information: Remember 2000 word count is important.
+
+                        The article should be engaging and informative, tailored to potential customers. Ensure the content is unique and structured with SEO best practices in mind, including keyword optimization related to the product and its features. Incorporate the following elements: - Robert Cialdini's Principles of Persuasion: Apply these principles (Reciprocity, Scarcity, Authority, Consistency, Liking, and Consensus) strategically throughout the content to enhance its persuasive impact, but do not mention Robert Cialdini. 
+                        
+                        Readability and Structure: The article should be easy to read, with a clear introduction, body, and conclusion. Use H1 for the main title, H2 for major headings, and H3 for list headings. Implement all elements with markdown. Making everything markdown is very important and should not be missed. NEVER write anything but markdown. Ensure paragraphs are concise. Provide useful Information for the Reader: Highlight the benefits, features, and practical applications of the product. Address common questions or concerns raised in the Amazon product reviews. - Call to Action: Conclude with a compelling call to action that encourages the reader to consider purchasing or learning more about the product. The objective is to create content that not only ranks well on search engines but also provides real value to readers, encouraging engagement and potential conversion. 
+                        
+                        Do not forget, You are writing a ready to ship article. Do not include keynotes or anything for the writer. No matter what, do not copy paste reviews, use them as information to enhance the article. Do not title the last paragraph "call to action", it should have a proper name fit for a conclusion. Remember to write the paragraph in markdown. NEVER try to include any images. Do NOT use any links in the article. The article word count should be at least 1500 words but we need to try to output 2000 words. DO NOT OUTPUT LESS THAN 1500 WORDS. DO NOT DIRELY USE REVIEWS, USE THE INFORMATION IN THEM TO MAKE YOUR OWN PARAGRAPHS. Try your best to match the maximum token length. A small article is not needed. You need to generate the biggest article you can without directly using comments. Do not write anything but the article itself. DO NOT INCLUDE ANY AI WARNINGS OR A WORD COUNT.
+                        `
+                },
+                {
+                    "role": "user",
+                    "content": promptString
+                }
+            ],
+            temperature: 1,
+            max_tokens: 12000,
+            top_p: 0.4,
+            frequency_penalty: 1,
+            presence_penalty: 1,
+        });
+        function removeLinks(markdownString) {
+            const linkRegex = /\[([^\]]+)\]\([^)]+\)/g;
+            return markdownString.replace(linkRegex, '$1').replace(/H\d+:(\s*)/g, '$1');
+        }
+        let RawAiResault = removeLinks(response.choices[0].message.content)
+        allArticles.push(RawAiResault)
+        console.log('doneai')
+        return RawAiResault
     } catch (err) {
         console.error(err);
     }
 
+}
+
+async function fakeAI(prompt) {
+    RawAiResault = 'asdasdas <h1>aa</h1>'
+    await new Promise(resolve => setTimeout(resolve, 20 * 1000));
+    return RawAiResault
 }
 
 async function fetchProductDetails(product, index) {
@@ -246,12 +314,12 @@ async function fetchProductDetails(product, index) {
         console.log(product.link, 'prlink')
         const ImgPromise = runConcurrentlyControlledImageProcessing(product, index)
 
-        
+
         //Call AI
         const rand = twoNumbers();
-        if (product.bestReviews && product.productImages) {
+        if (product.bestReviews) {
             const { productImages, ...productNoImages } = product;
-            const aiAnswerPromise = DoAIMagic(productNoImages)
+            const aiAnswerPromise = fakeAI(productNoImages)
 
             const [result1, aiAnswer] = await Promise.all([ImgPromise, aiAnswerPromise]);
 
@@ -263,10 +331,10 @@ async function fetchProductDetails(product, index) {
                 if (index > 2) {
                     articleToHTML(aiAnswer, product, allProducts[rand[0]], allProducts[rand[1]], index, rand);
                 } else {
-                    savedIndexes.push({ index, product, aiAnswer})
+                    savedIndexes.push({ index, product, aiAnswer })
                 }
             } else {
-                console.log("Product " + index + " generation failed due to lack of info, ye", aiAnswer, product, allProducts[rand[0]], allProducts[rand[1]])
+                console.log("Product " + index + " generation failed due to lack of info, ye", aiAnswer, product.link, allProducts[rand[0]].link, allProducts[rand[1]].link)
             }
         } else {
             console.log("Product " + index + " AI failed due to lack of info")
@@ -318,49 +386,67 @@ class ConcurrencyControl {
         }
     }
 }
-const concurrencyControl = new ConcurrencyControl(4);
-
+const concpup = new ConcurrencyControl(3);
+const conContPages = new ConcurrencyControl(3)
 
 function processProductImages(product, index) {
     console.log('------------------------------------started------------------------------------', index)
     // Return a new promise that encapsulates the entire operation
     return new Promise((resolve, reject) => {
-      getImages(product.link).then((prLinks) => {
-        console.log(prLinks, 'link');
-        let operations = prLinks.map((link, i) => {
-          return new Promise((resolveInner, rejectInner) => {
-            const currentImgMaxNum = ImgMaxNum++; // Update the ImgMaxNum here
-  
-            downloadFile(link, `./e/gen-img/${currentImgMaxNum}.webp`, index).then(() => {
-              // Chain resizeFile operations
-              const resizePromise = resizeFile(`./e/gen-img/${currentImgMaxNum}.webp`, `./e/gen-img/${currentImgMaxNum}a.webp`, index, 460, 460);
-  
-              if (i == 0) {
-                resizePromise.then(() => {
-                  resizeFile(`./e/gen-img/${currentImgMaxNum}.webp`, `./e/gen-img/${currentImgMaxNum}b.webp`, index, 320, 320).then(resolveInner);
-                });
-              } else {
-                resizePromise.then(resolveInner);
-              }
-  
-              product.productImages.push(`./gen-img/${currentImgMaxNum}a.webp`);
-              if (i == 0) {
-                product.productSmallImage = `./gen-img/${currentImgMaxNum}b.webp`;
-              }
-            }).catch(rejectInner);
-          });
-        });
-  
-        // Wait for all image processing operations to complete
-        Promise.all(operations).then(() => {
-            console.log('------------------------------------done------------------------------------', index)
-          resolve(); // Resolve the outer promise once all operations are complete
+        getImages(product.link).then((prLinks) => {
+            console.log(prLinks, 'link');
+            let operations = prLinks.map(async (link, i) => {
+                const currentImgMaxNum = ImgMaxNum++;
+            
+                try {
+                    await downloadFile(link, `./e/gen-og/${currentImgMaxNum}.webp`, index);
+            
+                    const resizePromises = [
+                        resizeFile(
+                            `./e/gen-og/${currentImgMaxNum}.webp`,
+                            `./e/gen-img/${currentImgMaxNum}-big.webp`,
+                            index,
+                            460,
+                            460,
+                            { r: 255, g: 255, b: 255, alpha: 1 }
+                        ),
+                    ];
+            
+                    if (i === 0) {
+                        resizePromises.push(
+                            resizeFile(
+                                `./e/gen-og/${currentImgMaxNum}.webp`,
+                                `./e/gen-img/${currentImgMaxNum}-small.webp`,
+                                index,
+                                320,
+                                320,
+                                { r: 255, g: 255, b: 255, alpha: 1 }
+                            )
+                        );
+                    }
+            
+                    await Promise.all(resizePromises);
+            
+                    product.productImages.push(`./gen-img/${currentImgMaxNum}-big.webp`);
+            
+                    if (i === 0) {
+                        product.productSmallImage = `./gen-img/${currentImgMaxNum}-small.webp`;
+                    }
+                } catch (err) {
+                    console.error(`Error processing link: ${err}`);
+                }
+            });
+
+            // Wait for all image processing operations to complete
+            Promise.all(operations).then(() => {
+                console.log('------------------------------------done------------------------------------', index)
+                resolve(); // Resolve the outer promise once all operations are complete
+            }).catch(reject);
         }).catch(reject);
-      }).catch(reject);
     });
-  }
-  function runConcurrentlyControlledImageProcessing(product, index) {
-    return concurrencyControl.run(() => processProductImages(product, index));
+}
+function runConcurrentlyControlledImageProcessing(product, index) {
+    return concpup.run(() => processProductImages(product, index));
 }
 
 fetchAndProcessData()
