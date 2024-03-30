@@ -3,14 +3,24 @@ const Showdown = require('showdown');
 const { JSDOM } = require("jsdom");
 const fs = require('fs');
 const path = require('node:path');
+const OpenAI = require("openai");
+const openai = new OpenAI({
+    apiKey: '***REMOVED***',
+});
 
-function articleToHTML(markdownText, product0, product1, product2, index, rand) {
+async function articleToHTML(markdownText, product0, product1, product2, index, rand) {
+
+    // if (product1.reviewRatingAndCount == "") {
+    //     console.log(product1)
+    // }
 
     //End the function if any of the products are empty or null         
     if (product0 == null || product1 == null || product2 == null) {
         console.log("Gen failed in converter.js index " + index, rand)
         return
     }
+
+    const keywords = getKewords(product0.title)
 
     // Create a new converter instance
     const converter = new Showdown.Converter();
@@ -58,7 +68,7 @@ function articleToHTML(markdownText, product0, product1, product2, index, rand) 
                     }
                     const img = document.createElement('img');
                     img.src = imageUrl;
-                    img.onerror="this.onerror=null"
+                    img.onerror = "this.onerror=null"
                     img.className = 'd-block w-100';
                     img.alt = 'Carousel product image';
                     item.appendChild(img);
@@ -115,19 +125,13 @@ function articleToHTML(markdownText, product0, product1, product2, index, rand) 
 
         // ---------
 
-        const aTags = document.querySelectorAll('a');
+        const linkEl = document.createElement('a');
+        linkEl.href = product0.link;
+        linkEl.className = "btn btn-primary link2amazon";
+        linkEl.textContent = "Buy on Amazon";
+        document.body.appendChild(linkEl);
 
-        aTags.forEach(a => {
-            const parentP = a.parentNode;
-            if (parentP.tagName === 'P') {
-                a.className = "btn btn-primary link2amazon"
-                const div = document.createElement('div'); // Create a new div
-                div.innerHTML = parentP.innerHTML; // Copy the innerHTML from the p to the div
-                parentP.parentNode.replaceChild(div, parentP); // Replace the p with the div
-            }
-        });
         let outputHTML = document.body.innerHTML;
-
         // Regular expression to remove extra line breaks after </ul> tags
         // outputHTML = outputHTML.replace(/<\/ul>\s*\n\s*\n/g, '</ul>\n');
         outputHTML = outputHTML.replace(/<\/div>\s*\n\s*\n/g, '</div>\n');
@@ -151,16 +155,23 @@ function articleToHTML(markdownText, product0, product1, product2, index, rand) 
     articleSection.innerHTML += modifiedHtml;
 
     // Insert in to cards
+    let c1Score = product1.reviewRatingAndCount[0].match(/^(\d(\.\d)?)/)[0]
+    c1Score = Math.round(c1Score * 2) / 2;
     const card1 = mainDocument.querySelector('#card1')
     card1.querySelector('img').src = product1.productSmallImage
     card1.querySelector('.card-title').innerHTML = product1.title
     card1.querySelector('.card-text').innerHTML = product1.fullPrice + "$"
     card1.querySelector('.revCount').innerHTML = product1.reviewRatingAndCount[1].match(/\d+/g).join(",");
+    card1.querySelector('.revImg').src = `./images/${c1Score}.png`
+
+    let c2Score = product2.reviewRatingAndCount[0].match(/^(\d(\.\d)?)/)[0]
+    c2Score = Math.round(c2Score * 2) / 2;
     const card2 = mainDocument.querySelector('#card2')
     card2.querySelector('img').src = product2.productSmallImage
     card2.querySelector('.card-title').innerHTML = product2.title
     card2.querySelector('.card-text').innerHTML = product2.fullPrice + "$"
     card2.querySelector('.revCount').innerHTML = product1.reviewRatingAndCount[1].match(/\d+/g).join(",");
+    card2.querySelector('.revImg').src = `./images/${c2Score}.png`
 
     // Insert Links
     const scriptTag = mainDocument.createElement('script');
@@ -191,7 +202,8 @@ function articleToHTML(markdownText, product0, product1, product2, index, rand) 
 
     //Other parts of header
     mainDocument.querySelector('meta[name="description"]').setAttribute('content', 'product0.fromTheManufacturer[0]')
-    mainDocument.querySelector('meta[name="keywords"]').setAttribute('content', 'hi')
+    await keywords
+    mainDocument.querySelector('meta[name="keywords"]').setAttribute('content', keywords)
     mainDocument.querySelector('title').innerHTML = product0.title;
 
     // Save the updated HTML
@@ -238,6 +250,72 @@ function mainPage(allProducts) {
     fs.writeFileSync(road, updatedHTML, 'utf8');
     console.log(`HTML file index-new.html saved!`)
 }
+
+async function getKewords(input) {
+    try {
+        const response = await openai.chat.completions.create({
+            model: "gpt-3.5-turbo-0125",
+            messages: [
+                {
+                    "role": "system",
+                    "content": `
+                    Objective: Your task is to analyze the input, which will be a product name including the brand and the item type, and generate a list of SEO-optimized meta keywords. These keywords should be carefully selected to improve the product's search engine visibility, considering relevance, search volume, and specificity.
+
+Input Description: The input is a string containing the brand name and the product type, formatted as "Brand Name - Product Type" (e.g., "AcmeCorp - Wireless Headphones").
+
+Output Requirements:
+Format: Output a comma-separated list of keywords. There should be no leading or trailing spaces, and no additional text or punctuation beyond the commas.
+
+Content:
+Start with the brand name and product type as primary keywords.
+Include long-tail keywords, which are more specific phrases that potential customers might use when searching for this type of product. These often have lower search volume but can be less competitive and more targeted.
+Add keywords that reflect product features, benefits, and applications, focusing on terms with a good balance between search volume and relevance to the product.
+Consider related search terms that potential customers might use, which are indirectly related to the product but could lead to its discovery.
+SEO Optimization Techniques:
+
+Ensure the keywords are relevant to the product’s features and potential uses.
+Incorporate a mix of broad and specific keywords to balance visibility and targeting.
+Utilize semantic variations of the main keywords to cover possible search intents and synonyms.
+Avoid keyword stuffing; ensure the keywords are natural and directly related to the product.
+Examples:
+
+Input: "AcmeCorp - Wireless Headphones"
+
+Output: "AcmeCorp, wireless headphones, Bluetooth headphones, noise-cancelling audio, high fidelity sound, portable audio devices, best wireless headphones for travel"
+
+Input: "GigaTech - Smartwatch"
+
+Output: "GigaTech, smartwatch, fitness tracking watch, waterproof smart devices, heart rate monitor wearable, smart notifications wristwatch, best smartwatch for athletes"
+
+Constraints:
+Limit the output to a maximum of 50 keywords to maintain focus and relevance.
+Ensure the keywords are realistic and reflect actual search behaviors and patterns.
+Special Considerations:
+
+Research commonly searched terms related to the product type to inform your keyword selection.
+For niche products, prioritize keywords that accurately describe the product’s unique features or target market to attract more qualified traffic.
+                    `
+                },
+                {
+                    "role": "user",
+                    "content": input
+                }
+            ],
+            temperature: 1,
+            max_tokens: 1000,
+            top_p: 1,
+            frequency_penalty: 0,
+            presence_penalty: 0,
+        });
+        let RawAiResault = response.choices[0].message.content
+        RawAiResault = RawAiResault.replace(/\.$/, '')
+        return RawAiResault
+    } catch (err) {
+        console.error(err);
+    }
+
+}
+
 module.exports = {
     articleToHTML,
     mainPage

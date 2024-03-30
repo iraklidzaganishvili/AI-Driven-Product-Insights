@@ -126,14 +126,15 @@ const downloadFile = async (imageUrl, outputPath, id = '') => {
         console.error(`Error in id ${id}: ${error.message}`);
     }
 };
-async function resizeFile(inputPath, outputPath, id = '', width, height) {
+async function resizeFile(inputPath, outputPath, id = '', width, height, background = { r: 255, g: 255, b: 255, alpha: 1 }) {
     try {
         let image = sharp(inputPath);
         if (width && height) {
             image = image.resize({
                 width: width,
                 height: height,
-                fit: 'contain'
+                fit: 'contain',
+                background: background
               });
         }
 
