@@ -1,0 +1,101 @@
+/* ========= [ * inner-pages ]  =========*/
+
+// navbar
+@import '../../../home_tech/assets/scss/navbar';
+
+// navbar style2
+@import '../../../home_lighting/assets/scss/navbar';
+
+// products
+@import 'products';
+
+// products_layout_2
+@import 'products_layout_2';
+
+// single_product
+@import 'single_product';
+
+// about
+@import 'about';
+
+// contact
+@import 'contact';
+
+// cart
+@import 'cart';
+
+// checkout
+@import 'checkout';
+
+// profile
+@import 'profile';
+
+// footer
+@import '../../../home_tech/assets/scss/footer';
+
+// footer style2
+@import '../../../home_lighting/assets/scss/footer';
+
+
+// ------------ home style ------------
+.home-style3 {
+    // font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #e2e4eb;
+
+    .form-check-input:checked {
+        background-color: var(--color-green2);
+        border-color: var(--color-green2);
+    }
+
+}
+
+.title {
+    .arrows {
+        position: relative;
+        width: 70px;
+        height: 25px;
+        background-color: #ebedf3;
+        border-radius: 30px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-inline-end: 0;
+        margin-inline-start: auto;    
+        .swiper-button-next,
+        .swiper-button-prev {
+            &::after {
+                font-size: 10px;
+                color: #000;
+            }
+        }
+        .swiper-button-next {
+            right: 0;
+        }
+        .swiper-button-prev {
+            left: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .home-style3 {
+        br{
+            display: none;
+        }
+        .fsz-50 {
+            font-size: 30px !important;
+        }
+        .fsz-40 {
+            font-size: 25px !important;
+        }
+        .mb-90 {
+            margin-bottom: 40px !important;
+        }
+        .fsz-30 {
+            font-size: 18px !important;
+        }
+        .p-30.bg-white{
+            padding: 25px 15px !important;
+        }
+    }
+}

@@ -1,0 +1,64 @@
+/* --------------- brand-cards style3 --------------- */
+.tc-brand-cards-style3 {
+    
+    .brand-card {
+
+        .banner {
+            position: relative;
+            height: 190px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            .info {
+                position: absolute;
+                left: 0;
+                top: 0;
+                padding: 30px;
+                height: 100%;
+                width: 100%;
+                z-index: 10; 
+            }
+        }
+
+        .products {
+            border-top: 1px solid #9995;
+            .product-card {
+                margin-top: 30px;
+                text-align: center;
+                &:hover {
+                    .cont {
+                        .title {
+                            color: var(--color-green2);
+                        }
+                    }
+                }
+                .img {
+                    height: 120px;
+                    width: 120px;
+                    border-radius: 50%;
+                    margin: auto;
+                    overflow: hidden;
+                    margin-bottom: 10px;
+                }
+                .cont {
+                    .title {
+                        font-size: 14px;
+                        font-weight: bold;
+                        text-transform: capitalize;
+                        transition: all 0.3s ease;
+                    }
+                }
+            }
+        }
+
+    }
+
+}
+
+@media screen and (max-width: 991px) {
+    .tc-brand-cards-style3 {
+        .brand-card .banner .info {
+            max-width: 60%;
+        }
+    }
+}

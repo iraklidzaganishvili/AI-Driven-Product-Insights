@@ -1,0 +1,212 @@
+/* --------------- brand-box style3 --------------- */
+.tc-brand-box-style3 {
+    
+    .top-info {
+        position: relative;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #9994;
+        .banner {
+            position: relative;
+            .img {
+                border-radius: 10px;
+                overflow: hidden;
+                height: 200px;
+            }
+            .info {
+                position: absolute;
+                padding: 30px;
+                top: 0;
+                left: 0;
+                max-width: 40%;
+                z-index: 10;
+            }
+        }
+
+        .brand-numbers {
+            .number-item {
+                display: flex;
+                align-items: start;
+                padding: 15px;
+                border: 1px solid transparent;
+                border-radius: 10px;
+                justify-content: space-between;
+                margin: 10px 0;
+                &:hover {
+                    border-color: var(--color-green2);
+                    .sm-title {
+                        color: var(--color-green2);
+                    }
+                }
+                .sm-title {
+                    transition: all 0.3s ease;
+                }
+                .img {
+                    height: 50px;
+                    flex-shrink: 0;
+                }
+            }
+        }
+    }
+
+    .products-content {
+        position: relative;
+        padding: 20px 60px 0;
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 40px;
+            height: 80px;
+            border-radius: 6px;
+            background-color: #edeff6;
+            transition: all 0.3s ease;
+            top: 170px;
+            &::after {
+                color: #000;
+                font-size: 12px;
+            }
+            &:hover {
+                background-color: var(--color-green2);
+                color: #fff;
+            }
+        }
+        .products-slider {
+            position: relative;
+            overflow: hidden; 
+            .product-card {
+                position: relative;
+                padding: 15px;
+                border-radius: 10px;
+                border: 1px solid transparent;
+                transition: all 0.3s ease;
+                &:hover {
+                    border-color: #cccccc;
+                    .info {
+                        .butn {
+                            transform: scale(1);
+                            opacity: 1;
+                            // bottom: 15px;
+                        }
+                    }
+                }
+                .top-inf {
+                    position: absolute;
+                    top: 15px;
+                    left: 15px;
+                    z-index: 10;
+                    width: calc(100% - 30px);
+                    display: flex;
+                    align-items: center;
+                    .dis-card {
+                        color: #fff;
+                        background-color: var(--color-green2);
+                        padding: 5px 10px;
+                        border-radius: 7px;
+                        display: inline-block;
+                    }
+                    .fav-btn {
+                        width: 30px;
+                        height: 30px;
+                        line-height: 30px;
+                        text-align: center;
+                        border-radius: 50%;
+                        background-color: #e2e4eb;
+                        color: #999;
+                        margin-inline-start: auto;
+                        margin-inline-end: 0;
+                        &.active {
+                            color: var(--color-green2);
+                        }
+                    }
+                }
+                .img {
+                    position: relative;
+                    height: 200px;
+                    display: block;
+                    margin-top: 10px;
+                    border-bottom: 1px solid #9991;
+                }
+                .info {
+                    padding-top: 15px;
+                    .rating {
+                        display: flex;
+                        align-items: center;
+                        font-size: 13px;
+                        color: #666;
+                        .stars {
+                            display: flex;
+                            margin-inline-end: 5px;
+                            i {
+                                color: #ffa500;
+                            }
+                        }
+                    }
+                    .meta {
+                        margin-top: 15px;
+                        .meta-item {
+                            font-size: 10px;
+                            text-transform: uppercase;
+                            padding: 3px 10px;
+                            position: relative;
+                            margin-inline-end: 5px;
+                            margin-top: 5px;
+                            border-radius: 6px;
+                            font-weight: 500;
+                            .bg{
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 6px;
+                                opacity: 0.05;
+                            }
+                        }
+                    }
+                    .thumbnail-imgs {
+                        .thumbnail {
+                            border: 1px solid transparent;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            &.selected {
+                                border-color: #9995;
+                            }
+                        }
+                    }
+                    .butn {
+                        // position: absolute;
+                        // left: 15px;
+                        // bottom: 0px;
+                        width: 100%;
+                        padding: 12px 30px;
+                        transform: scale(0.8);
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 991px) {
+    .tc-brand-box-style3 {
+        .top-info {
+            .banner {
+                .info {
+                    position: relative;
+                    padding: 20px;
+                    max-width: 100%;
+                    background-color: #f9f9f9;
+                    border-radius: 15px;
+                    margin-top: -15px;
+                    margin-bottom: 20px;
+                    &.text-white{
+                        color: #222 !important;
+                    }
+                }
+            }
+        }
+        .products-content {
+            padding: 20px 0 0;
+        }
+    }
+}

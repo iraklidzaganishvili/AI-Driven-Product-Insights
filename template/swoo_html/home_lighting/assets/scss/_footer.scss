@@ -1,0 +1,130 @@
+/* --------------- footer style2 --------------- */
+.tc-footer-style2 {
+    padding: 70px 0 0;
+    border-top: 1px solid #999;
+
+    .subs-form {
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        border: 1px solid #999;
+        border-radius: 10px;
+
+        .icon {
+            flex-shrink: 0;
+            font-size: 18px;
+        }
+        input {
+            width: 100%;
+            border: 0;
+            background-color: transparent;
+        }
+        button {
+            font-size: 18px;
+            border: 0;
+            background-color: transparent;
+            flex-shrink: 0;
+        }
+    }
+
+    .links {
+        display: flex;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+        ul {
+            width: 100%;
+            li{
+                margin-bottom: 10px;
+                a{
+                    font-size: 13px;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+    
+            }
+        }
+        &.half-links {
+            ul {
+                width: 50%;
+            }
+        }
+    }
+
+    .insta-imgs {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -5px;
+        a{
+            position: relative;
+            width: calc(33% - 6px);
+            margin: 3px;
+            border-radius: 10px;
+            overflow: hidden;
+            &:hover {
+                &::after {
+                    opacity: 0.3;
+                }
+                .icon {
+                    transform: translate(-50% , -50%) scale(1);
+                    opacity: 1;
+                }
+            }
+            &::after{
+                position: absolute;
+                content: "";
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #000;
+                z-index: 2;
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .icon{
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50% , -50%) scale(0);
+                font-size: 20px;
+                color: #fff;
+                z-index: 10;
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+        }
+    }
+
+    .foot {
+        padding: 80px 0 60px;
+
+        .pay-imgs {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+                height: 15px;
+                margin-inline-end: 10px;
+                &:last-of-type {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 991px) {
+    .tc-footer-style2 {
+        .foot-info,
+        .links  {
+            margin-bottom: 40px;
+        }
+    }
+}

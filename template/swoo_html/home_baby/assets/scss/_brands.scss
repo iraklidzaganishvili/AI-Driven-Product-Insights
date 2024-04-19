@@ -1,0 +1,37 @@
+/* --------------- brands style4 --------------- */
+.tc-brands-style4 {
+    .brands {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -10px;
+        justify-content: space-between;
+        .logo {
+            width: 160px;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            margin: 10px;
+            img {
+                max-width: 100px;
+                max-height: 70px;
+                object-fit: contain;
+                transition: all 0.3s ease;
+            }
+            &:hover {
+                border-color: var(--color-cyan2);
+                img {
+                    // filter: drop-shadow( 3px 3px 0 var(--color-cyan2) );
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .tc-brands-style4 {
+
+    }
+}

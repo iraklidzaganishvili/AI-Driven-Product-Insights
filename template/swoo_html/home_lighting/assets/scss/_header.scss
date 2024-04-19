@@ -1,0 +1,171 @@
+/* --------------- header style2 --------------- */
+.tc-header-style2 {
+    .main-slider {
+        position: relative;
+        overflow: hidden;
+        .slide-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            transform: scale(1.2);
+            transition: all 1s ease;
+            transition-delay: 1s;
+            opacity: 0;
+            
+            .img {
+                position: relative;
+                height: 700px;
+                // max-height: 100vw;
+                &::after {
+                    position: absolute;
+                    content: "";
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #000;
+                    opacity: 0.4;
+                }
+            }
+
+            .info {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                padding: 20px;
+                z-index: 10;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+
+                h2 {
+                    display: block;
+                    width: max-content;
+                    position: relative;
+                    margin: auto;
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: var(--color-darkGreen1);
+                        z-index: 5;
+                        transition: all 0.7s ease-in-out;
+                        transition-delay: 1.3s;
+                    }
+                }
+
+                h3,
+                h6 {
+                    display: block;
+                    width: max-content;
+                    position: relative;
+                    margin: auto;
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        right: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: var(--color-darkGreen1);
+                        z-index: 5;
+                        transition: all 0.7s ease-in-out;
+                        transition-delay: 1.3s;
+                    }
+                }
+
+                .sub-font {
+                    font-family: 'GrayscaleSignature';
+                    text-shadow: 0 0 10px #93ea9d;
+                }
+
+                .offer {
+                    padding: 6px;
+                    background-color: #27282b;
+                    border-radius: 8px;
+                    color: #2cfbcd;
+                }
+
+            }
+
+        }
+
+        .swiper-slide-active {
+            .slide-card {
+                transform: scale(1);
+                opacity: 1;
+                .info {
+                    h2,
+                    h3,
+                    h6 {
+                        &::after {
+                            width: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .slider-controls{
+            position: absolute;
+            left: 50%;
+            bottom: 40px;
+            transform: translateX(-50%);
+            background-color: #0005;
+            padding: 5px 50px;
+            border-radius: 20px;
+            display: inline-block;
+            z-index: 20;
+            .swiper-pagination{
+               position: relative;
+               bottom: 0;
+               .swiper-pagination-bullet{
+                  width: 7px;
+                  height: 7px;
+                  &.swiper-pagination-bullet-active{
+                     background-color: #fff;
+                  }
+               }
+            }
+            .swiper-button-next,
+            .swiper-button-prev{
+               // position: relative;
+               &::after{
+                  font-size: 14px;
+                  color: #fff;
+               }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .tc-header-style2 {
+        .fsz-100 {
+            font-size: 40px !important;
+        }
+        .fsz-80 {
+            font-size: 40px !important;
+        }
+        .mb-50 {
+            margin-bottom: 25px !important;
+        }
+        .mt-80 {
+            margin-top: 40px !important;
+        }
+        .main-slider {
+            .slide-card .img{
+                height: 500px;
+            }
+            .slider-controls {
+                bottom: 20px;
+            }
+        }
+    }
+}

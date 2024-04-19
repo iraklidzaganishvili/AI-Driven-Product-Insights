@@ -1,0 +1,19 @@
+/* --------------- bannerss style4 --------------- */
+.tc-banner-style4 {
+
+    .banner-card {
+        position: relative;
+        border-radius: 10px;
+        padding: 0 30px;
+        overflow: hidden;
+        background-image: linear-gradient(to right, #01a49e , #01c7c0);
+        color: #fff;
+    }
+
+}
+
+@media screen and (max-width: 991px) {
+    .tc-banner-style4 {
+
+    }
+}

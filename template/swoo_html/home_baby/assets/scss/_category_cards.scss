@@ -1,0 +1,55 @@
+/* --------------- category-cards style4 --------------- */
+.tc-category-cards-style4 {
+
+    .category-card {
+        margin-top: 20px;
+        background-color: #fafafa;
+        border-radius: 15px;
+        padding: 40px 30px;
+
+        &.lightBlue {
+            background-color: #e8f2f2;
+        }
+
+        &.lightBrown {
+            background-color: #f6f1e9;
+        }
+
+        .banners {
+            .adbanner {
+                position: relative;
+                display: block;
+                &.r-info{
+                    .info {
+                        left: auto;
+                        right: 0;
+                    }
+                }
+                .img {
+                    height: 130px;
+                    border-radius: 10px;
+                    overflow: hidden;
+                }
+                .info {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    height: 100%;
+                    width: 70%;
+                    padding: 15px 20px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-content: space-between;
+                    z-index: 10;
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 991px) {
+    .tc-category-cards-style4 {
+
+    }
+}

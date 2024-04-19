@@ -311,6 +311,15 @@ async function fetchProductDetails(product, index) {
             isFirstCall == false
         }
 
+        product.table = []
+        m$('table[class="a-keyvalue prodDetTable"] > tbody > tr').each(function () {
+
+            const key = $1('[class="a-color-secondary a-size-base prodDetSectionEntry"]', this).text().trim()
+            const value = $1('[class="a-size-base prodDetAttrValue"]', this).text().trim()
+            product.table.push([key,value])
+        })
+        console.log(product.table)
+
         console.log(product.link, 'prlink')
         const ImgPromise = runConcurrentlyControlledImageProcessing(product, index)
 
@@ -397,10 +406,10 @@ function processProductImages(product, index) {
             console.log(prLinks, 'link');
             let operations = prLinks.map(async (link, i) => {
                 const currentImgMaxNum = ImgMaxNum++;
-            
+
                 try {
                     await downloadFile(link, `./e/gen-og/${currentImgMaxNum}.webp`, index);
-            
+
                     const resizePromises = [
                         resizeFile(
                             `./e/gen-og/${currentImgMaxNum}.webp`,
@@ -411,7 +420,7 @@ function processProductImages(product, index) {
                             { r: 255, g: 255, b: 255, alpha: 1 }
                         ),
                     ];
-            
+
                     if (i === 0) {
                         resizePromises.push(
                             resizeFile(
@@ -424,11 +433,11 @@ function processProductImages(product, index) {
                             )
                         );
                     }
-            
+
                     await Promise.all(resizePromises);
-            
+
                     product.productImages.push(`./gen-img/${currentImgMaxNum}-big.webp`);
-            
+
                     if (i === 0) {
                         product.productSmallImage = `./gen-img/${currentImgMaxNum}-small.webp`;
                     }

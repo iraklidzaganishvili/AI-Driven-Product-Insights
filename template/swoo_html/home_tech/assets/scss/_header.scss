@@ -1,0 +1,133 @@
+/* --------------- header style3 --------------- */
+.tc-header-style3 {
+    position: relative;
+    margin-top: 20px;
+
+    .cat-list {
+        padding: 20px 30px;
+        background-color: #fff;
+        border-radius: 10px;
+        .cat-link {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: capitalize;
+            color: #000;
+            background-color: transparent;
+            padding: 6px 0;
+            display: flex;
+            align-items: center;
+            .arrow {
+                margin-inline-start: auto;
+            }
+            &:hover,
+            &.active {
+                color: var(--color-green2);
+                span {
+                    text-decoration: underline;
+                    color: var(--color-green2);
+                }
+            }
+        }
+    }
+
+
+    .header-slider3 {
+        position: relative;
+
+        .slider-card {
+            position: relative;
+            .img {
+                height: 310px;
+                border-radius: 10px;
+                overflow: hidden;
+            }
+            .info {
+                position: absolute;
+                top: 40px;
+                left: 60px;
+                z-index: 10;
+                width: 50%;
+            }
+        }
+
+        .slider-controls{
+            position: absolute;
+            left: auto;
+            right: 20px;
+            bottom: 20px;
+            background-color: #fff;
+            padding: 4px 40px;
+            border-radius: 20px;
+            display: inline-block;
+            z-index: 20;
+            .swiper-pagination{
+               position: relative;
+               bottom: 0;
+            }
+            .swiper-button-next,
+            .swiper-button-prev{
+               // position: relative;
+               &::after{
+                  font-size: 11px;
+                  color: #000;
+               }
+            }
+        }
+
+    }
+
+    .card-rec-box {
+        position: relative;
+        .img{
+            height: 120px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .info {
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 20px;
+            z-index: 10;
+        }
+    }
+
+    .card-box {
+        position: relative;
+        .img {
+            height: 215px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .info {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 25px;
+            z-index: 10;
+            &.r_info {
+                left: auto;
+                right: 0;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 991px) {
+    .tc-header-style3 {
+        .header-slider3 .slider-card {
+            margin-top: 20px;
+            .info {
+                top: 30px;
+                left: 20px;
+            }
+        }
+        .card-box,
+        .card-rec-box {
+            .info {
+                max-width: 50%;
+            }
+        }
+    }
+}

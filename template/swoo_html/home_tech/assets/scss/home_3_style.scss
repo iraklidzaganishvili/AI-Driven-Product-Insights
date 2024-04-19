@@ -1,0 +1,89 @@
+/* ========= [ * page-home_3 ]  =========*/
+
+// navbar
+@import 'navbar';
+
+// header
+@import 'header';
+
+// features
+@import 'features';
+
+// deals
+@import 'deals';
+
+// banners
+@import 'banners';
+
+// tabs
+@import 'tabs';
+
+// brand_box
+@import 'brand_box';
+
+// brand_cards
+@import 'brand_cards';
+
+// recently
+@import 'recently';
+
+// footer
+@import 'footer';
+
+
+// ------------ home style ------------
+.home-style3 {
+    // font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #e2e4eb;
+}
+
+.title {
+    .arrows {
+        position: relative;
+        width: 70px;
+        height: 25px;
+        background-color: #ebedf3;
+        border-radius: 30px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-inline-end: 0;
+        margin-inline-start: auto;    
+        .swiper-button-next,
+        .swiper-button-prev {
+            &::after {
+                font-size: 10px;
+                color: #000;
+            }
+        }
+        .swiper-button-next {
+            right: 0;
+        }
+        .swiper-button-prev {
+            left: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .home-style3 {
+        br{
+            display: none;
+        }
+        .fsz-50 {
+            font-size: 30px !important;
+        }
+        .fsz-40 {
+            font-size: 25px !important;
+        }
+        .mb-90 {
+            margin-bottom: 40px !important;
+        }
+        .fsz-30 {
+            font-size: 18px !important;
+        }
+        .p-30.bg-white{
+            padding: 25px 15px !important;
+        }
+    }
+}

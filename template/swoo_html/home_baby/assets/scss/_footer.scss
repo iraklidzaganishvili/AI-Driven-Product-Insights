@@ -1,0 +1,103 @@
+/* --------------- footer style4 --------------- */
+.tc-footer-style4 {
+
+    .top-content {
+        .links-group {
+            a{
+                font-size: 14px;
+                color: #666;
+                margin: 5px 0;
+                &:hover {
+                    color: var(--color-cyan2);
+                }
+            }
+        }
+        
+        .subscribe-content {
+            .subs-form {
+                .form-group {
+                    display: flex;
+                    border-radius: 7px;
+                    overflow: hidden;
+                    input {
+                        width: 100%;
+                        background-color: #edf0f7;
+                        border: 0;
+                        padding-inline-start: 20px;
+                        font-size: 12px;
+                    }
+                    button {
+                        background-color: var(--color-cyan2);
+                        border: 0;
+                        color: #fff;
+                        padding: 15px 30px;
+                        flex-shrink: 0;
+                        font-size: 12px;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+
+        .social-links {
+            a {
+                width: 35px;
+                height: 35px;
+                line-height: 35px;
+                text-align: center;
+                border-radius: 50%;
+                background-color: #edf0f7;
+                margin-inline-end: 10px;
+                &:hover {
+                    background-color: var(--color-cyan2);
+                    color: #fff;
+                }
+            }
+        }
+
+    }
+
+    .lang-links {
+        .links-ul {
+            display: flex;
+            &>li{
+                margin: 0 !important;
+                padding: 0 20px;
+                border: 1px solid #9995;
+                border-radius: 6px;
+                margin-inline-end: 10px !important;
+                padding: 5px 15px;
+            }
+        }
+    }
+
+    .pay-imgs {
+        img {
+            margin: 0 10px;
+            max-height: 20px;
+        }
+    }
+
+    .foot-download {
+        a {
+            padding: 5px 15px;
+            border-radius: 6px;
+            background-color: #000;
+            color: #fff;
+            margin-inline-start: 6px;
+        }
+    }
+
+}
+
+@media screen and (max-width: 991px) {
+    .tc-footer-style4 {
+        padding-bottom: 80px;
+        .foot-download {
+            a {
+                padding: 5px;
+                margin: 0;
+            }
+        }
+    }
+}
