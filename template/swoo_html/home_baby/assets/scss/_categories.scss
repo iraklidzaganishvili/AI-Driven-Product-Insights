@@ -1,0 +1,148 @@
+/* --------------- categories style4 --------------- */
+.tc-categories-style4 {
+    overflow: hidden;
+
+    .categories-slider4 {
+        position: relative;
+        // overflow: hidden;
+
+        .cat-card.new-card {
+            .icon-circle {
+                background-color: #eb3c1a;
+                color: #fff;
+                h4{
+                    position: relative;
+                    z-index: 10;
+                }
+                &::after {
+                    position: absolute;
+                    content: "";
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    background-color: #0001;
+                    transform: translate(45% , 30%);
+                }
+                &::before {
+                    position: absolute;
+                    content: "";
+                    left: 0;
+                    top: 0;
+                    width: 30%;
+                    height: 30%;
+                    border-radius: 50%;
+                    background-color: #fff3;
+                }
+            }
+        }
+
+        .cat-card.sale-card {
+            .icon-circle {
+                background-color: #01a49e;
+                color: #fff;
+                outline: 5px solid #fff;
+                outline-offset: -6px;
+                h4{
+                    position: relative;
+                    z-index: 10;
+                }
+                &::after {
+                    position: absolute;
+                    content: "";
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 20px;
+                    background-color: #f1dc67;
+                    transform: translate(-45%, 75%);
+                }
+                &::before {
+                    position: absolute;
+                    content: "";
+                    left: 0;
+                    top: 0;
+                    width: 40%;
+                    height: 40%;
+                    border-radius: 15px;
+                    background-color: #00827d;
+                    transform: translate(50px, -22px);
+                }
+            }
+        }
+
+        .cat-card {
+            display: block;
+            text-align: center;
+            &:hover {
+                .icon-circle {
+                    transform: scale(0.95);
+                    outline: 5px solid #e2f1f0;
+                    outline-offset: 5px;
+                }
+                b{
+                    color: var(--color-cyan2);
+                    transition: all 0.3s ease;
+                }
+            }
+            .icon-circle {
+                position: relative;
+                overflow: hidden;
+                width: 110px;
+                height: 110px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #e2f1f0;
+                margin: 0 auto 15px;
+                transition: all 0.3s ease;
+                outline: 5px solid transparent;
+                img {
+                    max-height: 55px;
+                }
+            }
+        }
+
+    }
+
+    .cat-banner {
+        position: relative;
+        margin-top: 30px;
+        .banner-item {
+            position: relative;
+            .img{
+                height: 230px;
+                border-radius: 15px;
+                overflow: hidden;
+            }
+            .info {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 10;
+                padding: 20px 40px;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: center;
+                height: 100%;
+            }
+            &.item-rtl {
+                .info {
+                    width: 50%;
+                    right: 0;
+                    left: auto;
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 991px) {
+    .tc-categories-style4 .cat-banner .banner-item.item-rtl .info {
+        width: 75%;
+    }
+}

@@ -1,0 +1,100 @@
+/* --------------- shop-room style2 --------------- */
+.tc-shop-room-style2 {
+    background-color: #ebe8e4;
+
+    .main-content {
+        padding: 70px 0;
+        border-top: 1px solid #999;
+    }
+
+    .title {
+        .arrows {
+            span {
+                width: 50px;
+                height: 30px;
+                line-height: 30px;
+                background-color: #fff;
+                border-radius: 6px;
+                margin-inline-start: 5px;
+                text-align: center;
+                font-size: 18px;
+                border: 0;
+                cursor: pointer;
+                &:hover {
+                    background-color: var(--color-darkGreen1);
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    .shop-room-slider {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .room-card {
+        &:hover {
+            .img {
+                transform: scale(0.96);
+                &::before {
+                    top: 50%;
+                    opacity: 1;
+                }
+                &::after {
+                    left: 50%;
+                    opacity: 1;
+                }
+                img {
+                    transform: scale(1.2);
+                }
+            }
+        }
+        .img {
+            position: relative;
+            height: 330px;
+            display: block;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            
+            &::before {
+                position: absolute;
+                content: "";
+                width: 1px;
+                height: 40px;
+                background-color: #fff;
+                left: 50%;
+                top: 20%;
+                transform: translate(-50% , -50%);
+                opacity: 0;
+                transition: all 0.5s ease;
+                z-index: 10;
+            }
+            &::after {
+                position: absolute;
+                content: "";
+                width: 40px;
+                height: 1px;
+                background-color: #fff;
+                left: 20%;
+                top: 50%;
+                transform: translate(-50% , -50%);
+                opacity: 0;
+                transition: all 0.5s ease;
+                z-index: 10;
+            }
+
+            img {
+                transition: all 0.5s ease;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 991px) {
+    .tc-shop-room-style2 {
+
+    }
+}

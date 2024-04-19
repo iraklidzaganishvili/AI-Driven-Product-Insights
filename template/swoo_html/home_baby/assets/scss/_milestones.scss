@@ -1,0 +1,42 @@
+/* --------------- milestones style4 --------------- */
+.tc-milestones-style4 {
+    .milestones-box {
+        padding: 60px 30px;
+        background-image: url(../img/milestones.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        overflow: hidden;
+
+        .miles-card {
+            position: relative;
+            text-align: center;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 40px;
+            .img {
+                height: 265px;
+            }
+            .info {
+                padding: 30px 15px;
+                background-color: #fff;
+                .title {
+                    font-size: 20px;
+                    display: block;
+                    width: max-content;
+                    margin: 0 auto 5px;
+                    font-weight: bold;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .tc-milestones-style4 {
+
+    }
+}

@@ -138,6 +138,7 @@ async function articleToHTML(markdownText, product0, product1, product2, index, 
 
         return outputHTML;
     }
+    console.log(addListsToHTML)
 
     // Load main HTML content
     const mainHtmlContent = fs.readFileSync('e/blueprint.html', 'utf8');
@@ -320,4 +321,3 @@ module.exports = {
     articleToHTML,
     mainPage
 };
-

@@ -1,0 +1,172 @@
+/* --------------- footer style2 --------------- */
+.tc-best-seller-style2 {
+    padding: 70px 0;
+    background-color: #ebe8e4;
+
+    .title {
+        .arrows {
+            span {
+                width: 50px;
+                height: 30px;
+                line-height: 30px;
+                background-color: #fff;
+                border-radius: 6px;
+                margin-inline-start: 5px;
+                text-align: center;
+                font-size: 18px;
+                border: 0;
+                cursor: pointer;
+                &:hover {
+                    background-color: var(--color-darkGreen1);
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    .slider-controls{
+        border: 1px solid #999;
+        padding: 5px 10px;
+        border-radius: 20px;
+        display: flex;
+        z-index: 20;
+        margin: 70px auto 0;
+        width: max-content;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 150px;
+        .swiper-pagination{
+           position: relative;
+           bottom: 0;
+           .swiper-pagination-bullet{
+              width: 7px;
+              height: 7px;
+              &.swiper-pagination-bullet-active{
+                 background-color: #000;
+              }
+           }
+        }
+        .swiper-next,
+        .swiper-prev{
+           color: #000;
+        }
+    }
+
+    .text-slider-content{
+        position: relative;
+        overflow: hidden;
+        width: calc(100% + 8vw);
+        left: -4vw;
+        margin-top: 50px;
+        .swiper-wrapper {
+           -webkit-transition-timing-function: linear !important;
+           transition-timing-function: linear !important;
+           position: relative;
+       }
+        .swiper-slide{
+           width: max-content !important;
+        }
+
+        .feature-card {
+            display: flex;
+            align-items: center;
+            a{
+                font-size: 100px;
+                filter: grayscale(1);
+                opacity: 0.7;
+                &:hover {
+                    filter: grayscale(0);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .product-card-style2 {
+        position: relative;
+        &:hover {
+            .swiper-button-next,
+            .swiper-button-prev {
+                opacity: 1;
+            }
+            .imgs {
+                .btns {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0);
+                }
+            }
+        }
+    
+        .fav-btn {
+            position: absolute;
+            width: 45px;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            background-color: #fff;
+            color: #c5c8cc;
+            border-radius: 50%;
+            top: 0;
+            right: 0;
+            z-index: 10;
+            font-size: 16px;
+            &.active {
+                color: #fe0000;
+            }
+        }
+    
+        .imgs {
+            position: relative;
+            overflow: hidden;
+            .img {
+                position: relative;
+                height: 340px;
+            }
+    
+            .btns {
+                position: absolute;
+                left: 0;
+                bottom: 20px;
+                width: 100%;
+                z-index: 10;
+                text-align: center;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(30px);
+                transition: all 0.3s ease;
+                .butn {
+                    padding: 10px 20px;
+                }
+            }
+        }
+    
+        .info{
+            .rate {
+                display: flex;
+                font-size: 12px;
+                .stars {
+                    color: #339900;
+                }
+            }
+        }
+    
+        .swiper-button-next,
+        .swiper-button-prev {
+            opacity: 0;
+            transition: all 0.3s ease;
+            &::after{
+                color: #000;
+                font-size: 13px;
+            }
+        }
+    
+    }
+}
+
+
+@media screen and (max-width: 991px) {
+    .tc-best-seller-style2 {
+
+    }
+}
