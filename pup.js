@@ -56,7 +56,7 @@ async function getImages(url) {
         return imageUrls
 
     } catch (error) {
-        console.log('Hover action failed, grabbing the first image on the page. ' + error);
+        // console.log('Hover action failed, grabbing the first image on the page. ' + error);
 
         // Grab the first image on the page
         const firstImageUrl = await page.evaluate(() => {
@@ -64,7 +64,7 @@ async function getImages(url) {
             return imageInForm ? imageInForm.src : null;
         });
 
-        console.log(firstImageUrl)
+        // console.log(firstImageUrl)
         await downloadFile(firstImageUrl, 'captcha.png');
 
         const pythonOutput = execSync('python captcha.py').toString().trim();
@@ -123,7 +123,7 @@ const downloadFile = async (imageUrl, outputPath, id = '') => {
         });
         await streamPipeline(response.body, fs.createWriteStream(outputPath));
     } catch (error) {
-        console.error(`Error in id ${id}: ${error.message}`);
+        // console.error(`Error in id ${id}: ${error.message}`);
     }
 };
 async function resizeFile(inputPath, outputPath, id = '', width, height, background = { r: 255, g: 255, b: 255, alpha: 1 }) {

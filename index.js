@@ -5,7 +5,7 @@ const { spawn } = require('child_process');
 const sharp = require('sharp');
 
 //imports
-const { articleToHTML, mainPage } = require('./e/converter');
+const { articleToHTML } = require('./converter');
 const { getImages, downloadFile, resizeFile } = require('./pup');
 
 //useragent
@@ -43,6 +43,7 @@ let currNum = 0;
 let MaxPages = 1
 let maxIndexesPerPage = 1
 let url = "bottle"
+let RelatedProductAmount = 2
 
 agentRotator = 0
 
@@ -64,14 +65,15 @@ async function fetchAndProcessData() {
 
         for (let i = 0; i < savedIndexes.length; i++) {
             if (savedIndexes[i].product.bestReviews && savedIndexes[i].product.productImages) {
-                const rand = twoNumbers();
-                articleToHTML(savedIndexes[i].aiAnswer, savedIndexes[i].product, allProducts[rand[0]], allProducts[rand[1]], 2222222, rand);
+                const rand = randomNumbers(RelatedProductAmount);
+                const relatedProducts = rand.map(index => allProducts[index]);
+                articleToHTML(savedIndexes[i].aiAnswer, savedIndexes[i].product, relatedProducts, 2222222, rand);
             } else {
                 console.log("Product " + index + " html generation failed due to lack of info")
             }
         }
 
-        if (allProducts) mainPage(allProducts)
+        // if (allProducts) mainPage(allProducts)
 
         let dataToSave = JSON.stringify(allProducts, null, 2);
         let AIDataToSave = JSON.stringify(allArticles, null, 2);
@@ -244,7 +246,28 @@ Article word count should be at least 1500 words but we need to try to output 20
     } catch (err) {
         console.error(err);
     }
+}
 
+async function commentAI(prompt) {
+    const response = await openai.chat.completions.create({
+        model: "gpt-3.5-turbo-16k-0613",
+        messages: [
+            {
+                "role": "system",
+                "content": "Given comment rephrase the comment. The answer needs to only have the name of the rephrased comment and your rephrased comment in that order in the same format that it was provided. I has to be in the same format as it was provided so {\"title\": \"your output\", \"content\": \"your output\"}"
+            },
+            {
+                "role": "user",
+                "content": JSON.stringify(prompt, null, 4).replace(/[\n\r]/g, '').replace(/"([^"]+)":/g, '$1:')
+            }
+        ],
+        temperature: 1,
+        max_tokens: 6000,
+        top_p: 0.4,
+        frequency_penalty: 1,
+        presence_penalty: 1,
+    });
+    return JSON.parse(response.choices[0].message.content)
 }
 
 async function fakeAI(prompt) {
@@ -316,34 +339,42 @@ async function fetchProductDetails(product, index) {
 
             const key = $1('[class="a-color-secondary a-size-base prodDetSectionEntry"]', this).text().trim()
             const value = $1('[class="a-size-base prodDetAttrValue"]', this).text().trim()
-            product.table.push([key,value])
+            product.table.push([key, value])
         })
-        console.log(product.table)
 
-        console.log(product.link, 'prlink')
+        // console.log(product.link, 'prlink')
         const ImgPromise = runConcurrentlyControlledImageProcessing(product, index)
 
 
         //Call AI
-        const rand = twoNumbers();
         if (product.bestReviews) {
             const { productImages, ...productNoImages } = product;
             const aiAnswerPromise = fakeAI(productNoImages)
 
-            const [result1, aiAnswer] = await Promise.all([ImgPromise, aiAnswerPromise]);
+            const rephraseComments = (async () => {
+                const aiPromises = product.bestReviews.slice(0, 3).map(async (review) => {
+                    return commentAI(review);
+                });
+                return Promise.all(aiPromises);
+            })();
 
+            const [result1, aiAnswer, rephraseCommentsAns] = await Promise.all([ImgPromise, aiAnswerPromise, rephraseComments]);
+
+            if (rephraseCommentsAns[0] && rephraseCommentsAns[0].title) product.rephraseComments = rephraseCommentsAns;
 
             allProducts.push(product)
 
             //SAVER <----
-            if (aiAnswer && product && allProducts[rand[0]] && allProducts[rand[1]]) {
-                if (index > 2) {
-                    articleToHTML(aiAnswer, product, allProducts[rand[0]], allProducts[rand[1]], index, rand);
+            if (aiAnswer && product) {
+                if (index > RelatedProductAmount) {
+                    const rand = randomNumbers(RelatedProductAmount, index);
+                    const relatedProducts = rand.map(index => allProducts[index]);
+                    articleToHTML(aiAnswer, product, relatedProducts, index, rand);
                 } else {
                     savedIndexes.push({ index, product, aiAnswer })
                 }
             } else {
-                console.log("Product " + index + " generation failed due to lack of info, ye", aiAnswer, product.link, allProducts[rand[0]].link, allProducts[rand[1]].link)
+                console.log("Product " + index + " generation failed due to lack of info, ye")
             }
         } else {
             console.log("Product " + index + " AI failed due to lack of info")
@@ -356,16 +387,16 @@ async function fetchProductDetails(product, index) {
     }
 }
 
-function twoNumbers() {
-    if (allProducts.length < 2) {
-        return [0, 0]
+function randomNumbers(count, index) {
+    if (count >= allProducts.length) {
+        return Array(count).fill(0);
     }
-    let randomIndex1 = Math.floor(Math.random() * allProducts.length)
-    let randomIndex2
-    do {
-        randomIndex2 = Math.floor(Math.random() * allProducts.length)
-    } while (randomIndex1 === randomIndex2)
-    return [randomIndex1, randomIndex2]
+    const uniqueIndices = new Set();
+    while (uniqueIndices.size < count) {
+        const randomIndex = Math.floor(Math.random() * allProducts.length);
+        if (randomIndex != index) uniqueIndices.add(randomIndex);
+    }
+    return Array.from(uniqueIndices);
 }
 
 
@@ -403,7 +434,7 @@ function processProductImages(product, index) {
     // Return a new promise that encapsulates the entire operation
     return new Promise((resolve, reject) => {
         getImages(product.link).then((prLinks) => {
-            console.log(prLinks, 'link');
+            // console.log(prLinks, 'link');
             let operations = prLinks.map(async (link, i) => {
                 const currentImgMaxNum = ImgMaxNum++;
 

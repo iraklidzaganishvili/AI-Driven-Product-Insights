@@ -8,8 +8,8 @@ const openai = new OpenAI({
     apiKey: '***REMOVED***',
 });
 
-async function articleToHTML(markdownText, product0, product1, product2, index, rand) {
-
+async function articleToHTML(markdownText, product0, relatedProducts, index, rand) {
+    const relatedProductsTitles = relatedProducts.map(product => product.title)
     // if (product1.reviewRatingAndCount == "") {
     //     console.log(product1)
     // }
@@ -149,8 +149,6 @@ async function articleToHTML(markdownText, product0, product1, product2, index, 
     // console.log(modifiedHtml);
 
 
-
-
     // ---------- insert in to the actual file ----------
 
     // // Find the section with the ID 'article'
@@ -263,7 +261,6 @@ async function articleToHTML(markdownText, product0, product1, product2, index, 
     if (table) {
         const ul = mainDocument.createElement('ul');
         const addInfo = mainDocument.querySelector('.additional-info')
-        console.log(table)
         table.forEach(([key, value]) => {
             const li = mainDocument.createElement('li');
             const strong = mainDocument.createElement('strong');
@@ -275,13 +272,151 @@ async function articleToHTML(markdownText, product0, product1, product2, index, 
             ul.appendChild(li);
         });
         addInfo.appendChild(ul)
-    }else{
+    } else {
         console.log('no table found')
     }
 
+    const relatedProductsElement = mainDocument.getElementById('13-related-prdcts');
+
+    // Create 8 slides with product information
+    for (let i = 0; i < 2; i++) {
+        const product = relatedProducts[i];
+
+        // Create the slide element
+        const slide = mainDocument.createElement('div');
+        slide.className = 'swiper-slide';
+        slide.setAttribute('role', 'group');
+        slide.setAttribute('aria-label', `${i + 1} / 8`);
+        slide.style.width = '236px';
+
+        // Create the product card element
+        const productCard = mainDocument.createElement('div');
+        productCard.className = 'product-card';
+
+        // Create the top info section
+        const topInfo = mainDocument.createElement('div');
+        topInfo.className = 'top-inf';
+
+        // Create the image section
+        const imageLink = mainDocument.createElement('a');
+        imageLink.href = '#0';
+        imageLink.className = 'img';
+        const image = mainDocument.createElement('img');
+        const imgLink = '../../../e/' + product.productSmallImage
+        image.src = imgLink;
+        image.alt = '';
+        image.className = 'img-contain main-image';
+        imageLink.appendChild(image);
+
+        // Create the info section
+        const info = mainDocument.createElement('div');
+        info.className = 'info';
+
+        const rating = mainDocument.createElement('div');
+        rating.className = 'rating';
+        const stars = mainDocument.createElement('div');
+        stars.className = 'stars';
+        const star = mainDocument.createElement('img');
+        let cScore = product.reviewRatingAndCount[0].match(/^(\d(\.\d)?)/)[0]
+        cScore = Math.round(cScore * 2) / 2;
+        star.src = `../../../e/images/${c1Score}.png`
+        stars.appendChild(star);
+        const numReviews = mainDocument.createElement('span');
+        numReviews.className = 'num';
+        numReviews.textContent = `(${product.reviewRatingAndCount[1].match(/\d+/g).join(",")})`;
+        rating.appendChild(stars);
+        rating.appendChild(numReviews);
+
+        const title = mainDocument.createElement('h6');
+        const titleLink = mainDocument.createElement('a');
+        titleLink.href = '#';
+        titleLink.className = 'prod-title fsz-14 fw-bold mt-2 hover-green2';
+        titleLink.textContent = product.title;
+        title.appendChild(titleLink);
+
+        const price = mainDocument.createElement('div');
+        price.className = 'price mt-15';
+        const priceText = mainDocument.createElement('h5');
+        priceText.className = 'fsz-18 fw-600';
+        const fPrice = product.fullPrice + '$'
+        priceText.textContent = fPrice;
+        price.appendChild(priceText);
+
+        const inStockText = mainDocument.createElement('p');
+        inStockText.className = 'fsz-12 mt-2';
+        const inStockIcon = mainDocument.createElement('i');
+        inStockIcon.className = 'fas fa-check-circle color-green2 me-1';
+        inStockText.appendChild(inStockIcon);
+        inStockText.appendChild(mainDocument.createTextNode(' In stock'));
+
+        info.appendChild(rating);
+        info.appendChild(title);
+        info.appendChild(price);
+        info.appendChild(inStockText);
+
+        // Append all elements to the product card
+        productCard.appendChild(topInfo);
+        productCard.appendChild(imageLink);
+        productCard.appendChild(info);
+
+        // Append the product card to the slide
+        slide.appendChild(productCard);
+
+        // Append the slide to the related products element
+        relatedProductsElement.appendChild(slide);
+    }
+
+    product0.rephraseComments.forEach(comment => {
+        const commentReplayCont = mainDocument.createElement('div');
+        commentReplayCont.className = 'comment-replay-cont py-5 px-4 mb-20 bg-white radius-5';
+
+        const commentCont = mainDocument.createElement('div');
+        commentCont.className = 'd-flex comment-cont';
+
+        const inf = mainDocument.createElement('div');
+        inf.className = 'inf';
+
+        const title = mainDocument.createElement('div');
+        title.className = 'title d-flex justify-content-between';
+
+        const name = mainDocument.createElement('h6');
+        name.className = 'fw-bold';
+        name.textContent = comment.title;
+
+        const timeAndRate = mainDocument.createElement('div');
+        timeAndRate.className = 'time  text-uppercase d-inline-block';
+
+        const rate = mainDocument.createElement('div');
+        rate.className = 'rate';
+
+        const stars = mainDocument.createElement('div');
+        stars.className = 'stars';
+
+        for (let i = 0; i < comment.rating; i++) {
+            const star = mainDocument.createElement('i');
+            star.className = 'fas fa-star color-green2';
+            stars.appendChild(star);
+        }
+
+        timeAndRate.appendChild(rate);
+        title.appendChild(name);
+        title.appendChild(timeAndRate);
+        inf.appendChild(title);
+
+        const text = mainDocument.createElement('div');
+        text.className = 'text color-000  mt-10';
+        text.textContent = comment.content;
+
+        inf.appendChild(text);
+        commentCont.appendChild(inf);
+        commentReplayCont.appendChild(commentCont);
+
+        mainDocument.getElementById('reviews-content').appendChild(commentReplayCont);
+    });
+
     const updatedHTML = mainDom.serialize();
 
-    const files = fs.readdirSync('./');
+    const files = fs.readdirSync('template/swoo_html/inner_pages/');
     let maxNum = 0;
 
     files.forEach(file => {
@@ -294,254 +429,9 @@ async function articleToHTML(markdownText, product0, product1, product2, index, 
     const pageNum = maxNum + 1;
     const newFileName = `${pageNum}.html`;
     const road = path.join('', newFileName)
-    fs.writeFileSync('template/swoo_html/inner_pages/single_product.html', updatedHTML, 'utf8');
+    fs.writeFileSync(`template/swoo_html/inner_pages/${newFileName}`, updatedHTML, 'utf8');
     console.log(`HTML file ${newFileName} saved!`)
 }
-articleToHTML(`# STANLEY IceFlow Stainless Steel Tumbler: The Perfect Hydration Companion for Every Adventure
-
-## Introduction
-
-In today's fast-paced world, staying hydrated is more important than ever. Whether you're at home, in the office, or on the go, having a reliable and stylish tumbler by your side can make all the difference. That's where the STANLEY IceFlow Stainless Steel Tumbler comes in. With its innovative design and exceptional features, this tumbler is not just a cup but a statement piece that elevates your beverage experience wherever you are.
-
-## Stay Hydrated for the Whole Day
-
-One of the key benefits of the STANLEY IceFlow Stainless Steel Tumbler is its large capacity. With a 30 oz size, this tumbler can hold enough thirst-quenching beverage to power you through even your longest days. Whether it's water to keep you refreshed or smoothies and iced coffee to fuel your energy levels, simply fill up this tumbler and get on with your day without worrying about constant refills.
-
-## Keeps Cold for a Long Time
-
-When it comes to keeping your drinks cold, the STANLEY IceFlow Tumbler truly excels. Thanks to its double-wall vacuum insulation and high-quality 18/8 stainless steel construction, this tumbler ensures that your beverages stay nice and chilled for up to an impressive 12 hours or even keeps them icy cold for up to two days when filled with ice.
-
-Gone are the days of settling for lukewarm water or melted ice-cold drinks after just a few hours. With the STANLEY IceFlow Tumbler by your side, enjoy refreshing sips throughout the day no matter how long it takes.
-
-## Straw Perfected: Effortless Sipping Anytime
-
-Say goodbye to flimsy disposable straws that create unnecessary waste or reusable straws that make a mess when tipped over. The STANLEY IceFlow Tumbler features an exclusive IceFlow flip straw that takes sipping to a whole new level of convenience.
-
-With this innovative design, you can effortlessly sip your favorite beverages without any spills or leaks. Simply snap the straw shut when you're done and enjoy peace of mind knowing that your tumbler is leak-resistant and ready for any adventure.
-
-## Made to Fit Your Life
-
-The STANLEY IceFlow Tumbler is not just about functionality; it's also designed with your lifestyle in mind. Its ergonomic rotating handle allows you to quickly grab the tumbler and go, making it perfect for those busy mornings or on-the-go moments.
-
-Additionally, this tumbler fits comfortably in cup holders both in your car and on exercise machines, ensuring that hydration is always within reach no matter where life takes you. And when it comes time to clean up, rest assured that the STANLEY IceFlow Tumbler is dishwasher safe, making maintenance a breeze.
-
-## Built for Life: A Promise You Can Count On
-
-When investing in a high-quality product like the STANLEY IceFlow Stainless Steel Tumbler, durability and longevity are crucial factors to consider. That's why Stanley has been trusted since 1913 as a brand committed to providing rugged gear built to last a lifetime.
-
-In line with their "BUILT FOR LIFE" promise, all Stanley products purchased from authorized resellers come with a lifetime warranty. This means that if anything goes wrong with your tumbler due to manufacturing defects or workmanship issues, Stanley will stand behind their product and ensure customer satisfaction.
-
-## Reviews Speak Volumes
-
-Don't just take our word for it - let satisfied customers share their experiences with the STANLEY IceFlow Stainless Steel Tumbler:
-
-- One reviewer praises how this tumbler keeps drinks at the perfect temperature throughout the day, whether it's ice-cold water on a scorching Southern day or piping hot coffee during early morning commutes. The leakproof flip lid is also highlighted as a small detail that makes a big difference in terms of convenience and peace of mind.
-
-- Another reviewer raves about the retro colors and how they perfectly match their aesthetic. They appreciate the collapsible straw feature, which adds an extra layer of cleanliness compared to cups with straws sticking straight up at all times. Easy cleaning and durability are also mentioned as standout features.
-
-- A customer expresses their love for this tumbler not only for its adorable design but also for its practicality and positive impact on the environment. Made from recycled fishing nets, this tumbler aligns with their conservation interests while providing excellent insulation capabilities.
-
-These reviews highlight some key aspects that make the STANLEY IceFlow Tumbler stand out: style, functionality, ease of use, durability, and environmental consciousness.
-
-## Conclusion
-
-In conclusion, if you're looking for a reliable companion to keep you hydrated throughout your daily adventures, look no further than the STANLEY IceFlow Stainless Steel Tumbler. With its large capacity, exceptional insulation capabilities, convenient flip straw design, ergonomic handle, dishwasher-safe construction,
-and lifetime warranty promise from Stanley - this tumbler has it all.
-
-Don't settle for lukewarm drinks or flimsy containers that can't withstand your active lifestyle. Invest in quality craftsmanship and timeless style with the STANLEY IceFlow Tumbler today!
-
-Stay refreshed in style wherever you go - sip confidently with the STANLEY IceFlow Stainless Steel Tumbler by your side!`,   {
-    "link": "https://www.amazon.com/dp/B096RVQWKX/ref=nosim?tag=bestmmorpg00",
-    "asin": "B096RVQWKX",
-    "title": "BJPKPK Insulated Water Bottles -17oz/500ml -Stainless Steel Water bottles, Sports water bottles Keep cold for 24 Hours and hot for 12 Hours,BPA Free water bottles,Mint",
-    "productImages": [
-      "./gen-img/639-big.webp",
-      "./gen-img/642-big.webp",
-      "./gen-img/640-big.webp",
-      "./gen-img/641-big.webp",
-      "./gen-img/643-big.webp"
-    ],
-    "fullPrice": "10.25",
-    "brand": "BJPKPK",
-    "reviewRatingAndCount": [
-      "4.5 out of 5",
-      "7,883 global ratings"
-    ],
-    "fromTheManufacturer": [
-      "Keep drinks cold & hot: Adopt double wall vacuum insulation design, keep your drinks ice cold for 24 hours and hot for 12 hours within our highly performed insulated water bottle.     Safe and Reliable: Made of premium 18/8 food grade stainless steel - durable and rust proof, BPA Free Lid - leak proof, no sweat on the exterior side to keep your hands comfortable while holding, Eco-friendly.     Keep Hydration: Drinking more water with this water bottle, suitable for any sports activities, work and any scenario in your daily life.     Functional style: Our water bottles have been designed with spill proof and leak proof features for convenient use and travelling.     Perfect size: Our water bottles are designed with perfect size for daily use and also perfect fit in your car cup holder.",
-      "From the manufacturer",
-      "BJPKPK Stainless Steel Double Wall Insulated Water Bottles BUILT TO LAST",
-      "Our highly rated water bottles are ready for any adventure, also designed to be the perfect urban companion as well. With design in mind, our stylish cola shaped bottles know how to keep you cool. Using our innovative insulated water bottles enhance the daily hydration experience by keeping drinks cold for 24 hours or hot for 12 hours. No matter where your journey, our water bottle is the best beverage companion, making sure you have high performance with you!",
-      "<img alt=\"water bottle\" src=\"https://m.media-amazon.com/images/S/aplus-media/vc/87d5cb76-8433-4d69-9e65-ccb745d57a69.__CR0,0,300,300_PT0_SX300_V1___.jpg\"/>",
-      "<img alt=\"water bottle\" src=\"https://m.media-amazon.com/images/S/aplus-media/vc/5afddd5d-7102-4860-9450-1276bd886527.__CR0,0,300,300_PT0_SX300_V1___.jpg\"/>",
-      "<img alt=\"water bottle cup holder\" src=\"https://m.media-amazon.com/images/S/aplus-media-library-service-media/d7bf0105-41a7-4627-baeb-b9e2f0e00829.__CR0,0,1600,1600_PT0_SX300_V1___.jpg\"/>",
-      "CLEANING AND MAINTENANCE:",
-      "18/8 Stainless Steel Material",
-      "Water tastes fresh all day long! And it feels nicer than plastic to drink.",
-      "Made with 18/8 food grade stainless steel, BJPKPK metal water bottles ensure pure taste and no flavor transfer, and the durable construction stands up to whatever life brings, never sweat on your hands or in your bag.",
-      "Double Wall Vacuum Insulation",
-      "The unique double wall vacuum insulation protects temperature for hours. Keeps cold drinks icy cold and hot drinks piping hot for hydration any time, anywhere. Our BJPKPK insulated water bottles can keep hot beverages warm for up to 12 hours and cold beverages chilled for up to 24 hrs.",
-      "The color is gorgeous, even prettier in real life!",
-      "Our stainless steel water bottles are beautifully crafted and designed to last. The powder coated             finish is not a smooth glossy finish, doesn't sweat, staying slip-free and colorful, no matter where             you take it.",
-      "You can use our double wall vacuum insulated water bottle in any circumstance, both for going to             the office as well as for any other common plans like hiking, go camping or making any sport.             Keep hydrated all day long! Whether you're on the road or in the office, there's a BJPKPK bottle             just for you."
-    ],
-    "bestReviews": [
-      {
-        "title": "Perfect Stanley Alternative: BJPKPK's Insulated Wonder Bottle Will Steal Your Heart",
-        "rating": "5.0 out of 5 stars",
-        "content": "Forget the hype, ditch the bulky beast – the BJPKPK Stainless Steel Insulated Water Bottle (25oz) is the real MVP of hydration heroes. While everyone's clinging to their Stanleys, this hidden gem takes the crown for keeping beverages ice-cold longer and piping hot for hours longer than your Stanley. Seriously, I'm talking frosty lemonade at sunset and toasty tea well into the afternoon.But it's not just about temperature. This little wonder is a champion of convenience too. Picture-perfect fit in any 3-inch car cupholder—no more awkward wedging or precarious balancing acts. Plus, the leakproof lid and durable stainless steel construction mean you can toss it in your bag without worry. Say goodbye to soggy backpacks and hello to peace of mind.And did I mention the gorgeous colors and sleek design? This bottle isn't just functional, it's eye-catching too. Ditch the boring metal cylinders and rock a vibrant pop of personality with every sip.Sure, you could follow the crowd and join the Stanley club, but why settle for good when you can have exceptional? The BJPKPK Kids Stainless Steel Insulated Water Bottle is a game-changer, a hydration hero, and an all-around awesome companion for any adventure. I love it so much, I'd buy another in a heartbeat (though with this quality, why would I need to?)Here's the lowdown:Temperature Titan: Keeps drinks ice-cold for 24 hours and piping hot for 12 hours.Cupholder Champion: Fits snugly in any 3-inch car cupholder.Leakproof Legend: No more spills, just pure hydration bliss.Durable Defender: Built to last, adventure after adventure.Style Star: Available in a range of eye-catching colors to match your personality.So, ditch the hype and grab a BJPKPK. Your taste buds (and your car cupholder) will thank you.P.S. If you're looking for a gift that's both practical and awesome, look no further! This bottle is a guaranteed crowd-pleaser for kids and adults alike."
-      },
-      {
-        "title": "Keeping Hydration Cool and Stylish",
-        "rating": "5.0 out of 5 stars",
-        "content": "I recently purchased the BJPKPK Insulated Water Bottle in Sakura Pink for my niece, and it has proven to be a delightful addition to her daily routine. This stainless steel water bottle not only keeps her beverages at the perfect temperature but also offers a chic design that she adores. I'm thrilled to provide a five-star review for this fantastic gift.Impressive Temperature Retention:One of the standout features of this water bottle is its remarkable ability to keep beverages cold for 24 hours and hot for 12 hours. Whether she's enjoying a refreshing cold drink or a hot beverage during the school day, this bottle ensures that it stays at the ideal temperature.Stainless Steel Durability:The stainless steel construction is not only durable but also adds to the aesthetic appeal of the bottle. It can withstand daily use and the occasional bump or drop.Chic Sakura Pink Design:The Sakura Pink color and design are both stylish and age-appropriate for my niece. She loves showing off her water bottle at school, making it a fashionable accessory as well as a practical one.Perfect Size:The 17oz/500ml size is just right for her daily hydration needs. It's not too bulky, making it easy to carry in her school bag, while still holding enough water to keep her refreshed throughout the day.BPA-Free and Safe:The fact that this bottle is BPA-free provides peace of mind. It ensures that she's staying hydrated with a safe and non-toxic container.Easy to Clean:The design of the bottle makes it easy to clean, and it's dishwasher safe, which simplifies the cleaning process for both her and her parents.In conclusion, the BJPKPK Insulated Water Bottle is a five-star gift that combines functionality and style. Its impressive temperature retention capabilities, chic Sakura Pink design, and stainless steel durability make it a perfect choice for my niece. It's a wonderful accessory for her school days, ensuring she stays hydrated and fashionable. Whether as a gift or for personal use, this water bottle is a fantastic choice for anyone seeking a stylish and practical hydration solution. My niece absolutely loves it, and I wholeheartedly recommend it to others."
-      },
-      {
-        "title": "Works great!",
-        "rating": "5.0 out of 5 stars",
-        "content": "It's a quality item for a great price; kept my drinks hot. I chose the 25 oz. size, but found the finish too slippery to hold, and it was a little difficult to hold onto due to the larger circumference. It felt a little heavy for me to hold as well. Not saying anyone else will have these same issues, but it was my experience. It's a great product, but I think this one is a little bit too big for me. I'll keep it for a backup. Seal works great and doesn't leak. I'm giving it 5 stars as it works great, I just had some difficulty using it that doesn't affect the rating."
-      },
-      {
-        "title": "Bottle mouth is too small for most average sized ice cubes.",
-        "rating": "4.0 out of 5 stars",
-        "content": "I received my order two days ago, and I am happy with it. The bottle has a sleek design that fits my hand much better than most of the others I’ve owned. I was disappointed by the size of the bottle opening. It is about an inch and a half wide and I will have to buy a smaller bottle brush to clean it properly. I also couldn't get my smaller ice cubes to fit the narrow opening, so I crushed some ice in the blender. The great news is that the ice stayed frozen for at least ten hours. Today, I didn't feel like chopping ice, so I added some very cold water from my fridge to the bottle, and 6 hours later,  it was still cold. If it's possible to redesign this with a wider mouth, it would be perfect for me. However, if you have a crushed ice option on your fridge or an icemaker with small pellet ice, you should have no problems loading it with ice and enjoying a very cold beverage for several hours. Though, so far, the water in the bottle is still cold, even without any ice. I wrote this review so anyone who must have a wide-mouth bottle understands this particular style may not fit your needs. However, if the narrow opening isn't a deal breaker, this is quite a good bottle that delivers on the promise to keep beverages cold for a reasonable price."
-      },
-      {
-        "title": "Great water bottle",
-        "rating": "5.0 out of 5 stars",
-        "content": "I like to take it to the bowling ally. I wish the opening was about a half inch wider , so You could put ice from the refrigerator,  the mouth is too small. Keeps your drinks cold for about 14 to 20 hours with ice. Plenty of colors to choose from."
-      },
-      {
-        "title": "Simple but great",
-        "rating": "5.0 out of 5 stars",
-        "content": "This is a great water bottle that doesn't leak. I bought it as a gift and it holds well, keeps liquids cold and is durable."
-      },
-      {
-        "title": "Sleek and attractive",
-        "rating": "5.0 out of 5 stars",
-        "content": "Good size, easy to hold, fits in cup holder and will probably keep water pretty cold."
-      },
-      {
-        "title": "I like it, but...",
-        "rating": "3.0 out of 5 stars",
-        "content": "It has a powder coating instead of a stainless-steel look.  The mouthpiece is not smooth, providing a soft spot to prevent hurting teeth or lips.  I have a very nice stainless steel bottle that is similar that I bought for $3 at Ross that has the features mentioned.  It is not insulated though.  I will see how well my water stays cold with the one I just purchased.  It's ok for the price, but I would pay a few dollars more for the features mentioned above."
-      },
-      {
-        "title": "Keeps it cold",
-        "rating": "4.0 out of 5 stars",
-        "content": "Not exactly fits 16.9 oz .. maybe 16oz.... 16.9oz maybe if filled to top. 16.9oz bottled water dint fit with the cap on. But have to sip a lil bit so the top fits without spillin. It does stay nice n cold on side pocket of my backpack. For those times u only need a lil cold hydration.  Dont work for them hot days u need more, gots the 25oz for that!!"
-      },
-      {
-        "title": "Nice shape and color",
-        "rating": "5.0 out of 5 stars",
-        "content": "The bottle has a nice deep blue color and the shape is easy to hold in one's hand. It can hold 500 ml of liquid but it is longer and thinner than normal plastic bottles of the same volume. I use it nearly every day. It is easy to clean and will not leak if filled just below the neck. I have only used it for cold liquids and haven't tried hot ones."
-      }
-    ],
-    "table": [
-      [
-        "Brand",
-        "BJPKPK"
-      ],
-      [
-        "Capacity",
-        "17 Fluid Ounces"
-      ],
-      [
-        "Color",
-        "A-Mint"
-      ],
-      [
-        "Recommended Uses For Product",
-        "Water, Soup, Travelling, Tea, Coffee"
-      ],
-      [
-        "Special Feature",
-        "Sweat Resistant, Leak Proof, Double Wall Vaccum Insulation"
-      ],
-      [
-        "Age Range (Description)",
-        "Adult"
-      ],
-      [
-        "Product Dimensions",
-        "2.7\"W x 10.7\"H"
-      ],
-      [
-        "Model Name",
-        "KeleCG11"
-      ],
-      [
-        "Item Weight",
-        "10.88 ounces"
-      ],
-      [
-        "Theme",
-        "Holiday"
-      ],
-      [
-        "Material",
-        "Stainless Steel, Metal"
-      ],
-      [
-        "Number of Items",
-        "1"
-      ],
-      [
-        "Included Components",
-        "Insulated Water Bottle;Sticker"
-      ],
-      [
-        "Product Care Instructions",
-        "Hand Wash Only"
-      ],
-      [
-        "Cap Type",
-        "Screw Cap"
-      ],
-      [
-        "With Lid",
-        "Yes"
-      ],
-      [
-        "Is Bpa Free",
-        "Yes"
-      ],
-      [
-        "Lid Tightness",
-        "leakproof"
-      ],
-      [
-        "Item Weight",
-        "10.9 ounces"
-      ],
-      [
-        "Manufacturer",
-        "BJPKPK"
-      ],
-      [
-        "ASIN",
-        "B096RVQWKX"
-      ],
-      [
-        "Country of Origin",
-        "China"
-      ],
-      [
-        "Item model number",
-        "KeleCG11"
-      ],
-      [
-        "Customer Reviews",
-        ""
-      ],
-      [
-        "Best Sellers Rank",
-        ""
-      ],
-      [
-        "Date First Available",
-        "June 7, 2021"
-      ]
-    ],
-    "productSmallImage": "./gen-img/639-small.webp"
-  }, '', '', 1, [0, 0])
+module.exports = {
+    articleToHTML
+};
