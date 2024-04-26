@@ -1,0 +1,229 @@
+[
+  {
+    "link": "https://www.amazon.com/dp/B0CBNH8Z47/ref=nosim?tag=bestmmorpg00",
+    "asin": "B0CBNH8Z47",
+    "title": "Acer Aspire C22-1610-UA91 AIO Desktop | 21.5\" Full HD 1920 x 1080 IPS Display | Intel Core i3-N305 | Intel UHD Graphics | 8GB DDR5 | 512GB PCIe Gen 4 SSD | Intel Wi-Fi 6 | Windows 11 Home",
+    "productImages": [
+      "./gen-img/4-big.webp",
+      "./gen-img/2-big.webp",
+      "./gen-img/1-big.webp",
+      "./gen-img/0-big.webp",
+      "./gen-img/5-big.webp",
+      "./gen-img/3-big.webp"
+    ],
+    "fullPrice": "499.99",
+    "brand": "acer",
+    "reviewRatingAndCount": [
+      "4.4 out of 5",
+      "530 global ratings"
+    ],
+    "fromTheManufacturer": [
+      "ALL-IN-ONE SLIM DESIGN: One slice of metal to do it all. Finished in black and gold, the 7.5 mm, ultra-slim all-in-one promises space-saving features and cable-tidy management, keeping the family home clutter-free and looking sharp.     SLIM. STYLISH. STUNNING: Enjoy the crisp colors that this cool, 21.5\" Full HD PC delivers. It features an Intel Core i3 processor, Intel UHD Graphics and fast Intel Wireless Wi-Fi 6 AX201 connectivity.     OPTIMIZED PERFORMANCE: The Intel Core i3-N305 processor and Intel UHD graphics distribute performance where you need it most. From streaming to browsing to photo and video editing!     DISPLAY AND COMFORT: The 21.5\" FHD IPS display is framed between a narrow bezel delivering a screen-to-body ratio of an incredible 90.71%. The tiltable screen (-5 to 25°) utilizes BlueLightShield technology to lower exposure to blue light for your comfort     INTERNAL SPECIFICATIONS: 8GB DDR5 4800MHz Memory; 512GB M.2 2280 PCIe Gen 4 SSD to store your files and media     VIDEO CALLING AND PRIVACY: Video calling has never been more critical. With the brilliant FHD 1080p webcam and two stereo microphones, stay connected with friends and family as if they were there. Additionally, keep family life private with the convenient webcam cover for peace of mind.     CONNECTIONS: Intel Wireless Wi-Fi 6 AX201 802.11ax Dual-Band 2.4GHz and 5GHz featuring 2x2 MU-MIMO technology; 10/100/1000 Gigabit Ethernet LAN (RJ-45 port); Bluetooth 5.2      PORTS: 1 - USB 3.2 Gen2 10 Gbps, Type-C (Rear), 1 - USB 3.2 Gen2 10Gbps Port (Rear), 1 - USB 3.2 Gen1 5Gbps Port (Rear), 1 - USB 2.0 480Mbps Port (Rear), 1 - HDMI-out 1.4b Port (Rear), 1 - Audio Jack, 1 - Ethernet (RJ-45)  Windows 11 Home | USB Keyboard and Mouse Included",
+      "From the manufacturer",
+      "All-in-One, Slim Design",
+      "One slice of metal to do it all. Finished in black and gold, the 7.5 mm, ultra-slim all-in-one promises space-saving features and cable-tidy management, keeping the family home clutter-free and looking sharp.",
+      "Optimized Performance",
+      "The  Intel Core i3-N305 Processors delivers optimized power for everyday tasks for every family member. With 8GB DDR5 users get increased speed for those with more demanding needs.",
+      "Display and Comfort",
+      "The 21.5\" FHD IPS display is framed between a narrow bezel delivering a screen-to-body ratio of an incredible 90.71%. The tiltable screen (-5 to 25°) utilizes BlueLightShield technology to lower exposure to blue light for your comfort",
+      "Video Calling and Privacy",
+      "Video calling has never been more critical. With the brilliant FHD 1080p webcam and two stereo microphones, stay connected with friends and family as if they were there. Additionally, keep family life private with the convenient webcam cover for peace of mind.",
+      "Strong and Stable Connectivity",
+      "Stay connected during the most critical moments with Wi-Fi 6, enabling high-speed, stable browsing; boasting performance in an environment with many connected devices.",
+      "Plenty of Ports",
+      "Featuring Bluetooth 5.2, USB Type-C, 2 USB 3.2 ports, USB 2.0 and add an extra display using HDMI, the Aspire C22 supports a wide range of connectivity options to support all your peripherals"
+    ],
+    "bestReviews": [
+      {
+        "title": "Great Computer",
+        "rating": "5.0 out of 5 stars",
+        "content": "Easy set up even for a rookie like me. Great computer"
+      },
+      {
+        "title": "Quality has gone into the toilet",
+        "rating": "1.0 out of 5 stars",
+        "content": "I needed a new desktop and was weighing between this Acer and a Lenovo. The Lenovo had the disk drive I wanted, but I went with the Acer because I've had such good luck with them in the past. What a mistake! The day before the free return expired the mouse stopped working. I tried using the form on the Acer website, but it refused to recognize the serial numbers on the back of the computer. There are only two numbers, I tried each one three times and neither was recognized. This isn't rocket science. So, I found an email address, sent them a message. 72 hours later they responded, asking for those numbers. By this time my new mouse had arrived, and I was able to double check that all drivers were up to date. They were. The new mouse worked four hours and then it also stopped working. I let the computer sit for 3 days, working on my backup computer, turned this one back on, and it worked. For 10 days. Now it won't go online. At all. I'm going to have to do my best to get as much work as possible off of the computer onto an external hard drive and then return the thing to factory settings. And then I'll put it back in the box and donate it to charity. I can't stand it anymore. Don't make my mistake. Try a different brand."
+      },
+      {
+        "title": "Good quality product",
+        "rating": "5.0 out of 5 stars",
+        "content": "All-in-one computer. setup was easy. seems to run very well."
+      },
+      {
+        "title": "Very bad screen - almost impossible to read",
+        "rating": "1.0 out of 5 stars",
+        "content": "I own other Dell computers and screens.I bought this computer as an update from existing computer.Unfortunately the screen was not well readable:-) Colors were not correct to the point that i was not able to use my color-coded exel files that i've been using for a decade on 10 different computers.-) fonts were also very grainy, not antialiased, and difficult to read.I have spent 4 hours with Microsoft support team trying different setups, and another 4 hours with the Dell support number. (i have all the proofI have had to return it, and i was charged 120$ for that.In addition to that, i have spent about 20 hours of my time in order to first copy all my files and setting up my accounts, and then remove from the machine for the return.Last time I'm buying a Dell, and Last time I'm buying computers on Amazon.They should be paying me for their disservice."
+      },
+      {
+        "title": "Problems with this PC",
+        "rating": "1.0 out of 5 stars",
+        "content": "I’ve had so many problems with this PC, even after sending it out for repairs within less than two months of purchasing it. The fan runs constantly and loudly the camera fades in and out and the keyboard and mouse will not connect. I purchased another Acer because the prior PC I had was an Acer and it served me well for 10 years but this one is a bunch of crap it seems. I’m so frustrated."
+      },
+      {
+        "title": "Suitable for the creation of documents",
+        "rating": "4.0 out of 5 stars",
+        "content": "Full disclosure: I regularly use and prefer the IOS operating system because I don’t ever recall experiencing unexplainable crashes and unprovoked system restarts, and, most importantly, I don’t need to purchase anti-virus software. With that said, I did, however, need a Window’s base system to use a MS graphic designer used for desktop publishing that I really liked; the reason I ordered this Acer Aspire desktop.Minus the lengthy software set up process and the nonobservance of my selection to set up this computer as new, yet the software moved files from my existing MS account to this Acer Aspire’s desktop, I was pleased with the speed of this desktop, especially while searching the internet. The colors on the screen were vibrant and the images on the screen were crystal clear. McAfee anti-virus’ software was already installed, and I think there was a 90-trial period, but I was able to easily uninstall and install an alternative anti-virus program that I favored. I appreciated that the 21.5” screen easily tilted to preference and the size of the screen made viewing content on the screen comfortable for my eyes, without having to change the settings.The Acer Aspire’s companion keyboard and mouse operated well and were of decent quality, and all I had to do was to plug each device into the back ports, power on the system, and the software walked me through set-up. I can’t comment on this desktop’s gaming potential because I’ll only be using the computer for desktop publishing. So far, I haven’t had any problems designing marketing materials on this unit."
+      },
+      {
+        "title": "Worst computer I have ever bought.",
+        "rating": "1.0 out of 5 stars",
+        "content": "Sorry to say this is the worst computer I have ever bought. It won't recognize external storage devices of  any kind. The original keyboard and mouse had to be replaced during the first month of use, with aftermarket units, due to very poor construction. Pathetic quality and very poor construction.Honestly I cannot recommend this computer under any situation. A computer that will not recognize external HD's - memory cards or any form of external storage is of no use at all. Avoid this product at all costs. I've only had it since December 2023 and I'm already having to replace the entire piece of garbage."
+      },
+      {
+        "title": "Redid it to look like Windows 10",
+        "rating": "5.0 out of 5 stars",
+        "content": "Months in and it's still a great computer.  I redid it to look like Windows 10 and it still works great."
+      },
+      {
+        "title": "Average computer",
+        "rating": "5.0 out of 5 stars",
+        "content": "Easy to unpack set up and get loaded with your files from your existing computer."
+      },
+      {
+        "title": "Non functioning screen",
+        "rating": "1.0 out of 5 stars",
+        "content": "This All in One goes to sleep and won’t turn back on.  I have to unplug it and turn it on again.  Customer Support can’t fix it.  It’s going back for a full refund"
+      }
+    ],
+    "table": [
+      [
+        "Standing screen display size",
+        "‎21.5 Inches"
+      ],
+      [
+        "Screen Resolution",
+        "‎1920 x 1080"
+      ],
+      [
+        "Max Screen Resolution",
+        "‎1920x1080"
+      ],
+      [
+        "Processor",
+        "‎3.8 GHz core_i3"
+      ],
+      [
+        "RAM",
+        "‎DDR5"
+      ],
+      [
+        "Hard Drive",
+        "‎512 SSD"
+      ],
+      [
+        "Chipset Brand",
+        "‎Intel"
+      ],
+      [
+        "Card Description",
+        "‎Integrated"
+      ],
+      [
+        "Graphics Card Ram Size",
+        "‎0.1"
+      ],
+      [
+        "Wireless Type",
+        "‎Bluetooth, 802.11ax"
+      ],
+      [
+        "Number of USB 2.0 Ports",
+        "‎1"
+      ],
+      [
+        "Number of USB 3.0 Ports",
+        "‎3"
+      ],
+      [
+        "Brand",
+        "‎acer"
+      ],
+      [
+        "Series",
+        "‎C22-1610-UA91"
+      ],
+      [
+        "Item model number",
+        "‎DQ.BL9AA.001"
+      ],
+      [
+        "Operating System",
+        "‎Windows 11 Home"
+      ],
+      [
+        "Item Weight",
+        "‎10.33 pounds"
+      ],
+      [
+        "Product Dimensions",
+        "‎19.46 x 0.3 x 11.76 inches"
+      ],
+      [
+        "Item Dimensions  LxWxH",
+        "‎19.46 x 0.3 x 11.76 inches"
+      ],
+      [
+        "Color",
+        "‎Black"
+      ],
+      [
+        "Processor Brand",
+        "‎Intel"
+      ],
+      [
+        "Number of Processors",
+        "‎8"
+      ],
+      [
+        "Computer Memory Type",
+        "‎DDR5 RAM"
+      ],
+      [
+        "Flash Memory Size",
+        "‎512 GB"
+      ],
+      [
+        "Hard Drive Interface",
+        "‎Solid State"
+      ],
+      [
+        "Hard Drive Rotational Speed",
+        "‎0.1"
+      ],
+      [
+        "ASIN",
+        "B0CBNH8Z47"
+      ],
+      [
+        "Customer Reviews",
+        ""
+      ],
+      [
+        "Best Sellers Rank",
+        ""
+      ],
+      [
+        "Date First Available",
+        "September 25, 2023"
+      ]
+    ],
+    "productSmallImage": "./gen-img/0-small.webp",
+    "rephraseComments": [
+      {
+        "title": "Great Computer",
+        "content": "The computer was easy to set up, even for someone with little experience. It is a great computer.",
+        "rating": "5.0 out of 5 stars"
+      },
+      {
+        "title": "Decline in quality",
+        "content": "I have had good experiences with Acer in the past, but this recent purchase has been a disappointment. The mouse stopped working shortly after the return period ended and I encountered difficulties when trying to contact customer support. After finally receiving a response, my new mouse also malfunctioned after only four hours of use. Additionally, the computer now refuses to go online. I am left with no choice but to transfer my work onto an external hard drive and restore the computer to its factory settings before returning it. I will be exploring other brands for future purchases.",
+        "rating": "1.0 out of 5 stars"
+      },
+      {
+        "title": "Good quality product",
+        "content": "The setup of this all-in-one computer was easy and it seems to run very well.",
+        "rating": "5.0 out of 5 stars"
+      }
+    ]
+  }
+]

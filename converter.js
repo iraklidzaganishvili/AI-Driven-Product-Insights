@@ -20,7 +20,7 @@ async function articleToHTML(markdownText, product0, relatedProducts, index, ran
     //     return
     // }
 
-    // const keywords = getKewords(product0.title)
+    const keywords = getKewords(product0.title)
 
     // Create a new converter instance
     const converter = new Showdown.Converter();
@@ -179,33 +179,52 @@ async function articleToHTML(markdownText, product0, relatedProducts, index, ran
     // scriptTag.innerHTML = `var link0 = "${product0.link}"; var link1 = "${product1.link}"; var link2 = "${product2.link}";`;
     // mainDocument.body.insertBefore(scriptTag, mainDocument.body.firstChild);
 
-    // // Make schema
-    // const schemaJSON = mainDocument.querySelector('script[type="application/ld+json"]');
-    // const schema = JSON.parse(schemaJSON.innerHTML);
-    // schema.itemListElement[0].item.offers.price = product0.fullPrice;
-    // schema.itemListElement[0].item.offers.url = product0.link;
-    // schema.itemListElement[0].item.image = product0.productImages[0];
-    // schema.itemListElement[0].item.name = product0.title;
-    // schema.itemListElement[0].item.description = product0.fromTheManufacturer[0] || "";
+    // Make schema
+    const schemaJSON = mainDocument.querySelector('script[type="application/ld+json"]');
+    const schema = JSON.parse(schemaJSON.innerHTML);
+    schema.itemListElement[0].item.offers.price = product0.fullPrice;
+    schema.itemListElement[0].item.offers.url = product0.link;
+    schema.itemListElement[0].item.image = product0.productImages[0];
+    schema.itemListElement[0].item.name = product0.title;
+    schema.itemListElement[0].item.description = product0.fromTheManufacturer[0] || "";
 
-    // schema.itemListElement[1].item.offers.price = product1.fullPrice;
-    // schema.itemListElement[1].item.offers.url = product1.link;
-    // schema.itemListElement[1].item.image = product1.productImages[0];
-    // schema.itemListElement[1].item.name = product1.title;
-    // schema.itemListElement[1].item.description = product1.fromTheManufacturer[0] || "";
+    const listItemSchema = {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+            "@type": "Product",
+            "name": "",
+            "image": "",
+            "description": "",
+            "offers": {
+                "@type": "Offer",
+                "url": "",
+                "priceCurrency": "USD",
+                "price": "",
+                "availability": "https://schema.org/InStock",
+                "itemCondition": "https://schema.org/NewCondition"
+            }
+        }
+    }
+    let position = 2;
+    relatedProducts.forEach(rp => {
+        const copy = JSON.parse(JSON.stringify(listItemSchema));
+        copy.position = position;
+        copy.item.name = rp.title;
+        copy.item.image = rp.productImages[0];
+        copy.item.description = rp.fromTheManufacturer[0] || "";
+        copy.item.offers.price = rp.fullPrice;
+        copy.item.offers.url = rp.link;
+        schema.itemListElement.push(copy);
+        position += 1;
+    });
 
-    // schema.itemListElement[2].item.offers.price = product2.fullPrice;
-    // schema.itemListElement[2].item.offers.url = product2.link;
-    // schema.itemListElement[2].item.image = product2.productImages[0];
-    // schema.itemListElement[2].item.name = product2.title;
-    // schema.itemListElement[2].item.description = product2.fromTheManufacturer[0] || "";
-    // schemaJSON.innerHTML = JSON.stringify(schema);
+    schemaJSON.innerHTML = JSON.stringify(schema);
 
-    // //Other parts of header
-    // mainDocument.querySelector('meta[name="description"]').setAttribute('content', 'product0.fromTheManufacturer[0]')
-    // await keywords
-    // mainDocument.querySelector('meta[name="keywords"]').setAttribute('content', keywords)
-    // mainDocument.querySelector('title').innerHTML = product0.title;
+    //Other parts of header
+    mainDocument.querySelector('meta[name="description"]').setAttribute('content', product0.fromTheManufacturer[0]);
+    mainDocument.querySelector('meta[name="keywords"]').setAttribute('content', await keywords)
+    mainDocument.querySelector('title').innerHTML = product0.title;
 
     // Save the updated HTML
 
@@ -279,7 +298,7 @@ async function articleToHTML(markdownText, product0, relatedProducts, index, ran
     const relatedProductsElement = mainDocument.getElementById('13-related-prdcts');
 
     // Create 8 slides with product information
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < relatedProducts.length; i++) {
         const product = relatedProducts[i];
 
         // Create the slide element
@@ -319,7 +338,7 @@ async function articleToHTML(markdownText, product0, relatedProducts, index, ran
         const star = mainDocument.createElement('img');
         let cScore = product.reviewRatingAndCount[0].match(/^(\d(\.\d)?)/)[0]
         cScore = Math.round(cScore * 2) / 2;
-        star.src = `../../../e/images/${c1Score}.png`
+        star.src = `../../../e/images/${cScore}.png`
         stars.appendChild(star);
         const numReviews = mainDocument.createElement('span');
         numReviews.className = 'num';
@@ -366,53 +385,61 @@ async function articleToHTML(markdownText, product0, relatedProducts, index, ran
         relatedProductsElement.appendChild(slide);
     }
 
-    product0.rephraseComments.forEach(comment => {
-        const commentReplayCont = mainDocument.createElement('div');
-        commentReplayCont.className = 'comment-replay-cont py-5 px-4 mb-20 bg-white radius-5';
+    if (product0.rephraseComments) {
+        product0.rephraseComments.forEach(comment => {
+            const commentReplayCont = mainDocument.createElement('div');
+            commentReplayCont.className = 'comment-replay-cont py-5 px-4 mb-20 bg-white radius-5';
 
-        const commentCont = mainDocument.createElement('div');
-        commentCont.className = 'd-flex comment-cont';
+            const commentCont = mainDocument.createElement('div');
+            commentCont.className = 'd-flex comment-cont';
 
-        const inf = mainDocument.createElement('div');
-        inf.className = 'inf';
+            const inf = mainDocument.createElement('div');
+            inf.className = 'inf';
 
-        const title = mainDocument.createElement('div');
-        title.className = 'title d-flex justify-content-between';
+            const title = mainDocument.createElement('div');
+            title.className = 'title d-flex justify-content-between';
 
-        const name = mainDocument.createElement('h6');
-        name.className = 'fw-bold';
-        name.textContent = comment.title;
+            const name = mainDocument.createElement('h6');
+            name.className = 'fw-bold';
+            name.textContent = comment.title;
 
-        const timeAndRate = mainDocument.createElement('div');
-        timeAndRate.className = 'time  text-uppercase d-inline-block';
+            const timeAndRate = mainDocument.createElement('div');
+            timeAndRate.className = 'time  text-uppercase d-inline-block';
 
-        const rate = mainDocument.createElement('div');
-        rate.className = 'rate';
+            const rate = mainDocument.createElement('div');
+            rate.className = 'rate';
 
-        const stars = mainDocument.createElement('div');
-        stars.className = 'stars';
+            const stars = mainDocument.createElement('div');
+            stars.className = 'stars';
 
-        for (let i = 0; i < comment.rating; i++) {
-            const star = mainDocument.createElement('i');
-            star.className = 'fas fa-star color-green2';
+            const star = mainDocument.createElement('img');
+            let c2Score = comment.rating.match(/^(\d(\.\d)?)/)[0]
+            c2Score = Math.round(c2Score * 2) / 2;
+            star.src = `../../../e/images/${c2Score}.png`
             stars.appendChild(star);
-        }
 
-        timeAndRate.appendChild(rate);
-        title.appendChild(name);
-        title.appendChild(timeAndRate);
-        inf.appendChild(title);
+            timeAndRate.appendChild(rate);
+            title.appendChild(name);
+            title.appendChild(timeAndRate);
+            inf.appendChild(title);
 
-        const text = mainDocument.createElement('div');
-        text.className = 'text color-000  mt-10';
-        text.textContent = comment.content;
+            const text = mainDocument.createElement('div');
+            text.className = 'text color-000  mt-10';
+            text.textContent = comment.content;
 
-        inf.appendChild(text);
-        commentCont.appendChild(inf);
-        commentReplayCont.appendChild(commentCont);
+            inf.appendChild(text);
+            commentCont.appendChild(inf);
+            commentReplayCont.appendChild(commentCont);
 
-        mainDocument.getElementById('reviews-content').appendChild(commentReplayCont);
-    });
+            mainDocument.getElementById('14-reviews-cont').appendChild(commentReplayCont);
+        });
+        mainDocument.getElementById('15-reviews-num').innerHTML = `(${product0.rephraseComments.length}) Comments`
+        mainDocument.getElementById('pills-tab3-tab').innerHTML = `(${product0.rephraseComments.length}) Comments`
+    }else{
+        mainDocument.getElementById('15-reviews-num').innerHTML = `(0) Comments`
+        mainDocument.getElementById('pills-tab3-tab').innerHTML = `(0) Comments`
+    }
+
 
     const updatedHTML = mainDom.serialize();
 
@@ -432,6 +459,72 @@ async function articleToHTML(markdownText, product0, relatedProducts, index, ran
     fs.writeFileSync(`template/swoo_html/inner_pages/${newFileName}`, updatedHTML, 'utf8');
     console.log(`HTML file ${newFileName} saved!`)
 }
+
+async function getKewords(input) {
+    try {
+        const response = await openai.chat.completions.create({
+            model: "gpt-3.5-turbo-0125",
+            messages: [
+                {
+                    "role": "system",
+                    "content": `
+                    Objective: Your task is to analyze the input, which will be a product name including the brand and the item type, and generate a list of SEO-optimized meta keywords. These keywords should be carefully selected to improve the product's search engine visibility, considering relevance, search volume, and specificity.
+
+Input Description: The input is a string containing the brand name and the product type, formatted as "Brand Name - Product Type" (e.g., "AcmeCorp - Wireless Headphones").
+
+Output Requirements:
+Format: Output a comma-separated list of keywords. There should be no leading or trailing spaces, and no additional text or punctuation beyond the commas.
+
+Content:
+Start with the brand name and product type as primary keywords.
+Include long-tail keywords, which are more specific phrases that potential customers might use when searching for this type of product. These often have lower search volume but can be less competitive and more targeted.
+Add keywords that reflect product features, benefits, and applications, focusing on terms with a good balance between search volume and relevance to the product.
+Consider related search terms that potential customers might use, which are indirectly related to the product but could lead to its discovery.
+SEO Optimization Techniques:
+
+Ensure the keywords are relevant to the product’s features and potential uses.
+Incorporate a mix of broad and specific keywords to balance visibility and targeting.
+Utilize semantic variations of the main keywords to cover possible search intents and synonyms.
+Avoid keyword stuffing; ensure the keywords are natural and directly related to the product.
+Examples:
+
+Input: "AcmeCorp - Wireless Headphones"
+
+Output: "AcmeCorp, wireless headphones, Bluetooth headphones, noise-cancelling audio, high fidelity sound, portable audio devices, best wireless headphones for travel"
+
+Input: "GigaTech - Smartwatch"
+
+Output: "GigaTech, smartwatch, fitness tracking watch, waterproof smart devices, heart rate monitor wearable, smart notifications wristwatch, best smartwatch for athletes"
+
+Constraints:
+Limit the output to a maximum of 50 keywords to maintain focus and relevance.
+Ensure the keywords are realistic and reflect actual search behaviors and patterns.
+Special Considerations:
+
+Research commonly searched terms related to the product type to inform your keyword selection.
+For niche products, prioritize keywords that accurately describe the product’s unique features or target market to attract more qualified traffic.
+                    `
+                },
+                {
+                    "role": "user",
+                    "content": input
+                }
+            ],
+            temperature: 1,
+            max_tokens: 1000,
+            top_p: 1,
+            frequency_penalty: 0,
+            presence_penalty: 0,
+        });
+        let RawAiResault = response.choices[0].message.content
+        RawAiResault = RawAiResault.replace(/\.$/, '')
+        return RawAiResault
+    } catch (err) {
+        console.error(err);
+    }
+
+}
+
 module.exports = {
     articleToHTML
 };
