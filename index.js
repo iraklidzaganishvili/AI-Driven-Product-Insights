@@ -43,7 +43,7 @@ let currNum = 0;
 let MaxPages = 1
 let maxIndexesPerPage = 1
 let url = "bottle"
-let RelatedProductAmount = 2
+let RelatedProductAmount = 8
 
 agentRotator = 0
 
@@ -65,7 +65,7 @@ async function fetchAndProcessData() {
 
         for (let i = 0; i < savedIndexes.length; i++) {
             if (savedIndexes[i].product.bestReviews && savedIndexes[i].product.productImages) {
-                const rand = randomNumbers(RelatedProductAmount);
+                const rand = randomNumbers(RelatedProductAmount, savedIndexes.index);
                 const relatedProducts = rand.map(index => allProducts[index]);
                 articleToHTML(savedIndexes[i].aiAnswer, savedIndexes[i].product, relatedProducts, 2222222, rand);
             } else {
@@ -267,7 +267,11 @@ async function commentAI(prompt) {
         frequency_penalty: 1,
         presence_penalty: 1,
     });
-    return JSON.parse(response.choices[0].message.content)
+    let newComment = JSON.parse(response.choices[0].message.content)
+    if(newComment.title){
+        newComment.rating = prompt.rating
+        return newComment
+    }
 }
 
 async function fakeAI(prompt) {
@@ -349,7 +353,7 @@ async function fetchProductDetails(product, index) {
         //Call AI
         if (product.bestReviews) {
             const { productImages, ...productNoImages } = product;
-            const aiAnswerPromise = fakeAI(productNoImages)
+            const aiAnswerPromise = DoAIMagic(productNoImages)
 
             const rephraseComments = (async () => {
                 const aiPromises = product.bestReviews.slice(0, 3).map(async (review) => {
@@ -396,6 +400,7 @@ function randomNumbers(count, index) {
         const randomIndex = Math.floor(Math.random() * allProducts.length);
         if (randomIndex != index) uniqueIndices.add(randomIndex);
     }
+    console.log(uniqueIndices)
     return Array.from(uniqueIndices);
 }
 
