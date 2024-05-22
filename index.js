@@ -43,6 +43,7 @@ let currNum = 0;
 let MaxPages = 1
 let maxIndexesPerPage = 1
 let url = "bottle"
+let category = "All"
 let RelatedProductAmount = 8
 
 agentRotator = 0
@@ -53,13 +54,13 @@ let ImgMaxNum = 0;
 async function fetchAndProcessData() {
     try {
         const userOutput = await new Promise((resolve) => {
-            readline.question(`Enter search, max products per page (1-10), amount of pages: `, (input) => {
+            readline.question(`Enter search, max products per page (1-10), amount of pages, category: `, (input) => {
                 readline.close();
                 resolve(input);
             });
         });
         const inputs = userOutput.split(',').map(input => input.trim());
-        [url = "bottle", maxIndexesPerPage = 1, MaxPages = 1] = inputs;
+        [url = "bottle", maxIndexesPerPage = 1, MaxPages = 1, category = "All"] = inputs;
 
         await getProducts('https://www.amazon.com/s?k=' + url);
 
@@ -132,7 +133,9 @@ async function getProducts(url) {
                     asin,
                     title,
                     productImages: [],
-                    fullPrice
+                    productSmallImages: [],
+                    fullPrice,
+                    category: category,
                 });
             });
             return [singlePageResults, $]
@@ -268,7 +271,7 @@ async function commentAI(prompt) {
         presence_penalty: 1,
     });
     let newComment = JSON.parse(response.choices[0].message.content)
-    if(newComment.title){
+    if (newComment.title) {
         newComment.rating = prompt.rating
         return newComment
     }
@@ -353,7 +356,7 @@ async function fetchProductDetails(product, index) {
         //Call AI
         if (product.bestReviews) {
             const { productImages, ...productNoImages } = product;
-            const aiAnswerPromise = DoAIMagic(productNoImages)
+            const aiAnswerPromise = fakeAI(productNoImages)
 
             const rephraseComments = (async () => {
                 const aiPromises = product.bestReviews.slice(0, 3).map(async (review) => {
@@ -451,32 +454,44 @@ function processProductImages(product, index) {
                             `./e/gen-og/${currentImgMaxNum}.webp`,
                             `./e/gen-img/${currentImgMaxNum}-big.webp`,
                             index,
-                            460,
-                            460,
+                            524,
+                            550,
                             { r: 255, g: 255, b: 255, alpha: 1 }
                         ),
                     ];
+
+                    resizePromises.push(
+                        resizeFile(
+                            `./e/gen-og/${currentImgMaxNum}.webp`,
+                            `./e/gen-img/${currentImgMaxNum}-small.webp`,
+                            index,
+                            89,
+                            89,
+                            { r: 255, g: 255, b: 255, alpha: 1 }
+                        )
+                    );
+
 
                     if (i === 0) {
                         resizePromises.push(
                             resizeFile(
                                 `./e/gen-og/${currentImgMaxNum}.webp`,
-                                `./e/gen-img/${currentImgMaxNum}-small.webp`,
+                                `./e/gen-img/${currentImgMaxNum}-mid.webp`,
                                 index,
-                                320,
-                                320,
+                                204,
+                                200,
                                 { r: 255, g: 255, b: 255, alpha: 1 }
                             )
                         );
                     }
 
+
                     await Promise.all(resizePromises);
 
                     product.productImages.push(`./gen-img/${currentImgMaxNum}-big.webp`);
+                    product.productSmallImages.push(`./gen-img/${currentImgMaxNum}-small.webp`)
+                    if (i === 0) product.productMidImage = (`./gen-img/${currentImgMaxNum}-mid.webp`)
 
-                    if (i === 0) {
-                        product.productSmallImage = `./gen-img/${currentImgMaxNum}-small.webp`;
-                    }
                 } catch (err) {
                     console.error(`Error processing link: ${err}`);
                 }
