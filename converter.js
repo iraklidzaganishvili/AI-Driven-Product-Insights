@@ -140,7 +140,7 @@ async function articleToHTML(markdownText, product0, relatedProducts, index, ran
     }
 
     // Load main HTML content
-    const mainHtmlContent = fs.readFileSync('template/swoo_html/inner_pages/template.html', 'utf8');
+    const mainHtmlContent = fs.readFileSync('public/template/swoo_html/inner_pages/template.html', 'utf8');
     const mainDom = new JSDOM(mainHtmlContent);
     const mainDocument = mainDom.window.document;
 
@@ -240,14 +240,17 @@ async function articleToHTML(markdownText, product0, relatedProducts, index, ran
     ids[0].innerHTML = product0.title
     let c1Score = product0.reviewRatingAndCount[0].match(/^(\d(\.\d)?)/)[0]
     c1Score = Math.round(c1Score * 2) / 2;
-    ids[1].src = `../../../e/images/${c1Score}.png`
+    ids[1].src = `../../../../e/images/${c1Score}.png`
     ids[2].innerHTML = product0.reviewRatingAndCount[1].match(/\d+/g).join(",");
     ids[3].innerHTML = product0.fullPrice + '$'
     ids[4].innerHTML = '.-sdasdsad'
     ids[5].innerHTML = product0.fullPrice + '$'
     ids[6].innerHTML = 'grab-this'
     ids[7].innerHTML = product0.brand
-
+    ids[15].href = product0.link
+    ids[16].innerHTML = product0.category
+    ids[17].innerHTML = product0.title
+    
     const swiperWrapper = mainDocument.getElementById('9-imgs-big').querySelector('.swiper-wrapper');
     product0.productImages.forEach((imgSrc, i) => {
         const newSlide = mainDocument.createElement('div');
@@ -255,20 +258,21 @@ async function articleToHTML(markdownText, product0, relatedProducts, index, ran
         const imgContainer = mainDocument.createElement('div');
         imgContainer.className = "img";
         const img = mainDocument.createElement('img');
-        img.src = "../../../e/" + imgSrc;
+        img.src = "../../../../e/" + imgSrc;
         imgContainer.appendChild(img);
         newSlide.appendChild(imgContainer);
         swiperWrapper.appendChild(newSlide);
     });
 
     const swiperWrapper1 = mainDocument.querySelector('.gallery-thumbs').querySelector('.swiper-wrapper');
-    product0.productImages.forEach((imgSrc, i) => {
+    product0.productSmallImages.forEach((imgSrc, i) => {
         const newSlide = mainDocument.createElement('div');
         newSlide.className = "swiper-slide";
         const imgContainer = mainDocument.createElement('div');
         imgContainer.className = "img";
         const img = mainDocument.createElement('img');
-        img.src = "../../../e/" + imgSrc;
+        img.src = "../../../../e/" + imgSrc;
+        img.className = "img-small";
         imgContainer.appendChild(img);
         newSlide.appendChild(imgContainer);
         swiperWrapper1.appendChild(newSlide);
@@ -318,10 +322,10 @@ async function articleToHTML(markdownText, product0, relatedProducts, index, ran
 
         // Create the image section
         const imageLink = mainDocument.createElement('a');
-        imageLink.href = '#0';
+        imageLink.href = `./${product.asin}.html`;
         imageLink.className = 'img';
         const image = mainDocument.createElement('img');
-        const imgLink = '../../../e/' + product.productSmallImage
+        const imgLink = '../../../../e/' + product.productMidImage
         image.src = imgLink;
         image.alt = '';
         image.className = 'img-contain main-image';
@@ -338,7 +342,7 @@ async function articleToHTML(markdownText, product0, relatedProducts, index, ran
         const star = mainDocument.createElement('img');
         let cScore = product.reviewRatingAndCount[0].match(/^(\d(\.\d)?)/)[0]
         cScore = Math.round(cScore * 2) / 2;
-        star.src = `../../../e/images/${cScore}.png`
+        star.src = `../../../../e/images/${cScore}.png`
         stars.appendChild(star);
         const numReviews = mainDocument.createElement('span');
         numReviews.className = 'num';
@@ -348,7 +352,7 @@ async function articleToHTML(markdownText, product0, relatedProducts, index, ran
 
         const title = mainDocument.createElement('h6');
         const titleLink = mainDocument.createElement('a');
-        titleLink.href = '#';
+        titleLink.href = `./${product.asin}.html`;
         titleLink.className = 'prod-title fsz-14 fw-bold mt-2 hover-green2';
         titleLink.textContent = product.title;
         title.appendChild(titleLink);
@@ -415,7 +419,7 @@ async function articleToHTML(markdownText, product0, relatedProducts, index, ran
             const star = mainDocument.createElement('img');
             let c2Score = comment.rating.match(/^(\d(\.\d)?)/)[0]
             c2Score = Math.round(c2Score * 2) / 2;
-            star.src = `../../../e/images/${c2Score}.png`
+            star.src = `../../../../e/images/${c2Score}.png`
             stars.appendChild(star);
 
             timeAndRate.appendChild(rate);
@@ -443,7 +447,7 @@ async function articleToHTML(markdownText, product0, relatedProducts, index, ran
 
     const updatedHTML = mainDom.serialize();
 
-    const files = fs.readdirSync('template/swoo_html/inner_pages/');
+    const files = fs.readdirSync('public/template/swoo_html/inner_pages/');
     let maxNum = 0;
 
     files.forEach(file => {
@@ -456,7 +460,7 @@ async function articleToHTML(markdownText, product0, relatedProducts, index, ran
     const pageNum = maxNum + 1;
     const newFileName = `${pageNum}.html`;
     const road = path.join('', newFileName)
-    fs.writeFileSync(`template/swoo_html/inner_pages/${newFileName}`, updatedHTML, 'utf8');
+    fs.writeFileSync(`public/template/swoo_html/inner_pages/${newFileName}`, updatedHTML, 'utf8');
     console.log(`HTML file ${newFileName} saved!`)
 }
 

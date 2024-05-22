@@ -172,4 +172,17 @@
   margin-bottom: 0px;
 }
 
+.img-small {
+  transition: filter 0.3s ease-in-out;
+}
+.img-small:hover {
+  filter: brightness(0.8);
+  scale: 1.1;
+  transition: scale 0.05s ease-in-out;
+}
+
+#review-width {
+  width: 100%;
+}
+
 /*# sourceMappingURL=pages.css.map */

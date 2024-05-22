@@ -15,4 +15,9 @@ body {
   margin: 15px;
 }
 
+.search-btn {
+  background-color: transparent;
+  border: none;
+}
+
 /*# sourceMappingURL=repeat.css.map */

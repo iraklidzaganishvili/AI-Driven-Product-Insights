@@ -30,8 +30,8 @@ async function getImages(url) {
             return srcs;
         }, selector);
         if (htmlContent.length === 0) {
-            const filePath = `screenshot-${1}.png`
-            await page.screenshot({ path: filePath });
+            // const filePath = `screenshot-${1}.png`
+            // await page.screenshot({ path: filePath });
             throw new Error("The variable is empty");
         }
 
@@ -42,8 +42,8 @@ async function getImages(url) {
                 visible: true,
             });
 
-            const filePath = `screenshot-${i}.png`
-            await page.screenshot({ path: filePath });
+            // const filePath = `screenshot-${i}.png`
+            // await page.screenshot({ path: filePath });
 
             const imageUrl = await page.evaluate((index) => {
                 const imageInForm = document.querySelector(`.image.item.itemNo${index}.maintain-height.selected .a-dynamic-image`);
@@ -69,7 +69,7 @@ async function getImages(url) {
 
         const pythonOutput = execSync('python captcha.py').toString().trim();
         await page.type('#captchacharacters', pythonOutput);
-        await page.screenshot({ path: 'page-on-comp.png' });
+        // await page.screenshot({ path: 'page-on-comp.png' });
 
         await Promise.all([
             page.waitForNavigation(), // Waits for the navigation to happen
@@ -95,8 +95,8 @@ async function getImages(url) {
                 visible: true,
             });
 
-            const filePath = `screenshot-${i}.png`
-            await page.screenshot({ path: filePath });
+            // const filePath = `screenshot-${i}.png`
+            // await page.screenshot({ path: filePath });
 
             const imageUrl = await page.evaluate((index) => {
                 const imageInForm = document.querySelector(`.image.item.itemNo${index}.maintain-height.selected .a-dynamic-image`);
