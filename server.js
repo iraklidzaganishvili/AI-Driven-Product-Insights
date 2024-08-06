@@ -5,10 +5,51 @@ const { Op } = require('sequelize'); // Import Op from sequelize
 const sequelize = require('./config/database');
 const Product = require('./models/Product');
 require('dotenv').config();
+const cors = require('cors');
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+app.post('/add-product', async (req, res) => {
+    const {
+        title,
+        asin,
+        link,
+        fullPrice,
+        category,
+        brand,
+        review_rating,
+        review_count,
+        product_mid_image,
+        product_images,
+        product_small_images,
+        rephrase_comments
+    } = req.body;
+
+    try {
+        const newProduct = await Product.create({
+            title,
+            asin,
+            link,
+            fullPrice,
+            category,
+            brand,
+            review_rating,
+            review_count,
+            product_mid_image,
+            product_images,
+            product_small_images,
+            rephrase_comments
+        });
+        res.status(201).json(newProduct);
+    } catch (err) {
+        console.error('Error adding product:', err);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
 
 app.get('/search', async (req, res) => {
     const searchTerm = req.query.name;
@@ -28,8 +69,7 @@ app.get('/search', async (req, res) => {
                 product_small_images: product.product_small_images,
                 rephrase_comments: product.rephrase_comments
             };
-            // const fileName = `your_file_directory/${product.asin}.html`; // Construct file name based on ASIN
-            const fileName = `./1.html`;
+            const fileName = `./${product.asin}.html`; // Construct file name based on ASIN
             res.json({ productDetails, fileName });
         } else {
             res.status(404).json({ error: 'Product not found' });

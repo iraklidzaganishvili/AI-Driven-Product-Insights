@@ -240,7 +240,7 @@ async function articleToHTML(markdownText, product0, relatedProducts, index, ran
     ids[0].innerHTML = product0.title
     let c1Score = product0.reviewRatingAndCount[0].match(/^(\d(\.\d)?)/)[0]
     c1Score = Math.round(c1Score * 2) / 2;
-    ids[1].src = `../../../../e/images/${c1Score}.png`
+    ids[1].src = `../../../images/${c1Score}.png`
     ids[2].innerHTML = product0.reviewRatingAndCount[1].match(/\d+/g).join(",");
     ids[3].innerHTML = product0.fullPrice + '$'
     ids[4].innerHTML = '.-sdasdsad'
@@ -258,7 +258,7 @@ async function articleToHTML(markdownText, product0, relatedProducts, index, ran
         const imgContainer = mainDocument.createElement('div');
         imgContainer.className = "img";
         const img = mainDocument.createElement('img');
-        img.src = "../../../../e/" + imgSrc;
+        img.src = "../../../gen-img/" + imgSrc;
         imgContainer.appendChild(img);
         newSlide.appendChild(imgContainer);
         swiperWrapper.appendChild(newSlide);
@@ -271,7 +271,7 @@ async function articleToHTML(markdownText, product0, relatedProducts, index, ran
         const imgContainer = mainDocument.createElement('div');
         imgContainer.className = "img";
         const img = mainDocument.createElement('img');
-        img.src = "../../../../e/" + imgSrc;
+        img.src = "../../../gen-img/" + imgSrc;
         img.className = "img-small";
         imgContainer.appendChild(img);
         newSlide.appendChild(imgContainer);
@@ -325,7 +325,7 @@ async function articleToHTML(markdownText, product0, relatedProducts, index, ran
         imageLink.href = `./${product.asin}.html`;
         imageLink.className = 'img';
         const image = mainDocument.createElement('img');
-        const imgLink = '../../../../e/' + product.productMidImage
+        const imgLink = '../../../gen-img/' + product.productMidImage
         image.src = imgLink;
         image.alt = '';
         image.className = 'img-contain main-image';
@@ -342,7 +342,7 @@ async function articleToHTML(markdownText, product0, relatedProducts, index, ran
         const star = mainDocument.createElement('img');
         let cScore = product.reviewRatingAndCount[0].match(/^(\d(\.\d)?)/)[0]
         cScore = Math.round(cScore * 2) / 2;
-        star.src = `../../../../e/images/${cScore}.png`
+        star.src = `../../../images/${cScore}.png`
         stars.appendChild(star);
         const numReviews = mainDocument.createElement('span');
         numReviews.className = 'num';
@@ -419,7 +419,7 @@ async function articleToHTML(markdownText, product0, relatedProducts, index, ran
             const star = mainDocument.createElement('img');
             let c2Score = comment.rating.match(/^(\d(\.\d)?)/)[0]
             c2Score = Math.round(c2Score * 2) / 2;
-            star.src = `../../../../e/images/${c2Score}.png`
+            star.src = `../../../images/${c2Score}.png`
             stars.appendChild(star);
 
             timeAndRate.appendChild(rate);
@@ -447,21 +447,8 @@ async function articleToHTML(markdownText, product0, relatedProducts, index, ran
 
     const updatedHTML = mainDom.serialize();
 
-    const files = fs.readdirSync('public/template/swoo_html/inner_pages/');
-    let maxNum = 0;
-
-    files.forEach(file => {
-        const baseName = path.basename(file, '.html');
-        const num = parseInt(baseName);
-        if (!isNaN(num) && num > maxNum) {
-            maxNum = num;
-        }
-    })
-    const pageNum = maxNum + 1;
-    const newFileName = `${pageNum}.html`;
-    const road = path.join('', newFileName)
-    fs.writeFileSync(`public/template/swoo_html/inner_pages/${newFileName}`, updatedHTML, 'utf8');
-    console.log(`HTML file ${newFileName} saved!`)
+    fs.writeFileSync(`public/template/swoo_html/inner_pages/${product0.asin}.html`, updatedHTML, 'utf8');
+    console.log(`HTML file ${product0.asin} saved!`)
 }
 
 async function getKewords(input) {
