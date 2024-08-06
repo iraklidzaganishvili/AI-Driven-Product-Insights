@@ -1,118 +1,105 @@
 [
   {
-    "link": "https://www.amazon.com/dp/B07ZVJY5PQ/ref=nosim?tag=bestmmorpg00",
-    "asin": "B07ZVJY5PQ",
-    "title": "Featured from Amazon brandsFeatured from Amazon brands Amazon Basics Tritan Water Bottle with Action Lid, 24 ounce, 2-Pack, Blue and Purple  ",
+    "link": "https://www.amazon.com/dp/B07F73NGPV/ref=nosim?tag=bestmmorpg00",
+    "asin": "B07F73NGPV",
+    "title": "ThermoFlask 24 oz Double Wall Vacuum Insulated Stainless Steel Water Bottle with Spout and Straw Lids, Plum",
     "productImages": [
-      "./gen-img/78-big.webp",
-      "./gen-img/76-big.webp",
-      "./gen-img/80-big.webp",
-      "./gen-img/77-big.webp",
-      "./gen-img/79-big.webp"
+      "B07F73NGPV-3-big.webp",
+      "B07F73NGPV-4-big.webp",
+      "B07F73NGPV-2-big.webp",
+      "B07F73NGPV-1-big.webp",
+      "B07F73NGPV-0-big.webp"
     ],
     "productSmallImages": [
-      "./gen-img/78-small.webp",
-      "./gen-img/76-small.webp",
-      "./gen-img/80-small.webp",
-      "./gen-img/77-small.webp",
-      "./gen-img/79-small.webp"
+      "B07F73NGPV-3-small.webp",
+      "B07F73NGPV-4-small.webp",
+      "B07F73NGPV-2-small.webp",
+      "B07F73NGPV-1-small.webp",
+      "B07F73NGPV-0-small.webp"
     ],
-    "fullPrice": "15.19",
+    "fullPrice": "24.99",
     "category": "All",
-    "brand": "Amazon Basics",
+    "brand": "Thermoflask",
     "reviewRatingAndCount": [
-      "4.1 out of 5",
-      "1,107 global ratings"
+      "4.7 out of 5",
+      "3,743 global ratings"
     ],
     "fromTheManufacturer": [
-      "24-ounce reusable sports water bottle (2 pack, blue and purple); standard size fits most car cup holders and bike water-bottle cages     Made with shatterproof, 100% BPA-free, durable Tritan plastic for reliable, long-lasting strength     Leak-proof locking lid; push-button lid allows for one-handed use; soft loop carry handle     Dishwasher-safe (top rack) for easy cleaning; not suitable for hot beverages; do not microwave     Measures 3.4 by 3.2 by 9.9 inches; backed by an Amazon Basics 1-year limited warranty",
-      "From the manufacturer",
-      "Amazon Basics Tritan Water Bottle with Action Lid, 24-Ounce",
-      "Portable Convenience",
-      "Easily stay hydrated with help from this reusable water bottle. Great for working out, running errands, at the office, or simply hanging out at home.",
-      "Standard Size",
-      "The water bottle's standard size fits most car cup holders and bike water-bottle cages.",
-      "Locking Lid, Flip Open Top",
-      "The leak-proof locking lid prevents drips, and its one-handed push-button mechanism flips open the top.",
-      "Durable with Carry Handle",
-      "The dishwasher-safe shatterproof water bottle provides reliable, long-lasting strength. Its soft loop handle makes it easy to carry."
+      "24 hr Cold / 12 hr Hot: ThermoFlask offers enduring temperature control with its double-wall vacuum insulation. BPA-free, no sweat, rust-resistant, and flavor-preserving.     2 Lids Included: Equipped with a leak-proof Chug lid and an enhanced straw lid for improved flow, this water bottle offers versatile drinking options. Enjoy easy, one-handed or hands-free sipping for on-the-go hydration.     Adventure-Ready Hydration: ThermoFlask's insulated bottles are your daily companion, keeping hot drinks warm and cold beverages chilled. Ideal for the active lifestyle.     Versatile Hydration Options: Choose from our premium 14-64 oz insulated bottles in various colors. Fits most cup holders and backpacks, ensuring hydration is always at hand.     Sustainable Quality with ThermoFlask: Embrace eco-friendly hydration for outdoor activities or daily commuting. Our durable stainless steel bottles are built to last.",
+      "From the manufacturer"
     ],
     "bestReviews": [
       {
-        "title": "So far we like them for taking on our hikes",
+        "title": "Best bottle I've tried",
         "rating": "5.0 out of 5 stars",
-        "content": "I particularly liked the medium size of the bottles. I didn't want insulated bottles that just added weight to our backpacks. I can deal with warm water. These bottles have a good capacity and still fit comfortably in our backpacks bottle pockets. I listen to the comments from those who said to make sure to lock the tops after closing. We haven't had any problems with leaking. Our bottle brush will fit inside to give them a good cleaning. The only disadvantage I found is some odor, sort of plasticy."
+        "content": "I was told about Thermoflask by a friend and it hasn't disappointed. If I fill the bottle 1/4 of the way with ice and add water to the top, the water has stayed cold for 24 hours. I haven't tried anything hot in it so I can't vouch for a drink remaining hot any length of time.  I like this particular size because it fits into my car cup holder which is where I usually am with it. There's a variety of colors to choose from and  each bottle comes with two different tops. I like mine so much I've purchased a couple extra as gifts."
       },
       {
-        "title": "Don't have to worry about spilling",
+        "title": "I am never without this water bottle",
         "rating": "5.0 out of 5 stars",
-        "content": "I like that I can lock the lid so there is no accidental  opening."
+        "content": "I have never had a water bottle I liked so much. Ive never been the type of person that always has their water bottle with them, until now. I’ve been trying to drink 1 gallon water/day for a long time now and I’ve tried lots of different methods, but they were hard to carry out. With this water bottle, it’s somehow easier. I know that 5 of these, plus 1 more cup equals a gallon. So I do 5.5 of these per day. It’s easier than carrying around my gallon sized water bottle.The things I love about this:1. The shape of the handle is extremely natural to hold. It’s the perfect shape for your hand to grab.2. It insulates your drink super well.3. I love the color I chose lol. (Purple)4. It’s leak proof, so when I’m going to nurse my baby and getting all the things I want with me (water, phone, reading material, etc) I know I can just toss it on the bed or couch and no leaks will happen. I can also just throw it in the diaper bag without worrying.5. It fits in the car cup holders6. I prefer the straw lid. The straw is made of sturdy plastic and won’t deteriorate or look dirty and nasty like those rubbery clear plastic straws. Also, it’s fun to fidget with the straw, which in turn leads to me drinking more water lol.7. It’s skinny enough to grab easily with one hand.I love this water bottle!"
       },
       {
-        "title": "Drying is difficult",
+        "title": "I LOVE THIS THING!",
+        "rating": "5.0 out of 5 stars",
+        "content": "One of the best Amazon purchases I've ever made! It is really great quality! I like that you receive two lids; One with a straw and one with a screw top. I have been using the straw lid and love it. The silicone mouthpiece does come off for easy washing. I like to put ice in my water so if I use about 1c of ice, I can fit about 16oz of water into it. It keeps your drink cold all day too! I love that my son cant figure out how to open it (kid gets into everything! Lol!) and that its spillproof. It's a great water bottle! Not too heavy at all. It fits in the cup holder in the gym and my car (as long as I remove the rubber cup holder insert). I highly recommend buying this. I've never owned a yeti or hydro flask.. so I cannot compare, but this is a great option for anyone who doesnt want to spend an arm and a leg on an insulated water bottle."
+      },
+      {
+        "title": "Very similar to Hydroflask but half the cost",
+        "rating": "5.0 out of 5 stars",
+        "content": "I already own a 32 oz hydroflask with a straw lid which I love but I left it at my office and I have not been back since the panedmic.  I decided to buy another one for home to use during working out and also throughout the day.  I just did not wan to pay the $40+ I paid for the hydroflask so I looked for a similar bottle (with moderate expectations of equivalency).  This had good reviews so it was worth a short.  All in all, I really like it.  It comes in cute colors, a straw lid (and an extra regular lid), and was super easy to clean and use.  I also like the slim size since it fits in everything unlike my 32 oz hydroflask.  The lid sometimes catches and does not close tightly but I will just unscrew it and try again (obviously these types of issues do not happen with the hydroflask, but for half the price, it is not a big deal).  As for keeping water cold, I have not had a chance to let the water sit for a long time as I bought this to drink from it throughout the day and I finish it fairly quickly (within a few hours), but during that time, it does keep the water cold enough."
+      },
+      {
+        "title": "Bottle: 5 stars; straw lid: 1 star",
         "rating": "4.0 out of 5 stars",
-        "content": "I really like these bottles but they are impossible to dry.  When put in the dishwasher there is still a lot of water inside the bottle (yes, I did put it in upside down).  You need to set them out on the counter and wait for them to dry before putting away."
+        "content": "I love these bottles! I have 3 of them and actually prefer them to the pricier flasks. Today, I filled 1/4 of it with ice and the rest with water at 7 am. The water is still ice cold now, at 6 pm. That’s how awesome these bottles are. I haven’t tried using anything hot in it because I have travel mugs that are better for that purpose.I removed one star because the straw lid leaks. Badly. I discovered this because I put some electrolytes in the bottle with water and shook it. Water sprayed everywhere with each shake. If I was reviewing just the lid, I’d give it 1 star."
       },
       {
-        "title": "Great product for the price!",
+        "title": "Nice water bottle",
         "rating": "5.0 out of 5 stars",
-        "content": "The media could not be loaded.\n                \n            \n                \n            \n            \n        \n    \n    \n\n\n\n\n\n\n\n\n  \n  \n    I adore the colors and transparency so you can easily see if it’s dirty! It’s easy to take apart and put back together for cleaning. I’ve been using it for a daily water bottle and have had no leaking or issues with the seal! It’s super portable and I can hang it almost anywhere! 10/10 highly recommend!"
+        "content": "I love the purple color and the feel of the water bottle. It is well constructed and slender enough to fit in many car bottle holders. I also like the comfortable holder built into the cap.Mine only came with one lid, the one where the straw can be inserted."
       },
       {
-        "title": "Flimsy, broke within a few months",
-        "rating": "1.0 out of 5 stars",
-        "content": "One of the main reasons I purchased these bottles was because Amazon backed them with a one-year warranty. They carry the Amazon Brand and specifically state they have a year warranty.Fast forward 4 months and the lid breaks making the bottle unusable. No problem right? There’s even a link to product support. But wait, the link takes you a BROKEN link - nothing there. So I call Amazon customer service (basically out of I’m just upset at the dishonesty of it all) and they put me on hold, ask me if I’ll take a $5 credit, put me on hold, they argue that it doesn’t say 1 year warranty (yep, it’s there currently on your website).Word of device. DONT TRUST AMAZON BASICS WARRANTY.It’s a cheap bottle, they don’t stand behind their product. Buy a better brand."
+        "title": "Great product",
+        "rating": "5.0 out of 5 stars",
+        "content": "I love the color and quality of this product. It keeps cold beverages ICE cold for the full 24 hours and it does a great job at keeping hot drinks hot. It is easy to carry and comes with two lids - a straw lid and a spout lid for every preference. It’s a hikers friend!"
       },
       {
-        "title": "Solid bottle, problematic lid",
+        "title": "Keeps water cold.",
+        "rating": "5.0 out of 5 stars",
+        "content": "Great water bottle. Just the right amount for 18 holes of golf. With ice added it keeps cold for hours. Love the color purple."
+      },
+      {
+        "title": "Hard to clean",
         "rating": "3.0 out of 5 stars",
-        "content": "I don’t understand why the lid screws off the way it does, because the mouth of the bottle does not get wider (easier to clean), although I do appreciate that there are no small parts.Also, it varies how much force you need to put on the lid to close it which is annoying.Overall a solid bottle, I’ve dropped it a few times and it hasn’t broken but I am missing that satisfying click to close, and it advertises as easy to clean but it could be easier."
+        "content": "The flask keeps my beverages and water nice and cold for a long time. I like that it has a handle to carry it and the integrated straw is great. But the fact that it can’t go into the dishwasher is a big problem. The lid with the drinking spout is almost impossible to thoroughly clean and the plastic straw grows mold inside within a short amount of time even after being washed in hot, soapy water. What’s the use of this flask when I still have to pour drinks into a glass? It will go into the garbage bin."
       },
       {
-        "title": "Durable and convenient",
-        "rating": "5.0 out of 5 stars",
-        "content": "We like this water bottle for its convenience.  It is well-made and has stood up to a bit of bashing around without any problems.  The only drawback is that the lid opens by pressing a bar at the front of the lid.  If anything touches that spot, the lid opens up and water spills out.  Learned that the hard way!  However, there is a locking slide that prevents that, though I had a tiny amount of water spill out when I knocked it over with the lid locked.  For cleaning, I put it in the top shelf of my dishwasher."
-      },
-      {
-        "title": "These fall apart almost immediately",
-        "rating": "2.0 out of 5 stars",
-        "content": "At first I liked these, although the narrow neck makes it hard to put ice in them. But now, 2 months after I got them, the lids of both bottles I bought are falling apart, and in different ways! Also, the body of the bottle scratches very easily. My 2 month old bottle looks 2 years old. Very poorly made."
-      },
-      {
-        "title": "Nice Water Bottles",
-        "rating": "4.0 out of 5 stars",
-        "content": "I had been looking for replacements of my Rubbermaid chug bottles, as I can't find them anymore and mine are getting worn out. These come the closest to what I have been looking for and I like the locking mechanism on the tops. The only thing I don't like is the wider mouth on them but I am keeping them!"
-      },
-      {
-        "title": "Okay product",
-        "rating": "4.0 out of 5 stars",
-        "content": "I enjoy these thermoses but should have been extra cautious as I had not realized they aren’t sealed as soon as the top is closed and that the little switch in the front needs to be activated or your drink will spill out."
+        "title": "Not dishwasher safe after all!",
+        "rating": "3.0 out of 5 stars",
+        "content": "The information on amazon says these are dishwasher safe and there is a picture of them in a dishwasher. The directions that come with the cup say it is hand-wash only.  I bought 2 for my kids to take to school specifically looking for ones that can be run through the dishwasher nightly."
       }
     ],
     "table": [
       [
         "Brand",
-        "Amazon Basics"
-      ],
-      [
-        "Material",
-        "Plastic"
-      ],
-      [
-        "Bottle Type",
-        "Water Bottle"
-      ],
-      [
-        "Color",
-        "Blue and Purple"
+        "Thermoflask"
       ],
       [
         "Capacity",
-        "680 Milliliters"
+        "24 Fluid Ounces"
+      ],
+      [
+        "Color",
+        "Plum"
+      ],
+      [
+        "Recommended Uses For Product",
+        "Water"
       ],
       [
         "Special Feature",
-        "Leak-proof"
+        "Sweatproof, Leakproof, Vacuum Insulated, Double Wall"
       ],
       [
         "Age Range (Description)",
@@ -120,55 +107,79 @@
       ],
       [
         "Product Dimensions",
-        "3.4\"W x 9.9\"H"
-      ],
-      [
-        "Product Care Instructions",
-        "Dishwasher Safe"
+        "4.3\"W x 13\"H"
       ],
       [
         "Model Name",
-        "25445"
+        "Insulated Stainless Steel"
       ],
       [
-        "Recommended Uses For Product",
-        "Reusable"
-      ],
-      [
-        "Number of Items",
-        "1"
+        "Item Weight",
+        "0.88 Pounds"
       ],
       [
         "Theme",
         "Sport"
       ],
       [
-        "Reusability",
-        "Reusable"
+        "Material",
+        "Stainless Steel"
       ],
       [
-        "Shape",
-        "Oval"
+        "Number of Items",
+        "1"
       ],
       [
-        "Material Type Free",
-        "BPA Free"
+        "Included Components",
+        "Water Bottle, Spout Lid, Straw Lid"
       ],
       [
-        "Unit Count",
-        "2.0 Count"
+        "Product Care Instructions",
+        "Dishwasher Safe"
+      ],
+      [
+        "Base Diameter",
+        "3 Inches"
+      ],
+      [
+        "Cap Type",
+        "Sports Cap"
+      ],
+      [
+        "With Lid",
+        "Yes"
+      ],
+      [
+        "Is Dishwasher Safe",
+        "Yes"
+      ],
+      [
+        "Is Microwaveable",
+        "No"
+      ],
+      [
+        "Is Oven Safe",
+        "No"
+      ],
+      [
+        "UPC",
+        "885395500539"
+      ],
+      [
+        "Manufacturer",
+        "Thermoflask"
+      ],
+      [
+        "Global Trade Identification Number",
+        "00885395500539"
       ],
       [
         "Item Weight",
         "14.1 ounces"
       ],
       [
-        "Manufacturer",
-        "Amazon"
-      ],
-      [
         "ASIN",
-        "B07ZVJY5PQ"
+        "B07F73NGPV"
       ],
       [
         "Country of Origin",
@@ -176,7 +187,7 @@
       ],
       [
         "Item model number",
-        "25445"
+        "50053"
       ],
       [
         "Customer Reviews",
@@ -187,26 +198,46 @@
         ""
       ],
       [
-        "Date First Available",
-        "November 11, 2020"
+        "Is Discontinued By Manufacturer",
+        "No"
+      ],
+      [
+        "Volume",
+        "710 Milliliters"
+      ],
+      [
+        "Mildew-resistant",
+        "BPA free"
+      ],
+      [
+        "Assembly required",
+        "No"
+      ],
+      [
+        "Number of pieces",
+        "1"
+      ],
+      [
+        "Batteries required",
+        "No"
       ]
     ],
-    "productMidImage": "./gen-img/76-mid.webp",
+    "productMidImage": "B07F73NGPV-0-mid.webp",
     "rephraseComments": [
       {
-        "title": "Positive review for hiking",
-        "content": "We are enjoying using these bottles on our hikes. The medium size is perfect and they fit well in our backpacks. We haven't experienced any leaking issues and the bottles are easy to clean. The only downside is a slight plastic odor.",
+        "title": "Positive review",
+        "content": "I have been using Thermoflask based on a recommendation from a friend and it has exceeded my expectations. When I fill the bottle with ice and water, the water stays cold for 24 hours. Although I haven't tested it with hot drinks, I am satisfied with its performance in keeping beverages cold. The size of the bottle is perfect as it fits into my car cup holder easily, which is where I usually use it. Additionally, there are various color options available and each bottle comes with two different tops. I love this product so much that I have even bought some as gifts.",
         "rating": "5.0 out of 5 stars"
       },
       {
-        "title": "No need to be concerned about spills",
-        "content": "I appreciate the ability to secure the lid, preventing any unintentional openings.",
+        "title": "Water bottle love",
+        "content": "I have never had a water bottle I liked so much. It's easier than carrying around my gallon-sized water bottle. The shape of the handle is natural to hold, it insulates well, and it's leak-proof. Plus, it fits in car cup holders and has a sturdy straw lid that I prefer.",
         "rating": "5.0 out of 5 stars"
       },
       {
-        "title": "Drying is challenging",
-        "content": "I enjoy using these bottles, but they are difficult to dry. Even when placed upside down in the dishwasher, there is still a significant amount of water left inside. It's necessary to leave them on the counter and wait for them to dry before storing.",
-        "rating": "4.0 out of 5 stars"
+        "title": "Positive Review",
+        "content": "This is one of the best Amazon purchases I've ever made! The quality is excellent and I love that it comes with two lids - one with a straw and one with a screw top. The straw lid is my favorite as it's easy to clean. It can hold about 16oz of water with 1 cup of ice, and keeps drinks cold all day. I also appreciate that it's spillproof and my son can't open it. It's not too heavy and fits in gym and car cup holders (after removing the rubber insert). Overall, highly recommend this affordable alternative to Yeti or Hydro Flask.",
+        "rating": "5.0 out of 5 stars"
       }
     ]
   }
