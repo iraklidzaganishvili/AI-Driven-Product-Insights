@@ -6,6 +6,7 @@ const path = require('node:path');
 const { kewordsAI } = require('./ai');
 
 async function articleToHTML(markdownText, product0, relatedProducts, index, rand) {
+    
     const relatedProductsTitles = relatedProducts.map(product => product.title)
     // if (product1.reviewRatingAndCount == "") {
     //     console.log(product1)
@@ -231,14 +232,12 @@ async function articleToHTML(markdownText, product0, relatedProducts, index, ran
         .filter(el => /^\d+-\w/.test(el.id));
     ids.sort((a, b) => parseInt(a.id.split('-')[0]) - parseInt(b.id.split('-')[0]));
     ids.forEach(el => {
-        console.log(el.id)
+        // console.log(el.id)
 
     })
     ids[0].innerHTML = product0.title
-    let c1Score = product0.reviewRatingAndCount[0].match(/^(\d(\.\d)?)/)[0]
-    c1Score = Math.round(c1Score * 2) / 2;
-    ids[1].src = `../../../images/${c1Score}.png`
-    ids[2].innerHTML = product0.reviewRatingAndCount[1].match(/\d+/g).join(",");
+    ids[1].src = `../../../images/${product0.reviewRating}.png`
+    ids[2].innerHTML = product0.reviewCount
     ids[3].innerHTML = product0.fullPrice + '$'
     ids[4].innerHTML = '.-sdasdsad'
     ids[5].innerHTML = product0.fullPrice + '$'
@@ -337,13 +336,11 @@ async function articleToHTML(markdownText, product0, relatedProducts, index, ran
         const stars = mainDocument.createElement('div');
         stars.className = 'stars';
         const star = mainDocument.createElement('img');
-        let cScore = product.reviewRatingAndCount[0].match(/^(\d(\.\d)?)/)[0]
-        cScore = Math.round(cScore * 2) / 2;
-        star.src = `../../../images/${cScore}.png`
+        star.src = `../../../images/${product.reviewRating}.png`
         stars.appendChild(star);
         const numReviews = mainDocument.createElement('span');
         numReviews.className = 'num';
-        numReviews.textContent = `(${product.reviewRatingAndCount[1].match(/\d+/g).join(",")})`;
+        numReviews.textContent = `(${product.reviewCount})`;
         rating.appendChild(stars);
         rating.appendChild(numReviews);
 

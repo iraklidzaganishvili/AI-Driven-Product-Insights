@@ -22,24 +22,21 @@ const Product = sequelize.define('Product', {
     brand: {
         type: DataTypes.STRING
     },
-    review_rating: {
+    reviewRating: {
         type: DataTypes.STRING
     },
-    review_count: {
+    reviewCount: {
         type: DataTypes.STRING
     },
-    product_mid_image: {
+    productMidImage: {
         type: DataTypes.STRING
     },
-    product_images: {
+    productImages: {
         type: DataTypes.JSON
     },
-    product_small_images: {
+    productSmallImages: {
         type: DataTypes.JSON
     },
-    rephrase_comments: {
-        type: DataTypes.JSON
-    }
 }, {
     tableName: 'products',
     timestamps: false

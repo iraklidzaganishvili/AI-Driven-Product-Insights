@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        form { display: grid; gap: 10px; }
+        input, button { padding: 5px; }
+        #searchResults { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Product Management</h1>
+    
+    <h2>Add Product</h2>
+    <form id="addProductForm">
+        <input type="text" id="title" placeholder="Title" required>
+        <input type="text" id="asin" placeholder="ASIN" required>
+        <input type="url" id="link" placeholder="Link">
+        <input type="number" id="fullPrice" placeholder="Full Price" step="0.01">
+        <input type="text" id="category" placeholder="Category">
+        <input type="text" id="brand" placeholder="Brand">
+        <input type="text" id="review_rating" placeholder="Review Rating">
+        <input type="text" id="review_count" placeholder="Review Count">
+        <input type="url" id="product_mid_image" placeholder="Product Mid Image URL">
+        <textarea id="product_images" placeholder="Product Images (JSON array)"></textarea>
+        <textarea id="product_small_images" placeholder="Product Small Images (JSON array)"></textarea>
+        <textarea id="rephrase_comments" placeholder="Rephrase Comments (JSON array)"></textarea>
+        <button type="submit">Add Product</button>
+    </form>
+
+    <h2>Search Product</h2>
+    <input type="text" id="searchInput" placeholder="Enter product name">
+    <button onclick="searchProduct()">Search</button>
+    <div id="searchResults"></div>
+
+    <script>
+        const API_URL = 'http://localhost:3000'; // Update this with your actual API URL
+
+        document.getElementById('addProductForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = {
+                title: document.getElementById('title').value,
+                asin: document.getElementById('asin').value,
+                link: document.getElementById('link').value,
+                fullPrice: parseFloat(document.getElementById('fullPrice').value),
+                category: document.getElementById('category').value,
+                brand: document.getElementById('brand').value,
+                review_rating: document.getElementById('review_rating').value,
+                review_count: document.getElementById('review_count').value,
+                product_mid_image: document.getElementById('product_mid_image').value,
+                product_images: JSON.parse(document.getElementById('product_images').value),
+                product_small_images: JSON.parse(document.getElementById('product_small_images').value),
+                rephrase_comments: JSON.parse(document.getElementById('rephrase_comments').value)
+            };
+
+            try {
+                const response = await axios.post(`${API_URL}/add-product`, formData);
+                alert('Product added successfully!');
+                e.target.reset();
+            } catch (error) {
+                console.error('Error adding product:', error);
+                alert('Error adding product. Please try again.');
+            }
+        });
+
+        async function searchProduct() {
+            const searchTerm = document.getElementById('searchInput').value;
+            try {
+                const response = await axios.get(`${API_URL}/search?name=${encodeURIComponent(searchTerm)}`);
+                const { productDetails, fileName } = response.data;
+                document.getElementById('searchResults').innerHTML = `
+                    <h3>${productDetails.title}</h3>
+                    <p>ASIN: ${productDetails.asin}</p>
+                    <p>Price: $${productDetails.fullPrice}</p>
+                    <p>Category: ${productDetails.category}</p>
+                    <p>Brand: ${productDetails.brand}</p>
+                    <p>Rating: ${productDetails.review_rating}</p>
+                    <p>Reviews: ${productDetails.review_count}</p>
+                    <img src="${productDetails.product_mid_image}" alt="${productDetails.title}">
+                    <p>File Name: ${fileName}</p>
+                `;
+            } catch (error) {
+                console.error('Error searching product:', error);
+                document.getElementById('searchResults').innerHTML = 'Product not found or error occurred.';
+            }
+        }
+    </script>
+</body>
+</html>

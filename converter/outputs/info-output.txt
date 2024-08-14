@@ -1,175 +1,220 @@
 [
   {
-    "link": "https://www.amazon.com/dp/B0CVNDXPH4/ref=nosim?tag=bestmmorpg00",
-    "asin": "B0CVNDXPH4",
-    "title": "IRON °FLASK Sports Water Bottle - Wide Mouth with 3 Straw Lids - Stainless Steel Gym & Outdoor Bottles for Men, Women & Kids - Double Walled, Insulated Thermos, Metal Canteen - Pink Tulip, 40 Oz",
+    "link": "https://www.amazon.com/dp/B07ZVJY5PQ/ref=nosim?tag=bestmmorpg00",
+    "asin": "B07ZVJY5PQ",
+    "title": "Amazon Basics Tritan Water Bottle with Action Lid, 24 ounce, 2-Pack, Blue and Purple",
     "productImages": [
-      "B0CVNDXPH4-0-big.webp",
-      "B0CVNDXPH4-2-big.webp",
-      "B0CVNDXPH4-3-big.webp",
-      "B0CVNDXPH4-4-big.webp",
-      "B0CVNDXPH4-1-big.webp",
-      "B0CVNDXPH4-5-big.webp"
+      "B07ZVJY5PQ-1-big.webp",
+      "B07ZVJY5PQ-0-big.webp",
+      "B07ZVJY5PQ-4-big.webp",
+      "B07ZVJY5PQ-2-big.webp",
+      "B07ZVJY5PQ-3-big.webp"
     ],
     "productSmallImages": [
-      "B0CVNDXPH4-0-small.webp",
-      "B0CVNDXPH4-2-small.webp",
-      "B0CVNDXPH4-3-small.webp",
-      "B0CVNDXPH4-4-small.webp",
-      "B0CVNDXPH4-1-small.webp",
-      "B0CVNDXPH4-5-small.webp"
+      "B07ZVJY5PQ-1-small.webp",
+      "B07ZVJY5PQ-0-small.webp",
+      "B07ZVJY5PQ-4-small.webp",
+      "B07ZVJY5PQ-2-small.webp",
+      "B07ZVJY5PQ-3-small.webp"
     ],
-    "fullPrice": "23.16",
+    "fullPrice": "15.19",
     "category": "All",
-    "brand": "IRON °FLASK",
-    "reviewRatingAndCount": [
-      "4.7 out of 5",
-      "147,272 global ratings"
-    ],
+    "brand": "Amazon Basics",
+    "reviewRating": "4",
+    "reviewCount": "1,193",
     "fromTheManufacturer": [
-      "INSULATED SPORTS WATER BOTTLE: Goodbye sweat! The double wall insulation makes the Iron Flask sweat-free! It keeps your drink COLD for up to 24 hours, and HOT for up to 12 hours. *NOTE: ONLY the 14 Oz, 18 Oz, & 22 Oz fit in cupholders*     3 LIDS: YES, Iron Flask comes with THREE different LEAK PROOF lids. Carabiner Straw Lid with 2 Straws, Flip Lid, and a Stainless Steel Lid! *NOTE: The stainless steel lid is plastic from inside and stainless steel from outside*     18/8 PREMIUM STAINLESS STEEL: The Iron Flask is made of 18/8 Stainless steel that is BPA free and non-toxic. It will never leave a metal taste or rust. HAND WASH ONLY WITH SOAPY HOT WATER!     THE PERFECT GIFT: Stay hydrated during outdoor adventures with our top-rated water bottles, we have everything Mom & Dad need to stay refreshed and energized. Give the gift of thirst-quenching this Mother’s and Father’s Day!     THE ULTIMATE LIFESTYLE GIFT: Choose a color that speaks to your friends and family to create the perfect, personalized gift! Great for the outdoor or gym enthusiast that will enjoy a memorable product they'll remember, & due to its durability will stand the test of time.",
-      "Product Description"
+      "24-ounce reusable sports water bottle (2 pack, blue and purple); standard size fits most car cup holders and bike water-bottle cages     Made with shatterproof, 100% BPA-free, durable Tritan plastic for reliable, long-lasting strength     Leak-proof locking lid; push-button lid allows for one-handed use; soft loop carry handle     Dishwasher-safe (top rack) for easy cleaning; not suitable for hot beverages; do not microwave     Measures 3.4 by 3.2 by 9.9 inches; backed by an Amazon Basics 1-year limited warranty",
+      "From the manufacturer",
+      "Amazon Basics Tritan Water Bottle with Action Lid, 24-Ounce",
+      "Portable Convenience",
+      "Easily stay hydrated with help from this reusable water bottle. Great for working out, running errands, at the office, or simply hanging out at home.",
+      "Standard Size",
+      "The water bottle's standard size fits most car cup holders and bike water-bottle cages.",
+      "Locking Lid, Flip Open Top",
+      "The leak-proof locking lid prevents drips, and its one-handed push-button mechanism flips open the top.",
+      "Durable with Carry Handle",
+      "The dishwasher-safe shatterproof water bottle provides reliable, long-lasting strength. Its soft loop handle makes it easy to carry."
     ],
     "bestReviews": [
       {
-        "title": "Staying Hydrated in Style with the IRON °FLASK Sports Water Bottle",
+        "title": "Wide-mouth and lightweight water bottle",
         "rating": "5.0 out of 5 stars",
-        "content": "In my quest for the perfect water bottle that could keep up with my active lifestyle and hydration needs, the IRON °FLASK Sports Water Bottle has been a revelation. Not just a container for liquids, this flask has proven to be an indispensable companion during workouts, hikes, and daily commutes. Here’s why it stands out from the crowd.Robust and Stylish Design: The IRON °FLASK impresses with its sturdy stainless steel construction, promising durability and resistance against wear and tear. The wide mouth design is not only practical for easy filling and cleaning but also adds a modern aesthetic appeal. Available in a variety of colors and finishes, it's easy to find one that matches your style or mood.Superior Temperature Retention: The flask's double-wall insulation technology is designed to keep cold drinks icy for up to 24 hours and hot beverages warm for up to 12 hours. This feature has been a game-changer for me, providing refreshment during long days out or comforting warmth during early morning outings.Versatility with Three Straw Lids: One of the unique selling points of the IRON °FLASK is the inclusion of 3 straw lids, offering versatility that I’ve found incredibly useful. Whether I’m driving, working out, or just prefer a different drinking mechanism, having these options allows for a tailored hydration experience. The straw lids also contribute to a leak-proof design, ensuring no spills or messes during transport.Eco-Friendly and Health-Conscious: By using the IRON °FLASK, I've significantly reduced my reliance on disposable plastic bottles, contributing to environmental conservation efforts. Additionally, the bottle is BPA-free, ensuring that my drinks are safe from harmful chemicals commonly found in plastic containers.Capacity for All Needs: Available in multiple sizes, the IRON °FLASK can cater to different hydration needs. Whether you require a smaller bottle for a quick gym session or a larger one for day-long hikes, there’s a size that fits the bill perfectly, making it a versatile choice for individuals and families alike.Final Thoughts: The IRON °FLASK Sports Water Bottle is more than just a vessel for carrying liquids; it's a thoughtfully designed accessory that enhances the hydration experience. Its durability, temperature retention capabilities, and versatility make it a superior choice for anyone serious about staying hydrated. Whether you're an athlete, an adventurer, or simply someone who appreciates the importance of hydration, the IRON °FLASK is an investment in your health and well-being."
+        "content": "I like that these water bottles have a wide mouth opening and the lid is easy to open and close one handed. They are lightweight enough to carry. They are top dishwasher safe."
       },
       {
-        "title": "My “all-day” hydration companion.",
+        "title": "nice",
         "rating": "5.0 out of 5 stars",
-        "content": "I recently purchased the 22 Oz IRON FLASK Sports Water Bottle in Fire Red, and I couldn’t be happier.The double wall insulation is incredible. It keeps my drinks nice and cold. Whether I’m at the gym, taking a stroll through the park, or just running errands my beverage stays at the perfect temperature.The three included lids are great. The Carabiner Straw Lid with two straws is perfect for sipping on the go. The Flip Lid, which is my personal favorite, is convenient for quick access. Lastly, the Stainless-Steel Lid adds a touch of elegance. Plus, they’re all 100% leak-proof!The 18/8 stainless steel construction ensures that my water never tastes metallic. It’s also BPA-free and non-toxic. I love the peace of mind knowing that my water bottle is safe and durable. I can’t leave out the fact that that I no longer have to deal with annoying condensation. The Iron Flask remains sweat-free, even during intense workouts. Plus, the Fire Red color is vibrant and eye-catching.Overall, the 22 Oz IRON FLASK Sports Water Bottle has become my constant companion. It fits perfectly in a cup holder, and I love the versatility of the different lids. If you’re looking for a high-quality, stylish water bottle, look no further."
+        "content": "honestly they work so well i got them for a festival and i still prefer to use them over my other water bottles"
       },
       {
-        "title": "Durable and easy to clean",
-        "rating": "5.0 out of 5 stars",
-        "content": "Love my iron flask water bottle. It came with three different lids that you can change out, along with extra straws and cleaning brushes. I picked this size because it still fits in the car drink holder (and in backpack water bottle holders), but also has a wide enough mouth for easy cleaning. Haven't had any issues with leaking, and the bottle has held up well (I've banged it around a bit at the gym and transporting in the car). I typically use it for cold water (with ice cubes added), and water stays cold for a pretty long time; haven't tried it with anything warm though. I've bought a few bottles from this company - worth it!"
-      },
-      {
-        "title": "Very good bottle!",
-        "rating": "5.0 out of 5 stars",
-        "content": "We have many different sizes and love these bottles. Ice stays for the whole day in Texas heat. Colors are bright. Options are many. Love these!"
-      },
-      {
-        "title": "Best product I have ever had and everyone should have.",
-        "rating": "5.0 out of 5 stars",
-        "content": "Product is phenomenal. Was given the iron flask coffee cup for Christmas and fell in love. This cup keeps my coffee hot for 6 hours straight. Also SPILL PROOF!!!!! The quality is amazing and great for people always on the run. I love the wide array of color and design selections. Just got myself the 40 oz and pleased to say it is just as good. This brand really cares about their buyers. Gave me 2 straws 3 different compact lids and a sticker. I will never go to a different brand, this would be a perfect gift for everyone in your family. Amazing product I will also share with my family."
-      },
-      {
-        "title": "Well insulated, good value, cheap plastic",
+        "title": "Great bottle.  Issues with cover",
         "rating": "4.0 out of 5 stars",
-        "content": "The 64oz Iron Flask is great for making sure you’re staying hydrated during the day. I enjoy the fact that it comes with an assortment of tops & a few straws. My favorite top is the flip top with the straw attachment. Unfortunately the clip broke recently and I’ve only had it for a few months. I’ll try the paracord attachment and see how I like that. I"
+        "content": "Bought 4 of these because I love the locking lid feature .  Problem is the locking device has come out of 2 of the bottles and the lid becomes useless."
       },
       {
-        "title": "Love this bottle",
-        "rating": "5.0 out of 5 stars",
-        "content": "I bought this for my teenage son and he uses it daily. The blue color matches exactly. It keeps whatever you put in it cold all day and night. He hasn't used it for anything hot so I can't speak on that but I can't imagine it wouldn't keep things hot for a long time. He loves the straw but will swap it out on occasion. It's easy to open and easy to clean. It also seems incredibly durable. I even bought one for myself!"
+        "title": "Flimsy, broke within a few months",
+        "rating": "1.0 out of 5 stars",
+        "content": "One of the main reasons I purchased these bottles was because Amazon backed them with a one-year warranty. They carry the Amazon Brand and specifically state they have a year warranty.Fast forward 4 months and the lid breaks making the bottle unusable. No problem right? There’s even a link to product support. But wait, the link takes you a BROKEN link - nothing there. So I call Amazon customer service (basically out of I’m just upset at the dishonesty of it all) and they put me on hold, ask me if I’ll take a $5 credit, put me on hold, they argue that it doesn’t say 1 year warranty (yep, it’s there currently on your website).Word of device. DONT TRUST AMAZON BASICS WARRANTY.It’s a cheap bottle, they don’t stand behind their product. Buy a better brand."
       },
       {
-        "title": "Love it",
+        "title": "Durable and convenient",
         "rating": "5.0 out of 5 stars",
-        "content": "This is my third one. I got the ocean color. I love the 22 ounce size and when one bottle is dirty, I can swap it out for another clean one. I drink more water when I don’t have to drink it out of a giant bottle and this slim size is perfect for holding without it being too heavy or bulky.I love having lid options as I tend to swap between whatever I need. These are great to carry around with the handle lid. It keeps my drinks super cold. I don’t need to keep drink cold for 24-48 hours because I’m actually drinking my liquids frequently so I can’t say how long it holds the temps but I’m not complaining.I would’ve never bought three bottles with the major competitor prices but these are an excellent price for everything you get and they’re pretty durable."
+        "content": "We like this water bottle for its convenience.  It is well-made and has stood up to a bit of bashing around without any problems.  The only drawback is that the lid opens by pressing a bar at the front of the lid.  If anything touches that spot, the lid opens up and water spills out.  Learned that the hard way!  However, there is a locking slide that prevents that, though I had a tiny amount of water spill out when I knocked it over with the lid locked.  For cleaning, I put it in the top shelf of my dishwasher."
       },
       {
-        "title": "It does what it says!",
-        "rating": "5.0 out of 5 stars",
-        "content": "I was tired of hot water on my cycling rides,and prime day arrived and I ordered 2 20oz and 1 40oz bottle from iron flask. They arrived and I filled one 20 and the 40 with ice and water. 24 hours later and through various settings (in the jeep, garage, apartment, garage again...) there is still plenty of ice in the bottle and this makes me really happy. I've not had a chance to try the 20oz on a blisteringly hot ride, but I'm confident it will hold up just fine. (I'll update when I do)The accessories included are great and my favorite part is the built in clip on the sippy lid.My only thought is, why didn't the name and logo people go with Fe instead of just F on the logo?Otherwise, I like the finish, the built in straw and sippy lid work great and overall I'm really happy with this purchase.Drawback? Picking a color was daunting as there are so many to choose from.I'll be getting more for certain."
+        "title": "gasket lost",
+        "rating": "3.0 out of 5 stars",
+        "content": "I loved this, but all of a sudden it began to leak.  The reason was the the gasket got lost somewhere!  It comes off too easily"
       },
       {
-        "title": "Best water bottle ever! Durable, leak proof, keeps drinks cold forever",
+        "title": "very rasy to use and clean",
         "rating": "5.0 out of 5 stars",
-        "content": "I’ve had my pink bottle for two years and it’s only a tiny bit dented on the bottom due to my clumsy self dropping it on concrete constantly. The paint has only chipped a tiny bit because I hand wash the bottle as directed (the paint chips are also from me dropping the bottle.)It keeps drinks cold for an incredibly long time. Yesterday I had it on me in 110 degree weather for hours and it still had some ice cubes intact at the end of the day.I ended up changing the lid a few times because someone in my family melted to original straw in the dishwasher . The lid it comes with doesn’t leak at all. I came back to buy more colors and sizes.This is just as good (if not better) than hydroflasks and Stanley’s for way less money. Buy it!"
+        "content": "very ezsy to use andclean  doesn;t leak"
+      },
+      {
+        "title": "Not leak proof",
+        "rating": "2.0 out of 5 stars",
+        "content": "I really liked the design of this- that the lip of the bottle is part of the bottle.  It makes it easier to clean in comparison to the style where the lip is part of the top that's a separate piece and has silicone o-rings.  However, after using them for more than a year, I'm finally fed up with the leaks.  The lid will unlatch even if its \"locked\".  And the silicone stopped for the mouth of the bottle doesn't always seal well.  Too finicky for me! I'm finding something else."
+      },
+      {
+        "title": "They hold water",
+        "rating": "4.0 out of 5 stars",
+        "content": "I prefer my nalgenes, but those don't fit in my pocket, whereas these do. No leakage, dishwasher safe (I hope), and the colors look fine. I keep one in my desk and the other goes out with me.One warning: on delivery, they stink to high heaven, and had to go in the dishwasher immediately"
+      },
+      {
+        "title": "Overall good",
+        "rating": "4.0 out of 5 stars",
+        "content": "Overall good water bottle.  Like the locking lid and convenient carrying handle.  Wish it was sweat proof."
       }
     ],
     "table": [
       [
         "Brand",
-        "IRON °FLASK"
-      ],
-      [
-        "Capacity",
-        "2.5 Pounds"
-      ],
-      [
-        "Color",
-        "Pink Tulip"
-      ],
-      [
-        "Recommended Uses For Product",
-        "Water"
-      ],
-      [
-        "Special Feature",
-        "Leakproof, Double Wall, Cold 24 Hours, Hot 12 Hours, Insulated"
-      ],
-      [
-        "Age Range (Description)",
-        "Adult"
-      ],
-      [
-        "Product Dimensions",
-        "3.5\"W x 10.4\"H"
-      ],
-      [
-        "Model Name",
-        "Wide Mouth Straw"
-      ],
-      [
-        "Item Weight",
-        "0.98 Pounds"
-      ],
-      [
-        "Theme",
-        "Sport"
+        "‎Amazon Basics"
       ],
       [
         "Material",
-        "Stainless Steel"
+        "‎Plastic"
       ],
       [
-        "Number of Items",
-        "1"
+        "Bottle Type",
+        "‎Water Bottle"
       ],
       [
-        "Included Components",
-        "Flip and Stainless Steel Lids"
+        "Color",
+        "‎Blue and Purple"
+      ],
+      [
+        "Capacity",
+        "‎680 Milliliters"
+      ],
+      [
+        "Special Feature",
+        "‎Leak-proof"
+      ],
+      [
+        "Age Range (Description)",
+        "‎Adult"
+      ],
+      [
+        "Product Dimensions",
+        "‎3.4\"W x 9.9\"H"
       ],
       [
         "Product Care Instructions",
-        "Hand Wash Only"
+        "‎Dishwasher Safe"
       ],
       [
-        "Base Diameter",
-        "8.89 Centimeters"
+        "Model Name",
+        "‎25445"
       ],
       [
-        "Cap Type",
-        "Straw Cap"
+        "Recommended Uses For Product",
+        "‎Reusable"
       ],
       [
-        "With Lid",
-        "Yes"
+        "Number of Items",
+        "‎1"
       ],
       [
-        "UPC",
-        "810082486773"
+        "Theme",
+        "‎Sport"
+      ],
+      [
+        "Reusability",
+        "‎Reusable"
+      ],
+      [
+        "Shape",
+        "‎Oval"
+      ],
+      [
+        "Material Type Free",
+        "‎Bisphenol A (BPA) Free"
+      ],
+      [
+        "Style",
+        "‎sporty"
+      ],
+      [
+        "Unit Count",
+        "‎2.0 Count"
+      ],
+      [
+        "Package Information",
+        "‎Water Bottle"
       ],
       [
         "Manufacturer",
-        "IRON °FLASK"
+        "‎Amazon"
+      ],
+      [
+        "UPC",
+        "‎840095818551"
+      ],
+      [
+        "Part Number",
+        "‎25445"
       ],
       [
         "Item Weight",
-        "15.7 ounces"
-      ],
-      [
-        "ASIN",
-        "B0CVNDXPH4"
+        "‎9.9 ounces"
       ],
       [
         "Country of Origin",
-        "China"
+        "‎China"
+      ],
+      [
+        "Item model number",
+        "‎25445"
+      ],
+      [
+        "Size",
+        "‎24 ounce"
+      ],
+      [
+        "Item Package Quantity",
+        "‎1"
+      ],
+      [
+        "Number Of Pieces",
+        "‎2"
+      ],
+      [
+        "Special Features",
+        "‎Leak-proof"
+      ],
+      [
+        "Included Components",
+        "‎bottles"
+      ],
+      [
+        "Batteries Required?",
+        "‎No"
+      ],
+      [
+        "ASIN",
+        "B07ZVJY5PQ"
       ],
       [
         "Customer Reviews",
@@ -180,26 +225,26 @@
         ""
       ],
       [
-        "Batteries required",
-        "No"
+        "Date First Available",
+        "November 11, 2020"
       ]
     ],
-    "productMidImage": "B0CVNDXPH4-0-mid.webp",
+    "productMidImage": "B07ZVJY5PQ-0-mid.webp",
     "rephraseComments": [
       {
-        "title": "Staying Hydrated in Style with the IRON °FLASK Sports Water Bottle",
-        "content": "The IRON °FLASK Sports Water Bottle is a game-changer for staying hydrated. With its robust and stylish design, superior temperature retention, versatility with three straw lids, eco-friendly and health-conscious features, and capacity for all needs, it's the perfect accessory for anyone serious about hydration.",
+        "title": "Wide-mouth and lightweight water bottle",
+        "content": "I appreciate the wide mouth opening and easy-to-use lid of these water bottles. They are also lightweight and dishwasher safe.",
         "rating": "5.0 out of 5 stars"
       },
       {
-        "title": "Hydration perfection",
-        "content": "I am extremely satisfied with my recent purchase of the 22 Oz IRON FLASK Sports Water Bottle in Fire Red. The insulation works wonders in keeping my drinks cold, no matter where I am. The three lids that come with it are all fantastic and leak-proof, providing convenience and versatility. The stainless steel construction ensures that there is no metallic taste, and I appreciate that it is BPA-free and non-toxic. Additionally, the bottle remains sweat-free even during intense workouts. Overall, this water bottle has become my go-to companion for staying hydrated on-the-go.",
+        "title": "nice",
+        "content": "I really like these water bottles. I bought them for a festival, but now I prefer using them over my other ones because they work so well.",
         "rating": "5.0 out of 5 stars"
       },
       {
-        "title": "Durable and easy to clean",
-        "content": "I am very happy with my iron flask water bottle. It includes three interchangeable lids, extra straws, and cleaning brushes. The size is perfect as it fits in car drink holders and backpack water bottle holders. Additionally, the wide mouth makes it easy to clean. I have not experienced any leaking issues and the bottle has proven to be durable even after being banged around at the gym and during transportation in the car. I mainly use it for cold water with ice cubes, which stays cold for a long time. However, I have not tested it with warm beverages yet. Overall, I highly recommend this product from this company.",
-        "rating": "5.0 out of 5 stars"
+        "title": "Issues with cover",
+        "content": "I bought 4 of these bottles because I love the locking lid feature. However, the locking device has come out of 2 of the bottles, rendering the lid useless.",
+        "rating": "4.0 out of 5 stars"
       }
     ]
   }

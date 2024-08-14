@@ -8,6 +8,7 @@ require('dotenv').config();
 const { articleToHTML } = require('./converter');
 const { mainArticleAI, commentAI } = require('./ai');
 const { getImages, downloadFile, resizeFile } = require('./pup');
+const { sendToServer } = require('./server_controller');
 
 //useragent
 const UserAgents = require('user-agents');
@@ -22,6 +23,7 @@ options = {
 }
 const cheerio = require('cheerio');
 const fs = require('fs');
+const { stringify } = require('querystring');
 const readline = require('node:readline').createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -219,10 +221,12 @@ async function fetchProductDetails(product, index) {
         m$('#aplus_feature_div').find('p, h1, h2, h3, h4, h5, h6').each(function () {
             texts.push($1(this).text().trim());
         });
-        product.reviewRatingAndCount = [
-            $1('[data-hook="rating-out-of-text"]', html1).text(),
-            $1('[data-hook="total-review-count"]', html1).children('span').text()
-        ].filter(item => item !== null && item !== "");
+
+        reviewRating = Math.round(
+            $1('[data-hook="rating-out-of-text"]', html1).text().match(/^(\d(\.\d)?)/)[0] * 2) / 2;
+        let reviewCount = $1('[data-hook="total-review-count"]', html1).children('span').text().match(/\d+/g).join(",");
+        product.reviewRating = reviewRating.toString();
+        product.reviewCount = reviewCount;
 
         product.fromTheManufacturer = [
             m$('[id="featurebullets_feature_div"]', mainHtml).find('ul').text().trim(),
@@ -274,15 +278,17 @@ async function fetchProductDetails(product, index) {
             if (rephraseCommentsAns[0] && rephraseCommentsAns[0].title) product.rephraseComments = rephraseCommentsAns;
 
             allProducts.push(product)
-            axios.post(`http://localhost:3000/add-product`, product)
-                .then(response => {
-                    console.log('Product added successfully:', response.data);
-                })
-                .catch(error => {
-                    console.error('Error adding product:', error.response ? error.response.data : error.message);
-                });
 
             //SAVER <----
+
+            sendToServer(product)
+                .then(result => {
+                    console.log("Product sent successfully:", result);
+                })
+                .catch(error => {
+                    console.error("Failed to send product:", error);
+                });
+
             const cutIndex = uncutAiAnswer.indexOf('<article>');
             if (cutIndex !== -1) {
                 var aiAnswer = uncutAiAnswer.slice(cutIndex + 9);

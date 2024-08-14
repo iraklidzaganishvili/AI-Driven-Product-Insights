@@ -21,12 +21,11 @@ app.post('/add-product', async (req, res) => {
         fullPrice,
         category,
         brand,
-        review_rating,
-        review_count,
-        product_mid_image,
-        product_images,
-        product_small_images,
-        rephrase_comments
+        reviewRating,
+        reviewCount,
+        productMidImage,
+        productImages,
+        productSmallImages,
     } = req.body;
 
     try {
@@ -37,12 +36,11 @@ app.post('/add-product', async (req, res) => {
             fullPrice,
             category,
             brand,
-            review_rating,
-            review_count,
-            product_mid_image,
-            product_images,
-            product_small_images,
-            rephrase_comments
+            reviewRating,
+            reviewCount,
+            productMidImage,
+            productImages,
+            productSmallImages,
         });
         res.status(201).json(newProduct);
     } catch (err) {
@@ -67,7 +65,6 @@ app.get('/search', async (req, res) => {
                 ...product,
                 product_images: product.product_images,
                 product_small_images: product.product_small_images,
-                rephrase_comments: product.rephrase_comments
             };
             const fileName = `./${product.asin}.html`; // Construct file name based on ASIN
             res.json({ productDetails, fileName });
