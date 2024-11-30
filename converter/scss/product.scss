@@ -1,4 +1,13 @@
-.link2amazon{
+.link2amazon {
     width: 100%;
     margin-top: 10px;
+}
+
+.tab-description {
+    .container {
+        padding: 0;
+    }
+    p,li,ol{
+        font-size: 20px;
+    }
 }

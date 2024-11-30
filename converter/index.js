@@ -295,6 +295,9 @@ async function fetchProductDetails(product, index) {
             } else {
                 var aiAnswer = uncutAiAnswer;
             }
+
+            allArticles.push(aiAnswer)
+
             if (aiAnswer && product) {
                 if (index > RelatedProductAmount) {
                     const rand = randomNumbers(RelatedProductAmount, index);

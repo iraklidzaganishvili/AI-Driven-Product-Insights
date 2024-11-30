@@ -3,4 +3,11 @@
   margin-top: 10px;
 }
 
+.tab-description .container {
+  padding: 0;
+}
+.tab-description p, .tab-description li, .tab-description ol {
+  font-size: 20px;
+}
+
 /*# sourceMappingURL=product.css.map */

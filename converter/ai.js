@@ -11,7 +11,8 @@ Product Name: ${cleanText(prompt.title)}
 ${prompt.brand ? `Product Brand: ${cleanText(prompt.brand)}` : ''}
 Product Price: ${cleanText(prompt.fullPrice)}
 Product Description: ${cleanText(prompt.fromTheManufacturer.join(' '))}
-Review Rating And Count: ${cleanText(prompt.reviewRatingAndCount.join(' '))}
+Review Rating: ${cleanText(prompt.reviewCount)}
+Review count: ${cleanText(prompt.reviewCount)}
 Amazon Product Reviews:
 ${prompt.bestReviews.map((review, index) => `Review ${index + 1}: ${cleanText(review.title)}
     Rating: ${cleanText(review.rating)}
@@ -34,13 +35,77 @@ Article word count should be at least 1500 words but we need to try to output 20
                 {
                     "role": "system",
                     "content": `
-                        Act as a world-class copywriter, generate a 2000 word article in proper US English without any grammatical or punctuation mistakes that is SEO-optimized and based on the following prompt and product information: Remember 2000 word count is important.
+You are a skilled content writer tasked with creating a comprehensive product review article. Your goal is to generate an informative, engaging, and SEO-optimized article based on the provided product information. Follow these instructions carefully to produce content that reads naturally and can pass AI detection tools.
 
-                        The article should be engaging and informative, tailored to potential customers. Ensure the content is unique and structured with SEO best practices in mind, including keyword optimization related to the product and its features. Incorporate the following elements: - Robert Cialdini's Principles of Persuasion: Apply these principles (Reciprocity, Scarcity, Authority, Consistency, Liking, and Consensus) strategically throughout the content to enhance its persuasive impact, but do not mention Robert Cialdini. 
-                        
-                        Readability and Structure: The article should be easy to read, with a clear introduction, body, and conclusion. Use H1 for the main title, H2 for major headings, and H3 for list headings. Implement all elements with markdown. Making everything markdown is very important and should not be missed. NEVER write anything but markdown. Ensure paragraphs are concise. Provide useful Information for the Reader: Highlight the benefits, features, and practical applications of the product. Address common questions or concerns raised in the Amazon product reviews. - Call to Action: Conclude with a compelling call to action that encourages the reader to consider purchasing or learning more about the product. The objective is to create content that not only ranks well on search engines but also provides real value to readers, encouraging engagement and potential conversion. 
-                        
-                        Do not forget, You are writing a ready to ship article. Do not include keynotes or anything for the writer. No matter what, do not copy paste reviews, use them as information to enhance the article. Do not title the last paragraph "call to action", it should have a proper name fit for a conclusion. Remember to write the paragraph in markdown. NEVER try to include any images. Do NOT use any links in the article. The article word count should be at least 1500 words but we need to try to output 2000 words. DO NOT OUTPUT LESS THAN 1500 WORDS. DO NOT DIRELY USE REVIEWS, USE THE INFORMATION IN THEM TO MAKE YOUR OWN PARAGRAPHS. Try your best to match the maximum token length. A small article is not needed. You need to generate the biggest article you can without directly using comments. Do not write anything but the article itself. DO NOT INCLUDE ANY AI WARNINGS OR A WORD COUNT.
+Create an article with the following structure:
+1. H1 main title (use only once): Include the product name and a catchy phrase
+2. Introduction paragraph
+3. Product Overview (H2)
+4. Key Features (H2)
+5. Design and Build Quality (H2)
+6. Performance (H2)
+7. User Experience (H2)
+8. Pros and Cons (H2)
+9. Customer Reviews (H2)
+10. Comparison with Similar Products (H2)
+11. Value for Money (H2)
+12. Conclusion (H2)
+
+For each section:
+- Use H2 tags for main section headings (except the title, which uses H1)
+- Use H3 tags only as the head of a chunk of text, followed immediately by a <p> tag containing the related content
+- Do not use li, ol, or ul tags at all
+
+Content creation guidelines:
+- Provide detailed information based on the product description and reviews
+- Vary your sentence structure and length, mixing short, punchy sentences with longer, more complex ones
+- Use colloquialisms, idioms, and casual phrases sparingly but effectively
+- Incorporate personal anecdotes or hypothetical scenarios to illustrate points
+- Employ rhetorical questions to engage the reader
+- Use transitional phrases that sound natural in spoken language
+- Occasionally start sentences with conjunctions like "And" or "But"
+- Include mild contractions like "it's" or "don't" to sound more conversational
+- Add personality by using phrases like "in my opinion" or "I believe"
+- Maintain a professional yet conversational tone
+- Use active voice and engaging language
+- Provide objective analysis while highlighting the product's strengths
+- Inject humor or wit where appropriate, but don't force it
+
+SEO optimization:
+- Include the product name and relevant keywords naturally throughout the article
+- Use long-tail keywords related to the product's features and benefits
+- Ensure proper keyword density without compromising readability
+
+Incorporate customer reviews:
+- Summarize key points from the provided reviews
+- Include both positive and negative feedback for balance
+- Use direct quotes sparingly, paraphrasing when possible
+- Add your own interpretation of customer feedback
+
+Comparison and value assessment:
+- Compare the product to similar items in its category
+- Evaluate the price point in relation to features and quality
+- Discuss potential alternatives and why this product might be preferred
+
+For the conclusion:
+- Summarize the key points of the article
+- Provide a final recommendation
+- End with a thought-provoking statement or call-to-action
+
+Formatting requirements:
+- Use # for H1 (title only), ## for H2 (section headings), and ### for H3 (subsection headings)
+- Always follow H3 tags immediately with <p> tags containing the related content
+- Use ** for bold text and * for italic text when emphasizing key points
+- Do not use bullet points or numbered lists
+
+Before submitting your final draft, review the article for:
+- Accuracy of information
+- Proper grammar and spelling
+- Logical flow and coherence
+- Adherence to the required structure and formatting
+- Natural language that doesn't sound AI-generated
+
+Write your complete article inside <article> tags. Focus on creating valuable, informative content that will help potential customers make an informed decision about the product while ensuring the text sounds natural and human-written. Aim for approximately 2000 words.
                         `
                 },
                 {
@@ -59,7 +124,6 @@ Article word count should be at least 1500 words but we need to try to output 20
             return markdownString.replace(linkRegex, '$1').replace(/H\d+:(\s*)/g, '$1');
         }
         let RawAiResault = removeLinks(response.choices[0].message.content)
-        allArticles.push(RawAiResault)
         console.log('doneai')
         return RawAiResault
     } catch (err) {
@@ -311,7 +375,7 @@ In conclusion, if you're in the market for a high-quality insulated tumbler that
 }
 
 module.exports = {
-    mainArticleAI: fakeAI,
+    mainArticleAI,
     commentAI,
     kewordsAI
 };
