@@ -1,1 +1,231 @@
-[]
+[
+  {
+    "link": "https://www.amazon.com/dp/B0D7HV2PC9/ref=nosim?tag=bestmmorpg00",
+    "asin": "B0D7HV2PC9",
+    "title": "Google Pixel 9 - Unlocked Android Smartphone with Gemini, 24-Hour Battery, Advanced Camera, and 6.3\" Actua Display - Peony - 128 GB",
+    "productImages": [
+      "B0D7HV2PC9-1-big.webp",
+      "B0D7HV2PC9-0-big.webp",
+      "B0D7HV2PC9-5-big.webp",
+      "B0D7HV2PC9-2-big.webp",
+      "B0D7HV2PC9-4-big.webp",
+      "B0D7HV2PC9-3-big.webp"
+    ],
+    "productSmallImages": [
+      "B0D7HV2PC9-1-small.webp",
+      "B0D7HV2PC9-0-small.webp",
+      "B0D7HV2PC9-5-small.webp",
+      "B0D7HV2PC9-2-small.webp",
+      "B0D7HV2PC9-4-small.webp",
+      "B0D7HV2PC9-3-small.webp"
+    ],
+    "fullPrice": "548.98",
+    "category": "All",
+    "brand": "Google",
+    "reviewRating": "4.5",
+    "reviewCount": "86",
+    "fromTheManufacturer": [
+      "Google Pixel 9 with Gemini gets the best of Google AI first, so you can take amazing photos, make edits like magic, and get things done even easier     Unlocked Android phone gives you the flexibility to change carriers and choose your own data plan[1]; it works with Google Fi, Verizon, T-Mobile, AT&T, and other major carriers     The award-winning Pixel Camera includes a 50 MP main sensor for incredible image and video quality, and a new 48 MP ultrawide camera for stunning Macro Focus     Make your photos better than you can imagine with Google AI; take a picture and be in it too with Add Me[2]; Best Take helps everyone look their best; and with Magic Editor, you can reframe photos, reimagine the scenery, and more[2]     Get more info quickly with Gemini, your built-in AI assistant[3]; instead of typing, use Gemini Live; it follows along even if you change the topic or switch the question[30]; and Pixel Screenshots helps you save things you’ll want to remember later",
+      "From the manufacturer",
+      "A phone full of firsts.",
+      "Meet Pixel 9 with Gemini. Engineered by Google, Pixel gets the best of Google AI first. So you can take amazing photos and get things done even easier. Pixel can protect against spam and other threats. It helps you in an emergency.[9] And it’s built to last.",
+      "Take the picture. And be in it, too.",
+      "Add Me makes sure no one is left out. Take a photo with the group, then swap in the photographer.[2]",
+      "Group pics the whole group loves.",
+      "Best Take combines similar photos into one fantastic picture where everyone looks their best.",
+      "Frame it perfectly with Magic Editor.",
+      "It helps reframe your photo, crops it just right, and can even expand it to get more of the scene.",
+      "Reimagine the scenery.",
+      "With Magic Editor, turn grass into a beach or make the sky pink. Just type what you want to see.[2]",
+      "Make stuff disappear.",
+      "Erase photobombers, crowds, powerlines, or other distractions, just like that.",
+      "Find something out, on the spot.",
+      "Ask Gemini about whatever’s on your screen. You can even take a photo and get help in real life.[3]",
+      "Catch up quick.",
+      "Use Gemini to summarize your Google Docs and unread messages in Gmail.[3]",
+      "Circle to Search. Whoa.",
+      "Circle an image or text, even in a video. Pixel finds it fast – right from the app you’re in.[8]",
+      "Pixel keeps one-upping itself.",
+      "Comes with 7 years of OS and security updates, plus new and upgraded features with Pixel Drops.[5]",
+      "More power behind it alI.",
+      "Google Tensor G4 is the most powerful chip yet, designed to handle Google’s advanced AI.",
+      "Find the perfect Pixel for you.",
+      "Pixel 9",
+      "Pixel 9 Pro/Pro XL",
+      "Pixel 9 Pro Fold",
+      "Pixel 8a"
+    ],
+    "bestReviews": [
+      {
+        "title": "Highly recommend!",
+        "rating": "5.0 out of 5 stars",
+        "content": "I've been using the Google Pixel 9 for two weeks, and it’s fantastic! The OLED display is super smooth, and the camera quality is exceptional. Google’s AI-powered image processing really impressive. The battery easily lasts a full day, even with heavy use. It’s definitely a premium phone, but worth it for the performance, camera, and long-term support. Highly recommend!"
+      },
+      {
+        "title": "Great phone",
+        "rating": "5.0 out of 5 stars",
+        "content": "Battery, fast charging, fast and great cameras"
+      },
+      {
+        "title": "GREAT PHONE",
+        "rating": "5.0 out of 5 stars",
+        "content": "Awesome phone with an awesome camera!! I love the size!! It fits my smaller hands perfect!!  Love it!!"
+      },
+      {
+        "title": "Love it",
+        "rating": "5.0 out of 5 stars",
+        "content": "Works as expected. Much faster than my old Google Pixel 6 pro. Smaller too."
+      },
+      {
+        "title": "A very good phone!",
+        "rating": "5.0 out of 5 stars",
+        "content": "This is the first Google phone that I have ever used, and I am impressed. For someone who uses google services quite often, it is super useful to have a phone with all of that stuff built in. Also, the camera quality is amazing!"
+      },
+      {
+        "title": "The phone is Pretty good",
+        "rating": "4.0 out of 5 stars",
+        "content": "The phone is pretty awesome ,Only complain is that it gets heated a littl le"
+      },
+      {
+        "title": "The Pixel 3 was better.",
+        "rating": "3.0 out of 5 stars",
+        "content": "This phone is evidence of the tech worlds deep overselling of AI. Out of the box, the gestures to swap between open apps on your phone and close them is virtually unusable. The gesture to circle something and Google search it, that's what's easy. Screen capture on a button on the side? Nope, launch the AI assistant, which is just the old assistant with a new name. Fortunately you can bring back the virtual buttons in the settings, rendering the phone almost functional.Just not for voice mail or MMS messages which I keep receiving errors on. Custom support chat can't even be bothered to read what you tell them so you have to type it three times, and their solutions just don't work. Up next on my list? Spending hours on the phone with their customer support.The phone feels great, but it's so slick, it slid from the center of a hardcover book (library book with the protective cover) off my side table with no force applied. Case is a must for grip. Even for flat surfaces apparently.This phone was a big jump for me from a Pixel 3 to a Pixel 9 and so far, nothing about the 9 is impressive outside of the fact that it made it through the day with battery to spare. When I got my 3 I was blown away. What I got a few days ago is unimpressive for six full years of development time.For the cost and the time jump. I wanted to be wowed. I was not wowed. The phone still takes good photos, you get good volume out of the speakers, although I think I liked the tone of my 3 better. Oh well, maybe in another 6-7 years Google will make a phone that functions better in its fundamentals instead of chasing unnecessary features in response to fragile tech trends."
+      },
+      {
+        "title": "I LOVE THIS PHONE but..",
+        "rating": "5.0 out of 5 stars",
+        "content": "I'm returning it because it's so expensive, buying it was an impulsive decision and now days later I realize I'm out of $800 bucks, it's not worth it because I can get other similar-ish phones for way much less. The battery is great as well as the speed. Love the refresh rate, however the phone does heat up when on for long periods of time. Sound quality great, screen size OK -- I miss small phones. Overall great phone, but it's too expensive, so I'm returning it. ☹️"
+      },
+      {
+        "title": "Excelente celular",
+        "rating": "5.0 out of 5 stars",
+        "content": "Excelente celular lo que más destaca es su sistema de cámaras muy pulido por Google.Vengo de Samsung y el cambio a android plano se nota y bastante.La pantalla de modelos como Samsung S23 es superior solo en eso bote que es peor.Lo demás todo perfecto buena cámara y en todos lo demás cumple a la perfección, contento con el cambio."
+      },
+      {
+        "title": "Love the phone",
+        "rating": "5.0 out of 5 stars",
+        "content": "Not much to say except that everything works well and as expected.  It has some features that I have not explored yet.  I would like to note that I had a lot of difficulty finding a screen protector that works with the on-screen fingerprint detector.  Finally I purchased a Caseology screen protector that works.  I would highly recommend using this protector. https://www.amazon.com/dp/B0D4NNBXB5?ref=ppx_yo2ov_dt_b_fed_asin_title"
+      }
+    ],
+    "table": [
+      [
+        "Product Dimensions",
+        "6.02 x 0.34 x 2.83 inches"
+      ],
+      [
+        "Item Weight",
+        "6.7 ounces"
+      ],
+      [
+        "ASIN",
+        "B0D7HV2PC9"
+      ],
+      [
+        "Item model number",
+        "G2YBB"
+      ],
+      [
+        "Batteries",
+        "1 Lithium Ion batteries required. (included)"
+      ],
+      [
+        "Customer Reviews",
+        ""
+      ],
+      [
+        "OS",
+        "Android 14"
+      ],
+      [
+        "Connectivity technologies",
+        "Bluetooth, Wi-Fi, NFC"
+      ],
+      [
+        "GPS",
+        "True"
+      ],
+      [
+        "Other display features",
+        "Wireless"
+      ],
+      [
+        "Human Interface Input",
+        "Touchscreen"
+      ],
+      [
+        "Scanner Resolution",
+        "either '1080 x 2340' or '2160 x 1080'"
+      ],
+      [
+        "Other camera features",
+        "Rear, Front"
+      ],
+      [
+        "Form Factor",
+        "Slate"
+      ],
+      [
+        "Color",
+        "Peony"
+      ],
+      [
+        "Battery Power Rating",
+        "4700"
+      ],
+      [
+        "Phone Talk Time",
+        "24 Hours"
+      ],
+      [
+        "Whats in the box",
+        "Google Pixel 9, 1m USB-C to USB-C cable (USB 2.0), SIM Tray Ejector"
+      ],
+      [
+        "Manufacturer",
+        "Google"
+      ],
+      [
+        "Country of Origin",
+        "China"
+      ],
+      [
+        "Date First Available",
+        "August 13, 2024"
+      ],
+      [
+        "Memory Storage Capacity",
+        "128 GB"
+      ],
+      [
+        "Standing screen display size",
+        "6.3 Inches"
+      ],
+      [
+        "Ram Memory Installed Size",
+        "12 GB"
+      ],
+      [
+        "Weight",
+        "0.42 Pounds"
+      ]
+    ],
+    "productMidImage": "B0D7HV2PC9-0-mid.webp",
+    "rephraseComments": [
+      {
+        "title": "Strongly endorse!",
+        "content": "I've had the Google Pixel 9 for two weeks now, and it’s amazing! The OLED screen is incredibly smooth, and the camera performance is outstanding. Google's AI-driven image processing is truly remarkable. The battery comfortably lasts an entire day, even with intensive usage. It’s certainly a high-end phone, but it's worth every penny for its performance, camera capabilities, and long-term support. Strongly endorse!",
+        "rating": "5.0 out of 5 stars"
+      },
+      {
+        "title": "Excellent smartphone",
+        "content": "Impressive battery life, quick charging, and outstanding camera quality",
+        "rating": "5.0 out of 5 stars"
+      },
+      {
+        "title": "FANTASTIC DEVICE",
+        "content": "Incredible phone with an amazing camera!! I adore the size!! It fits my smaller hands perfectly!! Absolutely love it!!",
+        "rating": "5.0 out of 5 stars"
+      }
+    ]
+  }
+]

@@ -3,6 +3,7 @@ EventEmitter.defaultMaxListeners = 50;
 const path = require('node:path');
 const axios = require('axios');
 require('dotenv').config();
+const fs = require('fs');
 
 //imports
 const { articleToHTML } = require('./converter');
@@ -14,15 +15,18 @@ const { sendToServer } = require('./server_controller');
 const UserAgents = require('user-agents');
 
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
+const cookies = JSON.parse(fs.readFileSync('cookies.json'));
+const cookieHeader = cookies.map(cookie => `${cookie.name}=${cookie.value}`).join('; ');
+
 const firstAgent = new UserAgents(userAgent => userAgent.deviceCategory === 'desktop')
 options = {
     method: 'GET',
     headers: {
-        'User-Agent': firstAgent.toString()
+        'User-Agent': firstAgent.toString(),
+        'Cookie': cookieHeader
     }
 }
 const cheerio = require('cheerio');
-const fs = require('fs');
 const { stringify } = require('querystring');
 const readline = require('node:readline').createInterface({
     input: process.stdin,
@@ -193,12 +197,17 @@ async function fetchProductDetails(product, index) {
     try {
         if (maxIndexesPerPage <= index) return
         let commentsPage = "http://www.amazon.com/product-reviews/" + product.asin;
+        commentsPage = "https://www.amazon.com/ax/claim/webauthn/nudge?openid.assoc_handle=usflex&openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fproduct-reviews%2F" + product.asin + "&pageId=usflex&ref_=PasskeyEnrollmentNudgeRedirect&passkeyNudgeArb=acfe56b6-4983-4bb9-ac55-b0eb0e7c1388&pageType=SignIn"
+        //temp fix as amazon updated their system forcing me to log in to view the comments page for no reason. This is used to kill the bots by amazon. They are killing my legitame bot :(
         const [response1, mainRes] = await Promise.all([
             fetch(commentsPage, options),
             fetch(product.link, options)
         ]);
+
+        
         agentRotator += 2
         const html1 = await response1.text();
+        
         const $1 = cheerio.load(html1);
         const ans = [];
         $1('[id^="customer_review"]', html1).each(function () {
@@ -221,7 +230,6 @@ async function fetchProductDetails(product, index) {
         m$('#aplus_feature_div').find('p, h1, h2, h3, h4, h5, h6').each(function () {
             texts.push($1(this).text().trim());
         });
-
         reviewRating = Math.round(
             $1('[data-hook="rating-out-of-text"]', html1).text().match(/^(\d(\.\d)?)/)[0] * 2) / 2;
         let reviewCount = $1('[data-hook="total-review-count"]', html1).children('span').text().match(/\d+/g).join(",");
@@ -316,7 +324,7 @@ async function fetchProductDetails(product, index) {
         return product;
     } catch (error) {
         console.error(`Error fetching details for product index ${index}:`, error);
-        return null;  // Return null for errors to filter out failed requests later
+        return null;
     }
 }
 
@@ -342,18 +350,15 @@ class ConcurrencyControl {
     }
 
     async run(task) {
-        // Wait until there's a slot available
         if (this.currentRunning >= this.maxConcurrency) {
             await new Promise((resolve) => this.queue.push(resolve));
         }
 
         try {
             this.currentRunning++;
-            // Execute the task
             return await task();
         } finally {
             this.currentRunning--;
-            // Release the slot, start the next task in the queue
             if (this.queue.length > 0) {
                 this.queue.shift()();
             }
@@ -365,7 +370,6 @@ const conContPages = new ConcurrencyControl(3)
 
 function processProductImages(product, index) {
     console.log('------------------------------------started------------------------------------', index)
-    // Return a new promise that encapsulates the entire operation
     return new Promise((resolve, reject) => {
         getImages(product.link).then((prLinks) => {
             // console.log(prLinks, 'link');
@@ -419,10 +423,9 @@ function processProductImages(product, index) {
                 }
             });
 
-            // Wait for all image processing operations to complete
             Promise.all(operations).then(() => {
                 console.log('------------------------------------done------------------------------------', index)
-                resolve(); // Resolve the outer promise once all operations are complete
+                resolve();
             }).catch(reject);
         }).catch(reject);
     });

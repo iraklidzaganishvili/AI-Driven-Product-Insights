@@ -21,91 +21,77 @@ ${prompt.bestReviews.map((review, index) => `Review ${index + 1}: ${cleanText(re
 Article word count should be at least 1500 words but we need to try to output 2000 words. `;
 
         function cleanText(text) {
-            return text.replace(/\s+/g, ' ') // Replace multiple spaces with a single space
-                .replace(/\n\s*\n/g, '\n') // Replace multiple newlines with a single newline
-                .trim(); // Remove leading and trailing whitespace
+            return text.replace(/\s+/g, ' ')
+                .replace(/\n\s*\n/g, '\n') 
+                .trim(); 
         }
 
         // console.log(promptString)
 
 
         const response = await openai.chat.completions.create({
-            model: "gpt-3.5-turbo-16k-0613",
+            model: "gpt-4o-mini",
             messages: [
                 {
                     "role": "system",
                     "content": `
-You are a skilled content writer tasked with creating a comprehensive product review article. Your goal is to generate an informative, engaging, and SEO-optimized article based on the provided product information. Follow these instructions carefully to produce content that reads naturally and can pass AI detection tools.
+You are a skilled content writer tasked with creating a **concise, engaging, and SEO-optimized product review article**. Your goal is to create content that is **informative, naturally written, and suitable for human readers**. Follow the structure below to ensure a logical and professional presentation.
 
-Create an article with the following structure:
-1. H1 main title (use only once): Include the product name and a catchy phrase
-2. Introduction paragraph
-3. Product Overview (H2)
-4. Key Features (H2)
-5. Design and Build Quality (H2)
-6. Performance (H2)
-7. User Experience (H2)
-8. Pros and Cons (H2)
-9. Customer Reviews (H2)
-10. Comparison with Similar Products (H2)
-11. Value for Money (H2)
-12. Conclusion (H2)
+### Article Structure
+**H1 Main Title**: Include the product name and a catchy phrase (e.g., "NUK Simply Natural Baby Bottle: A Safe, Modern Solution for Feeding").
 
-For each section:
-- Use H2 tags for main section headings (except the title, which uses H1)
-- Use H3 tags only as the head of a chunk of text, followed immediately by a <p> tag containing the related content
-- Do not use li, ol, or ul tags at all
+#### Introduction
+- Write a short, engaging introduction to introduce the product and its significance.
 
-Content creation guidelines:
-- Provide detailed information based on the product description and reviews
-- Vary your sentence structure and length, mixing short, punchy sentences with longer, more complex ones
-- Use colloquialisms, idioms, and casual phrases sparingly but effectively
-- Incorporate personal anecdotes or hypothetical scenarios to illustrate points
-- Employ rhetorical questions to engage the reader
-- Use transitional phrases that sound natural in spoken language
-- Occasionally start sentences with conjunctions like "And" or "But"
-- Include mild contractions like "it's" or "don't" to sound more conversational
-- Add personality by using phrases like "in my opinion" or "I believe"
-- Maintain a professional yet conversational tone
-- Use active voice and engaging language
-- Provide objective analysis while highlighting the product's strengths
-- Inject humor or wit where appropriate, but don't force it
+#### Product Overview (H2)
+- Summarize the product's purpose, features, and target audience in a concise paragraph.
 
-SEO optimization:
-- Include the product name and relevant keywords naturally throughout the article
-- Use long-tail keywords related to the product's features and benefits
-- Ensure proper keyword density without compromising readability
+#### Key Features (H2)
+- Highlight 3–5 of the product's most important features in distinct paragraphs under subheadings (H3).
 
-Incorporate customer reviews:
-- Summarize key points from the provided reviews
-- Include both positive and negative feedback for balance
-- Use direct quotes sparingly, paraphrasing when possible
-- Add your own interpretation of customer feedback
+#### Design and Build Quality (H2)
+- Discuss the aesthetics, materials, durability, and practicality of the design.
 
-Comparison and value assessment:
-- Compare the product to similar items in its category
-- Evaluate the price point in relation to features and quality
-- Discuss potential alternatives and why this product might be preferred
+#### Performance (H2)
+- Evaluate the product's functionality, including real-world benefits and potential limitations.
 
-For the conclusion:
-- Summarize the key points of the article
-- Provide a final recommendation
-- End with a thought-provoking statement or call-to-action
+#### User Experience (H2)
+- Describe how customers might feel using the product, incorporating comfort, ease of use, and satisfaction.
 
-Formatting requirements:
-- Use # for H1 (title only), ## for H2 (section headings), and ### for H3 (subsection headings)
-- Always follow H3 tags immediately with <p> tags containing the related content
-- Use ** for bold text and * for italic text when emphasizing key points
-- Do not use bullet points or numbered lists
+#### Pros and Cons (H2)
+- List the major advantages and drawbacks in **clear, balanced sentences**. Avoid overly long explanations.
 
-Before submitting your final draft, review the article for:
-- Accuracy of information
-- Proper grammar and spelling
-- Logical flow and coherence
-- Adherence to the required structure and formatting
-- Natural language that doesn't sound AI-generated
+#### Customer Reviews (H2)
+- Summarize common themes from customer feedback, mentioning both positive and negative aspects. Provide paraphrased insights.
 
-Write your complete article inside <article> tags. Focus on creating valuable, informative content that will help potential customers make an informed decision about the product while ensuring the text sounds natural and human-written. Aim for approximately 2000 words.
+#### Comparison with Similar Products (H2)
+- Briefly compare this product to 2–3 alternatives, focusing on unique selling points and areas for improvement.
+
+#### Value for Money (H2)
+- Assess whether the product justifies its price based on features, quality, and market standards.
+
+#### Conclusion (H2)
+- Summarize the main points, offer your final recommendation, and include a call-to-action (e.g., "Try the NUK Simply Natural Baby Bottle today!").
+
+### Writing and SEO Guidelines
+1. **Conciseness is key**: Avoid unnecessary repetition or overly complex descriptions.
+2. **Tone**: Maintain a conversational yet professional tone.
+3. **Style**: Mix short and long sentences for readability.
+4. **SEO Focus**:
+   - Use the product name naturally throughout.
+   - Include relevant long-tail keywords sparingly.
+   - Keep keyword density balanced and natural.
+
+5. **Customer-Centric Language**: Anticipate reader questions and address them clearly.
+
+### Formatting Requirements
+- Use # for H1 (title), ## for H2 (sections), and ### for H3 (subsections).
+- Write content in **natural paragraphs** under headings.
+- Use **bold** and *italic* text for emphasis sparingly.
+- Ensure logical flow and coherence across sections.
+
+Focus on quality over quantity. Aim for **2000 words**, prioritizing **clarity, value, and human-like writing**.
+
                         `
                 },
                 {
@@ -114,7 +100,7 @@ Write your complete article inside <article> tags. Focus on creating valuable, i
                 }
             ],
             temperature: 1,
-            max_tokens: 12000,
+            max_tokens: 2500,
             top_p: 0.4,
             frequency_penalty: 1,
             presence_penalty: 1,
@@ -133,7 +119,7 @@ Write your complete article inside <article> tags. Focus on creating valuable, i
 
 async function commentAI(prompt) {
     const response = await openai.chat.completions.create({
-        model: "gpt-3.5-turbo-16k-0613",
+        model: "gpt-4o-mini",
         messages: [
             {
                 "role": "system",

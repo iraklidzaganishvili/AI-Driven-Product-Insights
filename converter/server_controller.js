@@ -1,5 +1,5 @@
 async function sendToServer(product) {
-    const url = 'http://localhost:3000/add-product'; // Adjust this if your server is on a different domain
+    const url = 'http://localhost:3000/add-product';
 
     const validFields = [
         'title',
