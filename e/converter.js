@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('node:path');
 const OpenAI = require("openai");
 const openai = new OpenAI({
-    apiKey: '***REMOVED***',
+    apiKey: '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',
 });
 
 async function articleToHTML(markdownText, product0, product1, product2, index, rand) {

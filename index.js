@@ -32,7 +32,7 @@ let storeID = 'bestmmorpg00'
 
 //openai
 const openai = new OpenAI({
-    apiKey: '***REMOVED***',
+    apiKey: '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',
 });
 
 let allProducts = []
